@@ -3,7 +3,7 @@
  * Plugin Name: This Is My URL Shadow
  * Plugin URI: https://thisismyurl.com/shadow/
  * Description: Local-first WordPress diagnostics and safer fixes — file review, one-click recovery, and plain-English guidance before risky changes.
- * Version: 0.6125
+ * Version: 1.6143
  * Author: thisismyurl
  * Author URI: https://profiles.wordpress.org/thisismyurl/
  * Text Domain: thisismyurl-shadow
@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * In practice they form the contract between WordPress' plugin loader and the
  * rest of the This Is My URL Shadow codebase.
  */
-define( 'THISISMYURL_SHADOW_VERSION', '0.6125' );
+define( 'THISISMYURL_SHADOW_VERSION', '1.6143' );
 define( 'THISISMYURL_SHADOW_FILE', __FILE__ );
 define( 'THISISMYURL_SHADOW_BASENAME', plugin_basename( __FILE__ ) );
 define( 'THISISMYURL_SHADOW_PATH', plugin_dir_path( __FILE__ ) );

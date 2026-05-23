@@ -6,6 +6,12 @@ This project aims to follow the spirit of **Keep a Changelog**, while keeping en
 
 ---
 
+## [1.6143] — 2026-05-23
+
+### Changed
+- Promoted to a full release (class 1). The `0.6xxx` line was pre-release on the `x.Yddd` scheme.
+- Standardized the donation link to GitHub Sponsors (`https://github.com/sponsors/thisismyurl`).
+
 ## [0.6125] - 2026-05-03
 
 ### Fixed
