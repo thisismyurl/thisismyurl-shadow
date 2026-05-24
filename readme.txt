@@ -1,4 +1,4 @@
-=== This Is My URL Shadow ===
+=== This Is My URL - Shadow ===
 Contributors: thisismyurl
 Donate link: https://github.com/sponsors/thisismyurl
 Tags: diagnostics, site-health, security, performance, site-audit

@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: This Is My URL Shadow
+ * Plugin Name: This Is My URL - Shadow
  * Plugin URI: https://thisismyurl.com/shadow/
  * Description: Local-first WordPress diagnostics and safer fixes — file review, one-click recovery, and plain-English guidance before risky changes.
  * Version: 1.6143

@@ -1,4 +1,4 @@
-# This Is My URL Shadow
+# This Is My URL - Shadow
 
 This Is My URL Shadow is a local-first WordPress diagnostics and remediation plugin built to help site owners understand what matters, act safely, and recover with confidence.
 

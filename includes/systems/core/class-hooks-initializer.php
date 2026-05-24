@@ -793,7 +793,9 @@ class Hooks_Initializer {
 	 * Filter plugin action links
 	 */
 	public static function filter_plugin_action_links( $links ) {
-		return Menu_Manager::add_settings_link( $links );
+		$links   = Menu_Manager::add_settings_link( $links );
+		$links[] = '<a href="' . esc_url( 'https://github.com/sponsors/thisismyurl' ) . '" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Sponsor', 'thisismyurl-shadow' ) . '</a>';
+		return $links;
 	}
 
 	/**
