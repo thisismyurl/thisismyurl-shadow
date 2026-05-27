@@ -1,12 +1,11 @@
+# Funding and sponsorship. GitHub renders the keys below as a Sponsor button;
+# free-form text is not supported in this file.
+#   - GitHub Sponsors: https://github.com/sponsors/thisismyurl
+#   - Bitcoin / Dogecoin: the addresses below are direct.
+#   - PayPal or Interac e-transfer: email hello@thisismyurl.com and we will send details.
 github: [thisismyurl]
-# GitHub FUNDING.yml supports provider keys and custom links, not arbitrary free-form text.
-# Keep the raw payment details here for maintainers and mirror them in any public donation docs.
-# BTC: bc1qj9plydwsjczyf0t7a5yq22le65nfv3gcq05pd0
-# DOGE: DRcoAj6nQkxbL72MP7zXCacvgDTfhZ2iFP
-# PayPal: cross@thisismyurl.com
-# Interac: cross@thisismyurl.com
 custom:
   - "bitcoin:bc1qj9plydwsjczyf0t7a5yq22le65nfv3gcq05pd0"
   - "dogecoin:DRcoAj6nQkxbL72MP7zXCacvgDTfhZ2iFP"
-  - "mailto:cross@thisismyurl.com?subject=PayPal%20for%20WP%20Shadow"
-  - "mailto:cross@thisismyurl.com?subject=Interac%20for%20WP%20Shadow"
+  - "mailto:hello@thisismyurl.com?subject=PayPal%20donation%20for%20thisismyurl-shadow"
+  - "mailto:hello@thisismyurl.com?subject=Interac%20donation%20for%20thisismyurl-shadow"
