@@ -5,7 +5,7 @@ Tags: diagnostics, site-health, security, performance, site-audit
 Requires at least: 6.4
 Requires PHP: 8.1
 Tested up to: 7.0
-Stable tag: 1.6143
+Stable tag: 1.6147
 License: GPL v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -73,6 +73,11 @@ Not by default. The plugin is local-first. Optional future services, if introduc
 4. Backup and recovery interface
 
 == Changelog ==
+
+= 1.6147 =
+* Unified plugin versioning to the x.Yddd calendar-version scheme.
+* Confirmed compatibility with WordPress 7.0.
+
 
 = 1.6143 =
 * First full release (class 1). The 0.6xxx line was pre-release on the `x.Yddd` scheme.
