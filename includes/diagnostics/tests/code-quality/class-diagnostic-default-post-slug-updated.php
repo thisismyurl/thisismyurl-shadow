@@ -5,7 +5,7 @@
  * Checks whether the "Hello world!" sample post has been reused as real
  * content without updating its original slug or title.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

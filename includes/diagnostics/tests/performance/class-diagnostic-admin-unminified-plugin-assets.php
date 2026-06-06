@@ -7,7 +7,7 @@
  * opt out of minification via this parameter, forcing all users to download
  * larger, uncompressed asset payloads on every admin page load.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

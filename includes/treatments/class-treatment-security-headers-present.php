@@ -8,7 +8,7 @@
  * these headers at the server level, WordPress can add them through the
  * send_headers action.
  *
- * This treatment stores a flag that instructs the This Is My URL Shadow bootstrap to hook
+ * This treatment stores a flag that instructs the Christopher Ross Shadow bootstrap to hook
  * send_headers and emit:
  *   - X-Content-Type-Options: nosniff
  *   - X-Frame-Options: SAMEORIGIN
@@ -85,7 +85,7 @@ class Treatment_Security_Headers_Present extends Treatment_Base {
 
 		return array(
 			'success' => true,
-			'message' => __( 'Security headers disabled. This Is My URL Shadow will no longer emit security response headers.', 'thisismyurl-shadow' ),
+			'message' => __( 'Security headers disabled. Christopher Ross Shadow will no longer emit security response headers.', 'thisismyurl-shadow' ),
 		);
 	}
 }

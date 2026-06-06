@@ -201,7 +201,7 @@ class Treatment_Database_Indexes_Missing extends Treatment_Base {
 		if ( empty( $added ) ) {
 			return array(
 				'success' => false,
-				'message' => __( 'No record of indexes added by This Is My URL Shadow — cannot undo. Indexes (if present) must be removed manually.', 'thisismyurl-shadow' ),
+				'message' => __( 'No record of indexes added by Christopher Ross Shadow — cannot undo. Indexes (if present) must be removed manually.', 'thisismyurl-shadow' ),
 			);
 		}
 
@@ -245,7 +245,7 @@ class Treatment_Database_Indexes_Missing extends Treatment_Base {
 			'success' => true,
 			'message' => sprintf(
 				/* translators: %s: list of removed indexes */
-				__( 'Removed %1$d index(es) added by This Is My URL Shadow: %2$s.', 'thisismyurl-shadow' ),
+				__( 'Removed %1$d index(es) added by Christopher Ross Shadow: %2$s.', 'thisismyurl-shadow' ),
 				count( $dropped ),
 				implode( ', ', $dropped )
 			),

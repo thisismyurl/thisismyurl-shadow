@@ -41,7 +41,7 @@ class Treatment_Query_Debug_Logging_Disabled_Production extends Treatment_Base {
 	protected static $slug = 'query-debug-logging-disabled-production';
 
 	const MARKER_SLUG = 'query-debug-logging-disabled-production';
-	const DEFINE_LINE = "define( 'SAVEQUERIES', false ); // This Is My URL Shadow: disable query logging in production";
+	const DEFINE_LINE = "define( 'SAVEQUERIES', false ); // Christopher Ross Shadow: disable query logging in production";
 
 	public static function boot(): void {
 		File_Write_Registry::register( static::class );

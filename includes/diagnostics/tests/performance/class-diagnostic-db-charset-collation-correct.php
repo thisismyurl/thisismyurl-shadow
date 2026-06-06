@@ -5,7 +5,7 @@
  * Validates that the WordPress database uses utf8mb4 charset with an
  * appropriate unicode_ci collation, flagging legacy or mismatched configurations.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

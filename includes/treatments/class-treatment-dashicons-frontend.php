@@ -8,7 +8,7 @@
  * never see the toolbar, loading Dashicons is wasted CSS and font data on
  * every page request.
  *
- * This treatment stores a flag that tells the This Is My URL Shadow bootstrap to dequeue
+ * This treatment stores a flag that tells the Christopher Ross Shadow bootstrap to dequeue
  * and deregister dashicons on the wp_enqueue_scripts hook for non-authenticated
  * visitors. It is skipped if the active theme's stylesheet explicitly depends
  * on dashicons, since removing it would break the theme.

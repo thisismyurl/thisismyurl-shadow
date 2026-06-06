@@ -5,7 +5,7 @@
  * Checks whether an SEO plugin is installed and configured on the site, as
  * managing meta tags, schema, and canonical URLs requires dedicated SEO tooling.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

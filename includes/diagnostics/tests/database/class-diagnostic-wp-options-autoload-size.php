@@ -6,7 +6,7 @@
  * exceed a safe threshold. Excessive autoload data delays every page load
  * because WordPress fetches it all in a single query on boot.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */
@@ -111,10 +111,10 @@ class Diagnostic_Wp_Options_Autoload_Size extends Diagnostic_Base {
                 'explanation_sections' => array(
                     'summary' => sprintf(
                         /* translators: %s: autoload payload size label */
-                        __( 'This Is My URL Shadow measured your autoload payload at %s. Autoloaded options are loaded on every uncached request before most plugins run, so oversized payloads slow down every page view, not just one specific feature. Large serialized settings from old plugins are a common source of this growth.', 'thisismyurl-shadow' ),
+                        __( 'Christopher Ross Shadow measured your autoload payload at %s. Autoloaded options are loaded on every uncached request before most plugins run, so oversized payloads slow down every page view, not just one specific feature. Large serialized settings from old plugins are a common source of this growth.', 'thisismyurl-shadow' ),
                         $size_label
                     ),
-                    'how_wp_shadow_tested' => __( 'This Is My URL Shadow executed a byte-length aggregation query across wp_options rows where autoload is set to yes, then compared the total against practical warning and high-risk thresholds. It also sampled the top ten largest autoloaded options so you can identify which records contribute the most to startup overhead.', 'thisismyurl-shadow' ),
+                    'how_wp_shadow_tested' => __( 'Christopher Ross Shadow executed a byte-length aggregation query across wp_options rows where autoload is set to yes, then compared the total against practical warning and high-risk thresholds. It also sampled the top ten largest autoloaded options so you can identify which records contribute the most to startup overhead.', 'thisismyurl-shadow' ),
                     'why_it_matters' => __( 'Autoload bloat raises memory usage and slows Time To First Byte because WordPress has to fetch and deserialize more data before rendering begins. This can reduce throughput under traffic spikes and make admin actions feel sluggish, especially on smaller hosting plans with constrained PHP workers.', 'thisismyurl-shadow' ),
                     'how_to_fix_it' => __( 'Review the listed largest options first. Remove settings from plugins you no longer use, move large infrequently-used options to autoload=no where safe, and verify object cache behavior after changes. Apply updates incrementally, then run this check again to confirm the payload drops below the warning threshold without breaking plugin behavior.', 'thisismyurl-shadow' ),
                 ),

@@ -5,7 +5,7 @@
  * Checks whether social media profile URLs are connected to the site via an
  * SEO plugin to enable Knowledge Graph enrichment and social sharing metadata.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

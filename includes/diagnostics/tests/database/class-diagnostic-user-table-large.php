@@ -7,7 +7,7 @@
  * tables slow down the Users list screen, author dropdown menus in the
  * Gutenberg post editor, and any query that joins against wp_users.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

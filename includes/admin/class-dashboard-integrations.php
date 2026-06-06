@@ -2,9 +2,9 @@
 /**
  * Dashboard Integrations
  *
- * Adds This Is My URL Shadow integrations to the WordPress dashboard, admin bar, and Site Health.
+ * Adds Christopher Ross Shadow integrations to the WordPress dashboard, admin bar, and Site Health.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Admin
  * @since 0.6095
  */
@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Dashboard_Integrations Class
  *
- * Provides This Is My URL Shadow entry points inside standard WordPress admin surfaces.
+ * Provides Christopher Ross Shadow entry points inside standard WordPress admin surfaces.
  *
  * @since 0.6095
  */
@@ -59,7 +59,7 @@ class Dashboard_Integrations extends Hook_Subscriber_Base {
 
 		wp_add_dashboard_widget(
 			'thisismyurl_shadow_overview_widget',
-			__( 'This Is My URL Shadow Overview', 'thisismyurl-shadow' ),
+			__( 'Christopher Ross Shadow Overview', 'thisismyurl-shadow' ),
 			array( __CLASS__, 'render_dashboard_widget' )
 		);
 	}
@@ -94,7 +94,7 @@ class Dashboard_Integrations extends Hook_Subscriber_Base {
 		?>
 		<div class="thisismyurl-shadow-dashboard-widget">
 			<p>
-				<?php esc_html_e( 'This Is My URL Shadow runs locally inside your WordPress site and checks for issues you can fix here.', 'thisismyurl-shadow' ); ?>
+				<?php esc_html_e( 'Christopher Ross Shadow runs locally inside your WordPress site and checks for issues you can fix here.', 'thisismyurl-shadow' ); ?>
 			</p>
 			<p>
 				<strong><?php echo esc_html( $label ); ?></strong>
@@ -102,7 +102,7 @@ class Dashboard_Integrations extends Hook_Subscriber_Base {
 			<p><?php echo esc_html( $last_scan_text ); ?></p>
 			<p>
 				<a class="button button-primary" href="<?php echo esc_url( $dashboard_url ); ?>">
-					<?php esc_html_e( 'Open This Is My URL Shadow Dashboard', 'thisismyurl-shadow' ); ?>
+					<?php esc_html_e( 'Open Christopher Ross Shadow Dashboard', 'thisismyurl-shadow' ); ?>
 				</a>
 			</p>
 		</div>
@@ -110,7 +110,7 @@ class Dashboard_Integrations extends Hook_Subscriber_Base {
 	}
 
 	/**
-	 * Add This Is My URL Shadow entry to the admin bar.
+	 * Add Christopher Ross Shadow entry to the admin bar.
 	 *
 	 * @since 0.6095
 	 * @param  \WP_Admin_Bar $wp_admin_bar Admin bar instance.
@@ -126,10 +126,10 @@ class Dashboard_Integrations extends Hook_Subscriber_Base {
 		$title         = $count > 0
 			? sprintf(
 				/* translators: %s: number of open findings */
-				__( 'This Is My URL Shadow (%s)', 'thisismyurl-shadow' ),
+				__( 'Christopher Ross Shadow (%s)', 'thisismyurl-shadow' ),
 				number_format_i18n( $count )
 			)
-			: __( 'This Is My URL Shadow', 'thisismyurl-shadow' );
+			: __( 'Christopher Ross Shadow', 'thisismyurl-shadow' );
 
 		$wp_admin_bar->add_node(
 			array(
@@ -137,7 +137,7 @@ class Dashboard_Integrations extends Hook_Subscriber_Base {
 				'title' => esc_html( $title ),
 				'href'  => esc_url( $dashboard_url ),
 				'meta'  => array(
-					'title' => esc_attr__( 'Open This Is My URL Shadow Dashboard', 'thisismyurl-shadow' ),
+					'title' => esc_attr__( 'Open Christopher Ross Shadow Dashboard', 'thisismyurl-shadow' ),
 				),
 			)
 		);
@@ -153,7 +153,7 @@ class Dashboard_Integrations extends Hook_Subscriber_Base {
 	}
 
 	/**
-	 * Register Site Health tests for This Is My URL Shadow.
+	 * Register Site Health tests for Christopher Ross Shadow.
 	 *
 	 * @since 0.6095
 	 * @param  array $tests Site Health tests.
@@ -161,7 +161,7 @@ class Dashboard_Integrations extends Hook_Subscriber_Base {
 	 */
 	public static function filter_site_health_tests( array $tests ): array {
 		$tests['direct']['thisismyurl_shadow_overview'] = array(
-			'label' => __( 'This Is My URL Shadow overview', 'thisismyurl-shadow' ),
+			'label' => __( 'Christopher Ross Shadow overview', 'thisismyurl-shadow' ),
 			'test'  => array( __CLASS__, 'get_site_health_test' ),
 		);
 
@@ -179,23 +179,23 @@ class Dashboard_Integrations extends Hook_Subscriber_Base {
 		$last_scan     = self::get_last_scan_timestamp();
 		$dashboard_url = admin_url( 'admin.php?page=thisismyurl-shadow' );
 		$badge         = array(
-			'label' => 'This Is My URL Shadow',
+			'label' => 'Christopher Ross Shadow',
 			'color' => 'blue',
 		);
 
 		if ( 0 === $last_scan ) {
 			return array(
-				'label'       => __( 'This Is My URL Shadow has not run a scan yet', 'thisismyurl-shadow' ),
+				'label'       => __( 'Christopher Ross Shadow has not run a scan yet', 'thisismyurl-shadow' ),
 				'status'      => 'recommended',
 				'badge'       => $badge,
 				'description' => sprintf(
 					'<p>%s</p>',
-					esc_html__( 'This Is My URL Shadow runs locally inside your WordPress site. Running a first scan gives you a clear starting point.', 'thisismyurl-shadow' )
+					esc_html__( 'Christopher Ross Shadow runs locally inside your WordPress site. Running a first scan gives you a clear starting point.', 'thisismyurl-shadow' )
 				),
 				'actions'     => sprintf(
 					'<p><a class="button" href="%s">%s</a></p>',
 					esc_url( $dashboard_url ),
-					esc_html__( 'Open This Is My URL Shadow', 'thisismyurl-shadow' )
+					esc_html__( 'Open Christopher Ross Shadow', 'thisismyurl-shadow' )
 				),
 				'test'        => 'thisismyurl_shadow_overview',
 			);
@@ -203,7 +203,7 @@ class Dashboard_Integrations extends Hook_Subscriber_Base {
 
 		if ( $count > 0 ) {
 			return array(
-				'label'       => __( 'This Is My URL Shadow found items to review', 'thisismyurl-shadow' ),
+				'label'       => __( 'Christopher Ross Shadow found items to review', 'thisismyurl-shadow' ),
 				'status'      => 'recommended',
 				'badge'       => $badge,
 				'description' => sprintf(
@@ -213,14 +213,14 @@ class Dashboard_Integrations extends Hook_Subscriber_Base {
 				'actions'     => sprintf(
 					'<p><a class="button" href="%s">%s</a></p>',
 					esc_url( $dashboard_url ),
-					esc_html__( 'Review in This Is My URL Shadow', 'thisismyurl-shadow' )
+					esc_html__( 'Review in Christopher Ross Shadow', 'thisismyurl-shadow' )
 				),
 				'test'        => 'thisismyurl_shadow_overview',
 			);
 		}
 
 		return array(
-			'label'       => __( 'This Is My URL Shadow checks look good', 'thisismyurl-shadow' ),
+			'label'       => __( 'Christopher Ross Shadow checks look good', 'thisismyurl-shadow' ),
 			'status'      => 'good',
 			'badge'       => $badge,
 			'description' => sprintf(

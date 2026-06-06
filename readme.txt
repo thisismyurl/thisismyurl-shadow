@@ -1,4 +1,4 @@
-=== This Is My URL - Shadow ===
+=== - Shadow by Christopher Ross ===
 Contributors: thisismyurl
 Donate link: https://github.com/sponsors/thisismyurl
 Tags: diagnostics, site-health, security, performance, site-audit
@@ -13,7 +13,7 @@ Local-first WordPress diagnostics and safer fixes, with file review and one-clic
 
 == Description ==
 
-Most WordPress site owners do not know what is broken until something fails in production. This Is My URL Shadow surfaces the problems early — health, security, performance, and accessibility — and gives you a calm path to fix them without sending your site data to a cloud service.
+Most WordPress site owners do not know what is broken until something fails in production. Christopher Ross Shadow surfaces the problems early — health, security, performance, and accessibility — and gives you a calm path to fix them without sending your site data to a cloud service.
 
 This first public release is a beta focused on the core plugin experience:
 
@@ -26,28 +26,28 @@ This first public release is a beta focused on the core plugin experience:
 * WordPress Site Health integration
 * accessibility-first, plain-English guidance
 
-This Is My URL Shadow runs locally and does not require registration or a cloud account.
+Christopher Ross Shadow runs locally and does not require registration or a cloud account.
 
 == Installation ==
 
 1. Upload the plugin files to the `/wp-content/plugins/thisismyurl-shadow/` directory, or install the plugin through WordPress.
 2. Activate the plugin through the Plugins screen in WordPress.
-3. Open the This Is My URL Shadow dashboard from the WordPress admin menu.
+3. Open the Christopher Ross Shadow dashboard from the WordPress admin menu.
 4. Review findings and apply safe fixes where appropriate.
 
 == Frequently Asked Questions ==
 
 = Is this a beta release? =
 
-Yes. This is the first public beta release of This Is My URL Shadow. The beta is intended for real-world use and feedback while the team continues to polish workflows, copy, and recovery paths.
+Yes. This is the first public beta release of Christopher Ross Shadow. The beta is intended for real-world use and feedback while the team continues to polish workflows, copy, and recovery paths.
 
-= Does This Is My URL Shadow require an account or cloud service? =
+= Does Christopher Ross Shadow require an account or cloud service? =
 
-No. This Is My URL Shadow runs locally. The current public beta does not require registration, a paid plan, or a cloud connection.
+No. Christopher Ross Shadow runs locally. The current public beta does not require registration, a paid plan, or a cloud connection.
 
 = What kinds of issues does it check? =
 
-This Is My URL Shadow includes diagnostics across accessibility, code quality, database health, design, monitoring, performance, security, SEO, settings, WordPress health, and workflows.
+Christopher Ross Shadow includes diagnostics across accessibility, code quality, database health, design, monitoring, performance, security, SEO, settings, WordPress health, and workflows.
 
 = Does it make changes automatically? =
 
@@ -55,11 +55,11 @@ Some fixes can be applied through the treatment system. Lower-risk changes can b
 
 = Does it support multisite? =
 
-This Is My URL Shadow includes multisite-aware admin behavior and capability handling. As with any beta, multisite administrators should test changes carefully before wide rollout.
+Christopher Ross Shadow includes multisite-aware admin behavior and capability handling. As with any beta, multisite administrators should test changes carefully before wide rollout.
 
 = Is accessibility taken seriously? =
 
-Yes. This Is My URL Shadow is built around clearer language, keyboard-friendly workflows, screen-reader-aware structure, and lower-stress recovery paths. Accessibility issues should be treated as product bugs, not polish.
+Yes. Christopher Ross Shadow is built around clearer language, keyboard-friendly workflows, screen-reader-aware structure, and lower-stress recovery paths. Accessibility issues should be treated as product bugs, not polish.
 
 = Does it send my data to third parties? =
 
@@ -67,7 +67,7 @@ Not by default. The plugin is local-first. Optional future services, if introduc
 
 == Screenshots ==
 
-1. This Is My URL Shadow dashboard overview
+1. Christopher Ross Shadow dashboard overview
 2. Diagnostics inventory and findings views
 3. Treatment and file review workflows
 4. Backup and recovery interface
@@ -92,10 +92,10 @@ Not by default. The plugin is local-first. Optional future services, if introduc
 * Tag list updated for stronger discovery intent on WordPress.org search.
 
 = 0.6124 =
-* Cleanup pass for the WPShadow → This Is My URL Shadow rename: CSS classes, DOM IDs, dashboard JS globals, asset filenames, admin notice classes, GitHub workflow paths, repo slug for the GitHub release updater, and supporting documentation now all use the `thisismyurl-shadow` brand. Legacy on-disk backup directory and filename prefixes are preserved with `TODO(rename-v2)` markers so existing user backups remain restorable across upgrade.
+* Cleanup pass for the WPShadow → Christopher Ross Shadow rename: CSS classes, DOM IDs, dashboard JS globals, asset filenames, admin notice classes, GitHub workflow paths, repo slug for the GitHub release updater, and supporting documentation now all use the `thisismyurl-shadow` brand. Legacy on-disk backup directory and filename prefixes are preserved with `TODO(rename-v2)` markers so existing user backups remain restorable across upgrade.
 
 = 0.6123 =
-* Renamed plugin from "WPShadow" to "This Is My URL Shadow" for the WordPress.org submission. Slug is now `thisismyurl-shadow`.
+* Renamed plugin from "WPShadow" to "Christopher Ross Shadow" for the WordPress.org submission. Slug is now `thisismyurl-shadow`.
 * Removed `error_reporting()` / `ini_set()` overrides from global init; PHP error reporting is now left to WordPress and the host.
 * Removed global `define( 'DONOTCACHEPAGE', true )`. Cache-suppression now lives in a helper that only runs inside specific stateful render callbacks.
 * Replaced `WP_CONTENT_DIR . '/uploads'` (and similar) with `wp_upload_dir()`, `WP_PLUGIN_DIR`, `WPMU_PLUGIN_DIR`, and `get_theme_root()`.

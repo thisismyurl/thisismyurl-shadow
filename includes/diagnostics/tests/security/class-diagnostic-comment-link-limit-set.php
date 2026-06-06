@@ -5,7 +5,7 @@
  * Checks whether WordPress limits the number of links allowed per comment,
  * reducing the appeal of the comment form to spammers and link-droppers.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

@@ -5,7 +5,7 @@
  * Checks whether custom Site Health tests are registered via the
  * site_status_tests filter or a dedicated monitoring plugin is active.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

@@ -5,7 +5,7 @@
  * Checks whether a WordPress core auto-update policy has been explicitly
  * configured rather than left to default behaviour that may skip security patches.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

@@ -2,7 +2,7 @@
 /**
  * AJAX: Treatment Maturity
  *
- * Returns a structured breakdown of all shipped This Is My URL Shadow treatments:
+ * Returns a structured breakdown of all shipped Christopher Ross Shadow treatments:
  * maturity distribution (shipped vs guidance), risk level breakdown,
  * category breakdown, and reversible count.
  *

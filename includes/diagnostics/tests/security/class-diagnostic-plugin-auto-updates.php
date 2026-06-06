@@ -5,7 +5,7 @@
  * Checks whether automatic plugin updates are enabled to ensure security
  * patches are applied promptly without requiring manual action.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

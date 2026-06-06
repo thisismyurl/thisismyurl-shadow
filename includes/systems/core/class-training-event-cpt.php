@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Register and manage event content in This Is My URL Shadow.
+ * Register and manage event content in Christopher Ross Shadow.
  */
 class Training_Event_CPT {
 

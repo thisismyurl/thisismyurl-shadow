@@ -7,7 +7,7 @@
  * popular plugin options.
  *
  * Undo restores the original option payloads and recreates `.maintenance`
- * when This Is My URL Shadow removed it.
+ * when Christopher Ross Shadow removed it.
  *
  * @package ThisIsMyURL\Shadow
  * @since   0.7056

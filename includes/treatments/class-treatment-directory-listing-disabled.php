@@ -57,7 +57,7 @@ class Treatment_Directory_Listing_Disabled extends Treatment_Base {
 
 		$htaccess = get_home_path() . '.htaccess';
 		$rules    = array(
-			'# Disable directory browsing - managed by This Is My URL Shadow',
+			'# Disable directory browsing - managed by Christopher Ross Shadow',
 			'Options -Indexes',
 		);
 
@@ -78,7 +78,7 @@ class Treatment_Directory_Listing_Disabled extends Treatment_Base {
 	}
 
 	/**
-	 * Remove the This Is My URL Shadow directory-listing block from .htaccess.
+	 * Remove the Christopher Ross Shadow directory-listing block from .htaccess.
 	 *
 	 * @return array
 	 */

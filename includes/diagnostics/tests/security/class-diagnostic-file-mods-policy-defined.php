@@ -5,7 +5,7 @@
  * Checks whether a file modifications policy is explicitly defined via
  * DISALLOW_FILE_MODS or DISALLOW_FILE_EDIT constants in wp-config.php.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

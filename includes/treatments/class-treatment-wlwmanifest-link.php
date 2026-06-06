@@ -2,7 +2,7 @@
 /**
  * Treatment: Remove WLW Manifest Link
  *
- * Stores a This Is My URL Shadow option that instructs the plugin bootstrap to call
+ * Stores a Christopher Ross Shadow option that instructs the plugin bootstrap to call
  * remove_action( 'wp_head', 'wlwmanifest_link' ) on every request. This
  * removes the legacy Windows Live Writer discovery tag from <head>.
  *

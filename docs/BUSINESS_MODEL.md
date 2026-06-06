@@ -1,15 +1,15 @@
-# This Is My URL Shadow Business Model
+# Christopher Ross Shadow Business Model
 
 **Date:** April 5, 2026
-**Status:** Active — This Is My URL Shadow only
+**Status:** Active — Christopher Ross Shadow only
 
 ---
 
 ## What Exists Today
 
-### This Is My URL Shadow — Free WordPress Plugin
+### Christopher Ross Shadow — Free WordPress Plugin
 
-This Is My URL Shadow is the only currently available product. It is:
+Christopher Ross Shadow is the only currently available product. It is:
 
 - **100% free** — no trial, no paywall, no paywalled features
 - **Self-contained** — runs entirely on your WordPress server
@@ -69,7 +69,7 @@ All decisions are evaluated against these pillars:
 
 ## Sustainability
 
-This Is My URL Shadow is developed and maintained as a commitment to the WordPress community. The current model is:
+Christopher Ross Shadow is developed and maintained as a commitment to the WordPress community. The current model is:
 
 - Plugin released free
 - Development funded by the project director
@@ -91,5 +91,5 @@ If paid products are ever introduced, every paid offering must clearly state:
 ---
 
 **Version:** Current
-**Maintained By:** This Is My URL Shadow Team
+**Maintained By:** Christopher Ross Shadow Team
 **Aligned With:** [CORE_PHILOSOPHY.md](CORE_PHILOSOPHY.md)

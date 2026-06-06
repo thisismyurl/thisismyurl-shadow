@@ -1,7 +1,7 @@
 <?php
 
 /**
- * This Is My URL Shadow Plugin Bootstrap
+ * Christopher Ross Shadow Plugin Bootstrap
  *
  * Service registry and bootstrap orchestrator.
  * Initializes all core systems in the correct order.
@@ -59,7 +59,7 @@ class Plugin_Bootstrap {
 			Hooks_Initializer::init();
 		}
 
-		// Register This Is My URL Shadow-managed event post type and migration hooks.
+		// Register Christopher Ross Shadow-managed event post type and migration hooks.
 		if ( class_exists( '\\ThisIsMyURL\\Shadow\\Core\\Training_Event_CPT' ) ) {
 			Training_Event_CPT::init();
 		}
@@ -408,7 +408,7 @@ class Plugin_Bootstrap {
 	/**
 	 * Load dashboard integrations
 	 *
-	 * Registers the This Is My URL Shadow overview widget on the WP dashboard,
+	 * Registers the Christopher Ross Shadow overview widget on the WP dashboard,
 	 * adds an admin bar shortcut, and adds the At-a-Glance problem count.
 	 *
 	 * @return void

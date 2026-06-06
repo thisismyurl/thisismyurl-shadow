@@ -4,7 +4,7 @@
  *
  * Detects missing Cache-Control headers causing browsers to re-download assets unnecessarily.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since 0.6095
  */

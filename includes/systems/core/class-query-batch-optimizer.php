@@ -5,7 +5,7 @@
  * Batch-processes multiple database queries to reduce query count.
  * Uses query result caching and batching to minimize database load.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Core
  * @since 0.6095
  */

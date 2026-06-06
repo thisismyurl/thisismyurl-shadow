@@ -5,7 +5,7 @@
  * Verifies that WordPress is generating srcset and sizes attributes for
  * uploaded images, enabling browsers to request appropriately-sized assets.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

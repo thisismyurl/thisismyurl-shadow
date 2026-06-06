@@ -80,7 +80,7 @@ class Diagnostic_Rest_Api_Sensitive_Routes_Protected extends Diagnostic_Base {
 		$rest_url = rest_url( 'wp/v2/users' );
 		$result = Diagnostic_Request_Helper::get_result( $rest_url, array(
 			'timeout'    => 5,
-			'user-agent' => 'This Is My URL Shadow-Diagnostic/1.0',
+			'user-agent' => 'Christopher Ross Shadow-Diagnostic/1.0',
 		) );
 
 		if ( empty( $result['success'] ) || empty( $result['response'] ) || ! is_array( $result['response'] ) ) {

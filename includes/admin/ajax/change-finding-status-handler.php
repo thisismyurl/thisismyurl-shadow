@@ -111,7 +111,7 @@ class Change_Finding_Status_Handler extends AJAX_Handler_Base {
 
 				return array(
 					'action'      => 'manual_assigned',
-					'description' => __( 'Logged as manual fix. This Is My URL Shadow will track your progress but won\'t auto-remind.', 'thisismyurl-shadow' ),
+					'description' => __( 'Logged as manual fix. Christopher Ross Shadow will track your progress but won\'t auto-remind.', 'thisismyurl-shadow' ),
 				);
 
 			case 'automated':

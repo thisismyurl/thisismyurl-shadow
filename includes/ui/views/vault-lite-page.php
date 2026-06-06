@@ -2,9 +2,9 @@
 /**
  * Vault Lite Page
  *
- * Local-only backup dashboard and settings for This Is My URL Shadow.
+ * Local-only backup dashboard and settings for Christopher Ross Shadow.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Views
  * @since      0.6095
  */
@@ -181,7 +181,7 @@ thisismyurl_shadow_render_page_header(
 
 		<div class="wps-settings-section">
 			<h2 class="wps-settings-section-title"><?php esc_html_e( 'Available Backups', 'thisismyurl-shadow' ); ?></h2>
-			<p class="wps-settings-section-desc"><?php esc_html_e( 'Download, restore, or delete any retained local backup from this list. This Is My URL Shadow creates a fresh safety backup before restoring.', 'thisismyurl-shadow' ); ?></p>
+			<p class="wps-settings-section-desc"><?php esc_html_e( 'Download, restore, or delete any retained local backup from this list. Christopher Ross Shadow creates a fresh safety backup before restoring.', 'thisismyurl-shadow' ); ?></p>
 
 			<?php if ( empty( $backup_entries ) ) : ?>
 				<div class="notice notice-info inline">
@@ -278,7 +278,7 @@ thisismyurl_shadow_render_page_header(
 			<div class="wps-settings-dialog__body">
 				<p><?php esc_html_e( 'You are about to restore this local backup:', 'thisismyurl-shadow' ); ?></p>
 				<p id="wps-vault-restore-description"><strong></strong></p>
-				<p class="description"><?php esc_html_e( 'This Is My URL Shadow will create a fresh safety backup first when possible. Restoring may overwrite files and database content.', 'thisismyurl-shadow' ); ?></p>
+				<p class="description"><?php esc_html_e( 'Christopher Ross Shadow will create a fresh safety backup first when possible. Restoring may overwrite files and database content.', 'thisismyurl-shadow' ); ?></p>
 			</div>
 
 			<div class="wps-settings-dialog__footer" style="display:flex; gap:12px; justify-content:flex-end;">

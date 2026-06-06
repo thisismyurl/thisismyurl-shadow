@@ -5,7 +5,7 @@
  * Checks the effective JPEG quality level applied by WordPress during image
  * processing, flagging values that are too high (wasteful) or too low (blurry).
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

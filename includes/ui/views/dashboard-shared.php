@@ -103,7 +103,7 @@ function thisismyurl_shadow_build_explanation_sections_fallback(
 	}
 
 	$core_phrase = $is_core
-		? __( 'It is part of This Is My URL Shadow core coverage, so changes here usually deserve priority.', 'thisismyurl-shadow' )
+		? __( 'It is part of Christopher Ross Shadow core coverage, so changes here usually deserve priority.', 'thisismyurl-shadow' )
 		: __( 'It is part of the extended coverage set, useful for deeper hardening and operational quality.', 'thisismyurl-shadow' );
 	$automation_constraint = thisismyurl_shadow_get_automation_constraint_reason(
 		$run_key,
@@ -130,7 +130,7 @@ function thisismyurl_shadow_build_explanation_sections_fallback(
 
 	$how_tested = sprintf(
 		/* translators: 1: diagnostic name, 2: confidence level */
-		__( 'This Is My URL Shadow evaluates %1$s using deterministic rules inside the diagnostic class and records the latest result for dashboard reporting. Confidence for this check is marked as %2$s, which indicates how much direct evidence the test can gather versus inferred signals.', 'thisismyurl-shadow' ),
+		__( 'Christopher Ross Shadow evaluates %1$s using deterministic rules inside the diagnostic class and records the latest result for dashboard reporting. Confidence for this check is marked as %2$s, which indicates how much direct evidence the test can gather versus inferred signals.', 'thisismyurl-shadow' ),
 		$name,
 		$confidence
 	);
@@ -147,7 +147,7 @@ function thisismyurl_shadow_build_explanation_sections_fallback(
 		$signal_text = trim( $description );
 	}
 	if ( '' === $signal_text ) {
-		$signal_text = __( 'This Is My URL Shadow detected a configuration issue in this area.', 'thisismyurl-shadow' );
+		$signal_text = __( 'Christopher Ross Shadow detected a configuration issue in this area.', 'thisismyurl-shadow' );
 	}
 
 	$guidance_haystack = strtolower(
@@ -224,7 +224,7 @@ function thisismyurl_shadow_build_explanation_sections_fallback(
 	$how_to_fix = 'failed' === $status_raw
 		? sprintf(
 			/* translators: 1: issue signal text, 2: issue-specific beginner guidance, 3: automation constraint explanation */
-			__( 'What This Is My URL Shadow found: %1$s. Recommended next step: %2$s Why This Is My URL Shadow is not auto-fixing this: %3$s After you make this change, wait for the next scheduled run to confirm the result changes to Passed.', 'thisismyurl-shadow' ),
+			__( 'What Christopher Ross Shadow found: %1$s. Recommended next step: %2$s Why Christopher Ross Shadow is not auto-fixing this: %3$s After you make this change, wait for the next scheduled run to confirm the result changes to Passed.', 'thisismyurl-shadow' ),
 			$signal_text,
 			$issue_specific_fix,
 			$automation_constraint
@@ -240,7 +240,7 @@ function thisismyurl_shadow_build_explanation_sections_fallback(
 }
 
 /**
- * Explain why This Is My URL Shadow is not applying a diagnostic fix automatically.
+ * Explain why Christopher Ross Shadow is not applying a diagnostic fix automatically.
  *
  * @since 0.7056
  * @param string $run_key        Diagnostic run key.
@@ -272,7 +272,7 @@ function thisismyurl_shadow_get_automation_constraint_reason(
 	}
 
 	if ( $has_input_path ) {
-		$reason = __( 'the correct value depends on your site intent, naming, or environment details, so This Is My URL Shadow needs your input before it can safely write the setting', 'thisismyurl-shadow' );
+		$reason = __( 'the correct value depends on your site intent, naming, or environment details, so Christopher Ross Shadow needs your input before it can safely write the setting', 'thisismyurl-shadow' );
 		if ( '' !== $metadata_note ) {
 			$reason .= ' ' . sprintf(
 				/* translators: %s: diagnostic metadata note */
@@ -296,7 +296,7 @@ function thisismyurl_shadow_get_automation_constraint_reason(
 	}
 
 	if ( 'guidance' === $tx_maturity ) {
-		$reason = __( 'this change depends on hosting, filesystem access, external services, or operator review, so This Is My URL Shadow only provides guidance steps instead of making the change blindly', 'thisismyurl-shadow' );
+		$reason = __( 'this change depends on hosting, filesystem access, external services, or operator review, so Christopher Ross Shadow only provides guidance steps instead of making the change blindly', 'thisismyurl-shadow' );
 		if ( '' !== $metadata_note ) {
 			$reason .= ' ' . sprintf(
 				/* translators: %s: diagnostic metadata note */
@@ -327,7 +327,7 @@ function thisismyurl_shadow_get_automation_constraint_reason(
 		|| false !== strpos( $haystack, 'http/2' )
 		|| false !== strpos( $haystack, 'http/3' )
 	) {
-		return __( 'the fix lives at the server or hosting layer, outside normal WordPress settings, so applying it automatically would require assumptions about your infrastructure that This Is My URL Shadow cannot safely make', 'thisismyurl-shadow' );
+		return __( 'the fix lives at the server or hosting layer, outside normal WordPress settings, so applying it automatically would require assumptions about your infrastructure that Christopher Ross Shadow cannot safely make', 'thisismyurl-shadow' );
 	}
 
 	if (
@@ -340,7 +340,7 @@ function thisismyurl_shadow_get_automation_constraint_reason(
 		|| false !== strpos( $haystack, 'row-count' )
 		|| false !== strpos( $haystack, 'table-large' )
 	) {
-		return __( 'the fix would involve deleting, relocating, or bulk-editing data, and This Is My URL Shadow avoids destructive cleanup unless the change can be reversed safely and validated confidently', 'thisismyurl-shadow' );
+		return __( 'the fix would involve deleting, relocating, or bulk-editing data, and Christopher Ross Shadow avoids destructive cleanup unless the change can be reversed safely and validated confidently', 'thisismyurl-shadow' );
 	}
 
 	if (
@@ -363,7 +363,7 @@ function thisismyurl_shadow_get_automation_constraint_reason(
 		|| false !== strpos( $haystack, 'meta' )
 		|| false !== strpos( $haystack, 'analytics' )
 	) {
-		return __( 'the right fix depends on your content, compliance choices, or plugin stack, so This Is My URL Shadow avoids inventing pages, copy, or plugin behavior unless you explicitly provide the inputs', 'thisismyurl-shadow' );
+		return __( 'the right fix depends on your content, compliance choices, or plugin stack, so Christopher Ross Shadow avoids inventing pages, copy, or plugin behavior unless you explicitly provide the inputs', 'thisismyurl-shadow' );
 	}
 
 	if (
@@ -372,7 +372,7 @@ function thisismyurl_shadow_get_automation_constraint_reason(
 		|| false !== strpos( $haystack, 'user-enumeration' )
 		|| false !== strpos( $haystack, 'role' )
 	) {
-		return __( 'the change affects user accounts or access policy, so This Is My URL Shadow leaves the final decision to the site owner instead of risking an unintended lockout or privilege change', 'thisismyurl-shadow' );
+		return __( 'the change affects user accounts or access policy, so Christopher Ross Shadow leaves the final decision to the site owner instead of risking an unintended lockout or privilege change', 'thisismyurl-shadow' );
 	}
 
 	$reason = __( 'this issue does not map cleanly to one reversible WordPress write, and solving it safely requires context about your site setup, theme, content, plugins, or hosting environment', 'thisismyurl-shadow' );

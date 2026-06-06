@@ -8,7 +8,7 @@
  * rendering, this CSS is almost entirely unused and adds unnecessary page
  * weight for every visitor.
  *
- * This treatment stores a flag that tells the This Is My URL Shadow bootstrap to dequeue
+ * This treatment stores a flag that tells the Christopher Ross Shadow bootstrap to dequeue
  * those three stylesheets on the frontend when the active theme is a classic
  * (non-block/non-FSE) theme. The flag is only applied at page load, so it
  * takes effect immediately from the next request.

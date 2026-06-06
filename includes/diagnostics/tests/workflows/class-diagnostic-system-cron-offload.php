@@ -6,7 +6,7 @@
  * job. Using the built-in pseudo-cron causes missed or page-load-delayed tasks
  * on low-traffic sites and adds latency on high-traffic sites.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

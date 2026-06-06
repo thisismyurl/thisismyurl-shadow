@@ -2,7 +2,7 @@
 /**
  * Treatment: Remove Pingback Endpoint Disclosure
  *
- * Stores a This Is My URL Shadow option that instructs the plugin bootstrap to:
+ * Stores a Christopher Ross Shadow option that instructs the plugin bootstrap to:
  *  - remove_action( 'wp_head', 'pingback_url' )
  *    Suppresses the <link rel="pingback"> tag from every page's <head>.
  *  - remove_filter( 'wp_headers', 'wp_headers_pingback' )

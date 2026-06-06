@@ -6,7 +6,7 @@
  * OPcache is one of the highest-impact PHP runtime improvements because it
  * avoids reparsing and recompiling PHP files on every request.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */
@@ -127,8 +127,8 @@ class Diagnostic_Opcache_Enabled extends Diagnostic_Base {
 					'opcache.enable_cli' => $directive_map['opcache.enable_cli'] ?? ini_get( 'opcache.enable_cli' ),
 				),
 				'explanation_sections'     => array(
-					'summary' => __( 'This Is My URL Shadow checked the live PHP runtime for OPcache support and did not find an active opcode cache for web requests. OPcache keeps precompiled PHP bytecode in shared memory so WordPress does not need to recompile the same files on every hit.', 'thisismyurl-shadow' ),
-					'how_wp_shadow_tested' => __( 'This Is My URL Shadow inspected the runtime using opcache_get_status() and opcache_get_configuration() when available, then cross-checked the opcache.enable and opcache.enable_cli directives reported by PHP. A healthy result requires the web runtime to report OPcache as enabled.', 'thisismyurl-shadow' ),
+					'summary' => __( 'Christopher Ross Shadow checked the live PHP runtime for OPcache support and did not find an active opcode cache for web requests. OPcache keeps precompiled PHP bytecode in shared memory so WordPress does not need to recompile the same files on every hit.', 'thisismyurl-shadow' ),
+					'how_wp_shadow_tested' => __( 'Christopher Ross Shadow inspected the runtime using opcache_get_status() and opcache_get_configuration() when available, then cross-checked the opcache.enable and opcache.enable_cli directives reported by PHP. A healthy result requires the web runtime to report OPcache as enabled.', 'thisismyurl-shadow' ),
 					'why_it_matters' => __( 'Without OPcache, PHP spends more CPU time parsing and compiling WordPress core, plugin, and theme files on every request. That increases server load, slows uncached responses, and reduces the number of requests your hosting environment can handle efficiently.', 'thisismyurl-shadow' ),
 					'how_to_fix_it' => __( 'Enable OPcache in your PHP configuration or hosting control panel, then restart PHP-FPM or Apache if required by your host. After enabling it, rerun this diagnostic to confirm the live runtime reports OPcache as active for web requests.', 'thisismyurl-shadow' ),
 				),

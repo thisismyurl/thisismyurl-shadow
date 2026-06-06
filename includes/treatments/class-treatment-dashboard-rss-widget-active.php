@@ -13,7 +13,7 @@
  * render for all users who visit the dashboard.
  *
  * This treatment stores a flag (`thisismyurl_shadow_remove_dashboard_rss_widgets`) that
- * tells the This Is My URL Shadow bootstrap to deregister the widgets before they can fire:
+ * tells the Christopher Ross Shadow bootstrap to deregister the widgets before they can fire:
  *
  *   Bootstrap responsibility (when option is `true`):
  *     add_action( 'wp_dashboard_setup', function() {

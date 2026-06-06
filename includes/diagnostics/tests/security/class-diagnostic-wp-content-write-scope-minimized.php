@@ -5,7 +5,7 @@
  * Checks whether key wp-content subdirectories have overly permissive write
  * permissions that could allow unauthorized file modifications on the server.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

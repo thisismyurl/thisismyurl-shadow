@@ -26,7 +26,7 @@
  * - Skips AJAX, REST, cron, and CLI requests.
  * - Limited to a single buffer per request via `$is_buffering`.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */
@@ -81,7 +81,7 @@ class Diagnostic_Admin_Page_HTML_Helper {
 	/**
 	 * Register the capture hooks.
 	 *
-	 * Called from the This Is My URL Shadow plugin bootstrap. Safe to call on every request;
+	 * Called from the Christopher Ross Shadow plugin bootstrap. Safe to call on every request;
 	 * the inner guards ensure capturing only happens on qualifying admin pages.
 	 *
 	 * @since  0.6095

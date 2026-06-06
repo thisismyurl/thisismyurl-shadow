@@ -63,7 +63,7 @@ class Treatment_Sensitive_Files_Protected extends Treatment_Base {
 
 		// --- .htaccess block ------------------------------------------------
 		$rules = array(
-			'# Block access to sensitive files — managed by This Is My URL Shadow',
+			'# Block access to sensitive files — managed by Christopher Ross Shadow',
 			'<FilesMatch "^(\.env|\.env\..+|phpinfo\.php|debug\.log|error_log)$">',
 			'  Order Deny,Allow',
 			'  Deny from all',
@@ -132,7 +132,7 @@ class Treatment_Sensitive_Files_Protected extends Treatment_Base {
 	}
 
 	/**
-	 * Remove the This Is My URL Shadow sensitive-files block from root .htaccess.
+	 * Remove the Christopher Ross Shadow sensitive-files block from root .htaccess.
 	 *
 	 * Deleted files are not restored — this only removes the .htaccess rules.
 	 *

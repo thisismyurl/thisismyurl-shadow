@@ -1,8 +1,8 @@
 <?php
 /**
- * This Is My URL Shadow Menu Manager
+ * Christopher Ross Shadow Menu Manager
  *
- * Centralized registration of WordPress admin menus for This Is My URL Shadow.
+ * Centralized registration of WordPress admin menus for Christopher Ross Shadow.
  * Extracted from thisismyurl-shadow.php as part of Phase 4.5 refactoring.
  *
  * Philosophy: Commandment #7 (Ridiculously Good - obvious structure)
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 use ThisIsMyURL\Shadow\Admin\Post_Types_Page;
 use ThisIsMyURL\Shadow\Core\Form_Param_Helper;
 /**
- * Manages This Is My URL Shadow admin menu registration and setup
+ * Manages Christopher Ross Shadow admin menu registration and setup
  */
 class Menu_Manager {
 
@@ -40,7 +40,7 @@ class Menu_Manager {
 	}
 
 	/**
-	 * Register all This Is My URL Shadow admin menus
+	 * Register all Christopher Ross Shadow admin menus
 	 *
 	 * @return void
 	 */
@@ -51,8 +51,8 @@ class Menu_Manager {
 
 		// Top-level menu.
 		add_menu_page(
-			'This Is My URL Shadow',
-			'This Is My URL Shadow',
+			'Christopher Ross Shadow',
+			'Christopher Ross Shadow',
 			$admin_capability,
 			'thisismyurl-shadow',
 			'thisismyurl_shadow_render_dashboard_v2',
@@ -222,7 +222,7 @@ class Menu_Manager {
 	}
 
 	/**
-	 * Register This Is My URL Shadow settings link on plugins page
+	 * Register Christopher Ross Shadow settings link on plugins page
 	 *
 	 * @param array $links Plugin action links.
 	 * @return array Modified action links.
@@ -254,7 +254,7 @@ class Menu_Manager {
 	}
 
 	/**
-	 * Get capability required for admin-level This Is My URL Shadow pages.
+	 * Get capability required for admin-level Christopher Ross Shadow pages.
 	 *
 	 * @return string Capability name.
 	 */
@@ -267,7 +267,7 @@ class Menu_Manager {
 	}
 
 	/**
-	 * Get capability required for analyst/read-only This Is My URL Shadow pages.
+	 * Get capability required for analyst/read-only Christopher Ross Shadow pages.
 	 *
 	 * @return string Capability name.
 	 */

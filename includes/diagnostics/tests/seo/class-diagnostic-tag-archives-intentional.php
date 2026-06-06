@@ -5,7 +5,7 @@
  * Checks whether post tag archives are bloated with single-use tags that
  * generate thin archive pages and fragment crawl budget.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

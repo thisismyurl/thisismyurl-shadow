@@ -3,11 +3,11 @@
  * Treatment: Exclude internal search result pages from indexing
  *
  * Updates the active SEO plugin setting when Yoast SEO or Rank Math is
- * present. If no supported SEO plugin is active, This Is My URL Shadow enables a native
+ * present. If no supported SEO plugin is active, Christopher Ross Shadow enables a native
  * runtime noindex rule for search result pages.
  *
  * Undo restores the previous SEO-plugin option payloads and the previous
- * This Is My URL Shadow native runtime toggle.
+ * Christopher Ross Shadow native runtime toggle.
  *
  * @package ThisIsMyURL\Shadow
  * @since   0.7056
@@ -80,7 +80,7 @@ class Treatment_Search_Page_Indexing extends Treatment_Base {
 
 		if ( ! $has_yoast && ! $has_rankmath && ! (bool) get_option( self::NATIVE_OPTION, false ) ) {
 			update_option( self::NATIVE_OPTION, true, false );
-			$changes[] = __( 'This Is My URL Shadow native search-page noindex enabled', 'thisismyurl-shadow' );
+			$changes[] = __( 'Christopher Ross Shadow native search-page noindex enabled', 'thisismyurl-shadow' );
 		}
 
 		if ( empty( $changes ) ) {

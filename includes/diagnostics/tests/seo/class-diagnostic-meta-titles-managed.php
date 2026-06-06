@@ -5,7 +5,7 @@
  * Checks whether an SEO plugin is active to manage meta title tags for posts
  * and pages, and whether core title templates have been configured.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

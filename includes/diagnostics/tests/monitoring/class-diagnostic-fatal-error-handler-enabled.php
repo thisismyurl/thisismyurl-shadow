@@ -10,7 +10,7 @@
  * reverting to the pre-5.2 behaviour: a blank screen with no notification
  * and no recovery path short of FTP or server access.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

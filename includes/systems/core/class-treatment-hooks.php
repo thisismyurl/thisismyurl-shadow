@@ -3,7 +3,7 @@
 /**
  * Treatment Hooks
  *
- * Runtime hook registration for This Is My URL Shadow treatments that require active
+ * Runtime hook registration for Christopher Ross Shadow treatments that require active
  * WordPress filters/actions rather than passive configuration changes.
  *
  * Called once from Hooks_Initializer::on_plugins_loaded_late(). Each section

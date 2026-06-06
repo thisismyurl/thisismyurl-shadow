@@ -1,14 +1,14 @@
-# This Is My URL - Shadow
+# Christopher Ross - Shadow
 
 [![CI](https://github.com/thisismyurl/thisismyurl-shadow/actions/workflows/ci.yml/badge.svg)](https://github.com/thisismyurl/thisismyurl-shadow/actions/workflows/ci.yml) [![WordPress](https://img.shields.io/badge/WordPress-6.4%2B-blue)](https://wordpress.org/) [![License](https://img.shields.io/badge/License-GPL--2.0-blue)](LICENSE)
 
-This Is My URL Shadow is a local-first WordPress diagnostics and remediation plugin built to help site owners understand what matters, act safely, and recover with confidence. This repository is the source for the first public beta.
+Christopher Ross Shadow is a local-first WordPress diagnostics and remediation plugin built to help site owners understand what matters, act safely, and recover with confidence. This repository is the source for the first public beta.
 
 For the current version, see the plugin header in `thisismyurl-shadow.php` and the `Stable tag` in [`readme.txt`](readme.txt). For shipped notes, see [`CHANGELOG.md`](CHANGELOG.md).
 
 ## What ships today
 
-This Is My URL Shadow currently exposes:
+Christopher Ross Shadow currently exposes:
 
 - 230 display-ready diagnostics across 11 categories via `Diagnostic_Registry::get_diagnostic_definitions()`.
 - 101 executable treatment classes via `Treatment_Registry::get_all()`.
@@ -51,7 +51,7 @@ Not part of the current beta:
 ### Site owners
 
 1. Install and activate the plugin.
-2. Open the This Is My URL Shadow dashboard.
+2. Open the Christopher Ross Shadow dashboard.
 3. Review findings by category.
 4. Apply safe fixes where appropriate.
 5. Use file review or backup workflows before higher-risk changes.
@@ -79,7 +79,7 @@ php8.3 ./vendor/bin/phpunit --configuration phpunit.xml.dist
 
 ### WP-CLI
 
-When WP-CLI is available, This Is My URL Shadow registers commands for:
+When WP-CLI is available, Christopher Ross Shadow registers commands for:
 
 - `wp thisismyurl-shadow diagnostics list`
 - `wp thisismyurl-shadow diagnostics run <diagnostic>`
@@ -111,9 +111,9 @@ Planning notes, archived reports, and placeholder code should not be used for he
 
 ## Accessibility and privacy
 
-This Is My URL Shadow is built for people who use keyboards, screen readers, zoom, reduced motion, simpler language, and lower-stress workflows. The docs should help a busy site owner understand what a finding means, what happens next, and how to recover if something goes wrong.
+Christopher Ross Shadow is built for people who use keyboards, screen readers, zoom, reduced motion, simpler language, and lower-stress workflows. The docs should help a busy site owner understand what a finding means, what happens next, and how to recover if something goes wrong.
 
-This Is My URL Shadow runs locally. The current beta does not require an account, does not require cloud infrastructure, and should not make unexpected third-party requests.
+Christopher Ross Shadow runs locally. The current beta does not require an account, does not require cloud infrastructure, and should not make unexpected third-party requests.
 
 See [docs/ACCESSIBILITY.md](docs/ACCESSIBILITY.md), [PRIVACY.md](PRIVACY.md), and [docs/BUSINESS_MODEL.md](docs/BUSINESS_MODEL.md).
 
@@ -146,9 +146,9 @@ Code contributions are welcome. The short version:
 
 The full workflow and standards live in [CONTRIBUTING.md](CONTRIBUTING.md). Contributing is never required, but it is always appreciated.
 
-## About This Is My URL
+## About Christopher Ross
 
-This plugin is built and maintained by [This Is My URL](https://thisismyurl.com/), the WordPress development and technical SEO practice of Christopher Ross. I help teams build WordPress sites that stay secure, fast, and maintainable, and I write small, focused plugins like this one for the problems those sites keep running into.
+This plugin is built and maintained by [Christopher Ross](https://thisismyurl.com/), the WordPress development and technical SEO practice of Christopher Ross. I help teams build WordPress sites that stay secure, fast, and maintainable, and I write small, focused plugins like this one for the problems those sites keep running into.
 
 ### My background
 

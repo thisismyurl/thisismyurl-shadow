@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Get category metadata for all health gauges.
  *
  * Returns configuration for all 11 health categories:
- * - 9 standard This Is My URL Shadow categories (including Accessibility)
+ * - 9 standard Christopher Ross Shadow categories (including Accessibility)
  * - 1 WordPress native Site Health
  * - 1 Overall site health (calculated from all)
  *

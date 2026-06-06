@@ -9,7 +9,7 @@
  * flows, and app store policies require one for any software distribution.
  * Without a published terms page the site has no enforceable user agreement.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

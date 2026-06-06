@@ -6,7 +6,7 @@
  * consistent with a web form plugin. A contact page with no form is a missed
  * conversion opportunity.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

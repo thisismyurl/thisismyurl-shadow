@@ -2,7 +2,7 @@
 /**
  * Treatment: Remove RSD Link
  *
- * Stores a This Is My URL Shadow option that instructs the plugin bootstrap to call
+ * Stores a Christopher Ross Shadow option that instructs the plugin bootstrap to call
  * remove_action( 'wp_head', 'rsd_link' ) on every request. This removes
  * the legacy Really Simple Discovery link from <head>.
  *

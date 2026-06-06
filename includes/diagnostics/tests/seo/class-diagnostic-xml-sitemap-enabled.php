@@ -5,7 +5,7 @@
  * Checks whether an XML sitemap is active and accessible to help search engines
  * discover and efficiently index all published content on the site.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

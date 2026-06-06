@@ -2,7 +2,7 @@
 /**
  * AJAX: Save Scan Configuration
  *
- * Saves a single key within the This Is My URL Shadow scan frequency / scan config option
+ * Saves a single key within the Christopher Ross Shadow scan frequency / scan config option
  * and reschedules the diagnostic cron event when necessary.
  *
  * @package ThisIsMyURL\Shadow\Admin

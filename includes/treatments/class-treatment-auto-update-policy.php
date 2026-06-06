@@ -4,7 +4,7 @@
  *
  * WordPress minor core auto-updates provide background security patching. This
  * treatment enables option-driven core auto-updates when they have been turned
- * off in the database. If a wp-config constant disables updates, This Is My URL Shadow will
+ * off in the database. If a wp-config constant disables updates, Christopher Ross Shadow will
  * not override it automatically.
  *
  * Undo: restores the previous auto_update_core_enabled option state.
@@ -45,7 +45,7 @@ class Treatment_Auto_Update_Policy extends Treatment_Base {
 		if ( defined( 'WP_AUTO_UPDATE_CORE' ) && false === WP_AUTO_UPDATE_CORE ) {
 			return array(
 				'success' => false,
-				'message' => __( 'Core auto-updates are disabled by the WP_AUTO_UPDATE_CORE constant in wp-config.php. This Is My URL Shadow will not override that automatically.', 'thisismyurl-shadow' ),
+				'message' => __( 'Core auto-updates are disabled by the WP_AUTO_UPDATE_CORE constant in wp-config.php. Christopher Ross Shadow will not override that automatically.', 'thisismyurl-shadow' ),
 			);
 		}
 

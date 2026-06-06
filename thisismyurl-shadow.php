@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: This Is My URL - Shadow
+ * Plugin Name: - Shadow by Christopher Ross
  * Plugin URI: https://thisismyurl.com/shadow/
  * Description: Local-first WordPress diagnostics and safer fixes — file review, one-click recovery, and plain-English guidance before risky changes.
  * Version: 1.6147
@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * These are intentionally declared in the main plugin file because they are
  * needed before the autoloader and service bootstrap can resolve any classes.
  * In practice they form the contract between WordPress' plugin loader and the
- * rest of the This Is My URL Shadow codebase.
+ * rest of the Christopher Ross Shadow codebase.
  */
 define( 'THISISMYURL_SHADOW_VERSION', '1.6147' );
 define( 'THISISMYURL_SHADOW_FILE', __FILE__ );
@@ -47,7 +47,7 @@ if ( file_exists( THISISMYURL_SHADOW_PATH . 'vendor/autoload.php' ) ) {
 /**
  * Bootstrap Autoloader
  *
- * Automatically loads all This Is My URL Shadow classes in dependency order.
+ * Automatically loads all Christopher Ross Shadow classes in dependency order.
  * Replaces 130+ manual require_once calls.
  *
  * Phase 4: Bootstrap Consolidation - eliminates manual loading.

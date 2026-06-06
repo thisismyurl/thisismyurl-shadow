@@ -7,7 +7,7 @@
  * indicates plugins are bypassing WordPress's asset management system,
  * preventing caching, and fragmenting the HTML parser's work.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

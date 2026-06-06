@@ -9,7 +9,7 @@
  * providing any visible benefit.
  *
  * This treatment stores a flag (`thisismyurl_shadow_remove_emoji_admin`) that tells the
- * This Is My URL Shadow bootstrap to remove the admin-specific emoji hooks:
+ * Christopher Ross Shadow bootstrap to remove the admin-specific emoji hooks:
  *
  *   remove_action( 'admin_print_scripts', 'print_emoji_detection_script' )
  *   remove_action( 'admin_print_styles',  'print_emoji_styles' )

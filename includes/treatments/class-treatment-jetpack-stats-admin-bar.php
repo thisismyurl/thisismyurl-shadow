@@ -82,7 +82,7 @@ class Treatment_Jetpack_Stats_Admin_Bar extends Treatment_Base {
 		if ( ! isset( $options['admin_bar'] ) ) {
 			return array(
 				'success' => true,
-				'message' => __( 'Jetpack Stats admin bar setting was not overridden by This Is My URL Shadow. Nothing to restore.', 'thisismyurl-shadow' ),
+				'message' => __( 'Jetpack Stats admin bar setting was not overridden by Christopher Ross Shadow. Nothing to restore.', 'thisismyurl-shadow' ),
 			);
 		}
 

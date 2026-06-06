@@ -236,7 +236,7 @@ generate_content_files() {
 	guidance_count="$(json_get "${counts_json}" guidance_treatments)"
 
 	cat > "${CONTENT_DIR}/github-release-notes.md" <<EOF
-# This Is My URL Shadow ${VERSION}
+# Christopher Ross Shadow ${VERSION}
 
 ## Summary
 
@@ -263,9 +263,9 @@ ${release_bullets_md}
 EOF
 
 	cat > "${CONTENT_DIR}/github-discussion-announcement.md" <<EOF
-# This Is My URL Shadow ${VERSION} beta is available
+# Christopher Ross Shadow ${VERSION} beta is available
 
-This Is My URL Shadow ${VERSION} is ready for testing.
+Christopher Ross Shadow ${VERSION} is ready for testing.
 
 ## Release highlights
 
@@ -320,11 +320,11 @@ ${release_bullets_md}
 EOF
 
 	cat > "${CONTENT_DIR}/wordpress-org-submission-summary.md" <<EOF
-# WordPress.org Submission Summary for This Is My URL Shadow ${VERSION}
+# WordPress.org Submission Summary for Christopher Ross Shadow ${VERSION}
 
 ## Plugin summary
 
-This Is My URL Shadow is a local-first WordPress diagnostics and remediation plugin focused on safer changes, plain-English guidance, file review, and recovery workflows.
+Christopher Ross Shadow is a local-first WordPress diagnostics and remediation plugin focused on safer changes, plain-English guidance, file review, and recovery workflows.
 
 ## Current beta scope
 
@@ -350,9 +350,9 @@ ${release_bullets_md}
 EOF
 
 	cat > "${CONTENT_DIR}/wordpress-org-support-announcement.md" <<EOF
-# This Is My URL Shadow ${VERSION} beta release
+# Christopher Ross Shadow ${VERSION} beta release
 
-This Is My URL Shadow ${VERSION} is now available for testing.
+Christopher Ross Shadow ${VERSION} is now available for testing.
 
 Highlights in this beta:
 
@@ -407,7 +407,7 @@ publish_github_release_if_requested() {
 	if gh release view "${TAG_NAME}" --repo "${REPO_SLUG}" >/dev/null 2>&1; then
 		gh release edit "${TAG_NAME}" \
 			--repo "${REPO_SLUG}" \
-			--title "This Is My URL Shadow ${VERSION}" \
+			--title "Christopher Ross Shadow ${VERSION}" \
 			--notes-file "${CONTENT_DIR}/github-release-notes.md"
 		gh release upload "${TAG_NAME}" \
 			"${ZIP_PATH}" \
@@ -420,7 +420,7 @@ publish_github_release_if_requested() {
 			"${SHA_PATH}" \
 			--repo "${REPO_SLUG}" \
 			--target "${TARGET_REF}" \
-			--title "This Is My URL Shadow ${VERSION}" \
+			--title "Christopher Ross Shadow ${VERSION}" \
 			--notes-file "${CONTENT_DIR}/github-release-notes.md"
 	fi
 }

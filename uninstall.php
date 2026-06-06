@@ -1,6 +1,6 @@
 <?php
 /**
- * This Is My URL Shadow Uninstall Handler
+ * Christopher Ross Shadow Uninstall Handler
  *
  * Handles plugin uninstall including:
  * - More detailed exit interview
@@ -60,7 +60,7 @@ if ( ! $keep_data ) {
 	// Remove user meta
 	$wpdb->query( $wpdb->prepare( "DELETE FROM {$wpdb->usermeta} WHERE meta_key LIKE %s", $option_like ) );
 
-	// No custom This Is My URL Shadow tables are maintained.
+	// No custom Christopher Ross Shadow tables are maintained.
 
 	// Clear transients
 	$wpdb->query(

@@ -50,7 +50,7 @@ class File_Write_Pending_Notice {
 	}
 
 	/**
-	 * Render the notice on This Is My URL Shadow admin pages.
+	 * Render the notice on Christopher Ross Shadow admin pages.
 	 *
 	 * Only shown to administrators with manage_options capability who have not
 	 * recently dismissed the notice.
@@ -62,7 +62,7 @@ class File_Write_Pending_Notice {
 			return;
 		}
 
-		// Limit to This Is My URL Shadow admin pages to avoid noise on unrelated screens.
+		// Limit to Christopher Ross Shadow admin pages to avoid noise on unrelated screens.
 		$screen = function_exists( 'get_current_screen' ) ? get_current_screen() : null;
 		if ( ! $screen || false === strpos( (string) $screen->id, 'thisismyurl-shadow' ) ) {
 			return;
@@ -90,8 +90,8 @@ class File_Write_Pending_Notice {
 		$summary = sprintf(
 			/* translators: %d: number of pending file-write fixes. */
 			_n(
-				'This Is My URL Shadow has identified %d recommended change to a system file that requires your review before it can be applied.',
-				'This Is My URL Shadow has identified %d recommended changes to system files that require your review before they can be applied.',
+				'Christopher Ross Shadow has identified %d recommended change to a system file that requires your review before it can be applied.',
+				'Christopher Ross Shadow has identified %d recommended changes to system files that require your review before they can be applied.',
 				$count,
 				'thisismyurl-shadow'
 			),
@@ -104,7 +104,7 @@ class File_Write_Pending_Notice {
 		<div class="notice notice-warning is-dismissible thisismyurl-shadow-file-write-notice"
 		     data-nonce="<?php echo esc_attr( $nonce ); ?>">
 			<p>
-				<strong><?php esc_html_e( 'This Is My URL Shadow — File Changes Pending', 'thisismyurl-shadow' ); ?></strong>
+				<strong><?php esc_html_e( 'Christopher Ross Shadow — File Changes Pending', 'thisismyurl-shadow' ); ?></strong>
 			</p>
 			<p>
 				<?php echo esc_html( $summary ); ?>

@@ -6,7 +6,7 @@
  * These features expose the site to link-spam and DDoS amplification abuse and
  * should be disabled unless intentionally required.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

@@ -5,7 +5,7 @@
  * Verifies that author archives are intentionally enabled or disabled and
  * are not creating thin-content pages that harm SEO.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

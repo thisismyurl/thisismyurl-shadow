@@ -19,7 +19,7 @@
  * finding ID is in this list, repeat scans apply its treatment automatically
  * without prompting.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Admin\Ajax
  * @since      0.6095
  */

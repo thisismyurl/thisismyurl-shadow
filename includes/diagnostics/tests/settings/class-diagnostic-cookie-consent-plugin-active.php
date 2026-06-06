@@ -5,7 +5,7 @@
  * Checks that a recognised cookie consent or GDPR compliance plugin is installed
  * and active, as required for sites serving EU and international visitors.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

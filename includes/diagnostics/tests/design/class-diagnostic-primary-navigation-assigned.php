@@ -5,7 +5,7 @@
  * Checks whether the primary/main navigation menu location registered by
  * the active theme has a menu assigned to it.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

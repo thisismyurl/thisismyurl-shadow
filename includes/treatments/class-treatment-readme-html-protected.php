@@ -79,7 +79,7 @@ class Treatment_Readme_Html_Protected extends Treatment_Base {
 			"Connect to your server via SFTP or cPanel File Manager.",
 			"Navigate to: {$file}",
 			"Open the file in a text editor.",
-			"Remove the This Is My URL Shadow block that wraps the readme.html deny rule.",
+			"Remove the Christopher Ross Shadow block that wraps the readme.html deny rule.",
 			"Save the file and reload your site.",
 		) );
 	}

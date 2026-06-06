@@ -5,7 +5,7 @@
  * Checks whether the WordPress permalink structure is set to a human-readable
  * format rather than the default numeric query string that harms SEO.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

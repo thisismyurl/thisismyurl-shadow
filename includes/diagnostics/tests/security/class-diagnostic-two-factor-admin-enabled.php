@@ -5,7 +5,7 @@
  * Checks whether a two-factor authentication plugin is active and verifies
  * that all admin accounts have enrolled in 2FA.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

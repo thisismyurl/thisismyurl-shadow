@@ -9,7 +9,7 @@
  * that the AMP validation runtime is being loaded unnecessarily, adding
  * HTTP requests, JS parse overhead, and potential compatibility issues.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

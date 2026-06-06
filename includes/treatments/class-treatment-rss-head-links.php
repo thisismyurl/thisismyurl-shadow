@@ -2,7 +2,7 @@
 /**
  * Treatment: Remove RSS Feed Autodiscovery Links
  *
- * Stores a This Is My URL Shadow option that instructs the plugin bootstrap to call
+ * Stores a Christopher Ross Shadow option that instructs the plugin bootstrap to call
  * remove_action( 'wp_head', 'feed_links', 2 ) and
  * remove_action( 'wp_head', 'feed_links_extra', 3 ) on every request.
  * This removes the RSS autodiscovery <link> tags from <head> that

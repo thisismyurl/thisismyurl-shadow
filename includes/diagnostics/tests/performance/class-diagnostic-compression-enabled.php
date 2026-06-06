@@ -5,7 +5,7 @@
  * Checks whether HTTP compression (gzip or brotli) is active by inspecting
  * the Content-Encoding header returned for the site homepage.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */
@@ -83,7 +83,7 @@ class Diagnostic_Compression_Enabled extends Diagnostic_Base {
 		$home_url = home_url( '/' );
 		$result = Diagnostic_Request_Helper::get_result( $home_url, array(
 			'timeout'    => 7,
-			'user-agent' => 'This Is My URL Shadow-Diagnostic/1.0',
+			'user-agent' => 'Christopher Ross Shadow-Diagnostic/1.0',
 			'headers'    => array(
 				'Accept-Encoding' => 'gzip, deflate, br',
 			),

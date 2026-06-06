@@ -2,7 +2,7 @@
 /**
  * File Write Review Page
  *
- * Registers a hidden This Is My URL Shadow admin page (accessible via notice link or direct
+ * Registers a hidden Christopher Ross Shadow admin page (accessible via notice link or direct
  * URL) that presents each pending file-write treatment with:
  *   - The exact text that would be inserted/modified in the target file
  *   - A side-by-side diff preview (via AJAX dry-run)
@@ -33,7 +33,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * This page exists to slow down potentially risky automatic fixes just enough
  * for an admin to understand what will change. Rather than applying file edits
- * immediately, This Is My URL Shadow routes people here so they can inspect the proposed
+ * immediately, Christopher Ross Shadow routes people here so they can inspect the proposed
  * diff, create a backup, and read rollback guidance first.
  */
 class File_Write_Review_Page {

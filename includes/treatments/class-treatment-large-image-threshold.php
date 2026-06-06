@@ -13,7 +13,7 @@
  * get served on pages — increasing bandwidth and slowing loads.
  *
  * This treatment stores a flag and target threshold (2560 px) that tells the
- * This Is My URL Shadow bootstrap to add a `big_image_size_threshold` filter at high
+ * Christopher Ross Shadow bootstrap to add a `big_image_size_threshold` filter at high
  * priority (999) restoring the default behaviour. This overrides any earlier
  * filter that disabled it.
  *

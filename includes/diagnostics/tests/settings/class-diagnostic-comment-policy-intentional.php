@@ -5,7 +5,7 @@
  * Checks whether WordPress comments are open by default without comment
  * moderation, which exposes the site to spam and unreviewed public content.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

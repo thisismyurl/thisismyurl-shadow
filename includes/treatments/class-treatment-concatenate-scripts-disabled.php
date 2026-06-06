@@ -10,9 +10,9 @@
  * increasing admin page request counts.
  *
  * This treatment locates the `define( 'CONCATENATE_SCRIPTS', false )` call
- * in wp-config.php, wraps it in This Is My URL Shadow marker comments, and comments it
+ * in wp-config.php, wraps it in Christopher Ross Shadow marker comments, and comments it
  * out so PHP no longer evaluates it. The marker format is the same used by
- * all other This Is My URL Shadow file-write treatments and is safely reversible.
+ * all other Christopher Ross Shadow file-write treatments and is safely reversible.
  *
  * Note: If `CONCATENATE_SCRIPTS` is set elsewhere (a mu-plugin, a managed
  * hosting config file, or a third-party plugin) and not in wp-config.php,
@@ -21,7 +21,7 @@
  *
  * Risk level: high — modifies wp-config.php directly.
  *
- * Undo: removes the This Is My URL Shadow marker block from wp-config.php, leaving no
+ * Undo: removes the Christopher Ross Shadow marker block from wp-config.php, leaving no
  * CONCATENATE_SCRIPTS define. WordPress then falls back to its own default,
  * which is concatenation enabled on admin pages.
  *
@@ -145,12 +145,12 @@ class Treatment_Concatenate_Scripts_Disabled extends Treatment_Base {
 			);
 		}
 
-		// Check whether already wrapped in This Is My URL Shadow markers (idempotent).
+		// Check whether already wrapped in Christopher Ross Shadow markers (idempotent).
 		$marker_start = '// thisismyurl_shadow_MARKER_START: ' . self::MARKER_SLUG;
 		if ( str_contains( $content, $marker_start ) ) {
 			return array(
 				'success' => true,
-				'message' => __( 'CONCATENATE_SCRIPTS was already commented out by This Is My URL Shadow. No additional change was made.', 'thisismyurl-shadow' ),
+				'message' => __( 'CONCATENATE_SCRIPTS was already commented out by Christopher Ross Shadow. No additional change was made.', 'thisismyurl-shadow' ),
 			);
 		}
 
@@ -160,7 +160,7 @@ class Treatment_Concatenate_Scripts_Disabled extends Treatment_Base {
 			static function ( array $matches ): string {
 				$original_line = $matches[0];
 				return "\n// thisismyurl_shadow_MARKER_START: " . self::MARKER_SLUG . "\n"
-					. '// ' . ltrim( $original_line ) . ' // commented out by This Is My URL Shadow — was disabling admin script bundling' . "\n"
+					. '// ' . ltrim( $original_line ) . ' // commented out by Christopher Ross Shadow — was disabling admin script bundling' . "\n"
 					. '// thisismyurl_shadow_MARKER_END: ' . self::MARKER_SLUG;
 			},
 			$content
@@ -193,7 +193,7 @@ class Treatment_Concatenate_Scripts_Disabled extends Treatment_Base {
 	}
 
 	/**
-	 * Remove the This Is My URL Shadow marker block from wp-config.php.
+	 * Remove the Christopher Ross Shadow marker block from wp-config.php.
 	 *
 	 * Removing the markers also removes the commented-out define, leaving no
 	 * CONCATENATE_SCRIPTS constant. WordPress falls back to its own default
@@ -210,7 +210,7 @@ class Treatment_Concatenate_Scripts_Disabled extends Treatment_Base {
 		if ( $result['success'] ) {
 			return array(
 				'success' => true,
-				'message' => __( 'This Is My URL Shadow marker block removed from wp-config.php. No CONCATENATE_SCRIPTS constant is now defined, so WordPress uses its own default (admin script concatenation enabled). To restore the original false value, add define( \'CONCATENATE_SCRIPTS\', false ) back to wp-config.php manually.', 'thisismyurl-shadow' ),
+				'message' => __( 'Christopher Ross Shadow marker block removed from wp-config.php. No CONCATENATE_SCRIPTS constant is now defined, so WordPress uses its own default (admin script concatenation enabled). To restore the original false value, add define( \'CONCATENATE_SCRIPTS\', false ) back to wp-config.php manually.', 'thisismyurl-shadow' ),
 			);
 		}
 
@@ -272,9 +272,9 @@ class Treatment_Concatenate_Scripts_Disabled extends Treatment_Base {
 				'Connect to your server via SFTP or cPanel File Manager.',
 				"Navigate to: {$file}",
 				'Open the file in a text editor.',
-				'Find and delete the three This Is My URL Shadow marker lines:',
+				'Find and delete the three Christopher Ross Shadow marker lines:',
 				'  // thisismyurl_shadow_MARKER_START: concatenate-scripts-disabled',
-				"  // define( 'CONCATENATE_SCRIPTS', false ); // commented out by This Is My URL Shadow ...",
+				"  // define( 'CONCATENATE_SCRIPTS', false ); // commented out by Christopher Ross Shadow ...",
 				'  // thisismyurl_shadow_MARKER_END: concatenate-scripts-disabled',
 				'Save the file.',
 				'Reload your WordPress site to confirm admin pages load correctly.',

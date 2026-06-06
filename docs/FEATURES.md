@@ -1,4 +1,4 @@
-# This Is My URL Shadow Feature Inventory
+# Christopher Ross Shadow Feature Inventory
 
 Last updated: April 5, 2026
 Status: Public beta source of truth
@@ -41,7 +41,7 @@ Do not pull headline counts from raw file totals, branch-local experiments, or p
 
 ### Diagnostics
 
-This Is My URL Shadow scans a WordPress installation and groups findings across 11 categories. The current registry-backed counts are:
+Christopher Ross Shadow scans a WordPress installation and groups findings across 11 categories. The current registry-backed counts are:
 
 | Category | Count |
 | --- | ---: |
@@ -78,7 +78,7 @@ Public docs should be clear that not every finding is meant to be fixed automati
 
 ### File Review
 
-This Is My URL Shadow includes file-write review workflows for operations that should not bypass user inspection. This is part of the plugin's safety model, especially for higher-risk remediation.
+Christopher Ross Shadow includes file-write review workflows for operations that should not bypass user inspection. This is part of the plugin's safety model, especially for higher-risk remediation.
 
 ### Backup And Recovery
 
@@ -90,7 +90,7 @@ The dashboard surfaces findings, progress, and status information in one place, 
 
 ### Activity And KPI Tracking
 
-This Is My URL Shadow records activity and impact metrics so users can see what changed and why it mattered.
+Christopher Ross Shadow records activity and impact metrics so users can see what changed and why it mattered.
 
 ### Runtime And CLI Surfaces
 

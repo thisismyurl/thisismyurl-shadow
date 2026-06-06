@@ -36,7 +36,7 @@ if ( ! function_exists( 'thisismyurl_shadow_render_findings' ) ) {
 
 if ( ! function_exists( 'thisismyurl_shadow_render_settings' ) ) {
 	/**
-	 * Render the This Is My URL Shadow Settings page.
+	 * Render the Christopher Ross Shadow Settings page.
 	 *
 	 * @since 0.6095
 	 */
@@ -98,7 +98,7 @@ if ( ! function_exists( 'thisismyurl_shadow_enqueue_settings_assets' ) ) {
 	 * @return void
 	 */
 	function thisismyurl_shadow_enqueue_settings_assets( string $hook_suffix ): void {
-		// Only load on This Is My URL Shadow settings and Vault Lite pages.
+		// Only load on Christopher Ross Shadow settings and Vault Lite pages.
 		if ( false === strpos( $hook_suffix, 'thisismyurl-shadow-settings' ) && false === strpos( $hook_suffix, 'thisismyurl-shadow-vault-lite' ) ) {
 			return;
 		}

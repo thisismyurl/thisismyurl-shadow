@@ -1,6 +1,6 @@
 <?php
 /**
- * KPI Tracker for This Is My URL Shadow
+ * KPI Tracker for Christopher Ross Shadow
  *
  * Tracks key performance indicators to prove value delivered
  *

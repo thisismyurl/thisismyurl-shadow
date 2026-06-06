@@ -1,6 +1,6 @@
 {
   "name": "thisismyurl/thisismyurl-shadow",
-  "description": "Development tooling for the This Is My URL Shadow plugin.",
+  "description": "Development tooling for the Christopher Ross Shadow plugin.",
   "type": "project",
   "license": "GPL-2.0-or-later",
   "require-dev": {

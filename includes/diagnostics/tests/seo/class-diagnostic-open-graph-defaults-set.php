@@ -5,7 +5,7 @@
  * Checks whether Open Graph meta tags are being output so links shared on
  * social media display with proper titles, descriptions, and preview images.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

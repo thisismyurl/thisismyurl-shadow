@@ -7,7 +7,7 @@
  * uploads/ folder, creating filesystem performance issues and making manual
  * file management impractical as the media library grows.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

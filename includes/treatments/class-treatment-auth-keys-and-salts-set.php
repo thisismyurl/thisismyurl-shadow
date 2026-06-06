@@ -92,7 +92,7 @@ class Treatment_Auth_Keys_And_Salts_Set extends Treatment_Base {
 		$response = wp_remote_get( self::SALT_API_URL, [
 			'timeout'   => 15,
 			'sslverify' => true,
-			'user-agent' => 'This Is My URL Shadow/' . THISISMYURL_SHADOW_VERSION . '; ' . home_url( '/' ),
+			'user-agent' => 'Christopher Ross Shadow/' . THISISMYURL_SHADOW_VERSION . '; ' . home_url( '/' ),
 		] );
 
 		if ( is_wp_error( $response ) ) {

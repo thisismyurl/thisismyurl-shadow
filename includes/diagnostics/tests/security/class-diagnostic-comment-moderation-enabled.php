@@ -5,7 +5,7 @@
  * Checks whether WordPress comment moderation is enabled so submitted comments
  * are held for review before appearing publicly on the site.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

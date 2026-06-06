@@ -6,7 +6,7 @@
  * customised from the generic defaults. Probes via apply_filters() so SMTP
  * plugins and custom hooks are included in the evaluation.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

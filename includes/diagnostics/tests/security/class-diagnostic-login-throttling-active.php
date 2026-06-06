@@ -5,7 +5,7 @@
  * Checks whether a login throttling or brute-force protection plugin is
  * active to limit repeated failed login attempts on the WordPress login page.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

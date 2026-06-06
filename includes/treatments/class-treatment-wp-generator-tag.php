@@ -2,7 +2,7 @@
 /**
  * Treatment: Remove WP Generator Tag
  *
- * Stores a This Is My URL Shadow option that instructs the plugin bootstrap to call
+ * Stores a Christopher Ross Shadow option that instructs the plugin bootstrap to call
  * remove_action( 'wp_head', 'wp_generator' ) on the next request. Undo
  * simply deletes the option, restoring the default tag on next load.
  *

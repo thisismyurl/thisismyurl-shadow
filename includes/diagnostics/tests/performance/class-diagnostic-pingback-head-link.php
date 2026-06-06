@@ -12,7 +12,7 @@
  * WordPress outputs the head tag and HTTP header unconditionally, even when
  * default_ping_status is set to "closed".
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */
@@ -74,7 +74,7 @@ class Diagnostic_Pingback_Head_Link extends Diagnostic_Base {
 	 *
 	 * Checks whether pingback_url is still hooked to wp_head (head link) and
 	 * whether wp_headers_pingback is still hooked to wp_headers (HTTP header).
-	 * Returns null if both outputs have already been suppressed by This Is My URL Shadow,
+	 * Returns null if both outputs have already been suppressed by Christopher Ross Shadow,
 	 * the existing treatment, or a third-party plugin.
 	 *
 	 * @since  0.6095

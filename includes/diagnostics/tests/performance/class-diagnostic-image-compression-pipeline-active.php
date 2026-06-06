@@ -5,7 +5,7 @@
  * Checks whether an automatic image compression/optimisation plugin is active,
  * ensuring uploaded images are compressed to reduce storage and page weight.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

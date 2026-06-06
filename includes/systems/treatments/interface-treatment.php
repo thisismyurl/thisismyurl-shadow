@@ -3,7 +3,7 @@
  * Treatment Interface
  *
  * Defines the contract for treatment implementations. All treatments must implement
- * these methods to be recognized and executed by the This Is My URL Shadow system.
+ * these methods to be recognized and executed by the Christopher Ross Shadow system.
  *
  * **Architecture:**
  * Treatment system uses interface-based architecture:
@@ -13,7 +13,7 @@
  *
  * **Why Interfaces Matter Here:**
  * - Ensures all treatments have consistent behavior
- * - Enables This Is My URL Shadow framework to treat all treatments uniformly
+ * - Enables Christopher Ross Shadow framework to treat all treatments uniformly
  * - Type safety: code that expects Treatment_Interface gets consistent behavior
  * - Future-proofing: new feature additions can be added to interface
  *
@@ -29,7 +29,7 @@ namespace ThisIsMyURL\Shadow\Treatments;
  * Interface for treatment/fix implementations
  *
  * Every treatment class must implement this interface to be recognized by the
- * This Is My URL Shadow framework. Use Treatment_Base instead of implementing directly.
+ * Christopher Ross Shadow framework. Use Treatment_Base instead of implementing directly.
  *
  * **Contract Requirements:**
  * - `get_finding_id()` - Returns diagnostic ID this treatment fixes

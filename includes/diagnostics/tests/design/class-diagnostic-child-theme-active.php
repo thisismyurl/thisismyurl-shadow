@@ -5,7 +5,7 @@
  * Checks whether the active theme is a child theme. Customising a parent theme
  * directly means all changes are overwritten when the theme is updated.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

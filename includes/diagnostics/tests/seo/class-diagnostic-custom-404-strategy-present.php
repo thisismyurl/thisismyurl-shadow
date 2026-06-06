@@ -5,7 +5,7 @@
  * Checks whether the active theme includes a custom 404 template to deliver
  * a helpful, branded experience for visitors hitting missing pages.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

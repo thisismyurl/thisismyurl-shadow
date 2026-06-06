@@ -5,7 +5,7 @@
  * Checks whether a spam protection plugin is active to filter bot
  * submissions from WordPress comments and contact forms.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

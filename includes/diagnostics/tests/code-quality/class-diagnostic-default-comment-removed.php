@@ -6,7 +6,7 @@
  * the default "Hello world!" post. This comment should be deleted before the
  * site goes live.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

@@ -6,7 +6,7 @@
  * migrated from legacy hosting sometimes carry an ISO-8859-1 charset that
  * causes character encoding errors in content, feeds, and API responses.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

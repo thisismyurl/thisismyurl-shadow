@@ -3,7 +3,7 @@
  * Treatment: Configure WordPress trash auto-emptying
  *
  * Ensures `EMPTY_TRASH_DAYS` is set to 30 in wp-config.php. Existing defines
- * are updated in place; otherwise This Is My URL Shadow inserts a marker-wrapped block.
+ * are updated in place; otherwise Christopher Ross Shadow inserts a marker-wrapped block.
  *
  * Undo restores the previous wp-config.php contents from backup.
  *
@@ -29,7 +29,7 @@ class Treatment_Trash_Auto_Empty_Configured extends Treatment_Base {
 
 	private const BACKUP_OPTION = 'thisismyurl_shadow_trash_auto_empty_wp_config_backup';
 	private const MARKER_SLUG   = 'trash-auto-empty-configured';
-	private const DEFINE_LINE   = "define( 'EMPTY_TRASH_DAYS', 30 ); // This Is My URL Shadow: keep trash cleanup enabled";
+	private const DEFINE_LINE   = "define( 'EMPTY_TRASH_DAYS', 30 ); // Christopher Ross Shadow: keep trash cleanup enabled";
 
 	public static function boot(): void {
 		File_Write_Registry::register( static::class );
@@ -154,7 +154,7 @@ class Treatment_Trash_Auto_Empty_Configured extends Treatment_Base {
 			"Connect to your server via SFTP or cPanel File Manager.",
 			"Navigate to: {$file}",
 			"Open the file in a text editor.",
-			"Either restore your previous wp-config.php from backup or remove the This Is My URL Shadow-added EMPTY_TRASH_DAYS change.",
+			"Either restore your previous wp-config.php from backup or remove the Christopher Ross Shadow-added EMPTY_TRASH_DAYS change.",
 			"Save the file and reload your WordPress admin.",
 		) );
 	}

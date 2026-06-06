@@ -130,7 +130,7 @@ class Diagnostic_Backups_Automated extends Diagnostic_Base {
 		}
 
 		if ( '' === $active_backup_plugin ) {
-			// Check Vault Lite (This Is My URL Shadow's built-in backup engine) before declaring no backup found.
+			// Check Vault Lite (Christopher Ross Shadow's built-in backup engine) before declaring no backup found.
 			if ( (bool) get_option( 'thisismyurl_shadow_backup_enabled', true ) ) {
 				$schedule_enabled = (bool) get_option( 'thisismyurl_shadow_backup_schedule_enabled', false );
 				$has_backups      = ! empty( get_option( 'thisismyurl_shadow_local_backup_index', array() ) );
@@ -147,8 +147,8 @@ class Diagnostic_Backups_Automated extends Diagnostic_Base {
 					'severity'     => 'medium',
 					'threat_level' => 40,
 					'details'      => array(
-						'plugin' => 'This Is My URL Shadow Vault Lite',
-						'fix'    => __( 'Open This Is My URL Shadow › Vault Lite and enable a daily or weekly backup schedule so your data is protected automatically.', 'thisismyurl-shadow' ),
+						'plugin' => 'Christopher Ross Shadow Vault Lite',
+						'fix'    => __( 'Open Christopher Ross Shadow › Vault Lite and enable a daily or weekly backup schedule so your data is protected automatically.', 'thisismyurl-shadow' ),
 					),
 				);
 			}

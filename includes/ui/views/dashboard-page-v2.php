@@ -1,6 +1,6 @@
 <?php
 /**
- * This Is My URL Shadow Dashboard & Guardian Pages
+ * Christopher Ross Shadow Dashboard & Guardian Pages
  *
  * Dashboard = reporting screen (what Guardian is doing)
  * Guardian  = management screen (all diagnostics + detail drill-down)
@@ -22,7 +22,7 @@ use ThisIsMyURL\Shadow\Core\Form_Param_Helper;
    ============================================================ */
 
 /**
- * Render the This Is My URL Shadow Dashboard (report view).
+ * Render the Christopher Ross Shadow Dashboard (report view).
  *
  * Summarises what Guardian is monitoring. Clicking through on any
  * family card or issue row opens Guardian filtered to that area.
@@ -205,7 +205,7 @@ function thisismyurl_shadow_render_dashboard_v2() {
 					?>
 				</strong>
 				<p class="wps-alert-copy">
-					<?php esc_html_e( 'This Is My URL Shadow only shows a final all-clear after every enabled test has reported a real result. Open Guardian to run diagnostics from the detail panels.', 'thisismyurl-shadow' ); ?>
+					<?php esc_html_e( 'Christopher Ross Shadow only shows a final all-clear after every enabled test has reported a real result. Open Guardian to run diagnostics from the detail panels.', 'thisismyurl-shadow' ); ?>
 				</p>
 				<p class="wps-alert-action">
 					<a href="<?php echo esc_url( $guardian_url ); ?>" class="wps-button wps-button--primary">
@@ -1154,11 +1154,11 @@ function thisismyurl_shadow_render_diagnostic_detail_v2() {
 						<?php if ( null === $tx_class ) : ?>
 							<?php if ( ! empty( $requirement_fields ) ) : ?>
 								<p class="wps-action-note">
-									<?php esc_html_e( 'This fix needs a small amount of input from you. Use the form below and This Is My URL Shadow will save the values and update the matching setting immediately where supported.', 'thisismyurl-shadow' ); ?>
+									<?php esc_html_e( 'This fix needs a small amount of input from you. Use the form below and Christopher Ross Shadow will save the values and update the matching setting immediately where supported.', 'thisismyurl-shadow' ); ?>
 								</p>
 								<?php if ( '' !== $manual_fix_reason ) : ?>
 									<p class="wps-action-note">
-										<strong><?php esc_html_e( 'Why This Is My URL Shadow is asking you first:', 'thisismyurl-shadow' ); ?></strong>
+										<strong><?php esc_html_e( 'Why Christopher Ross Shadow is asking you first:', 'thisismyurl-shadow' ); ?></strong>
 										<?php echo ' ' . esc_html( $manual_fix_reason ); ?>
 									</p>
 								<?php endif; ?>
@@ -1168,7 +1168,7 @@ function thisismyurl_shadow_render_diagnostic_detail_v2() {
 								</p>
 								<?php if ( '' !== $manual_fix_reason ) : ?>
 									<p class="wps-action-note">
-										<strong><?php esc_html_e( 'Why This Is My URL Shadow is not auto-fixing this:', 'thisismyurl-shadow' ); ?></strong>
+										<strong><?php esc_html_e( 'Why Christopher Ross Shadow is not auto-fixing this:', 'thisismyurl-shadow' ); ?></strong>
 										<?php echo ' ' . esc_html( $manual_fix_reason ); ?>
 									</p>
 								<?php endif; ?>
@@ -1190,7 +1190,7 @@ function thisismyurl_shadow_render_diagnostic_detail_v2() {
 								<?php if ( 'failed' === $status_raw ) : ?>
 									<?php if ( $tx_is_file_write ) : ?>
 										<p class="wps-action-note">
-											<?php esc_html_e( 'This fix changes a file on disk, so This Is My URL Shadow sends you through the review page before applying it.', 'thisismyurl-shadow' ); ?>
+											<?php esc_html_e( 'This fix changes a file on disk, so Christopher Ross Shadow sends you through the review page before applying it.', 'thisismyurl-shadow' ); ?>
 										</p>
 										<p class="wps-alert-action">
 											<a href="<?php echo esc_url( $tx_file_review_url ); ?>" class="wps-button wps-button--primary">
@@ -1199,7 +1199,7 @@ function thisismyurl_shadow_render_diagnostic_detail_v2() {
 										</p>
 									<?php else : ?>
 										<p class="wps-action-note">
-											<?php esc_html_e( 'This Is My URL Shadow can apply this fix right now from Guardian.', 'thisismyurl-shadow' ); ?>
+											<?php esc_html_e( 'Christopher Ross Shadow can apply this fix right now from Guardian.', 'thisismyurl-shadow' ); ?>
 										</p>
 										<p class="wps-alert-action">
 											<button
@@ -1231,7 +1231,7 @@ function thisismyurl_shadow_render_diagnostic_detail_v2() {
 										<span class="wps-toggle-slider" aria-hidden="true"></span>
 									</label>
 									<label for="wps-treatment-auto-toggle" class="wps-inline-toggle-label">
-										<?php esc_html_e( 'Automatically apply this fix when This Is My URL Shadow detects the issue again', 'thisismyurl-shadow' ); ?>
+										<?php esc_html_e( 'Automatically apply this fix when Christopher Ross Shadow detects the issue again', 'thisismyurl-shadow' ); ?>
 									</label>
 								</div>
 								<?php if ( $tx_default_enabled ) : ?>
@@ -1259,7 +1259,7 @@ function thisismyurl_shadow_render_diagnostic_detail_v2() {
 								</p>
 								<?php if ( '' !== $manual_fix_reason ) : ?>
 									<p class="wps-action-note">
-										<strong><?php esc_html_e( 'Why This Is My URL Shadow is not auto-fixing this:', 'thisismyurl-shadow' ); ?></strong>
+										<strong><?php esc_html_e( 'Why Christopher Ross Shadow is not auto-fixing this:', 'thisismyurl-shadow' ); ?></strong>
 										<?php echo ' ' . esc_html( $manual_fix_reason ); ?>
 									</p>
 								<?php endif; ?>

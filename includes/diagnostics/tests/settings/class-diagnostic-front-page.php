@@ -5,7 +5,7 @@
  * Checks whether WordPress is set to show a static front page and that the
  * assigned page is published and accessible.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

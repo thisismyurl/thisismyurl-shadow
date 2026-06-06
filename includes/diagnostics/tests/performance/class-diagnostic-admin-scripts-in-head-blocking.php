@@ -8,7 +8,7 @@
  * script file has been downloaded, parsed, and executed; footer scripts are
  * expected and are therefore excluded from this check.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

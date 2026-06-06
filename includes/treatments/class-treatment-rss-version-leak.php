@@ -2,7 +2,7 @@
 /**
  * Treatment: Remove RSS Version Leak
  *
- * Stores a This Is My URL Shadow option that instructs the plugin bootstrap to add
+ * Stores a Christopher Ross Shadow option that instructs the plugin bootstrap to add
  * add_filter( 'the_generator', '__return_empty_string' ) so the WordPress
  * version is stripped from RSS feed headers. Undo deletes the option.
  *

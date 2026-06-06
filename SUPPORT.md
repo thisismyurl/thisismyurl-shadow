@@ -1,4 +1,4 @@
-# This Is My URL Shadow Support
+# Christopher Ross Shadow Support
 
 This page explains the best place to go for help, bug reports, feature ideas, and security concerns.
 
@@ -40,7 +40,7 @@ Use:
 
 Please include as much of the following as you can:
 
-- This Is My URL Shadow version
+- Christopher Ross Shadow version
 - WordPress version
 - PHP version
 - whether this is single-site or multisite
@@ -87,7 +87,7 @@ A great bug report often includes:
 
 ## Our Support Philosophy
 
-This Is My URL Shadow is built around **advice, not sales**.
+Christopher Ross Shadow is built around **advice, not sales**.
 
 That means support should never feel like:
 

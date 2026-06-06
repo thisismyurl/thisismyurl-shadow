@@ -5,7 +5,7 @@
  * Checks whether a user account named "admin" still exists. This is the
  * most common target for brute-force credential stuffing attacks.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

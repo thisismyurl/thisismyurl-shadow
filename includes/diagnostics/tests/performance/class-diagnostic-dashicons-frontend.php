@@ -6,7 +6,7 @@
  * for non-logged-in visitors on the front end, where it is typically not
  * needed and represents unused CSS and font requests.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

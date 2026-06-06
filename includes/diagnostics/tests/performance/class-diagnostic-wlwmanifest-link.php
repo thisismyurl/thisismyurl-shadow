@@ -6,7 +6,7 @@
  * tag into every page's <head>. Windows Live Writer was discontinued by
  * Microsoft in 2017 and the tag serves no purpose on modern sites.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

@@ -45,7 +45,7 @@
  * Layout shift prevention resources should be kept in plugin-bundled guidance.
  * Training references should not point to external product marketing pages.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since 0.6095
  */

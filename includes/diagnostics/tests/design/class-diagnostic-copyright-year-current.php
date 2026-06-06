@@ -5,7 +5,7 @@
  * Checks that the copyright year in the site footer matches the current year.
  * A stale year makes the site appear neglected and out of date.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

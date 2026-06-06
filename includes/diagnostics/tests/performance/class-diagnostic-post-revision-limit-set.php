@@ -5,7 +5,7 @@
  * Checks whether WP_POST_REVISIONS is set to a finite number, preventing
  * unlimited revision accumulation that bloats the posts table over time.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

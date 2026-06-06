@@ -6,7 +6,7 @@
  * "Uncategorized", as new posts inherit this category automatically and an
  * unnamed default creates low-quality URLs and category archive pages.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

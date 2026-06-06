@@ -6,7 +6,7 @@
  * into every page's <head>. Shortlinks were a sharing convenience before
  * URL shorteners became universal; they serve no modern purpose.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

@@ -6,7 +6,7 @@
  * in 'future' status past their scheduled date. This indicates a broken
  * WP-Cron setup where the publish_future_post action never fired.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

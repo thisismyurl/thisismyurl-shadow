@@ -6,7 +6,7 @@
  * blocks real visitors from accessing it. Flags when the WP_Settings helper
  * detects an active .maintenance file or a known coming-soon plugin option.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

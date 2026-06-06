@@ -2,7 +2,7 @@
 /**
  * Bootstrap Autoloader
  *
- * Automatically loads all This Is My URL Shadow classes in dependency order.
+ * Automatically loads all Christopher Ross Shadow classes in dependency order.
  * Replaces 130+ manual require_once calls with intelligent auto-loading.
  *
  * Philosophy:
@@ -10,7 +10,7 @@
  * - Phase 4: Bootstrap Consolidation (DRY bootstrap)
  * - Convention over configuration
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Core
  * @since 0.6095
  */
@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Bootstrap_Autoloader Class
  *
- * Intelligently loads all This Is My URL Shadow classes with proper dependency ordering.
+ * Intelligently loads all Christopher Ross Shadow classes with proper dependency ordering.
  *
  * @since 0.6095
  */

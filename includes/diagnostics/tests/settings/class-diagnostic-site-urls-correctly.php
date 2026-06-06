@@ -5,7 +5,7 @@
  * Checks whether the WordPress Address and Site URL are both using HTTPS and
  * are consistent with each other to avoid redirect loops or mixed content.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

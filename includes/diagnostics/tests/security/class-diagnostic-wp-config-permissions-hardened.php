@@ -5,7 +5,7 @@
  * Checks whether wp-config.php has restrictive file permissions to prevent
  * other system users or web processes from reading database credentials.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

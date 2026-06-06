@@ -5,7 +5,7 @@
  * Checks whether an SEO plugin is active to manage canonical URL tags and
  * prevent duplicate content from harming search engine rankings.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

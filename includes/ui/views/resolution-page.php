@@ -2,7 +2,7 @@
 /**
  * Resolution Centre — View
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Views
  */
 

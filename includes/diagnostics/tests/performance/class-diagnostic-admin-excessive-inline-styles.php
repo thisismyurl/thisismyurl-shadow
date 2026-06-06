@@ -7,7 +7,7 @@
  * directly into the HTML rather than enqueueing stylesheets, which prevents
  * browser caching, inflates raw HTML, and contributes to render-blocking.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

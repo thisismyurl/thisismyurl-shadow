@@ -86,7 +86,7 @@ class Treatment_Script_Debug_Production extends Treatment_Base {
 		if ( str_contains( $content, '// thisismyurl_shadow_MARKER_START: ' . self::MARKER_SLUG ) ) {
 			return array(
 				'success' => true,
-				'message' => __( 'SCRIPT_DEBUG was already commented out by This Is My URL Shadow.', 'thisismyurl-shadow' ),
+				'message' => __( 'SCRIPT_DEBUG was already commented out by Christopher Ross Shadow.', 'thisismyurl-shadow' ),
 			);
 		}
 
@@ -95,7 +95,7 @@ class Treatment_Script_Debug_Production extends Treatment_Base {
 			static function ( array $matches ): string {
 				$original_line = $matches[0];
 				return "\n// thisismyurl_shadow_MARKER_START: " . self::MARKER_SLUG . "\n"
-					. '// ' . ltrim( $original_line ) . ' // commented out by This Is My URL Shadow - was forcing development asset builds' . "\n"
+					. '// ' . ltrim( $original_line ) . ' // commented out by Christopher Ross Shadow - was forcing development asset builds' . "\n"
 					. '// thisismyurl_shadow_MARKER_END: ' . self::MARKER_SLUG;
 			},
 			$content,
@@ -157,7 +157,7 @@ class Treatment_Script_Debug_Production extends Treatment_Base {
 			array(
 				'Connect to your server via SFTP or File Manager.',
 				"Open {$file}.",
-				'Find and delete the This Is My URL Shadow marker block for script-debug-production.',
+				'Find and delete the Christopher Ross Shadow marker block for script-debug-production.',
 				'If you intentionally need SCRIPT_DEBUG again, re-add the original define manually.',
 				'Save the file and reload the site.',
 			)

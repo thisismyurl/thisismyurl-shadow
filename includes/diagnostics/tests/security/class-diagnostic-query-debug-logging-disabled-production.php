@@ -5,7 +5,7 @@
  * Checks whether SAVEQUERIES is enabled in production, which logs all
  * database queries in memory and may expose sensitive query data.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

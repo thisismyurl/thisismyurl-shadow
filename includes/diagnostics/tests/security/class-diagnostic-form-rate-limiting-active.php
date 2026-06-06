@@ -5,7 +5,7 @@
  * Checks whether rate limiting or anti-abuse controls are active on WordPress
  * forms to prevent brute-force and submission flooding attacks.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

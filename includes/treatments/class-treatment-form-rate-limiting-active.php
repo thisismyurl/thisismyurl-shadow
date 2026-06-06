@@ -2,7 +2,7 @@
 /**
  * Treatment: Form Rate Limiting Active
  *
- * Enables This Is My URL Shadow's native comment/form rate-limiting feature by toggling the
+ * Enables Christopher Ross Shadow's native comment/form rate-limiting feature by toggling the
  * `thisismyurl_shadow_form_rate_limiting_enabled` option.
  *
  * The actual enforcement logic runs inside Treatment_Hooks::init() via a
@@ -76,7 +76,7 @@ class Treatment_Form_Rate_Limiting_Active extends Treatment_Base {
 
 		return [
 			'success' => true,
-			'message' => __( 'Form rate limiting disabled. This Is My URL Shadow will no longer throttle comment submissions. Consider installing Akismet or a CAPTCHA plugin for continued protection.', 'thisismyurl-shadow' ),
+			'message' => __( 'Form rate limiting disabled. Christopher Ross Shadow will no longer throttle comment submissions. Consider installing Akismet or a CAPTCHA plugin for continued protection.', 'thisismyurl-shadow' ),
 		];
 	}
 }

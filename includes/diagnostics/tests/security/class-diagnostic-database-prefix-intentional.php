@@ -5,7 +5,7 @@
  * Checks whether the WordPress database table prefix has been changed from
  * the default "wp_", which reduces the effectiveness of automated SQL injection.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

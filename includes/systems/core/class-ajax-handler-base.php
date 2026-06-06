@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Provide the shared contract for This Is My URL Shadow AJAX and admin-post handlers.
+ * Provide the shared contract for Christopher Ross Shadow AJAX and admin-post handlers.
  *
  * Most handlers in the plugin are intentionally thin. They should express the
  * business action being performed, while this base class owns the repetitive
@@ -36,7 +36,7 @@ abstract class AJAX_Handler_Base {
 	}
 
 	/**
-	 * Retrieve a This Is My URL Shadow option expected to be an array.
+	 * Retrieve a Christopher Ross Shadow option expected to be an array.
 	 *
 	 * @param string $option   Option name.
 	 * @param array  $fallback Default array value.
@@ -114,7 +114,7 @@ abstract class AJAX_Handler_Base {
 	}
 
 	/**
-	 * Verify an AJAX request against This Is My URL Shadow's standard security contract.
+	 * Verify an AJAX request against Christopher Ross Shadow's standard security contract.
 	 *
 	 * The base contract for privileged handlers is:
 	 * - optional rate limiting,
@@ -222,7 +222,7 @@ abstract class AJAX_Handler_Base {
 	/**
 	 * Read and sanitize an array-shaped POST value.
 	 *
-	 * This exists because several This Is My URL Shadow admin screens submit structured data
+	 * This exists because several Christopher Ross Shadow admin screens submit structured data
 	 * such as preference maps or grouped treatment inputs. The helper ensures the
 	 * array contract is validated before downstream business logic runs.
 	 *

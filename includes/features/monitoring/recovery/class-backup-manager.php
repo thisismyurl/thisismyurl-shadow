@@ -2,7 +2,7 @@
 /**
  * Local Backup Manager.
  *
- * Provides the "Vault Lite" local-only backup engine for This Is My URL Shadow.
+ * Provides the "Vault Lite" local-only backup engine for Christopher Ross Shadow.
  * It creates protected ZIP archives on the same server before treatments
  * run and when scheduled/manual backups are triggered.
  *
@@ -24,14 +24,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 // phpcs:disable WordPress.DB.DirectDatabaseQuery.NoCaching,WordPress.DB.PreparedSQL.InterpolatedNotPrepared,WordPress.DB.DirectDatabaseQuery.SchemaChange,PluginCheck.Security.DirectDB.UnescapedDBParameter,WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound
 
 /**
- * Implement This Is My URL Shadow's local-only backup engine.
+ * Implement Christopher Ross Shadow's local-only backup engine.
  *
  * This class exists to make treatments and scheduled maintenance safer. It is
  * responsible for creating protected archives, tracking those archives in an
  * option-backed index, enforcing restore policy, and cleaning up old backups.
  *
  * For readers learning the plugin, this class is the main reference for how
- * This Is My URL Shadow balances convenience with containment: backups live on the same
+ * Christopher Ross Shadow balances convenience with containment: backups live on the same
  * server, are stored in hidden randomized paths, and are treated as operational
  * safety tooling rather than a full remote backup product.
  */
@@ -880,7 +880,7 @@ class Backup_Manager {
 		if ( empty( $safety_backup['success'] ) ) {
 			return array(
 				'success' => false,
-				'message' => __( 'Restore stopped because This Is My URL Shadow could not create the required safety backup first.', 'thisismyurl-shadow' ),
+				'message' => __( 'Restore stopped because Christopher Ross Shadow could not create the required safety backup first.', 'thisismyurl-shadow' ),
 				'file'    => (string) ( $entry['file'] ?? $filename ),
 			);
 		}
@@ -980,9 +980,9 @@ class Backup_Manager {
 			);
 		}
 
-		$message = __( 'Backup files were restored successfully. This Is My URL Shadow created a fresh safety backup first, but the database dump was not applied automatically.', 'thisismyurl-shadow' );
+		$message = __( 'Backup files were restored successfully. Christopher Ross Shadow created a fresh safety backup first, but the database dump was not applied automatically.', 'thisismyurl-shadow' );
 		if ( $database_restored ) {
-			$message = __( 'Backup restored successfully. This Is My URL Shadow created a fresh safety backup first.', 'thisismyurl-shadow' );
+			$message = __( 'Backup restored successfully. Christopher Ross Shadow created a fresh safety backup first.', 'thisismyurl-shadow' );
 		} elseif ( $database_restore_skipped ) {
 			$message = self::get_database_restore_denied_message();
 		}
@@ -1167,7 +1167,7 @@ class Backup_Manager {
 			return '';
 		}
 
-		$sql  = "-- This Is My URL Shadow local backup database export\n";
+		$sql  = "-- Christopher Ross Shadow local backup database export\n";
 		$sql .= '-- Generated: ' . gmdate( 'c' ) . "\n\n";
 
 		foreach ( $tables as $table ) {
@@ -1351,7 +1351,7 @@ class Backup_Manager {
 	 * @return string
 	 */
 	private static function get_database_restore_denied_message(): string {
-		return __( 'Backup files were restored successfully and This Is My URL Shadow created a fresh safety backup first, but the SQL import was skipped because database restore is disabled by site policy.', 'thisismyurl-shadow' );
+		return __( 'Backup files were restored successfully and Christopher Ross Shadow created a fresh safety backup first, but the SQL import was skipped because database restore is disabled by site policy.', 'thisismyurl-shadow' );
 	}
 
 	/**

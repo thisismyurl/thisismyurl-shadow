@@ -15,7 +15,7 @@
  * - Commandment #12: Expandable (easy for developers to extend)
  * - DRY: Zero repetitive add_action() calls
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Core
  * @since 0.6095
  */

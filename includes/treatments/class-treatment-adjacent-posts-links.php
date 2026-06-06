@@ -2,7 +2,7 @@
 /**
  * Treatment: Remove Adjacent Posts Rel Links
  *
- * Stores a This Is My URL Shadow option that instructs the plugin bootstrap to call
+ * Stores a Christopher Ross Shadow option that instructs the plugin bootstrap to call
  * remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10 ) on
  * every request. This removes the prev/next post <link> tags from <head>
  * that are not used by modern browsers for navigation.

@@ -3,7 +3,7 @@
  * Treatment: Disable the WordPress file editor
  *
  * Ensures `DISALLOW_FILE_EDIT` is set to true in wp-config.php.
- * Existing definitions are updated in place; otherwise This Is My URL Shadow inserts a
+ * Existing definitions are updated in place; otherwise Christopher Ross Shadow inserts a
  * marker-wrapped block near the top of the file.
  *
  * Undo restores the original wp-config.php content from backup.
@@ -30,7 +30,7 @@ class Treatment_File_Editor_Disabled extends Treatment_Base {
 
 	private const BACKUP_OPTION = 'thisismyurl_shadow_file_editor_disabled_wp_config_backup';
 	private const MARKER_SLUG   = 'file-editor-disabled';
-	private const DEFINE_LINE   = "define( 'DISALLOW_FILE_EDIT', true ); // This Is My URL Shadow: disable theme/plugin editor";
+	private const DEFINE_LINE   = "define( 'DISALLOW_FILE_EDIT', true ); // Christopher Ross Shadow: disable theme/plugin editor";
 
 	public static function boot(): void {
 		File_Write_Registry::register( static::class );
@@ -155,7 +155,7 @@ class Treatment_File_Editor_Disabled extends Treatment_Base {
 			"Connect to your server via SFTP or cPanel File Manager.",
 			"Navigate to: {$file}",
 			"Open the file in a text editor.",
-			"Either restore your previous wp-config.php from backup or remove the This Is My URL Shadow-added DISALLOW_FILE_EDIT change.",
+			"Either restore your previous wp-config.php from backup or remove the Christopher Ross Shadow-added DISALLOW_FILE_EDIT change.",
 			"Save the file and reload your WordPress admin.",
 		) );
 	}

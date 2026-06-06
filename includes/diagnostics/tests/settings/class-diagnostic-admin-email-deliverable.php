@@ -7,7 +7,7 @@
  * actively monitored. Site notifications and security alerts rely on this
  * address being deliverable.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

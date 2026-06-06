@@ -1,8 +1,8 @@
 <?php
 /**
- * Asset Manager for This Is My URL Shadow
+ * Asset Manager for Christopher Ross Shadow
  *
- * Centralized CSS/JS enqueuing for all This Is My URL Shadow pages.
+ * Centralized CSS/JS enqueuing for all Christopher Ross Shadow pages.
  *
  * @package ThisIsMyURL\Shadow
  * @subpackage Admin

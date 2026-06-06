@@ -6,7 +6,7 @@
  * been customised from the factory defaults. Sites left on defaults may
  * generate incorrectly-sized image variants on every upload.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

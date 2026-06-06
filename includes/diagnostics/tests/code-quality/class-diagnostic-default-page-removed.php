@@ -5,7 +5,7 @@
  * Checks whether the "Sample Page" that WordPress installs on every new site
  * has been removed or replaced with intentional content.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

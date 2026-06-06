@@ -5,7 +5,7 @@
  * Checks whether the WordPress ping/update services list has been intentionally
  * configured for the site's publishing model.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

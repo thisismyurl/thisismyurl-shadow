@@ -5,7 +5,7 @@
  * Checks whether an SEO plugin is active to manage meta description tags,
  * which directly influence click-through rates from search result pages.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

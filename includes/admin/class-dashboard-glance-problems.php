@@ -2,9 +2,9 @@
 /**
  * Dashboard At a Glance Problems Item
  *
- * Adds a This Is My URL Shadow problem count to the WordPress "At a Glance" widget.
+ * Adds a Christopher Ross Shadow problem count to the WordPress "At a Glance" widget.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Admin
  * @since 0.6095
  */
@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Dashboard_Glance_Problems Class
  *
- * Adds the This Is My URL Shadow problem count to the default dashboard glance widget.
+ * Adds the Christopher Ross Shadow problem count to the default dashboard glance widget.
  *
  * @since 0.6095
  */
@@ -53,7 +53,7 @@ class Dashboard_Glance_Problems extends Hook_Subscriber_Base {
 	}
 
 	/**
-	 * Add This Is My URL Shadow problems count to At a Glance.
+	 * Add Christopher Ross Shadow problems count to At a Glance.
 	 *
 	 * @since 0.6095
 	 * @param  array $items Glance items.
@@ -81,7 +81,7 @@ class Dashboard_Glance_Problems extends Hook_Subscriber_Base {
 	}
 
 	/**
-	 * Get the count of active This Is My URL Shadow problems.
+	 * Get the count of active Christopher Ross Shadow problems.
 	 *
 	 * @since 0.6095
 	 * @return int Problem count.

@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Settings Registry - Centralized WordPress Settings API Registration
  *
- * Registers all This Is My URL Shadow settings using proper WordPress Settings API.
+ * Registers all Christopher Ross Shadow settings using proper WordPress Settings API.
  * Provides sanitization, validation, defaults, and proper WordPress integration.
  *
  * Philosophy Alignment:
@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Settings_Registry {
 	/**
-	 * Get a This Is My URL Shadow setting value.
+	 * Get a Christopher Ross Shadow setting value.
 	 *
 	 * @since 0.6095
 	 * @param  string $key     Setting key (with or without thisismyurl_shadow_ prefix).
@@ -70,7 +70,7 @@ class Settings_Registry {
 	}
 
 	/**
-	 * Set a This Is My URL Shadow setting value.
+	 * Set a Christopher Ross Shadow setting value.
 	 *
 	 * @since 0.6095
 	 * @param  string $key   Setting key (with or without thisismyurl_shadow_ prefix).
@@ -114,7 +114,7 @@ class Settings_Registry {
 	 * @param mixed  $value     The new option value.
 	 */
 	public static function on_setting_updated( $option, $old_value, $value ): void {
-		// Only fire for This Is My URL Shadow settings (check for prefix).
+		// Only fire for Christopher Ross Shadow settings (check for prefix).
 		// Use str_starts_with for PHP 8.0+, fallback to strpos for earlier versions.
 		if ( function_exists( 'str_starts_with' ) ) {
 			if ( ! str_starts_with( $option, 'thisismyurl_shadow_' ) ) {
@@ -131,7 +131,7 @@ class Settings_Registry {
 		}
 
 		/**
-		 * Fires when a This Is My URL Shadow setting is updated.
+		 * Fires when a Christopher Ross Shadow setting is updated.
 		 *
 		 * @param string $option    Setting name.
 		 * @param mixed  $old_value Previous value.
@@ -140,7 +140,7 @@ class Settings_Registry {
 		do_action( 'thisismyurl_shadow_setting_updated', $option, $old_value, $value );
 
 		/**
-		 * Fires when a specific This Is My URL Shadow setting is updated.
+		 * Fires when a specific Christopher Ross Shadow setting is updated.
 		 *
 		 * The dynamic portion of the hook name, $option, refers to the setting name.
 		 * For example: thisismyurl_shadow_setting_updated_thisismyurl_debug_mode
@@ -181,7 +181,7 @@ class Settings_Registry {
 	 * @param mixed  $value  Value of the added option.
 	 */
 	public static function on_setting_added( $option, $value ): void {
-		// Only fire for This Is My URL Shadow settings (check for prefix).
+		// Only fire for Christopher Ross Shadow settings (check for prefix).
 		// Use str_starts_with for PHP 8.0+, fallback to strpos for earlier versions.
 		if ( function_exists( 'str_starts_with' ) ) {
 			if ( ! str_starts_with( $option, 'thisismyurl_shadow_' ) ) {
@@ -194,7 +194,7 @@ class Settings_Registry {
 		}
 
 		/**
-		 * Fires when a This Is My URL Shadow setting is added.
+		 * Fires when a Christopher Ross Shadow setting is added.
 		 *
 		 * @param string $option Setting name.
 		 * @param mixed  $value  Setting value.
@@ -202,7 +202,7 @@ class Settings_Registry {
 		do_action( 'thisismyurl_shadow_setting_added', $option, $value );
 
 		/**
-		 * Fires when a specific This Is My URL Shadow setting is added.
+		 * Fires when a specific Christopher Ross Shadow setting is added.
 		 *
 		 * The dynamic portion of the hook name, $option, refers to the setting name.
 		 *
@@ -317,7 +317,7 @@ class Settings_Registry {
 	}
 
 	/**
-	 * Register all This Is My URL Shadow settings with WordPress Settings API
+	 * Register all Christopher Ross Shadow settings with WordPress Settings API
 	 *
 	 * Each setting gets:
 	 * - Type validation

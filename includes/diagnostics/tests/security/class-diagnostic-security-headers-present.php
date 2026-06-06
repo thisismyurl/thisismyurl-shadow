@@ -5,7 +5,7 @@
  * Checks whether the site sends essential HTTP security headers such as
  * X-Content-Type-Options, X-Frame-Options, and Referrer-Policy.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */
@@ -86,7 +86,7 @@ class Diagnostic_Security_Headers_Present extends Diagnostic_Base {
 		$home_url = home_url( '/' );
 		$response = wp_remote_head( $home_url, array(
 			'timeout'    => 5,
-			'user-agent' => 'This Is My URL Shadow-Diagnostic/1.0',
+			'user-agent' => 'Christopher Ross Shadow-Diagnostic/1.0',
 			'sslverify'  => false,
 		) );
 

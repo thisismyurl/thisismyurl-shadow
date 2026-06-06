@@ -1,6 +1,6 @@
-# This Is My URL Shadow Development Milestones
+# Christopher Ross Shadow Development Milestones
 
-**Project:** This Is My URL Shadow Core Plugin
+**Project:** Christopher Ross Shadow Core Plugin
 **Last Updated:** April 5, 2026
 **Maintained By:** [@thisismyurl](https://github.com/thisismyurl)
 
@@ -10,7 +10,7 @@
 
 ## Overview
 
-This Is My URL Shadow follows a **monthly release cycle** where practical. Each release is tied to specific development phases.
+Christopher Ross Shadow follows a **monthly release cycle** where practical. Each release is tied to specific development phases.
 
 **Version Format:** `1.Yddd` (Year digit + Julian day in Toronto time)
 

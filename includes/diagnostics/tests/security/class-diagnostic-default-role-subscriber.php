@@ -5,7 +5,7 @@
  * Checks whether the default role assigned to new user registrations is
  * "subscriber" — the least-privileged role — to minimise privilege escalation risk.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

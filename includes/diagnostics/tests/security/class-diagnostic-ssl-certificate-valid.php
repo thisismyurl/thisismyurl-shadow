@@ -5,7 +5,7 @@
  * Verifies that the site SSL certificate is trusted, not expired, and not
  * expiring within the configured warning window.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

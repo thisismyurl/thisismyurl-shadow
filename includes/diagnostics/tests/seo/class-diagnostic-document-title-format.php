@@ -5,7 +5,7 @@
  * Checks whether the active theme declares title-tag support, which allows
  * WordPress and SEO plugins to fully manage the page title element.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

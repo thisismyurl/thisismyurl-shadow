@@ -4,7 +4,7 @@
  *
  * Provides convenient functions for rendering consistent page headers and footers.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Views
  * @since 0.6095
  */

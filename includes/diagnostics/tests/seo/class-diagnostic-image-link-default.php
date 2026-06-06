@@ -5,7 +5,7 @@
  * Checks whether WordPress is configured to link inserted images to
  * attachment pages by default, which creates thin URLs that can harm SEO.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

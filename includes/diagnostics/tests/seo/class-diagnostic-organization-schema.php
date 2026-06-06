@@ -5,7 +5,7 @@
  * Checks whether Organization or Person structured data schema is being output
  * with the minimum required fields to help search engines understand the site's identity.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

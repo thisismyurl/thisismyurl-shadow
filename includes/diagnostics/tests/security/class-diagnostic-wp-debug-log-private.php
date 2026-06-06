@@ -5,7 +5,7 @@
  * Checks whether the WordPress debug log file is publicly accessible via a
  * direct URL when WP_DEBUG_LOG is enabled, which could expose sensitive data.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

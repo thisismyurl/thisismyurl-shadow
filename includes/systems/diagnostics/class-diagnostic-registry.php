@@ -1126,7 +1126,7 @@ class Diagnostic_Registry extends Abstract_Registry {
 		add_action( 'deactivated_plugin', array( __CLASS__, 'clear_cache' ) );
 		add_action( 'upgrader_process_complete', array( __CLASS__, 'clear_cache' ) );
 
-		// Clear cache on This Is My URL Shadow plugin update
+		// Clear cache on Christopher Ross Shadow plugin update
 		add_action( 'upgrader_process_complete', array( __CLASS__, 'handle_plugin_update' ), 10, 2 );
 	}
 

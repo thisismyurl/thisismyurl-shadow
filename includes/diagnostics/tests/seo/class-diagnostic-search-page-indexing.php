@@ -5,7 +5,7 @@
  * Checks whether WordPress internal search result pages are excluded from
  * search engine indexing to prevent duplicate or low-value pages from crawling.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */
@@ -124,7 +124,7 @@ class Diagnostic_Search_Page_Indexing extends Diagnostic_Base {
 		return array(
 			'id'           => self::$slug,
 			'title'        => self::$title,
-			'description'  => __( 'No SEO plugin or This Is My URL Shadow native rule is managing the noindex status of internal search result pages. Search result pages (/?s=...) are thin-content pages that should be excluded from search engine indexes. Install an SEO plugin such as Yoast SEO or Rank Math, or enable a native noindex rule, so search pages stay out of Google.', 'thisismyurl-shadow' ),
+			'description'  => __( 'No SEO plugin or Christopher Ross Shadow native rule is managing the noindex status of internal search result pages. Search result pages (/?s=...) are thin-content pages that should be excluded from search engine indexes. Install an SEO plugin such as Yoast SEO or Rank Math, or enable a native noindex rule, so search pages stay out of Google.', 'thisismyurl-shadow' ),
 			'severity'     => 'medium',
 			'threat_level' => 40,
 			'details'      => array( 'noindex_search' => null, 'plugin' => null, 'native_rule' => false ),

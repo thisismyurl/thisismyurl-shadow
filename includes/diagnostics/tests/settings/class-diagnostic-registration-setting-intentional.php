@@ -7,7 +7,7 @@
  * high-privilege default role, or as a medium finding when it is open with a
  * safe role but potentially unintentional.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

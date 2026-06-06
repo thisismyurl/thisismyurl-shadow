@@ -10,7 +10,7 @@
  * Passwords represent an additional authentication surface that warrants an
  * intentional decision rather than silent default enablement.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

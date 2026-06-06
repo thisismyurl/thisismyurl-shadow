@@ -90,7 +90,7 @@ OPTION 3 — VPS/Dedicated (MySQL 8):
 VERIFICATION:
   mysql --version   (or mariadb --version)
 
-Re-run the This Is My URL Shadow scan after upgrading.",
+Re-run the Christopher Ross Shadow scan after upgrading.",
 					'thisismyurl-shadow'
 				),
 				esc_html( $server )
@@ -106,7 +106,7 @@ Re-run the This Is My URL Shadow scan after upgrading.",
 	public static function undo(): array {
 		return [
 			'success' => true,
-			'message' => __( 'This is a guidance-only treatment — no changes were made by This Is My URL Shadow.', 'thisismyurl-shadow' ),
+			'message' => __( 'This is a guidance-only treatment — no changes were made by Christopher Ross Shadow.', 'thisismyurl-shadow' ),
 		];
 	}
 }

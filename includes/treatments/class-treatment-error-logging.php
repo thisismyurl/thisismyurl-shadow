@@ -30,7 +30,7 @@ class Treatment_Error_Logging extends Treatment_Base {
 
 	private const BACKUP_OPTION = 'thisismyurl_shadow_error_logging_wp_config_backup';
 	private const MARKER_SLUG   = 'error-logging';
-	private const BLOCK         = "define( 'WP_DEBUG', true ); // This Is My URL Shadow: enable WordPress debug mode for logging\ndefine( 'WP_DEBUG_LOG', true ); // This Is My URL Shadow: write errors to wp-content/debug.log\ndefine( 'WP_DEBUG_DISPLAY', false ); // This Is My URL Shadow: never show errors to visitors\n@ini_set( 'display_errors', 0 ); // This Is My URL Shadow: disable PHP error display";
+	private const BLOCK         = "define( 'WP_DEBUG', true ); // Christopher Ross Shadow: enable WordPress debug mode for logging\ndefine( 'WP_DEBUG_LOG', true ); // Christopher Ross Shadow: write errors to wp-content/debug.log\ndefine( 'WP_DEBUG_DISPLAY', false ); // Christopher Ross Shadow: never show errors to visitors\n@ini_set( 'display_errors', 0 ); // Christopher Ross Shadow: disable PHP error display";
 
 	public static function boot(): void {
 		File_Write_Registry::register( static::class );
@@ -77,9 +77,9 @@ class Treatment_Error_Logging extends Treatment_Base {
 		}
 
 		$replacements = array(
-			'WP_DEBUG'         => "define( 'WP_DEBUG', true ); // This Is My URL Shadow: enable WordPress debug mode for logging",
-			'WP_DEBUG_LOG'     => "define( 'WP_DEBUG_LOG', true ); // This Is My URL Shadow: write errors to wp-content/debug.log",
-			'WP_DEBUG_DISPLAY' => "define( 'WP_DEBUG_DISPLAY', false ); // This Is My URL Shadow: never show errors to visitors",
+			'WP_DEBUG'         => "define( 'WP_DEBUG', true ); // Christopher Ross Shadow: enable WordPress debug mode for logging",
+			'WP_DEBUG_LOG'     => "define( 'WP_DEBUG_LOG', true ); // Christopher Ross Shadow: write errors to wp-content/debug.log",
+			'WP_DEBUG_DISPLAY' => "define( 'WP_DEBUG_DISPLAY', false ); // Christopher Ross Shadow: never show errors to visitors",
 		);
 
 		$missing_lines = array();
@@ -98,7 +98,7 @@ class Treatment_Error_Logging extends Treatment_Base {
 		}
 
 		if ( ! preg_match( "/@?ini_set\s*\(\s*['\"]display_errors['\"]\s*,\s*0\s*\)\s*;/i", $updated ) ) {
-			$missing_lines[] = "@ini_set( 'display_errors', 0 ); // This Is My URL Shadow: disable PHP error display";
+			$missing_lines[] = "@ini_set( 'display_errors', 0 ); // Christopher Ross Shadow: disable PHP error display";
 		}
 
 		if ( ! empty( $missing_lines ) ) {
@@ -175,7 +175,7 @@ class Treatment_Error_Logging extends Treatment_Base {
 			"Connect to your server via SFTP or cPanel File Manager.",
 			"Navigate to: {$file}",
 			"Open the file in a text editor.",
-			"Restore the previous wp-config.php contents or remove the This Is My URL Shadow error-logging changes.",
+			"Restore the previous wp-config.php contents or remove the Christopher Ross Shadow error-logging changes.",
 			"Save the file and reload your site.",
 		) );
 	}

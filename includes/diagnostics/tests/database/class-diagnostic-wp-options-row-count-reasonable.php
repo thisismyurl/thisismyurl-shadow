@@ -6,7 +6,7 @@
  * unhealthy size. Bloated options tables are often caused by plugins that
  * write per-item records rather than using a single serialised option.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

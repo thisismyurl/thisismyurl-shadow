@@ -2,7 +2,7 @@
 /**
  * Treatment: Remove Shortlink Head Tag
  *
- * Stores a This Is My URL Shadow option that instructs the plugin bootstrap to call
+ * Stores a Christopher Ross Shadow option that instructs the plugin bootstrap to call
  * remove_action( 'wp_head', 'wp_shortlink_wp_head' ) on every request.
  * Shortlinks via the API and wp_get_shortlink() continue to work; only
  * the auto-injected <link rel="shortlink"> tag is removed.

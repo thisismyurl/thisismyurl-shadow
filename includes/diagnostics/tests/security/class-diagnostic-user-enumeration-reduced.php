@@ -5,7 +5,7 @@
  * Checks whether WordPress user enumeration via the author query parameter
  * or REST API is restricted to prevent username harvesting by attackers.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

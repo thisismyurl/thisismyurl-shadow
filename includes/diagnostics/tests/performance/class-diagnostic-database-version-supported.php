@@ -5,7 +5,7 @@
  * Verifies that the MySQL/MariaDB version meets WordPress minimum requirements
  * and is within a supported, actively maintained release series.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

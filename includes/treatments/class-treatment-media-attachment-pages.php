@@ -5,7 +5,7 @@
  * Sets the wp_attachment_pages_enabled option to 0 (WordPress 6.4+) to
  * disable individual attachment pages. These pages serve no SEO or UX
  * purpose on most sites and are flagged by SEO tools. On WordPress < 6.4
- * the redirect is managed via an option stored by This Is My URL Shadow.
+ * the redirect is managed via an option stored by Christopher Ross Shadow.
  *
  * Risk level: safe — single option update, fully reversible.
  *
@@ -56,7 +56,7 @@ class Treatment_Media_Attachment_Pages extends Treatment_Base {
 			);
 		}
 
-		// Pre-6.4: store a This Is My URL Shadow option; the plugin bootstrap adds a redirect.
+		// Pre-6.4: store a Christopher Ross Shadow option; the plugin bootstrap adds a redirect.
 		update_option( 'thisismyurl_shadow_redirect_attachment_pages', true, false );
 
 		return array(

@@ -9,7 +9,7 @@
  * are in the viewport — increasing initial page weight and slowing First
  * Contentful Paint.
  *
- * This treatment stores a flag that tells the This Is My URL Shadow bootstrap to re-add the
+ * This treatment stores a flag that tells the Christopher Ross Shadow bootstrap to re-add the
  * `wp_lazy_loading_enabled` filter at priority 999 returning `true`, overriding
  * any theme or plugin filter that had disabled it.
  *

@@ -8,7 +8,7 @@
  * no usable page is selected.
  *
  * Undo: restores the previous reading settings, removes any page created by
- * This Is My URL Shadow, and restores the prior post status when it was changed.
+ * Christopher Ross Shadow, and restores the prior post status when it was changed.
  *
  * @package ThisIsMyURL\Shadow
  * @since   0.7056
@@ -76,7 +76,7 @@ class Treatment_Homepage_Page_Published extends Treatment_Base {
 			$page_id = wp_insert_post(
 				array(
 					'post_title'     => __( 'Home', 'thisismyurl-shadow' ),
-					'post_content'   => __( 'This homepage placeholder was created by This Is My URL Shadow. Replace this content with your real homepage layout and copy.', 'thisismyurl-shadow' ),
+					'post_content'   => __( 'This homepage placeholder was created by Christopher Ross Shadow. Replace this content with your real homepage layout and copy.', 'thisismyurl-shadow' ),
 					'post_status'    => 'publish',
 					'post_type'      => 'page',
 					'post_author'    => get_current_user_id() ?: 1,

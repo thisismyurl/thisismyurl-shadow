@@ -97,7 +97,7 @@ class Diagnostic_Login_Url_Hardening extends Diagnostic_Base {
 		$login_url = site_url( 'wp-login.php' );
 		$response  = wp_remote_head( $login_url, array(
 			'timeout'     => 5,
-			'user-agent'  => 'This Is My URL Shadow-Diagnostic/1.0',
+			'user-agent'  => 'Christopher Ross Shadow-Diagnostic/1.0',
 			'sslverify'   => false,
 			'redirection' => 0,
 		) );

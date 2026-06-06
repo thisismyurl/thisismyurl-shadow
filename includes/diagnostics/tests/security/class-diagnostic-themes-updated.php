@@ -5,7 +5,7 @@
  * Checks whether any installed themes have available updates, as outdated
  * themes can contain unpatched security vulnerabilities.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

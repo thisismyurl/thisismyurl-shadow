@@ -1,7 +1,7 @@
 <?php
 
 /**
- * This Is My URL Shadow Database Migrator
+ * Christopher Ross Shadow Database Migrator
  *
  * Handles database schema creation, updates, and migrations using WordPress dbDelta().
  * Called during plugin activation to ensure tables are created/updated as needed.
@@ -71,7 +71,7 @@ class Database_Migrator {
 	}
 
 	/**
-	 * Get database tables created by This Is My URL Shadow
+	 * Get database tables created by Christopher Ross Shadow
 	 *
 	 * @return array List of table names
 	 */
@@ -100,7 +100,7 @@ class Database_Migrator {
 	/**
 	 * Reset database (for development/testing)
 	 *
-	 * WARNING: This permanently deletes all This Is My URL Shadow data
+	 * WARNING: This permanently deletes all Christopher Ross Shadow data
 	 * Only call this explicitly with proper capabilities check
 	 *
 	 * @return bool Success status

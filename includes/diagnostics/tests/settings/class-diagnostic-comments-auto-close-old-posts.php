@@ -5,7 +5,7 @@
  * Checks whether WordPress is configured to automatically close comments on
  * posts older than a set number of days, reducing the spam attack surface.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

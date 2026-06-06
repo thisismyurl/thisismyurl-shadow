@@ -1,12 +1,12 @@
-# This Is My URL Shadow Privacy Overview
+# Christopher Ross Shadow Privacy Overview
 
-**Plain-English summary:** This Is My URL Shadow is designed to run locally on your WordPress site. Privacy is not an afterthought; it is part of the product's foundation.
+**Plain-English summary:** Christopher Ross Shadow is designed to run locally on your WordPress site. Privacy is not an afterthought; it is part of the product's foundation.
 
 ---
 
 ## Our Privacy Approach
 
-This Is My URL Shadow follows a simple principle:
+Christopher Ross Shadow follows a simple principle:
 
 > **If data does not need to leave your site, it should stay on your site.**
 
@@ -16,7 +16,7 @@ That means the core plugin is built to provide local value without requiring a c
 
 ## What the Core Plugin Stores Locally
 
-Depending on the features you use, This Is My URL Shadow may store data such as:
+Depending on the features you use, Christopher Ross Shadow may store data such as:
 
 - plugin settings and preferences
 - diagnostic results and finding status
@@ -30,7 +30,7 @@ This information is stored within your WordPress environment to make the plugin 
 
 ## What the Core Plugin Does Not Do by Default
 
-By default, This Is My URL Shadow should not:
+By default, Christopher Ross Shadow should not:
 
 - sell your data
 - run invasive third-party tracking
@@ -41,7 +41,7 @@ By default, This Is My URL Shadow should not:
 
 ## Optional External Services
 
-Some future or optional This Is My URL Shadow services may involve external infrastructure, such as cloud diagnostics, backup storage, or account-linked services.
+Some future or optional Christopher Ross Shadow services may involve external infrastructure, such as cloud diagnostics, backup storage, or account-linked services.
 
 If and when those services are used, they should be:
 
@@ -56,7 +56,7 @@ Users should always understand what is local, what is remote, and why.
 
 ## Privacy Principles We Follow
 
-This Is My URL Shadow aims to be:
+Christopher Ross Shadow aims to be:
 
 - **consent-first**
 - **transparent**

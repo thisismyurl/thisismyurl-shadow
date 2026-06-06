@@ -7,7 +7,7 @@
  * domain. Using a free-provider address for site notifications looks
  * unprofessional and reduces DMARC alignment on outbound emails.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

@@ -2,10 +2,10 @@
 /**
  * Settings Page
  *
- * Full settings UI for This Is My URL Shadow: general options, scan schedule,
+ * Full settings UI for Christopher Ross Shadow: general options, scan schedule,
  * and per-diagnostic toggles and frequency.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Views
  * @since      0.6095
  */
@@ -69,7 +69,7 @@ $next_backup_display = class_exists( '\ThisIsMyURL\Shadow\Guardian\Backup_Schedu
 	: __( 'Scheduler unavailable', 'thisismyurl-shadow' );
 
 /**
- * Helper: read a This Is My URL Shadow option using the shared settings registry when available.
+ * Helper: read a Christopher Ross Shadow option using the shared settings registry when available.
  *
  * @param  string $option   Option name.
  * @param  mixed  $fallback Default value.
@@ -126,7 +126,7 @@ $settings_url = admin_url( 'admin.php?page=thisismyurl-shadow-settings' );
 <?php
 thisismyurl_shadow_render_page_header(
 	__( 'Settings', 'thisismyurl-shadow' ),
-	__( 'Configure This Is My URL Shadow to match your workflow and site requirements.', 'thisismyurl-shadow' ),
+	__( 'Configure Christopher Ross Shadow to match your workflow and site requirements.', 'thisismyurl-shadow' ),
 	'dashicons-admin-settings'
 );
 ?>
@@ -317,7 +317,7 @@ thisismyurl_shadow_render_page_header(
 				<div class="wps-settings-row">
 					<div class="wps-settings-row-label">
 						<label for="wps-debug-mode"><?php esc_html_e( 'Debug Mode', 'thisismyurl-shadow' ); ?></label>
-						<p class="wps-settings-row-hint"><?php esc_html_e( 'Enable verbose logging of all This Is My URL Shadow operations. Useful when reporting issues.', 'thisismyurl-shadow' ); ?></p>
+						<p class="wps-settings-row-hint"><?php esc_html_e( 'Enable verbose logging of all Christopher Ross Shadow operations. Useful when reporting issues.', 'thisismyurl-shadow' ); ?></p>
 					</div>
 					<div class="wps-settings-row-control">
 						<label class="wps-toggle-switch">
@@ -349,7 +349,7 @@ thisismyurl_shadow_render_page_header(
 
 		<div class="wps-settings-section">
 			<h2 class="wps-settings-section-title"><?php esc_html_e( 'Automatic Scan Schedule', 'thisismyurl-shadow' ); ?></h2>
-			<p class="wps-settings-section-desc"><?php esc_html_e( 'Control how often This Is My URL Shadow runs diagnostic scans in the background.', 'thisismyurl-shadow' ); ?></p>
+			<p class="wps-settings-section-desc"><?php esc_html_e( 'Control how often Christopher Ross Shadow runs diagnostic scans in the background.', 'thisismyurl-shadow' ); ?></p>
 
 			<div class="wps-settings-rows">
 
@@ -870,7 +870,7 @@ thisismyurl_shadow_render_page_header(
 
 		<div class="wps-settings-section">
 			<h2 class="wps-settings-section-title"><?php esc_html_e( 'Reading Comfort & Focus', 'thisismyurl-shadow' ); ?></h2>
-			<p class="wps-settings-section-desc"><?php esc_html_e( 'These options can be applied across WordPress admin screens, not just This Is My URL Shadow. They are optional comfort aids — what helps one person read or focus more easily may not help another.', 'thisismyurl-shadow' ); ?></p>
+			<p class="wps-settings-section-desc"><?php esc_html_e( 'These options can be applied across WordPress admin screens, not just Christopher Ross Shadow. They are optional comfort aids — what helps one person read or focus more easily may not help another.', 'thisismyurl-shadow' ); ?></p>
 
 			<div class="notice notice-info inline">
 				<p><?php esc_html_e( 'The focus-friendly font option uses a local readable font stack inspired by styles some ADHD or dyslexic users report as easier to track. No external font files are loaded.', 'thisismyurl-shadow' ); ?></p>

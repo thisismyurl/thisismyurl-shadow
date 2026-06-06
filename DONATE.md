@@ -1,6 +1,6 @@
-# Support This Is My URL Shadow
+# Support Christopher Ross Shadow
 
-If This Is My URL Shadow has helped you, there are several meaningful ways to support the project.
+If Christopher Ross Shadow has helped you, there are several meaningful ways to support the project.
 
 This document exists to keep that support request aligned with the project's core philosophy:
 
@@ -55,7 +55,7 @@ Support makes it easier to invest time in:
 
 ## Our Promise
 
-Financial support should never turn This Is My URL Shadow into nagware.
+Financial support should never turn Christopher Ross Shadow into nagware.
 
 We do **not** want support asks to feel like:
 - guilt
@@ -69,6 +69,6 @@ If the project asks for support, it should be because the work has already been 
 
 ## Thank You
 
-Whether you support This Is My URL Shadow with time, feedback, reviews, code, or money: thank you.
+Whether you support Christopher Ross Shadow with time, feedback, reviews, code, or money: thank you.
 
 That support helps keep the project useful, humane, and sustainable.

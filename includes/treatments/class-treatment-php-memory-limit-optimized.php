@@ -37,7 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * This treatment exists because memory-related performance issues are common,
  * but the correct fix for WordPress beginners is not always obvious. The class
- * wraps the change in markers so This Is My URL Shadow can show a preview, apply it safely,
+ * wraps the change in markers so Christopher Ross Shadow can show a preview, apply it safely,
  * and later remove only its own lines if the admin chooses to roll back.
  */
 class Treatment_Php_Memory_Limit_Optimized extends Treatment_Base {
@@ -66,8 +66,8 @@ class Treatment_Php_Memory_Limit_Optimized extends Treatment_Base {
 	 * @since 0.6095
 	 * @var   string
 	 */
-	const DEFINE_BLOCK = "define( 'WP_MEMORY_LIMIT', '256M' );     // This Is My URL Shadow: front-end PHP memory cap\n" .
-	                     "define( 'WP_MAX_MEMORY_LIMIT', '512M' ); // This Is My URL Shadow: admin/WP-Cron PHP memory cap";
+	const DEFINE_BLOCK = "define( 'WP_MEMORY_LIMIT', '256M' );     // Christopher Ross Shadow: front-end PHP memory cap\n" .
+	                     "define( 'WP_MAX_MEMORY_LIMIT', '512M' ); // Christopher Ross Shadow: admin/WP-Cron PHP memory cap";
 
 	/**
 	 * Register this treatment with the file-write review system.

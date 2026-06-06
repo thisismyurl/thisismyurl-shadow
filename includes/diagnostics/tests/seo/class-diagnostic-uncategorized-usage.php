@@ -6,7 +6,7 @@
  * Uncategorized category, which signals poor content organisation to visitors
  * and search engines.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

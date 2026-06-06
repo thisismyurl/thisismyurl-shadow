@@ -44,7 +44,7 @@ extract_last_number() {
   grep -Ei "${pattern}" "${file_path}" | head -n 1 | grep -Eo '[0-9]+' | tail -n 1 || true
 }
 
-log "This Is My URL Shadow Release Proof"
+log "Christopher Ross Shadow Release Proof"
 log "Generated: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
 log "Container: ${CONTAINER_NAME}"
 log "Workspace: ${ROOT_DIR}"

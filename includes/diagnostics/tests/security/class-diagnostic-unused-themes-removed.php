@@ -5,7 +5,7 @@
  * Checks whether unused themes remain installed on the site, reducing the
  * attack surface from outdated or unmaintained theme files.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */

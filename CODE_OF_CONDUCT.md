@@ -2,7 +2,7 @@
 
 ## Our Commitment
 
-This Is My URL Shadow aims to be a project where people can participate safely, respectfully, and constructively.
+Christopher Ross Shadow aims to be a project where people can participate safely, respectfully, and constructively.
 
 We want this community to reflect the same values as the product itself:
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * WP-CLI commands for This Is My URL Shadow.
+ * WP-CLI commands for Christopher Ross Shadow.
  *
  * @package ThisIsMyURL\Shadow
  */
@@ -14,11 +14,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Register This Is My URL Shadow commands with WP-CLI.
+ * Register Christopher Ross Shadow commands with WP-CLI.
  */
 class thisismyurl_shadow_CLI_Command {
 	/**
-	 * Register all This Is My URL Shadow WP-CLI commands.
+	 * Register all Christopher Ross Shadow WP-CLI commands.
 	 *
 	 * @return void
 	 */
@@ -111,7 +111,7 @@ class thisismyurl_shadow_CLI_Command {
 	}
 
 	/**
-	 * Run the full This Is My URL Shadow scan.
+	 * Run the full Christopher Ross Shadow scan.
 	 *
 	 * ## OPTIONS
 	 *

@@ -5,7 +5,7 @@
  * Checks whether WordPress core automatic updates have been completely disabled,
  * leaving the site without background security patching.
  *
- * @package    This Is My URL Shadow
+ * @package    Christopher Ross Shadow
  * @subpackage Diagnostics
  * @since      0.6095
  */
