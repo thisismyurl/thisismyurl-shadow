@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: - Shadow by Christopher Ross
+ * Plugin Name: Shadow by Christopher Ross
  * Plugin URI: https://thisismyurl.com/shadow/
- * Description: Local-first WordPress diagnostics and safer fixes — file review, one-click recovery, and plain-English guidance before risky changes.
+ * Description: Local-first WordPress diagnostics and safer fixes — file review and plain-English guidance before risky changes.
  * Version: 1.6147
  * Author: thisismyurl
  * Author URI: https://profiles.wordpress.org/thisismyurl/
@@ -223,21 +223,5 @@ if ( ! function_exists( 'thisismyurl_shadow_suppress_page_cache' ) ) {
 		if ( function_exists( 'nocache_headers' ) ) {
 			nocache_headers();
 		}
-	}
-}
-
-// Self-hosted updater is excluded from the WordPress.org distribution zip
-// via .distignore. Guard with file_exists() so .org installs do not fatal.
-if ( file_exists( THISISMYURL_SHADOW_PATH . 'github-updater.php' ) ) {
-	require_once THISISMYURL_SHADOW_PATH . 'github-updater.php';
-
-	if ( function_exists( 'timu_boot_github_release_updater' ) ) {
-		timu_boot_github_release_updater(
-			array(
-				'plugin_file' => __FILE__,
-				'slug'        => 'thisismyurl-shadow',
-				'repo'        => 'thisismyurl/thisismyurl-shadow',
-			)
-		);
 	}
 }

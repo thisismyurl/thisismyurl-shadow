@@ -3,6 +3,10 @@ declare(strict_types=1);
 
 namespace ThisIsMyURL\Shadow\Admin\Pages;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 /**
  * Manage Christopher Ross Shadow's automated diagnostic scan schedule.
  *

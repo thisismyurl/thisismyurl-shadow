@@ -54,11 +54,6 @@ class Hooks_Initializer {
 		add_action( 'admin_enqueue_scripts', array( __CLASS__, 'enqueue_admin_accessibility_styles' ) );
 		add_action( 'admin_head', array( __CLASS__, 'on_admin_head' ) );
 
-		// Scheduled backups (Vault Lite)
-		if ( class_exists( '\\ThisIsMyURL\\Shadow\\Guardian\\Backup_Scheduler' ) ) {
-			\ThisIsMyURL\Shadow\Guardian\Backup_Scheduler::init();
-		}
-
 		// Hidden file-write review page used by Guardian file-write fixes.
 		if ( ! class_exists( '\\ThisIsMyURL\\Shadow\\Admin\\Pages\\File_Write_Review_Page' ) ) {
 			$review_page = THISISMYURL_SHADOW_PATH . 'includes/admin/pages/class-file-write-review-page.php';
@@ -98,8 +93,6 @@ class Hooks_Initializer {
 		add_action( 'update_option_thisismyurl_shadow_notifications_enabled', array( __CLASS__, 'on_option_updated' ), 10, 3 );
 		add_action( 'update_option_thisismyurl_shadow_notification_severity', array( __CLASS__, 'on_option_updated' ), 10, 3 );
 		add_action( 'update_option_thisismyurl_shadow_notify_admin_email', array( __CLASS__, 'on_option_updated' ), 10, 3 );
-		add_action( 'update_option_thisismyurl_shadow_backup_enabled', array( __CLASS__, 'on_option_updated' ), 10, 3 );
-		add_action( 'update_option_thisismyurl_shadow_backup_retention_days', array( __CLASS__, 'on_option_updated' ), 10, 3 );
 
 		// Filters for WordPress integration
 		add_filter( 'plugin_action_links_' . THISISMYURL_SHADOW_BASENAME, array( __CLASS__, 'filter_plugin_action_links' ) );
@@ -1318,8 +1311,6 @@ class Hooks_Initializer {
 			'thisismyurl_shadow_notifications_enabled'     => 'Notifications',
 			'thisismyurl_shadow_notification_severity'     => 'Notification Severity',
 			'thisismyurl_shadow_notify_admin_email'        => 'Notification Email',
-			'thisismyurl_shadow_backup_enabled'            => 'Backups',
-			'thisismyurl_shadow_backup_retention_days'     => 'Backup Retention',
 		);
 
 		$setting_name = isset( $setting_names[ $option ] ) ? $setting_names[ $option ] : $option;

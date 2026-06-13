@@ -3,9 +3,6 @@
  * Christopher Ross Shadow Uninstall Handler
  *
  * Handles plugin uninstall including:
- * - More detailed exit interview
- * - Optional diagnostic data submission
- * - Contact permission for follow-up
  * - Clean up plugin data
  *
  * Philosophy:

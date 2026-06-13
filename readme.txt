@@ -1,4 +1,4 @@
-=== - Shadow by Christopher Ross ===
+=== Shadow by Christopher Ross ===
 Contributors: thisismyurl
 Donate link: https://github.com/sponsors/thisismyurl
 Tags: diagnostics, site-health, security, performance, site-audit
@@ -9,7 +9,7 @@ Stable tag: 1.6147
 License: GPL v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Local-first WordPress diagnostics and safer fixes, with file review and one-click recovery before risky changes.
+Local-first WordPress diagnostics and safer fixes, with file review before risky changes.
 
 == Description ==
 
@@ -22,7 +22,6 @@ This first public release is a beta focused on the core plugin experience:
 * 93 automated treatment entries and 8 guidance-only treatment entries
 * dashboard views for findings, trends, and status
 * file-write review for risky changes
-* local backup and recovery workflows
 * WordPress Site Health integration
 * accessibility-first, plain-English guidance
 
@@ -65,16 +64,24 @@ Yes. Christopher Ross Shadow is built around clearer language, keyboard-friendly
 
 Not by default. The plugin is local-first. Optional future services, if introduced, must remain opt-in and clearly explained.
 
+== External services ==
+
+Christopher Ross Shadow is local-first and does not send your site data to any third party. Two behaviours involve outbound HTTP requests, and both are disclosed here for transparency.
+
+1. Self-directed diagnostics (loopback requests to your own site). Several performance and security diagnostics request your own site's URLs — derived from `home_url()` and the REST API URL — to inspect how your server actually responds. These checks cover things such as caching and compression headers, HTTP/2 support, mixed-content references, and directory-listing exposure. The requests go only to your own domain; no data is sent to any external service.
+
+2. WordPress.org secret-key (salt) API, only when you run the matching treatment. The "Set authentication keys and salts" treatment makes a one-time request to the official WordPress.org salt API (https://api.wordpress.org/secret-key/1.1/salt/) to generate a fresh set of secret keys for your `wp-config.php`. This request runs only when you explicitly apply that treatment. No site data is transmitted in the request. WordPress.org terms: https://wordpress.org/about/privacy/ — privacy policy: https://wordpress.org/about/privacy/
+
 == Screenshots ==
 
 1. Christopher Ross Shadow dashboard overview
 2. Diagnostics inventory and findings views
 3. Treatment and file review workflows
-4. Backup and recovery interface
 
 == Changelog ==
 
 = 1.6147 =
+* Removed the local backup and restore feature; backup and restore are not part of this plugin and are handled by a separate, dedicated plugin.
 * Unified plugin versioning to the x.Yddd calendar-version scheme.
 * Confirmed compatibility with WordPress 7.0.
 

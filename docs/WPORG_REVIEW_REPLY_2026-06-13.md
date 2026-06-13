@@ -31,13 +31,23 @@ plugin rather than defects.
 - **Prepared SQL.** The sample-content diagnostic query now uses a single
   `$wpdb->prepare()` with the `array_fill()` placeholder pattern from your
   email (one `%s` per phrase, all values bound through the second argument).
-- **File/dir locations.** Uploads now resolve through `wp_get_upload_dir()`;
-  the plugins directory uses `WP_PLUGIN_DIR`.
+- **File/dir locations.** The flagged `WP_CONTENT_DIR` / `WP_PLUGIN_DIR` /
+  `ABSPATH` usages were almost all inside the backup engine, which has been
+  removed (see below). The few that remain use an API helper where one exists.
 - **PHP limits.** `set_time_limit()` / `ini_set()` calls are confirmed scoped
-  to the scan- and restore-execution methods only (never global/`init`/
+  to the diagnostic-scan execution method only (never global/`init`/
   constructor), with comments documenting the scope.
+- **Backup/restore engine removed.** The local backup/restore feature
+  ("Vault Lite") — including the `$wpdb->query()` that replayed a `.sql` dump
+  and the whole-site path handling you flagged — has been **removed from this
+  plugin** and now lives in a separate plugin. This resolves the restore-SQL
+  finding and most of the file/directory-location findings outright.
+- **GitHub updater removed.** The self-hosted update bridge has been removed
+  entirely (file deleted, no longer referenced), per the earlier request.
+- **Plugin name corrected.** The display name is now "Shadow by Christopher
+  Ross" (a stray leading character has been removed).
 
-## Three clarifications
+## Two clarifications
 
 ### 1. Option names that belong to other plugins / WordPress core
 
@@ -61,38 +71,21 @@ applies), runs only after a capability check, and is guarded by a test that the
 target plugin is actually active before touching its option. All options the
 plugin owns are prefixed `thisismyurl_shadow_`.
 
-### 2. `ABSPATH` / `WP_CONTENT_DIR` in the backup and security tooling
+### 2. The remaining `ABSPATH` references are in security diagnostics/treatments
 
-Shadow ships a whole-site backup/restore engine ("Vault Lite") and a set of
-security treatments. Referencing `ABSPATH` and `WP_CONTENT_DIR` is inherent to
-what those features do, and we use an API helper wherever one exists
-(`wp_get_upload_dir()` for uploads, `get_theme_root()` for themes,
-`WP_PLUGIN_DIR` for plugins). The remaining references point at files and
-directories that have no dedicated helper:
+With the backup engine removed, the only remaining `ABSPATH` references belong
+to security features for which referencing the WordPress root is inherent to
+the feature's job:
 
-- `class-backup-manager.php` — `WP_CONTENT_DIR` is the backup root; `ABSPATH .
-  'wp-config.php'` / `'.htaccess'` are backup sources; `ABSPATH . '.git'`,
-  `WP_CONTENT_DIR . '/cache'` and `'/upgrade'` are *exclude*-from-backup paths.
 - `class-diagnostic-sensitive-files-protected.php` — scans `ABSPATH` (the
   webroot) for publicly exposed `wp-config.bak/.old`, `debug.log`, etc. Finding
-  files in the webroot is the diagnostic's entire job.
+  files in the webroot is the diagnostic's entire purpose.
 - `class-treatment-file-mods-policy-defined.php` — inserts `define(
   'DISALLOW_FILE_EDIT', true )` into `wp-config.php`, which must be located
   relative to `ABSPATH`.
 - `class-ajax-handler-base.php` — uses `ABSPATH` as the root of a
   path-traversal allow-list (a security control); requests for files outside
   the WordPress root are rejected.
-
-### 3. Restore replays the plugin's own SQL dump
-
-The Vault Lite restore reads a `.sql` backup that **this plugin generated** and
-replays it with `$wpdb->query()`. The full statement comes from the dump file,
-so there are no bindable values to parameterize — `prepare()` does not apply
-here. The path is admin-only: it runs `check_admin_referer()` and
-`current_user_can( 'manage_options' )` before any statement executes, and a
-non-admin or bad-nonce request is rejected with a 403. (The *diagnostic* query
-you flagged — sample-content detection — is unrelated to restore and is now
-fully prepared, as noted above.)
 
 I did not list every individual change, since the team re-reviews the whole
 plugin. Happy to clarify any of the above.
@@ -104,10 +97,16 @@ Christopher Ross
 
 ## Internal notes (do not send)
 
-- Verification done in the editing environment: `php -l` clean on all 9 changed
-  files; manual review against ValidatedSanitizedInput / EscapeOutput /
-  PreparedSQL / NonceVerification. `composer`/`phpcs`/`wp plugin check` were not
-  runnable there (no https wrapper in that PHP CLI).
+- Verification done in the editing environment: `php -l` clean on every changed
+  file; manual review against ValidatedSanitizedInput / EscapeOutput /
+  PreparedSQL / NonceVerification; residual-reference sweep after the Vault Lite
+  removal returns zero `Backup_Manager`/`Backup_Scheduler`/vault-feature hits.
+  `composer`/`phpcs`/`wp plugin check` were not runnable there (no https wrapper
+  in that PHP CLI).
+- Vault Lite (local backup/restore) was removed entirely this round (8 files
+  deleted incl. github-updater.php; ~14 files edited to strip wiring). This
+  resolved the restore-SQL and most file/dir-location findings without needing
+  the keep+justify argument.
 - **Before upload, run locally:** `composer install` →
   `composer run lint:phpcs` → `wp plugin check thisismyurl-shadow`. Confirm the
   three flagged sniff families are clean. The `prepare-wordpress-org-release.sh`

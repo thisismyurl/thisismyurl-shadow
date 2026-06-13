@@ -494,8 +494,7 @@ All view files include the PHPCS disable directive at the top (after ABSPATH che
 1. `includes/ui/views/resolution-page.php`
 2. `includes/ui/views/dashboard-page-v2.php`
 3. `includes/ui/views/settings-page.php`
-4. `includes/ui/views/vault-lite-page.php`
-5. `includes/ui/views/file-write-review-page.php`
+4. `includes/ui/views/file-write-review-page.php`
 
 ---
 

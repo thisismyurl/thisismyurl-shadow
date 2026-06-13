@@ -294,8 +294,6 @@ class Plugin_Bootstrap {
 		// Load Phase 5: Academy & Training Integration
 		self::load_academy_training();
 
-		// (Removed) Vault and Academy systems
-
 		// Initialize real-time monitoring if enabled
 		if ( class_exists( '\\ThisIsMyURL\\Shadow\\Reporting\\Realtime_Monitoring' ) ) {
 			\ThisIsMyURL\Shadow\Reporting\Realtime_Monitoring::init();

@@ -12,6 +12,10 @@ declare(strict_types=1);
 
 namespace ThisIsMyURL\Shadow\Core;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 /**
  * Generates trend charts for KPI visualization
  */

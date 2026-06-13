@@ -25,6 +25,10 @@ declare(strict_types=1);
 
 namespace ThisIsMyURL\Shadow\Treatments;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 /**
  * Interface for treatment/fix implementations
  *

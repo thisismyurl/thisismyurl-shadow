@@ -407,130 +407,6 @@ class Settings_Registry {
 			)
 		);
 
-		// =================================================================
-		// BACKUP SETTINGS (Vault Lite)
-		// =================================================================
-
-		register_setting(
-			'thisismyurl_shadow_settings',
-			'thisismyurl_shadow_backup_enabled',
-			array(
-				'type'              => 'boolean',
-				'default'           => true,
-				'sanitize_callback' => 'rest_sanitize_boolean',
-				'show_in_rest'      => false,
-				'description'       => __( 'Enable backups before treatments', 'thisismyurl-shadow' ),
-			)
-		);
-
-		register_setting(
-			'thisismyurl_shadow_settings',
-			'thisismyurl_shadow_backup_include_database',
-			array(
-				'type'              => 'boolean',
-				'default'           => true,
-				'sanitize_callback' => 'rest_sanitize_boolean',
-				'show_in_rest'      => false,
-				'description'       => __( 'Include database in Vault Lite backups', 'thisismyurl-shadow' ),
-			)
-		);
-
-		register_setting(
-			'thisismyurl_shadow_settings',
-			'thisismyurl_shadow_backup_restore_database_allowed',
-			array(
-				'type'              => 'boolean',
-				'default'           => false,
-				'sanitize_callback' => 'rest_sanitize_boolean',
-				'show_in_rest'      => false,
-				'description'       => __( 'Allow SQL imports to run during Vault Lite restores', 'thisismyurl-shadow' ),
-			)
-		);
-
-		register_setting(
-			'thisismyurl_shadow_settings',
-			'thisismyurl_shadow_backup_retention_days',
-			array(
-				'type'              => 'integer',
-				'default'           => 7,
-				'sanitize_callback' => array( __CLASS__, 'sanitize_retention_days' ),
-				'show_in_rest'      => false,
-				'description'       => __( 'Number of days to keep Vault Lite backups', 'thisismyurl-shadow' ),
-			)
-		);
-
-		register_setting(
-			'thisismyurl_shadow_settings',
-			'thisismyurl_shadow_backup_max_size_mb',
-			array(
-				'type'              => 'integer',
-				'default'           => 500,
-				'sanitize_callback' => 'absint',
-				'show_in_rest'      => false,
-				'description'       => __( 'Maximum total backup size (MB)', 'thisismyurl-shadow' ),
-			)
-		);
-
-		register_setting(
-			'thisismyurl_shadow_settings',
-			'thisismyurl_shadow_backup_compress',
-			array(
-				'type'              => 'boolean',
-				'default'           => true,
-				'sanitize_callback' => 'rest_sanitize_boolean',
-				'show_in_rest'      => false,
-				'description'       => __( 'Compress Vault Lite backups', 'thisismyurl-shadow' ),
-			)
-		);
-
-		register_setting(
-			'thisismyurl_shadow_settings',
-			'thisismyurl_shadow_backup_include_uploads',
-			array(
-				'type'              => 'boolean',
-				'default'           => true,
-				'sanitize_callback' => 'rest_sanitize_boolean',
-				'show_in_rest'      => false,
-				'description'       => __( 'Include uploads folder in Vault Lite backups', 'thisismyurl-shadow' ),
-			)
-		);
-
-		register_setting(
-			'thisismyurl_shadow_settings',
-			'thisismyurl_shadow_backup_verify',
-			array(
-				'type'              => 'boolean',
-				'default'           => true,
-				'sanitize_callback' => 'rest_sanitize_boolean',
-				'show_in_rest'      => false,
-				'description'       => __( 'Verify Vault Lite backups after creation', 'thisismyurl-shadow' ),
-			)
-		);
-
-		register_setting(
-			'thisismyurl_shadow_settings',
-			'thisismyurl_shadow_treatment_backup_window',
-			array(
-				'type'              => 'integer',
-				'default'           => 60,
-				'sanitize_callback' => 'absint',
-				'show_in_rest'      => false,
-				'description'       => __( 'Reuse an existing backup if created within this many minutes (treatment deduplication)', 'thisismyurl-shadow' ),
-			)
-		);
-
-		register_setting(
-			'thisismyurl_shadow_settings',
-			'thisismyurl_shadow_treatment_backup_exclude_uploads',
-			array(
-				'type'              => 'boolean',
-				'default'           => true,
-				'sanitize_callback' => 'rest_sanitize_boolean',
-				'show_in_rest'      => false,
-				'description'       => __( 'Exclude the uploads folder from treatment-triggered backups', 'thisismyurl-shadow' ),
-			)
-		);
-
 		register_setting(
 			'thisismyurl_shadow_settings',
 			'thisismyurl_shadow_magic_link_expiry_notifications',
@@ -540,42 +416,6 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Send email notifications when magic links expire', 'thisismyurl-shadow' ),
-			)
-		);
-
-		register_setting(
-			'thisismyurl_shadow_settings',
-			'thisismyurl_shadow_backup_schedule_enabled',
-			array(
-				'type'              => 'boolean',
-				'default'           => false,
-				'sanitize_callback' => 'rest_sanitize_boolean',
-				'show_in_rest'      => false,
-				'description'       => __( 'Enable scheduled Vault Lite backups', 'thisismyurl-shadow' ),
-			)
-		);
-
-		register_setting(
-			'thisismyurl_shadow_settings',
-			'thisismyurl_shadow_backup_schedule_frequency',
-			array(
-				'type'              => 'string',
-				'default'           => 'daily',
-				'sanitize_callback' => array( __CLASS__, 'sanitize_backup_frequency' ),
-				'show_in_rest'      => false,
-				'description'       => __( 'How often scheduled backups run', 'thisismyurl-shadow' ),
-			)
-		);
-
-		register_setting(
-			'thisismyurl_shadow_settings',
-			'thisismyurl_shadow_backup_schedule_time',
-			array(
-				'type'              => 'string',
-				'default'           => '02:00',
-				'sanitize_callback' => array( __CLASS__, 'sanitize_backup_time' ),
-				'show_in_rest'      => false,
-				'description'       => __( 'Time of day for scheduled backups (24h)', 'thisismyurl-shadow' ),
 			)
 		);
 
@@ -1050,7 +890,7 @@ class Settings_Registry {
 			return array();
 		}
 
-		$valid_services = array( 'vault', 'cloud' );
+		$valid_services = array( 'cloud' );
 		$sanitized      = array();
 
 		foreach ( $value as $service => $config ) {
@@ -1182,44 +1022,6 @@ class Settings_Registry {
 		}
 
 		return $sanitized;
-	}
-
-	/**
-	 * Sanitize retention days
-	 *
-	 * @param mixed $value Input value
-	 * @return int Sanitized value (7-365 days)
-	 */
-	public static function sanitize_retention_days( $value ): int {
-		$int = absint( $value );
-		return min( max( $int, 7 ), 365 ); // Clamp between 7-365 days
-	}
-
-	/**
-	 * Sanitize backup frequency
-	 *
-	 * @param mixed $value Input value
-	 * @return string Sanitized frequency
-	 */
-	public static function sanitize_backup_frequency( $value ): string {
-		$allowed = array( 'daily', 'weekly', 'monthly' );
-		$value   = sanitize_key( (string) $value );
-		return in_array( $value, $allowed, true ) ? $value : 'weekly';
-	}
-
-	/**
-	 * Sanitize backup time (HH:MM 24h)
-	 *
-	 * @param mixed $value Input value
-	 * @return string Sanitized time
-	 */
-	public static function sanitize_backup_time( $value ): string {
-		$value = is_string( $value ) ? trim( $value ) : '';
-		if ( preg_match( '/^([01]\d|2[0-3]):([0-5]\d)$/', $value ) ) {
-			return $value;
-		}
-
-		return '02:00';
 	}
 
 	/**

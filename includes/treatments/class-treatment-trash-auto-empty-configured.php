@@ -113,7 +113,7 @@ class Treatment_Trash_Auto_Empty_Configured extends Treatment_Base {
 			);
 		}
 
-		$original = base64_decode( (string) $backup );
+		$original = base64_decode( (string) $backup ); // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_decode -- Decodes the plugin's own base64-encoded config-backup snapshot before restore.
 		if ( false === $original || false === file_put_contents( $file_path, $original ) ) { // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_file_put_contents
 			return array(
 				'success' => false,

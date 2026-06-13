@@ -3,6 +3,10 @@ declare(strict_types=1);
 
 namespace ThisIsMyURL\Shadow\Core;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 /**
  * Activity Logger - Comprehensive activity tracking system
  *

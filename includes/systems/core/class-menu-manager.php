@@ -104,16 +104,6 @@ class Menu_Manager {
 			);
 		}
 
-		// Vault Lite local backup page.
-		add_submenu_page(
-			'thisismyurl-shadow',
-			__( 'Vault Lite', 'thisismyurl-shadow' ),
-			__( 'Vault Lite', 'thisismyurl-shadow' ),
-			$admin_capability,
-			'thisismyurl-shadow-vault-lite',
-			'thisismyurl_shadow_render_vault_lite'
-		);
-
 		// Settings.
 		add_submenu_page(
 			'thisismyurl-shadow',
@@ -144,8 +134,6 @@ class Menu_Manager {
 				array( 'ThisIsMyURL\Shadow\Gamification\Gamification_UI', 'render_achievements_page' )
 			);
 		}
-
-		// Vault Lite now has its own dedicated submenu page.
 	}
 
 	/**
@@ -159,7 +147,6 @@ class Menu_Manager {
 		}
 
 		$page                = Form_Param_Helper::get( 'page', 'text', '' );
-		$tab                 = Form_Param_Helper::get( 'tab', 'text', '' );
 		$core_pages_released = self::are_core_pages_released();
 
 		if ( in_array( $page, array( 'thisismyurl-shadow-findings', 'thisismyurl-shadow-automations' ), true ) && ! $core_pages_released ) {
@@ -185,13 +172,6 @@ class Menu_Manager {
 		if ( in_array( $page, array( 'thisismyurl-shadow-achievements', 'wpshadow-leaderboard', 'wpshadow-rewards' ), true ) && class_exists( '\ThisIsMyURL\Shadow\Gamification\Gamification_Release_Gate' ) && ! \ThisIsMyURL\Shadow\Gamification\Gamification_Release_Gate::is_released() ) {
 			if ( current_user_can( self::get_analyst_capability() ) ) {
 				wp_safe_redirect( admin_url( 'admin.php?page=thisismyurl-shadow' ) );
-				exit;
-			}
-		}
-
-		if ( 'thisismyurl-shadow-settings' === $page && 'backups' === $tab ) {
-			if ( current_user_can( self::get_admin_capability() ) ) {
-				wp_safe_redirect( admin_url( 'admin.php?page=thisismyurl-shadow-vault-lite' ) );
 				exit;
 			}
 		}

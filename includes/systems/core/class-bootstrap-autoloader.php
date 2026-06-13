@@ -104,10 +104,6 @@ class Bootstrap_Autoloader {
 		'includes/ui/views/dashboard-page-v2.php',
 		'includes/ui/dashboard/gauges-module.php',
 
-		// Backup/recovery
-		'includes/features/monitoring/recovery/class-backup-manager.php',
-		'includes/features/monitoring/recovery/class-backup-scheduler.php',
-
 		// Menu and routing
 		'includes/systems/core/class-menu-manager.php',
 		'includes/systems/core/class-ajax-router.php',
