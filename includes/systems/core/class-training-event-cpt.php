@@ -608,8 +608,8 @@ class Training_Event_CPT {
 			return;
 		}
 
-		$start_datetime = self::sanitize_datetime_input( isset( $_POST['thisismyurl_shadow_event_start_datetime'] ) ? (string) wp_unslash( $_POST['thisismyurl_shadow_event_start_datetime'] ) : '' );
-		$end_datetime   = self::sanitize_datetime_input( isset( $_POST['thisismyurl_shadow_event_end_datetime'] ) ? (string) wp_unslash( $_POST['thisismyurl_shadow_event_end_datetime'] ) : '' );
+		$start_datetime = self::sanitize_datetime_input( isset( $_POST['thisismyurl_shadow_event_start_datetime'] ) ? sanitize_text_field( wp_unslash( $_POST['thisismyurl_shadow_event_start_datetime'] ) ) : '' );
+		$end_datetime   = self::sanitize_datetime_input( isset( $_POST['thisismyurl_shadow_event_end_datetime'] ) ? sanitize_text_field( wp_unslash( $_POST['thisismyurl_shadow_event_end_datetime'] ) ) : '' );
 		$event_type     = isset( $_POST['thisismyurl_shadow_event_type'] ) ? sanitize_key( wp_unslash( $_POST['thisismyurl_shadow_event_type'] ) ) : 'training';
 		$timezone       = isset( $_POST['thisismyurl_shadow_event_timezone'] ) ? sanitize_text_field( wp_unslash( $_POST['thisismyurl_shadow_event_timezone'] ) ) : 'America/Toronto';
 		$venue          = isset( $_POST['thisismyurl_shadow_event_venue'] ) ? sanitize_text_field( wp_unslash( $_POST['thisismyurl_shadow_event_venue'] ) ) : '';

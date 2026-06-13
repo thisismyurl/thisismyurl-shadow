@@ -310,7 +310,7 @@ class Treatment_Hooks {
 			return; // Safety: no token configured → no gate.
 		}
 
-		$supplied = isset( $_GET['wpstoken'] ) ? sanitize_key( (string) $_GET['wpstoken'] ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		$supplied = isset( $_GET['wpstoken'] ) ? sanitize_key( wp_unslash( $_GET['wpstoken'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only login-URL token gate compared with hash_equals().
 
 		if ( ! hash_equals( $token, $supplied ) ) {
 			wp_safe_redirect( home_url( '/' ), 302 );

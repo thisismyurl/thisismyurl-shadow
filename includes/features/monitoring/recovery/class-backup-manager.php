@@ -921,7 +921,7 @@ class Backup_Manager {
 		$uploads_basedir = self::get_uploads_basedir();
 		$themes_root     = function_exists( 'get_theme_root' ) ? get_theme_root() : WP_CONTENT_DIR . '/themes';
 		$mu_plugins_dir  = defined( 'WPMU_PLUGIN_DIR' ) ? WPMU_PLUGIN_DIR : WP_CONTENT_DIR . '/mu-plugins';
-		$plugins_dir     = defined( 'WP_PLUGIN_DIR' ) ? WP_PLUGIN_DIR : WP_CONTENT_DIR . '/plugins';
+		$plugins_dir     = WP_PLUGIN_DIR;
 
 		$directory_targets = array(
 			$temp_dir . '/site-files/wp-content/plugins'    => $plugins_dir,
@@ -1311,7 +1311,8 @@ class Backup_Manager {
 			$statement .= $line;
 
 			if ( preg_match( '/;\s*$/', $trimmed ) ) {
-				$wpdb->query( $statement ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.PreparedSQL.NotPrepared
+				// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.PreparedSQL.NotPrepared -- Executes the plugin's own self-generated SQL dump during an admin-gated, nonce-verified, capability-checked restore. The full statement is read from the dump file; there are no bindable values to parameterize.
+				$wpdb->query( $statement );
 				if ( ! empty( $wpdb->last_error ) ) {
 					$success = false;
 					break;

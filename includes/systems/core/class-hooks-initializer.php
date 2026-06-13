@@ -51,6 +51,7 @@ class Hooks_Initializer {
 
 		// Menu and asset loading
 		add_action( 'admin_menu', array( __CLASS__, 'on_admin_menu' ) );
+		add_action( 'admin_enqueue_scripts', array( __CLASS__, 'enqueue_admin_accessibility_styles' ) );
 		add_action( 'admin_head', array( __CLASS__, 'on_admin_head' ) );
 
 		// Scheduled backups (Vault Lite)
@@ -404,8 +405,6 @@ class Hooks_Initializer {
 	 * @return void
 	 */
 	public static function on_admin_head() {
-		self::output_admin_accessibility_styles();
-
 		if ( ! function_exists( 'get_current_screen' ) ) {
 			return;
 		}
@@ -451,17 +450,42 @@ class Hooks_Initializer {
 	}
 
 	/**
-	 * Output optional admin accessibility styles.
+	 * Enqueue optional admin accessibility styles via an inline stylesheet.
 	 *
-	 * Applies reading and visibility preferences across WordPress admin screens
-	 * when enabled from the Christopher Ross Shadow Accessibility tab.
+	 * Registers a base handle and attaches the generated preference CSS with
+	 * wp_add_inline_style() so the output is enqueued through the styles API
+	 * rather than echoed directly into the admin head.
 	 *
-	 * @since 0.6095
+	 * @since 0.6149
 	 * @return void
 	 */
-	private static function output_admin_accessibility_styles(): void {
-		if ( ! is_admin() ) {
+	public static function enqueue_admin_accessibility_styles(): void {
+		$css = self::build_admin_accessibility_css();
+		if ( '' === $css ) {
 			return;
+		}
+
+		$handle = 'thisismyurl-shadow-admin-accessibility';
+		wp_register_style( $handle, false, array(), THISISMYURL_SHADOW_VERSION );
+		wp_enqueue_style( $handle );
+		wp_add_inline_style( $handle, $css );
+	}
+
+	/**
+	 * Build optional admin accessibility CSS from saved preferences.
+	 *
+	 * Applies reading and visibility preferences across WordPress admin screens
+	 * when enabled from the Christopher Ross Shadow Accessibility tab. Every
+	 * interpolated value is derived from a controlled source — sanitize_key'd
+	 * enums, a clamped number_format'd scale, and hardcoded literals — so the
+	 * result cannot break out of the inline style context.
+	 *
+	 * @since 0.6095
+	 * @return string Generated CSS, or an empty string when no preference is active.
+	 */
+	private static function build_admin_accessibility_css(): string {
+		if ( ! is_admin() ) {
+			return '';
 		}
 
 		$admin_font      = sanitize_key( (string) get_option( 'thisismyurl_shadow_admin_font_family', 'default' ) );
@@ -515,10 +539,10 @@ class Hooks_Initializer {
 		}
 
 		if ( '' === trim( $css ) ) {
-			return;
+			return '';
 		}
 
-		echo "<style id='thisismyurl-shadow-admin-accessibility-styles'>\n{$css}</style>"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- CSS is generated from sanitized internal values.
+		return $css;
 	}
 
 	/**

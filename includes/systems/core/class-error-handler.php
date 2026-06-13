@@ -98,7 +98,7 @@ class Error_Handler {
 			return true;
 		}
 
-		$accept = isset( $_SERVER['HTTP_ACCEPT'] ) ? strtolower( trim( (string) wp_unslash( $_SERVER['HTTP_ACCEPT'] ) ) ) : '';
+		$accept = isset( $_SERVER['HTTP_ACCEPT'] ) ? strtolower( sanitize_text_field( wp_unslash( $_SERVER['HTTP_ACCEPT'] ) ) ) : '';
 		return '' !== $accept && false === strpos( $accept, 'text/html' );
 	}
 

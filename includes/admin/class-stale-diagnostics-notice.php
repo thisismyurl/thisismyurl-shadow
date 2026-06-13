@@ -85,7 +85,9 @@ class Stale_Diagnostics_Notice {
 		$last_run     = (int) get_option( 'thisismyurl_shadow_last_quick_checks', 0 );
 		$guardian_url = admin_url( 'admin.php?page=thisismyurl-shadow-guardian' );
 		$notice_nonce = wp_create_nonce( 'thisismyurl_shadow_stale_diagnostics_nonce' );
-		$redirect_url = self::sanitize_redirect_target( (string) filter_input( INPUT_SERVER, 'REQUEST_URI', FILTER_UNSAFE_RAW ) );
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only redirect target, hardened by wp_validate_redirect().
+		$request_uri  = isset( $_SERVER['REQUEST_URI'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REQUEST_URI'] ) ) : '';
+		$redirect_url = self::sanitize_redirect_target( $request_uri );
 		$run_guardian = self::get_run_guardian_url( $redirect_url );
 
 		if ( 0 === $last_run ) {
@@ -167,7 +169,9 @@ class Stale_Diagnostics_Notice {
 			$run_error = 'scan_manager_missing';
 		}
 
-		$redirect = self::sanitize_redirect_target( (string) filter_input( INPUT_GET, 'redirect', FILTER_UNSAFE_RAW ) );
+		// Nonce verified above via check_admin_referer( 'thisismyurl_shadow_run_guardian' ); target hardened by wp_validate_redirect().
+		$redirect_raw = isset( $_GET['redirect'] ) ? sanitize_text_field( wp_unslash( $_GET['redirect'] ) ) : '';
+		$redirect     = self::sanitize_redirect_target( $redirect_raw );
 		if ( '' === $redirect ) {
 			$redirect = admin_url( 'admin.php?page=thisismyurl-shadow-guardian' );
 		}

@@ -303,7 +303,7 @@ class Scan_Frequency_Manager {
 		}
 
 		if ( function_exists( 'set_time_limit' ) ) {
-			set_time_limit( 120 ); // phpcs:ignore Squiz.PHP.DiscouragedFunctions.Discouraged -- Manual Guardian runs can exceed default local execution limits.
+			set_time_limit( 120 ); // phpcs:ignore Squiz.PHP.DiscouragedFunctions.Discouraged -- Scoped to the diagnostic-scan execution method; a full Guardian scan can exceed the default execution limit on some hosts.
 		}
 
 		$config  = self::get_scan_config();
