@@ -13,17 +13,22 @@ Local-first WordPress diagnostics and safer fixes, with file review before risky
 
 == Description ==
 
-Most WordPress site owners do not know what is broken until something fails in production. Shadow by Christopher Ross surfaces the problems early — health, security, performance, and accessibility — and gives you a calm path to fix them without sending your site data to a cloud service.
+Most WordPress site owners do not know what is broken until something fails in production. Shadow by Christopher Ross surfaces the problems early — health, security, performance, and accessibility — and gives you a calm path to fix them.
 
-This first public release is a beta focused on the core plugin experience:
+What makes Shadow different:
+
+* **Local-first.** Everything runs on your own server. No cloud account, no registration; your site data never leaves your site.
+* **Review before it writes.** Risky changes are shown to you first — you see the exact change before it is made.
+* **Reversible.** Treatments apply with undo support, so a fix you do not like can be rolled back.
+* **Plain-English, accessibility-first.** Findings are explained in language you can act on.
+
+This first public release includes:
 
 * 230 display-ready diagnostics across 11 categories
-* 101 executable treatment classes in the remediation layer
-* 93 automated treatment entries and 8 guidance-only treatment entries
+* 101 treatment classes in the remediation layer (93 automated, 8 guidance-only)
 * dashboard views for findings, trends, and status
 * file-write review for risky changes
 * WordPress Site Health integration
-* accessibility-first, plain-English guidance
 
 Shadow by Christopher Ross runs locally and does not require registration or a cloud account.
 
@@ -36,13 +41,13 @@ Shadow by Christopher Ross runs locally and does not require registration or a c
 
 == Frequently Asked Questions ==
 
-= Is this a beta release? =
+= Is it safe to use on a production site? =
 
-Yes. This is the first public beta release of Shadow by Christopher Ross. The beta is intended for real-world use and feedback while the team continues to polish workflows, copy, and recovery paths.
+Yes. Diagnostics only read your site; they change nothing. Any change a treatment makes is shown to you first and can be undone. This is the first public release and is actively developed — the review-and-undo model is designed to keep you in control on a live site.
 
 = Does Shadow by Christopher Ross require an account or cloud service? =
 
-No. Shadow by Christopher Ross runs locally. The current public beta does not require registration, a paid plan, or a cloud connection.
+No. Shadow by Christopher Ross runs locally and does not require registration, a paid plan, or a cloud connection.
 
 = What kinds of issues does it check? =
 
@@ -54,7 +59,7 @@ Some fixes can be applied through the treatment system. Lower-risk changes can b
 
 = Does it support multisite? =
 
-Shadow by Christopher Ross includes multisite-aware admin behavior and capability handling. As with any beta, multisite administrators should test changes carefully before wide rollout.
+Shadow by Christopher Ross includes multisite-aware admin behavior and capability handling. Multisite administrators should test changes on a staging site before a wide rollout.
 
 = Is accessibility taken seriously? =
 
@@ -111,7 +116,7 @@ Shadow by Christopher Ross is local-first and does not send your site data to an
 * Tightened `.distignore` so the WordPress.org zip excludes `.git/`, `.gitattributes`, `.github/`, `tests/`, `docs/`, `vendor/`, `composer.*`, and the GitHub release updater.
 
 = 0.6095 =
-* First public beta release.
+* First public release of Shadow by Christopher Ross.
 * Aligned public documentation with the current plugin scope and philosophy.
 * Refined diagnostics, treatment, file-review, and recovery messaging for public release.
 * Continued hardening of core safety boundaries and admin workflows.

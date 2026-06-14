@@ -819,14 +819,15 @@ if ( ! $confirmed ) {
 }
 ```
 
-**2. Automatic Backups (Knowledge Protection):**
+**2. Reversible Changes (Knowledge Protection):**
 ```php
-// ✅ Before file modifications
-Backup_Manager::create_backup( array(
-    'files' => array( '.htaccess', 'wp-config.php' ),
-    'reason' => 'Security treatment: SSL redirect',
-    'automatic_restore' => true, // Restore if treatment fails
-) );
+// ✅ Before modifying wp-config.php, snapshot the original so undo() can restore it
+update_option(
+    self::BACKUP_OPTION,
+    base64_encode( $original_contents ), // reversible snapshot, not obfuscation
+    false                                // do not autoload
+);
+// Each treatment's undo() decodes this snapshot and restores the file.
 ```
 
 **3. Secure Input Handling (Malicious Protection):**
