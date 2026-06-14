@@ -137,6 +137,36 @@ We do claim that accessibility and disability inclusion are real priorities, and
 
 ---
 
+## Manual Verification Log
+
+The admin-screen accessibility fixes in 1.6165 were implemented and reviewed at
+the **code level** by an accessibility specialist (WCAG 2.2 AA). The items below
+require a **live assistive-technology pass** to be certified — automated and code
+review cannot substitute for them. Until a row is signed off with a date and
+tester, treat it as **unverified**.
+
+> Status legend: ⬜ PENDING (not yet run) · ✅ PASS · ❌ FAIL (with fix note)
+
+| # | Check | Surface | Tool / AT | Status | Date | Tester | Notes |
+|---|-------|---------|-----------|--------|------|--------|-------|
+| 1 | Visible keyboard-focus indicator on tabs and the resolution card header | Settings, Resolution | NVDA + Firefox, keyboard-only | ⬜ PENDING | | | |
+| 2 | Live-region announcements fire per action (assertive Run Fix, polite elsewhere) | Dashboard, Settings, File-write | NVDA (browse + forms) | ⬜ PENDING | | | |
+| 3 | Focus restored to the affected card after a Resolution-Centre reload | Resolution | NVDA + Firefox, keyboard | ⬜ PENDING | | | |
+| 4 | Focus restored to `#wps-detail-heading` after a Guardian treatment reload | Dashboard detail | NVDA + Firefox | ⬜ PENDING | | | |
+| 5 | Admin-notice dismiss moves focus off the vanishing control | Any admin notice | NVDA, keyboard-only | ⬜ PENDING | | | |
+| 6 | Attention table announces its caption; confirm no missing `<th>` columns | Dashboard | NVDA table nav | ⬜ PENDING | | | |
+| 7 | `aria-current="page"` announces on the active tab; inactive tabs silent | Settings | VoiceOver + Safari | ⬜ PENDING | | | |
+| 8 | Gauges, status colours, and glyphs legible in Windows High Contrast Mode | Dashboard | `forced-colors: active` | ⬜ PENDING | | | |
+| 9 | `wps-res-feedback-msg` polite region announces once (no double-read) | Resolution | NVDA | ⬜ PENDING | | | |
+| 10 | Error messages announce via the live region (old `alert()` is gone) | Resolution | NVDA, keyboard-only | ⬜ PENDING | | | |
+| 11 | Automated audit: no critical/serious violations | All 4 admin screens | axe DevTools + Lighthouse | ⬜ PENDING | | | |
+
+When every row is ✅ with a date, add a one-line summary at the top of this
+section, e.g. *"Certified against NVDA 2025.x + Firefox, VoiceOver + Safari, and
+keyboard-only on YYYY-MM-DD."*
+
+---
+
 ## Related Documents
 
 - [`CORE_PHILOSOPHY.md`](CORE_PHILOSOPHY.md)

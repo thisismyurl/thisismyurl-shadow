@@ -5,7 +5,7 @@ Tags: diagnostics, site-health, security, performance, site-audit
 Requires at least: 6.4
 Requires PHP: 8.1
 Tested up to: 7.0
-Stable tag: 1.6147
+Stable tag: 1.6165
 License: GPL v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -84,6 +84,15 @@ Shadow by Christopher Ross is local-first and does not send your site data to an
 3. Treatment and file review workflows
 
 == Changelog ==
+
+= 1.6165 =
+* Hardened input sanitization, output escaping, and database queries across the plugin in response to the WordPress.org review.
+* Removed the self-hosted update bridge; updates are handled through WordPress.org.
+* Added clean-up of all scheduled events on deactivation.
+* Accessibility pass on the admin screens: visible keyboard focus, screen-reader announcements for actions, native buttons, stronger colour contrast, and focus management after page changes.
+* Added a developer reference for the plugin's actions and filters (HOOKS.md) and included it in the distribution.
+* Internal clean-up: removed leftover code from the retired backup feature and reduced the plugin's options footprint.
+* Refreshed the readme to lead with what makes the plugin different (local-first, review-before-write, reversible).
 
 = 1.6147 =
 * Removed the local backup and restore feature; backup and restore are not part of this plugin and are handled by a separate, dedicated plugin.
