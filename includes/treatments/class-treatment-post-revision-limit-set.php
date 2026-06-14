@@ -33,7 +33,7 @@ class Treatment_Post_Revision_Limit_Set extends Treatment_Base {
 	protected static $slug = 'post-revision-limit-set';
 
 	/** The define line inserted by this treatment. */
-	private const DEFINE_LINE = "define( 'WP_POST_REVISIONS', 5 ); // Added by Christopher Ross Shadow";
+	private const DEFINE_LINE = "define( 'WP_POST_REVISIONS', 5 ); // Added by Shadow by Christopher Ross";
 
 	/** Markers wrapping the inserted block. */
 	private const MARKER_START = '// BEGIN This Is My URL Shadow WP_POST_REVISIONS';
@@ -83,7 +83,7 @@ class Treatment_Post_Revision_Limit_Set extends Treatment_Base {
 		if ( strpos( $original, self::MARKER_START ) !== false ) {
 			return array(
 				'success' => true,
-				'message' => __( 'WP_POST_REVISIONS was already added by Christopher Ross Shadow.', 'thisismyurl-shadow' ),
+				'message' => __( 'WP_POST_REVISIONS was already added by Shadow by Christopher Ross.', 'thisismyurl-shadow' ),
 			);
 		}
 

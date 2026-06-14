@@ -5,7 +5,7 @@
  * Checks whether automatic plugin updates are enabled to ensure security
  * patches are applied promptly without requiring manual action.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

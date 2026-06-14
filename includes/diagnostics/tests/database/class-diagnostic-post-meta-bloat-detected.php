@@ -6,7 +6,7 @@
  * disproportionate to the number of published posts. A high ratio usually
  * indicates orphaned or abandoned plugin data.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

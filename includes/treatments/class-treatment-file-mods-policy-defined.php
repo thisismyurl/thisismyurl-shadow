@@ -14,7 +14,7 @@
  * does NOT block plugin/theme installs or auto-updates (use DISALLOW_FILE_MODS
  * for that broader restriction, which should be a separate, explicit choice).
  *
- * Undo: removes the Christopher Ross Shadow-inserted define from wp-config.php and restores
+ * Undo: removes the Shadow by Christopher Ross-inserted define from wp-config.php and restores
  * the site to its previous configuration.
  *
  * @package ThisIsMyURL\Shadow
@@ -44,7 +44,7 @@ class Treatment_File_Mods_Policy_Defined extends Treatment_Base {
 	/**
 	 * The define snippet inserted by this treatment.
 	 */
-	private const DEFINE_LINE = "define( 'DISALLOW_FILE_EDIT', true ); // Added by Christopher Ross Shadow";
+	private const DEFINE_LINE = "define( 'DISALLOW_FILE_EDIT', true ); // Added by Shadow by Christopher Ross";
 
 	/**
 	 * Marker comments wrapping the inserted block for reliable removal.
@@ -93,7 +93,7 @@ class Treatment_File_Mods_Policy_Defined extends Treatment_Base {
 		if ( strpos( $original, self::MARKER_START ) !== false ) {
 			return array(
 				'success' => true,
-				'message' => __( 'DISALLOW_FILE_EDIT was already added by Christopher Ross Shadow.', 'thisismyurl-shadow' ),
+				'message' => __( 'DISALLOW_FILE_EDIT was already added by Shadow by Christopher Ross.', 'thisismyurl-shadow' ),
 			);
 		}
 
@@ -130,7 +130,7 @@ class Treatment_File_Mods_Policy_Defined extends Treatment_Base {
 	}
 
 	/**
-	 * Remove the Christopher Ross Shadow-inserted DISALLOW_FILE_EDIT block from wp-config.php.
+	 * Remove the Shadow by Christopher Ross-inserted DISALLOW_FILE_EDIT block from wp-config.php.
 	 *
 	 * Falls back to the stored backup if the marker block cannot be found.
 	 *
@@ -155,7 +155,7 @@ class Treatment_File_Mods_Policy_Defined extends Treatment_Base {
 			);
 		}
 
-		// Remove the Christopher Ross Shadow marker block.
+		// Remove the Shadow by Christopher Ross marker block.
 		$pattern  = '/' . preg_quote( PHP_EOL . self::MARKER_START, '/' ) . '.*?' . preg_quote( self::MARKER_END . PHP_EOL, '/' ) . '/s';
 		$modified = preg_replace( $pattern, '', $current );
 

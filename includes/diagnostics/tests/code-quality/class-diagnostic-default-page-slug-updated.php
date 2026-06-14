@@ -5,7 +5,7 @@
  * Checks whether the "Sample Page" that ships with WordPress has been reused
  * as real content without updating its original slug or title.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

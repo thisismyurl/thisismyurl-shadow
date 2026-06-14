@@ -15,7 +15,7 @@
  * - Commandment #12: Expandable (easy for developers to extend)
  * - DRY: Zero repetitive add_action() calls
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Core
  * @since 0.6095
  */

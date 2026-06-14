@@ -6,7 +6,7 @@
  * over WordPress transients. Improves cache performance by 5-10x when
  * object cache is available.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Core
  * @since 0.6095
  */
@@ -38,7 +38,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Cache_Manager {
 
 	/**
-	 * Default cache group for Christopher Ross Shadow
+	 * Default cache group for Shadow by Christopher Ross
 	 *
 	 * @var string
 	 */
@@ -171,9 +171,9 @@ class Cache_Manager {
 	}
 
 	/**
-	 * Clear all Christopher Ross Shadow cache
+	 * Clear all Shadow by Christopher Ross cache
 	 *
-	 * Flushes all Christopher Ross Shadow-related cache entries from both
+	 * Flushes all Shadow by Christopher Ross-related cache entries from both
 	 * object cache and transients.
 	 *
 	 * @since 0.6095
@@ -199,7 +199,7 @@ class Cache_Manager {
 		 * database scan.
 		 *
 		 * A single prefix delete against wp_options is therefore the most accurate and least fragile
-		 * way to clear only Christopher Ross Shadow-owned transient rows when no object-cache registry exists.
+		 * way to clear only Shadow by Christopher Ross-owned transient rows when no object-cache registry exists.
 		 */
 
 		// Delete all transients matching pattern

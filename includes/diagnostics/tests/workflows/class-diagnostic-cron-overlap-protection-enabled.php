@@ -6,7 +6,7 @@
  * crashed cron process is blocking all future scheduled task execution. A lock
  * older than 10 minutes is treated as stale.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

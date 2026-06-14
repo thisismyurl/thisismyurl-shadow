@@ -5,7 +5,7 @@
  * Checks whether the category taxonomy is organized and free of empty or
  * near-empty categories that fragment crawl budget and dilute site structure.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

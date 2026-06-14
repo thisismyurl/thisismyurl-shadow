@@ -5,7 +5,7 @@
  * Checks whether a WordPress core update is available and flags sites running
  * an outdated version that may contain known security vulnerabilities.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

@@ -10,7 +10,7 @@
  * without curl. Surfacing missing extensions early prevents hours of
  * debugging after a site goes live.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

@@ -5,7 +5,7 @@
  * Checks that a recognised cookie consent or GDPR compliance plugin is installed
  * and active, as required for sites serving EU and international visitors.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

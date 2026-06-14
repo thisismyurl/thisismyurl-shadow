@@ -105,7 +105,7 @@ if ( ! function_exists( 'thisismyurl_shadow_run_diagnostic' ) ) {
 		$class_name = thisismyurl_shadow_resolve_diagnostic_class( $diagnostic_id );
 
 		/**
-		 * Filter a single diagnostic run before Christopher Ross Shadow executes the default flow.
+		 * Filter a single diagnostic run before Shadow by Christopher Ross executes the default flow.
 		 *
 		 * Return a result array to short-circuit execution.
 		 *
@@ -201,7 +201,7 @@ if ( ! function_exists( 'thisismyurl_shadow_run_diagnostic_scan' ) ) {
 	 */
 	function thisismyurl_shadow_run_diagnostic_scan( bool $force_diagnostics = false ): array {
 		/**
-		 * Filter a full scan before Christopher Ross Shadow executes the default flow.
+		 * Filter a full scan before Shadow by Christopher Ross executes the default flow.
 		 *
 		 * Return a result array to short-circuit execution.
 		 *
@@ -318,7 +318,7 @@ if ( ! function_exists( 'thisismyurl_shadow_get_readiness_inventory' ) ) {
 	 */
 	function thisismyurl_shadow_get_readiness_inventory(): array {
 		/**
-		 * Filter readiness inventory before Christopher Ross Shadow builds the default payload.
+		 * Filter readiness inventory before Shadow by Christopher Ross builds the default payload.
 		 *
 		 * Return an array to short-circuit execution.
 		 *
@@ -340,7 +340,7 @@ if ( ! function_exists( 'thisismyurl_shadow_get_readiness_inventory' ) ) {
 		}
 
 		/**
-		 * Fires after Christopher Ross Shadow builds the readiness inventory.
+		 * Fires after Shadow by Christopher Ross builds the readiness inventory.
 		 *
 		 * @param array<string,mixed> $inventory Inventory payload.
 		 */

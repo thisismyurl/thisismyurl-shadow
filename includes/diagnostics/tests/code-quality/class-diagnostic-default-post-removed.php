@@ -5,7 +5,7 @@
  * Checks whether the "Hello world!" sample post that WordPress installs
  * on every new site has been removed or replaced with intentional content.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

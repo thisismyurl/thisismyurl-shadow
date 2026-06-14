@@ -1,15 +1,15 @@
 <?php
 
 /**
- * Register Christopher Ross Shadow findings as native WordPress Site Health tests.
+ * Register Shadow by Christopher Ross findings as native WordPress Site Health tests.
  *
- * This file adapts Christopher Ross Shadow's stored diagnostic findings into the structure
+ * This file adapts Shadow's stored diagnostic findings into the structure
  * expected by WordPress Site Health. That integration matters because many
  * site owners and developers already use Tools > Site Health as their first
  * troubleshooting stop. Surfacing findings there makes the plugin feel like a
  * good WordPress citizen instead of a separate reporting silo.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Admin
  */
 
@@ -52,10 +52,10 @@ add_action( 'admin_init', 'thisismyurl_shadow_register_diagnostic_site_health_te
 // All functionality is now in thisismyurl_shadow_register_diagnostic_site_health_tests
 
 /**
- * Register stored Christopher Ross Shadow findings as direct Site Health tests.
+ * Register stored Shadow by Christopher Ross findings as direct Site Health tests.
  *
  * Each finding becomes its own test entry so WordPress can display a separate
- * row, status, and "View in Christopher Ross Shadow" action. This is intentionally done with
+ * row, status, and "View in Shadow by Christopher Ross" action. This is intentionally done with
  * a filter callback rather than by writing to Site Health internals directly,
  * because the filter API is the stable extension point WordPress provides.
  *
@@ -78,7 +78,7 @@ function thisismyurl_shadow_register_diagnostic_site_health_tests() {
 	}
 
 	$badge = array(
-		'label' => 'Christopher Ross Shadow',
+		'label' => 'Shadow by Christopher Ross',
 		'color' => 'blue',
 	);
 
@@ -108,16 +108,16 @@ function thisismyurl_shadow_register_diagnostic_site_health_tests() {
 }
 
 /**
- * Build the Site Health result array for one Christopher Ross Shadow finding.
+ * Build the Site Health result array for one Shadow by Christopher Ross finding.
  *
  * Site Health expects a specific array contract containing the label, status,
  * badge metadata, description, actions, and an internal test identifier. This
- * helper translates Christopher Ross Shadow's more flexible finding payload into that schema
+ * helper translates Shadow's more flexible finding payload into that schema
  * and normalizes severity values that may be stored as either strings such as
  * "high" or numbers such as a 0-100 threat score.
  *
  * @since  0.6095
- * @param  string               $diagnostic_id Christopher Ross Shadow finding identifier.
+ * @param  string               $diagnostic_id Shadow by Christopher Ross finding identifier.
  * @param  array<string,mixed>  $finding_data  Stored finding payload.
  * @param  array<string,string> $badge         Site Health badge definition.
  * @param  string               $test_id       Unique Site Health test ID.
@@ -126,7 +126,7 @@ function thisismyurl_shadow_register_diagnostic_site_health_tests() {
 function thisismyurl_shadow_generate_diagnostic_site_health_result( $diagnostic_id, $finding_data, $badge, $test_id ) {
 	$action_url  = admin_url( 'admin.php?page=thisismyurl-shadow' );
 	$title       = isset( $finding_data['title'] ) ? $finding_data['title'] : $diagnostic_id;
-	$description = isset( $finding_data['description'] ) ? $finding_data['description'] : __( 'Christopher Ross Shadow has detected an issue.', 'thisismyurl-shadow' );
+	$description = isset( $finding_data['description'] ) ? $finding_data['description'] : __( 'Shadow by Christopher Ross has detected an issue.', 'thisismyurl-shadow' );
 
 	// Get severity - can be string (high/medium/low) or numeric (0-100)
 	$severity = isset( $finding_data['severity'] ) ? $finding_data['severity'] : 'medium';
@@ -170,7 +170,7 @@ function thisismyurl_shadow_generate_diagnostic_site_health_result( $diagnostic_
 			sprintf(
 				'<a href="%s">%s</a>',
 				esc_url( $action_url . '#' . sanitize_title_with_dashes( $diagnostic_id ) ),
-				esc_html__( 'View in Christopher Ross Shadow', 'thisismyurl-shadow' )
+				esc_html__( 'View in Shadow by Christopher Ross', 'thisismyurl-shadow' )
 			),
 		),
 		'test'        => $test_id,

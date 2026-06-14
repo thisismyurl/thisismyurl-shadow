@@ -87,7 +87,7 @@ class Ajax_File_Write_Apply extends AJAX_Handler_Base {
 		$filesystem_method = (string) get_filesystem_method( array(), $file_path );
 		if ( 'direct' !== $filesystem_method ) {
 			self::send_error(
-				__( 'Christopher Ross Shadow beta only applies file changes when WordPress has direct filesystem access. This file needs to be updated manually with your host file manager or SFTP workflow.', 'thisismyurl-shadow' )
+				__( 'Shadow by Christopher Ross beta only applies file changes when WordPress has direct filesystem access. This file needs to be updated manually with your host file manager or SFTP workflow.', 'thisismyurl-shadow' )
 			);
 		}
 

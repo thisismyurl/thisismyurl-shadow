@@ -5,7 +5,7 @@
  * Checks whether an HTTPS site is serving any mixed content (HTTP assets),
  * which triggers browser security warnings and degrades trust.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */
@@ -98,7 +98,7 @@ class Diagnostic_Mixed_Content_Eliminated extends Diagnostic_Base {
 		// Scan homepage HTML for asset src/href with http:// pointing to this domain.
 		$result = Diagnostic_Request_Helper::get_result( $home_url, array(
 			'timeout'    => 7,
-			'user-agent' => 'Christopher Ross Shadow-Diagnostic/1.0',
+			'user-agent' => 'Shadow by Christopher Ross-Diagnostic/1.0',
 		) );
 
 		if ( empty( $result['success'] ) || empty( $result['response'] ) || ! is_array( $result['response'] ) ) {

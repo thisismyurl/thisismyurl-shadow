@@ -13,7 +13,7 @@ Local-first WordPress diagnostics and safer fixes, with file review before risky
 
 == Description ==
 
-Most WordPress site owners do not know what is broken until something fails in production. Christopher Ross Shadow surfaces the problems early — health, security, performance, and accessibility — and gives you a calm path to fix them without sending your site data to a cloud service.
+Most WordPress site owners do not know what is broken until something fails in production. Shadow by Christopher Ross surfaces the problems early — health, security, performance, and accessibility — and gives you a calm path to fix them without sending your site data to a cloud service.
 
 This first public release is a beta focused on the core plugin experience:
 
@@ -25,28 +25,28 @@ This first public release is a beta focused on the core plugin experience:
 * WordPress Site Health integration
 * accessibility-first, plain-English guidance
 
-Christopher Ross Shadow runs locally and does not require registration or a cloud account.
+Shadow by Christopher Ross runs locally and does not require registration or a cloud account.
 
 == Installation ==
 
 1. Upload the plugin files to the `/wp-content/plugins/thisismyurl-shadow/` directory, or install the plugin through WordPress.
 2. Activate the plugin through the Plugins screen in WordPress.
-3. Open the Christopher Ross Shadow dashboard from the WordPress admin menu.
+3. Open the Shadow by Christopher Ross dashboard from the WordPress admin menu.
 4. Review findings and apply safe fixes where appropriate.
 
 == Frequently Asked Questions ==
 
 = Is this a beta release? =
 
-Yes. This is the first public beta release of Christopher Ross Shadow. The beta is intended for real-world use and feedback while the team continues to polish workflows, copy, and recovery paths.
+Yes. This is the first public beta release of Shadow by Christopher Ross. The beta is intended for real-world use and feedback while the team continues to polish workflows, copy, and recovery paths.
 
-= Does Christopher Ross Shadow require an account or cloud service? =
+= Does Shadow by Christopher Ross require an account or cloud service? =
 
-No. Christopher Ross Shadow runs locally. The current public beta does not require registration, a paid plan, or a cloud connection.
+No. Shadow by Christopher Ross runs locally. The current public beta does not require registration, a paid plan, or a cloud connection.
 
 = What kinds of issues does it check? =
 
-Christopher Ross Shadow includes diagnostics across accessibility, code quality, database health, design, monitoring, performance, security, SEO, settings, WordPress health, and workflows.
+Shadow by Christopher Ross includes diagnostics across accessibility, code quality, database health, design, monitoring, performance, security, SEO, settings, WordPress health, and workflows.
 
 = Does it make changes automatically? =
 
@@ -54,11 +54,11 @@ Some fixes can be applied through the treatment system. Lower-risk changes can b
 
 = Does it support multisite? =
 
-Christopher Ross Shadow includes multisite-aware admin behavior and capability handling. As with any beta, multisite administrators should test changes carefully before wide rollout.
+Shadow by Christopher Ross includes multisite-aware admin behavior and capability handling. As with any beta, multisite administrators should test changes carefully before wide rollout.
 
 = Is accessibility taken seriously? =
 
-Yes. Christopher Ross Shadow is built around clearer language, keyboard-friendly workflows, screen-reader-aware structure, and lower-stress recovery paths. Accessibility issues should be treated as product bugs, not polish.
+Yes. Shadow by Christopher Ross is built around clearer language, keyboard-friendly workflows, screen-reader-aware structure, and lower-stress recovery paths. Accessibility issues should be treated as product bugs, not polish.
 
 = Does it send my data to third parties? =
 
@@ -66,7 +66,7 @@ Not by default. The plugin is local-first. Optional future services, if introduc
 
 == External services ==
 
-Christopher Ross Shadow is local-first and does not send your site data to any third party. Two behaviours involve outbound HTTP requests, and both are disclosed here for transparency.
+Shadow by Christopher Ross is local-first and does not send your site data to any third party. Two behaviours involve outbound HTTP requests, and both are disclosed here for transparency.
 
 1. Self-directed diagnostics (loopback requests to your own site). Several performance and security diagnostics request your own site's URLs — derived from `home_url()` and the REST API URL — to inspect how your server actually responds. These checks cover things such as caching and compression headers, HTTP/2 support, mixed-content references, and directory-listing exposure. The requests go only to your own domain; no data is sent to any external service.
 
@@ -74,7 +74,7 @@ Christopher Ross Shadow is local-first and does not send your site data to any t
 
 == Screenshots ==
 
-1. Christopher Ross Shadow dashboard overview
+1. Shadow by Christopher Ross dashboard overview
 2. Diagnostics inventory and findings views
 3. Treatment and file review workflows
 
@@ -99,10 +99,10 @@ Christopher Ross Shadow is local-first and does not send your site data to any t
 * Tag list updated for stronger discovery intent on WordPress.org search.
 
 = 0.6124 =
-* Cleanup pass for the WPShadow → Christopher Ross Shadow rename: CSS classes, DOM IDs, dashboard JS globals, asset filenames, admin notice classes, GitHub workflow paths, repo slug for the GitHub release updater, and supporting documentation now all use the `thisismyurl-shadow` brand. Legacy on-disk backup directory and filename prefixes are preserved with `TODO(rename-v2)` markers so existing user backups remain restorable across upgrade.
+* Cleanup pass for the WPShadow → Shadow by Christopher Ross rename: CSS classes, DOM IDs, dashboard JS globals, asset filenames, admin notice classes, GitHub workflow paths, repo slug for the GitHub release updater, and supporting documentation now all use the `thisismyurl-shadow` brand. Legacy on-disk backup directory and filename prefixes are preserved with `TODO(rename-v2)` markers so existing user backups remain restorable across upgrade.
 
 = 0.6123 =
-* Renamed plugin from "WPShadow" to "Christopher Ross Shadow" for the WordPress.org submission. Slug is now `thisismyurl-shadow`.
+* Renamed plugin from "WPShadow" to "Shadow by Christopher Ross" for the WordPress.org submission. Slug is now `thisismyurl-shadow`.
 * Removed `error_reporting()` / `ini_set()` overrides from global init; PHP error reporting is now left to WordPress and the host.
 * Removed global `define( 'DONOTCACHEPAGE', true )`. Cache-suppression now lives in a helper that only runs inside specific stateful render callbacks.
 * Replaced `WP_CONTENT_DIR . '/uploads'` (and similar) with `wp_upload_dir()`, `WP_PLUGIN_DIR`, `WPMU_PLUGIN_DIR`, and `get_theme_root()`.

@@ -1,6 +1,6 @@
-# Christopher Ross Shadow Development Milestones
+# Shadow Development Milestones
 
-**Project:** Christopher Ross Shadow Core Plugin
+**Project:** Shadow Core Plugin
 **Last Updated:** April 5, 2026
 **Maintained By:** [@thisismyurl](https://github.com/thisismyurl)
 
@@ -10,7 +10,7 @@
 
 ## Overview
 
-Christopher Ross Shadow follows a **monthly release cycle** where practical. Each release is tied to specific development phases.
+Shadow by Christopher Ross follows a **monthly release cycle** where practical. Each release is tied to specific development phases.
 
 **Version Format:** `1.Yddd` (Year digit + Julian day in Toronto time)
 

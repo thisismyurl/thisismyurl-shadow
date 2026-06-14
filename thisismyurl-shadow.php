@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * These are intentionally declared in the main plugin file because they are
  * needed before the autoloader and service bootstrap can resolve any classes.
  * In practice they form the contract between WordPress' plugin loader and the
- * rest of the Christopher Ross Shadow codebase.
+ * rest of the Shadow by Christopher Ross codebase.
  */
 define( 'THISISMYURL_SHADOW_VERSION', '1.6147' );
 define( 'THISISMYURL_SHADOW_FILE', __FILE__ );
@@ -47,7 +47,7 @@ if ( file_exists( THISISMYURL_SHADOW_PATH . 'vendor/autoload.php' ) ) {
 /**
  * Bootstrap Autoloader
  *
- * Automatically loads all Christopher Ross Shadow classes in dependency order.
+ * Automatically loads all Shadow by Christopher Ross classes in dependency order.
  * Replaces 130+ manual require_once calls.
  *
  * Phase 4: Bootstrap Consolidation - eliminates manual loading.

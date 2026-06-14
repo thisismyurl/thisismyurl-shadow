@@ -7,7 +7,7 @@
  * diagnostic tests need. All methods are side-effect-free and safe to
  * call repeatedly within a single request.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics\Helpers
  * @since      0.6095
  */

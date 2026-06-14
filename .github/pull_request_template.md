@@ -5,7 +5,7 @@ What does this PR change?
 What user problem or maintenance problem does it solve?
 
 ## Philosophy check
-Please confirm the change aligns with Christopher Ross Shadow's approach:
+Please confirm the change aligns with Shadow's approach:
 
 - [ ] Helpful Neighbor: clearer, more useful, less confusing
 - [ ] Advice Not Sales: no manipulative or fear-based copy

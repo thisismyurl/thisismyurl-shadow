@@ -5,7 +5,7 @@
  * Checks whether a recognised page-caching plugin is active or the WP_CACHE
  * constant has been set, ensuring pages are served from cache.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

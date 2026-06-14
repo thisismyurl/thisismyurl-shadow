@@ -5,7 +5,7 @@
  * Checks whether the date and time display formats match the convention expected
  * by the site's locale, preventing mismatched date formatting for non-US sites.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

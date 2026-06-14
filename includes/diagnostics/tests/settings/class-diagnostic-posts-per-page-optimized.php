@@ -6,7 +6,7 @@
  * range. Very high values load excessive content on a single page, degrading
  * performance; very low values bury content and hurt crawlability.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

@@ -5,7 +5,7 @@
  * Scans for conditions that could leak database credentials or connection
  * details to the public, such as debug mode exposing error output.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

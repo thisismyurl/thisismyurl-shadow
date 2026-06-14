@@ -10,7 +10,7 @@
  * reverting to the pre-5.2 behaviour: a blank screen with no notification
  * and no recovery path short of FTP or server access.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

@@ -8,7 +8,7 @@
  * a static file that sits on disk. Vulnerability scanners actively request
  * /readme.html to fingerprint WordPress targets without needing to parse HTML.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */
@@ -88,7 +88,7 @@ class Diagnostic_Readme_Html_Protected extends Diagnostic_Base {
 			array(
 				'timeout'     => 7,
 				'redirection' => 0, // Do not follow redirects — a redirect means the file is not directly served.
-				'user-agent'  => 'Christopher Ross Shadow-Diagnostic/1.0',
+				'user-agent'  => 'Shadow by Christopher Ross-Diagnostic/1.0',
 				'sslverify'   => false,
 			)
 		);

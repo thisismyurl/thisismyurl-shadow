@@ -5,7 +5,7 @@
  * Creates necessary database indexes for performance optimization.
  * Improves query performance by 10-15% on indexed queries.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Core
  * @since 0.6095
  */
@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Database_Indexes Class
  *
- * Creates and manages database indexes for Christopher Ross Shadow tables.
+ * Creates and manages database indexes for Shadow by Christopher Ross tables.
  * Called during plugin activation/upgrade.
  *
  * @since 0.6095
@@ -37,7 +37,7 @@ class Database_Indexes {
 	 * @return void
 	 */
 	public static function create_all() {
-		// Christopher Ross Shadow now uses WordPress core tables and option/meta storage.
+		// Shadow by Christopher Ross now uses WordPress core tables and option/meta storage.
 		// No plugin-specific custom table indexes are required.
 		return;
 	}

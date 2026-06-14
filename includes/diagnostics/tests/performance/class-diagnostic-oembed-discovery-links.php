@@ -7,7 +7,7 @@
  * embedded by others — distinct from the wp-embed.js script that handles
  * embedding third-party content on your own site.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

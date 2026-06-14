@@ -7,7 +7,7 @@
  * indicates a plugin that is writing data to every post but has since been
  * removed, leaving behind large amounts of stale metadata.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

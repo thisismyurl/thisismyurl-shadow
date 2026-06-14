@@ -2,7 +2,7 @@
 /**
  * Treatment: Remove oEmbed Discovery Links
  *
- * Stores a Christopher Ross Shadow option that instructs the plugin bootstrap to call
+ * Stores a Shadow by Christopher Ross option that instructs the plugin bootstrap to call
  * remove_action( 'wp_head', 'wp_oembed_add_discovery_links' ) and
  * remove_action( 'wp_head', 'wp_oembed_add_host_js' ) on every request.
  * oEmbed embedding by third-party sites continues to work; only the

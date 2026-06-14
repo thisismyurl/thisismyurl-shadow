@@ -5,7 +5,7 @@
  * Checks whether inactive plugins remain installed, as deactivated plugins
  * still represent an attack surface through outdated or vulnerable code.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

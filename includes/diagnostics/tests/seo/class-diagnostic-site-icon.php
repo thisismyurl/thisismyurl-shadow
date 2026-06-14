@@ -5,7 +5,7 @@
  * Checks whether a site icon (favicon) has been configured in WordPress,
  * which appears in browser tabs, bookmarks, and search engine results.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

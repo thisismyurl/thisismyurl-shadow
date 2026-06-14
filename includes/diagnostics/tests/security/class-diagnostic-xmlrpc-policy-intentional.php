@@ -5,7 +5,7 @@
  * Checks whether XML-RPC is intentionally enabled, as an unmanaged
  * xmlrpc.php endpoint is a common vector for brute-force and amplification attacks.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

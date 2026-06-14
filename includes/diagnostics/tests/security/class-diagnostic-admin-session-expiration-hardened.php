@@ -5,7 +5,7 @@
  * Checks whether the authentication cookie lifetime for admin sessions has
  * been reduced from WordPress defaults to lower the risk of session hijack.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

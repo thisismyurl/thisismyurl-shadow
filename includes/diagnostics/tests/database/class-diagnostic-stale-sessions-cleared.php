@@ -7,7 +7,7 @@
  * wp_usermeta; WordPress should be expiring these automatically, but on busy
  * sites they can pile up and slow user-related queries.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

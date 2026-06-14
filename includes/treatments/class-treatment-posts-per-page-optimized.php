@@ -5,7 +5,7 @@
  * Sites with very high posts-per-page values generate heavy archive pages,
  * while very low values bury content and reduce crawl depth. This treatment
  * sets the WordPress posts_per_page option to 10, which sits in the middle of
- * Christopher Ross Shadow's recommended range for most sites.
+ * Shadow's recommended range for most sites.
  *
  * Undo: restores the previous posts_per_page value.
  *

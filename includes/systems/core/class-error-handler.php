@@ -138,11 +138,11 @@ class Error_Handler {
 	 */
 	public static function add_error_modal_script(): void {
 		?>
-		<!-- Christopher Ross Shadow Error Handler Modal -->
+		<!-- Shadow Error Handler Modal -->
 		<div id="thisismyurl-shadow-modal-overlay" class="thisismyurl-shadow-modal-overlay wps-none" role="dialog" aria-modal="true" aria-labelledby="thisismyurl-shadow-error-modal-title" aria-hidden="true" data-thisismyurl-shadow-modal="static" data-overlay-close="true" data-esc-close="true">
 			<div class="thisismyurl-shadow-modal wps-p-30-rounded-8" role="document">
 				<h2 id="thisismyurl-shadow-error-modal-title" style="margin-top: 0; color: #0073aa;">
-					<?php esc_html_e( 'How can Christopher Ross Shadow help?', 'thisismyurl-shadow' ); ?>
+					<?php esc_html_e( 'How can Shadow by Christopher Ross help?', 'thisismyurl-shadow' ); ?>
 				</h2>
 
 				<p style="line-height:1.0; color: #333;">
@@ -155,7 +155,7 @@ class Error_Handler {
 						<?php esc_html_e( '📊 Send Anonymous Report (Recommended)', 'thisismyurl-shadow' ); ?>
 					</h3>
 					<p class="wps-m-10">
-						<?php esc_html_e( 'Send error details to Christopher Ross Shadow for personalized suggestions. We collect:', 'thisismyurl-shadow' ); ?>
+						<?php esc_html_e( 'Send error details to Shadow by Christopher Ross for personalized suggestions. We collect:', 'thisismyurl-shadow' ); ?>
 					</p>
 					<ul class="wps-m-10">
 						<li><?php esc_html_e( 'Error message and location', 'thisismyurl-shadow' ); ?></li>
@@ -284,7 +284,7 @@ class Error_Handler {
 	}
 
 	/**
-	 * Enhance the error message with Christopher Ross Shadow help options
+	 * Enhance the error message with Shadow by Christopher Ross help options
 	 *
 	 * @param string $message Error message
 	 * @param array $error Error details
@@ -302,10 +302,10 @@ class Error_Handler {
 			'active_plugins' => array_values( array_map( 'plugin_basename', get_option( 'active_plugins', array() ) ) ),
 		);
 
-		// Add Christopher Ross Shadow help button and modal (only shown on actual errors)
+		// Add Shadow by Christopher Ross help button and modal (only shown on actual errors)
 		$help_section = '<div class="wps-p-15-rounded-4">' .
 			'<p class="wps-m-0">' .
-				esc_html__( 'For help resolving this issue, Christopher Ross Shadow can assist:', 'thisismyurl-shadow' ) .
+				esc_html__( 'For help resolving this issue, Shadow by Christopher Ross can assist:', 'thisismyurl-shadow' ) .
 			'</p>' .
 			'<button
 				id="thisismyurl-shadow-help-btn"
@@ -327,7 +327,7 @@ class Error_Handler {
 	}
 
 	/**
-	 * Enhance error args to add Christopher Ross Shadow AI report button
+	 * Enhance error args to add Shadow AI report button
 	 *
 	 * @param array $args wp_die arguments
 	 * @param array $error Error details

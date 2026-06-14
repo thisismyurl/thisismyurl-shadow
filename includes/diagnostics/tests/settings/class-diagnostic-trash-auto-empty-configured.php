@@ -7,7 +7,7 @@
  * accumulate in the database indefinitely, bloating the wp_posts table,
  * slowing queries, and inflating backup sizes.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

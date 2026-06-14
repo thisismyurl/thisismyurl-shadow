@@ -6,7 +6,7 @@
  * commonly needed by diagnostic tests. All methods are side-effect-free
  * and safe to call repeatedly.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics\Helpers
  * @since      0.6095
  */

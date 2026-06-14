@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Christopher Ross Shadow AJAX Router
+ * Shadow AJAX Router
  *
  * Centralizes registration of all AJAX handlers.
  * Extracted from thisismyurl-shadow.php as part of Phase 4.5 refactoring.
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Routes and registers all AJAX handlers for Christopher Ross Shadow
+ * Routes and registers all AJAX handlers for Shadow by Christopher Ross
  */
 class AJAX_Router {
 

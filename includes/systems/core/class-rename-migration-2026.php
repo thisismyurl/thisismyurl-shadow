@@ -2,7 +2,7 @@
 /**
  * One-shot legacy data migration from the wpshadow / thisismyurl_ identifiers
  * the plugin shipped under prior to the WordPress.org rename to
- * "Christopher Ross Shadow" (slug: thisismyurl-shadow).
+ * "Shadow by Christopher Ross" (slug: thisismyurl-shadow).
  *
  * What this class migrates, all gated by a single one-shot flag option so the
  * migration only ever runs once per site:

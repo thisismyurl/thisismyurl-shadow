@@ -5,7 +5,7 @@
  * Checks whether any installed plugins have available updates, as outdated
  * plugins are a leading source of WordPress security vulnerabilities.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

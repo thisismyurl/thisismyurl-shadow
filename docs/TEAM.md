@@ -1,4 +1,4 @@
-# Christopher Ross Shadow Team Reference
+# Shadow Team Reference
 
 Quick reference for team member GitHub usernames and roles.
 

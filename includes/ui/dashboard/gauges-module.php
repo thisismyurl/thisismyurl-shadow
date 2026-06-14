@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Christopher Ross Shadow Health Gauges Dashboard Module
+ * Shadow Health Gauges Dashboard Module
  *
  * Handles health gauge rendering for:
  * - Overall site health score
@@ -280,7 +280,7 @@ function thisismyurl_shadow_render_health_gauges( string $category_filter = '' )
 	<div class="wps-dashboard-gauges wps-gap-6 wps-mb-8">
 		<!-- Left: Large Overall Health Gauge + Scan Buttons -->
 		<div class="wps-health-gauge-main">
-			<div class="wps-health-gauge-card" style="display:block; color:inherit; text-decoration:none; border-color: <?php echo esc_attr( $overall_color ); ?>;" role="group" aria-label="<?php esc_attr_e( 'Overall Christopher Ross Shadow dashboard health gauge', 'thisismyurl-shadow' ); ?>">
+			<div class="wps-health-gauge-card" style="display:block; color:inherit; text-decoration:none; border-color: <?php echo esc_attr( $overall_color ); ?>;" role="group" aria-label="<?php esc_attr_e( 'Overall Shadow by Christopher Ross dashboard health gauge', 'thisismyurl-shadow' ); ?>">
 				<h3 class="wps-health-gauge-title"><?php esc_html_e( 'Overall Site Health', 'thisismyurl-shadow' ); ?></h3>
 
 				<svg id="thisismyurl-shadow-overall-gauge" width="200" height="200" viewBox="0 0 200 200" class="wps-health-gauge-svg" aria-labelledby="overall-health-title" role="img">

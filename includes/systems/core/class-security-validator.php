@@ -5,7 +5,7 @@
  * Centralized security validation methods to reduce code duplication.
  * Consolidates nonce verification, capability checks, and permission errors.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Core
  * @since 0.6095
  */

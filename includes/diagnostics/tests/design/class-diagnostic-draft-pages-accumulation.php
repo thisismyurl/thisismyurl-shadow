@@ -6,7 +6,7 @@
  * of old drafts often signals incomplete or abandoned site work and can
  * create confusion about site structure.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

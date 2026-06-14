@@ -1,6 +1,6 @@
-# Contributing to Christopher Ross Shadow
+# Contributing to Shadow by Christopher Ross
 
-Thank you for helping improve Christopher Ross Shadow.
+Thank you for helping improve Shadow by Christopher Ross.
 
 We want contributions to feel like they came from a **helpful neighbor**: clear, practical, kind, and safe.
 
@@ -21,7 +21,7 @@ If your change conflicts with the philosophy, the philosophy wins.
 
 ## What We Welcome
 
-We welcome contributions that make Christopher Ross Shadow:
+We welcome contributions that make Shadow by Christopher Ross:
 
 - easier to understand
 - safer to use
@@ -78,7 +78,7 @@ Assume the reader is intelligent but busy. Use clear language instead of jargon 
 ## Development Workflow
 
 ### Local Setup
-Christopher Ross Shadow is intended to be worked on in:
+Shadow by Christopher Ross is intended to be worked on in:
 
 - GitHub Codespaces, or
 - VS Code with Dev Containers
@@ -179,7 +179,7 @@ If you are proposing a feature, explain:
 
 - the user problem
 - why it matters
-- how it aligns with Christopher Ross Shadow philosophy
+- how it aligns with Shadow by Christopher Ross philosophy
 - any accessibility or privacy considerations
 
 ---
@@ -202,6 +202,6 @@ We want this project to be welcoming, respectful, and genuinely useful.
 
 ## Thank You
 
-Every thoughtful contribution helps Christopher Ross Shadow become more trustworthy, more humane, and more helpful.
+Every thoughtful contribution helps Shadow by Christopher Ross become more trustworthy, more humane, and more helpful.
 
 That matters.

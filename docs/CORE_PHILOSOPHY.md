@@ -1,4 +1,4 @@
-# Christopher Ross Shadow Core Philosophy
+# Shadow Core Philosophy
 
 **Date:** February 4, 2026
 **Version:** 1.3
@@ -10,7 +10,7 @@
 
 ## Core Identity: The Helpful Neighbor
 
-Christopher Ross Shadow is **not a sales tool**. It's a **trusted advisor** that genuinely helps users succeed with WordPress, then naturally guides them toward resources that deepen that success.
+Shadow by Christopher Ross is **not a sales tool**. It's a **trusted advisor** that genuinely helps users succeed with WordPress, then naturally guides them toward resources that deepen that success.
 
 **Think:** The neighbor who helps you fix your fence for free, then mentions where they got their great tools—not because they're selling them, but because they genuinely want you to succeed too.
 
@@ -99,7 +99,7 @@ Every piece of copy should pass this test: "Would a helpful neighbor say this?"
 **Example Transformation:**
 
 ❌ **Sales Talk:**
-> "Your site has 5 critical issues! Upgrade to Christopher Ross Shadow Pro to unlock auto-fix for all issues. Only $49/month!"
+> "Your site has 5 critical issues! Upgrade to Shadow Pro to unlock auto-fix for all issues. Only $49/month!"
 
 ✅ **Advice:**
 > "We found 5 security concerns. We can fix 3 of them automatically right now (free). For the other 2, here's what they mean and how to fix them yourself: [Link to free guide]. Want us to handle it? Our Pro addon can help with that too."
@@ -283,7 +283,7 @@ The entire plugin architecture is open to extension by other developers, for fre
 
 **"Write like you're explaining to your grandmother, but respect her intelligence."**
 
-All language throughout Christopher Ross Shadow must follow these strict communication principles. This applies to code comments, UI text, error messages, documentation, KB articles, and training materials.
+All language throughout Shadow by Christopher Ross must follow these strict communication principles. This applies to code comments, UI text, error messages, documentation, KB articles, and training materials.
 
 ### Core Principle: Novice-First Language
 
@@ -899,7 +899,7 @@ Would a good neighbor:
 - Not tell you about suspicious activity? **No → Alert and log**
 - Let a stranger into your house because they claimed to be you? **No → Verify identity**
 
-If a good neighbor wouldn't allow it, neither should Christopher Ross Shadow.
+If a good neighbor wouldn't allow it, neither should Shadow by Christopher Ross.
 
 ---
 
@@ -1405,11 +1405,11 @@ Learn more about our philosophy: [CORE_PHILOSOPHY.md](../CORE_PHILOSOPHY.md)
 - Accessibility improvements benefit EVERYONE
 
 ### The Philosophy
-Christopher Ross Shadow's core belief: **"Helpful Neighbor" means helpful to EVERYONE.**
+Shadow's core belief: **"Helpful Neighbor" means helpful to EVERYONE.**
 
 If a feature helps 90% of users but excludes someone with a disability, it's helping 90% at the expense of the 10%. That's not "helpful"—that's "helpful to some."
 
-Christopher Ross Shadow aims for truly helpful: inclusive by default.
+Shadow by Christopher Ross aims for truly helpful: inclusive by default.
 
 ---
 
@@ -1580,4 +1580,4 @@ We review and update these core principles every **three months** as part of our
 **Last Updated:** February 4, 2026
 **Next Review:** May 4, 2026
 **Canon Status:** ✅ Non-Negotiable, Foundational Requirement
-**Enforced By:** Christopher Ross Shadow Development Team & AI Agents
+**Enforced By:** Shadow Development Team & AI Agents

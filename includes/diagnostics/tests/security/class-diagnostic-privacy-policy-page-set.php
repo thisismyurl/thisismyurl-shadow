@@ -5,7 +5,7 @@
  * Checks whether a privacy policy page has been created and designated in
  * WordPress settings, as required for GDPR and similar regulations.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

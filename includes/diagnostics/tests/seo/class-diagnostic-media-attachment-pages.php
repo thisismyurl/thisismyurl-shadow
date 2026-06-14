@@ -5,7 +5,7 @@
  * Checks whether WordPress is generating publicly accessible attachment pages
  * for media files, which create low-value indexed URLs that dilute SEO authority.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

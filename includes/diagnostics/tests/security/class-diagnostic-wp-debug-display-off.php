@@ -5,7 +5,7 @@
  * Checks whether WP_DEBUG_DISPLAY is enabled along with WP_DEBUG, which
  * would cause PHP errors and sensitive information to leak to site visitors.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

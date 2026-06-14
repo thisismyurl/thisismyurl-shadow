@@ -9,7 +9,7 @@
  * constant that has no legitimate purpose on a production site and can
  * double or triple the JavaScript payload served to every visitor.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

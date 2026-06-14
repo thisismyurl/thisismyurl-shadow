@@ -63,7 +63,7 @@ class Treatment_Sensitive_Files_Protected extends Treatment_Base {
 
 		// --- .htaccess block ------------------------------------------------
 		$rules = array(
-			'# Block access to sensitive files — managed by Christopher Ross Shadow',
+			'# Block access to sensitive files — managed by Shadow by Christopher Ross',
 			'<FilesMatch "^(\.env|\.env\..+|phpinfo\.php|debug\.log|error_log)$">',
 			'  Order Deny,Allow',
 			'  Deny from all',
@@ -132,7 +132,7 @@ class Treatment_Sensitive_Files_Protected extends Treatment_Base {
 	}
 
 	/**
-	 * Remove the Christopher Ross Shadow sensitive-files block from root .htaccess.
+	 * Remove the Shadow by Christopher Ross sensitive-files block from root .htaccess.
 	 *
 	 * Deleted files are not restored — this only removes the .htaccess rules.
 	 *

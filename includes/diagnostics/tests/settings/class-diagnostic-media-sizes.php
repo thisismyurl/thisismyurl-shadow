@@ -6,7 +6,7 @@
  * been customised from the factory defaults. Sites left on defaults may
  * generate incorrectly-sized image variants on every upload.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

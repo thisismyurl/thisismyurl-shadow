@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Register and manage event content in Christopher Ross Shadow.
+ * Register and manage event content in Shadow by Christopher Ross.
  */
 class Training_Event_CPT {
 

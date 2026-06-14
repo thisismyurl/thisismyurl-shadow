@@ -5,7 +5,7 @@
  * Checks whether the WordPress admin dashboard is forced to use HTTPS
  * via the FORCE_SSL_ADMIN constant or equivalent server configuration.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

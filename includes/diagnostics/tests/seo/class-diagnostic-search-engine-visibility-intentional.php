@@ -5,7 +5,7 @@
  * Checks whether the WordPress "discourage search engines" setting is active,
  * which would prevent the entire site from being crawled and indexed.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

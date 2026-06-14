@@ -5,7 +5,7 @@
  * Checks whether the RSS feed is configured to output excerpts rather than
  * full post content, reducing content scraping and preserving reader engagement.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

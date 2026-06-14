@@ -5,7 +5,7 @@
  * Checks whether the homepage has a unique meta title and description
  * configured in an SEO plugin rather than relying on WordPress site defaults.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */
@@ -143,8 +143,8 @@ class Diagnostic_Homepage_Meta extends Diagnostic_Base {
 				'show_on_front'  => $show_on_front,
 				'front_page_id'  => $front_page_id,
 				'explanation_sections' => array(
-					'summary' => __( 'Christopher Ross Shadow checked the homepage metadata configured through your SEO plugin and found required fields missing. The homepage is usually the highest-authority page on the site, so incomplete metadata weakens search result presentation where it matters most.', 'thisismyurl-shadow' ),
-					'how_wp_shadow_tested' => __( 'Christopher Ross Shadow detected the active SEO plugin, then inspected either the configured front-page post meta or the plugin’s home-page settings for a custom meta title and meta description. Empty fields are treated as missing because search engines will fall back to generic defaults or page text extraction.', 'thisismyurl-shadow' ),
+					'summary' => __( 'Shadow by Christopher Ross checked the homepage metadata configured through your SEO plugin and found required fields missing. The homepage is usually the highest-authority page on the site, so incomplete metadata weakens search result presentation where it matters most.', 'thisismyurl-shadow' ),
+					'how_wp_shadow_tested' => __( 'Shadow by Christopher Ross detected the active SEO plugin, then inspected either the configured front-page post meta or the plugin’s home-page settings for a custom meta title and meta description. Empty fields are treated as missing because search engines will fall back to generic defaults or page text extraction.', 'thisismyurl-shadow' ),
 					'why_it_matters' => __( 'Homepage metadata influences how your site appears in search results and helps define the core topic and value proposition of the site. Missing or generic metadata can reduce click-through rate and make brand messaging inconsistent across search surfaces.', 'thisismyurl-shadow' ),
 					'how_to_fix_it' => __( 'Open your SEO plugin’s homepage settings and write a deliberate meta title and meta description for the front page. Aim for a concise brand/topic title and a description that explains the benefit of the site rather than repeating generic site text.', 'thisismyurl-shadow' ),
 				),
@@ -163,7 +163,7 @@ class Diagnostic_Homepage_Meta extends Diagnostic_Base {
 			$home_url,
 			array(
 				'timeout'    => 7,
-				'user-agent' => 'Christopher Ross Shadow-Diagnostic/1.0',
+				'user-agent' => 'Shadow by Christopher Ross-Diagnostic/1.0',
 			)
 		);
 
@@ -227,8 +227,8 @@ class Diagnostic_Homepage_Meta extends Diagnostic_Base {
 				'rendered_title'     => $title,
 				'meta_description'   => $meta_description,
 				'explanation_sections' => array(
-					'summary' => __( 'Christopher Ross Shadow fetched the rendered homepage and inspected the final HTML output instead of relying on plugin-specific settings. The page is missing key metadata or is still using generic title output that does not clearly define the homepage’s search snippet.', 'thisismyurl-shadow' ),
-					'how_wp_shadow_tested' => __( 'Christopher Ross Shadow requested the homepage HTML, extracted the title tag and meta description, and compared the title output against the site name and default name-plus-tagline patterns. Missing description tags or obviously generic title output are flagged as incomplete homepage metadata.', 'thisismyurl-shadow' ),
+					'summary' => __( 'Shadow by Christopher Ross fetched the rendered homepage and inspected the final HTML output instead of relying on plugin-specific settings. The page is missing key metadata or is still using generic title output that does not clearly define the homepage’s search snippet.', 'thisismyurl-shadow' ),
+					'how_wp_shadow_tested' => __( 'Shadow by Christopher Ross requested the homepage HTML, extracted the title tag and meta description, and compared the title output against the site name and default name-plus-tagline patterns. Missing description tags or obviously generic title output are flagged as incomplete homepage metadata.', 'thisismyurl-shadow' ),
 					'why_it_matters' => __( 'When the homepage metadata is missing, search engines generate snippets from whatever on-page text they can find, which can weaken messaging and lower click-through rate. Generic titles also make it harder to communicate brand positioning and topical relevance from the search results page.', 'thisismyurl-shadow' ),
 					'how_to_fix_it' => __( 'Add a deliberate homepage title and meta description either through your theme, an SEO plugin, or a custom head output integration. The title should communicate the brand and primary topic, and the description should clearly explain what the site offers and who it serves.', 'thisismyurl-shadow' ),
 				),

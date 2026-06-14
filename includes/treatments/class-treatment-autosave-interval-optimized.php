@@ -43,7 +43,7 @@ class Treatment_Autosave_Interval_Optimized extends Treatment_Base {
 	const MARKER_SLUG = 'autosave-interval-optimized';
 
 	/** The define() statement inserted. */
-	const DEFINE_LINE = "define( 'AUTOSAVE_INTERVAL', 120 ); // Christopher Ross Shadow: reduce autosave frequency";
+	const DEFINE_LINE = "define( 'AUTOSAVE_INTERVAL', 120 ); // Shadow by Christopher Ross: reduce autosave frequency";
 
 	/**
 	 * Self-register with File_Write_Registry on class load.

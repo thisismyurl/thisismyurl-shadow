@@ -19,7 +19,7 @@ exit;
 /**
  * Define the runtime contract for all diagnostic checks.
  *
- * Diagnostics are the read-only analysis layer of Christopher Ross Shadow. Each concrete
+ * Diagnostics are the read-only analysis layer of Shadow by Christopher Ross. Each concrete
  * diagnostic answers one question about a site, such as whether a setting is
  * risky, a page is missing, or a performance threshold is being exceeded. This
  * base class standardizes how those checks are described, scheduled, enabled,
@@ -242,7 +242,7 @@ protected static function stamp_last_run(): void {
 }
 
 /**
- * Execute the diagnostic through Christopher Ross Shadow's shared scan pipeline.
+ * Execute the diagnostic through Shadow's shared scan pipeline.
  *
  * Concrete diagnostics implement check(), but the plugin does not call that
  * method directly in normal operation. Instead it calls execute() so shared

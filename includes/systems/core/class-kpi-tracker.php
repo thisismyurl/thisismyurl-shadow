@@ -1,6 +1,6 @@
 <?php
 /**
- * KPI Tracker for Christopher Ross Shadow
+ * KPI Tracker for Shadow by Christopher Ross
  *
  * Tracks key performance indicators to prove value delivered
  *

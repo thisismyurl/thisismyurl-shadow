@@ -10,7 +10,7 @@
  * larger than upload_max_filesize or large uploads silently fail mid-transfer
  * before WordPress even receives the data, showing only a generic error.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

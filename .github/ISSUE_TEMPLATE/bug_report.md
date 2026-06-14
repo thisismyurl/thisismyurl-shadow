@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Report a reproducible problem in Christopher Ross Shadow
+about: Report a reproducible problem in Shadow by Christopher Ross
 labels: bug
 ---
 
@@ -19,7 +19,7 @@ Describe the result you expected.
 3. See error `...`
 
 ## Environment
-- Christopher Ross Shadow version:
+- Shadow by Christopher Ross version:
 - WordPress version:
 - PHP version:
 - Site type: single-site / multisite

@@ -1,6 +1,6 @@
 # Plugin Check Compliance: Technical Reference Guide
 
-This document provides detailed technical rationale for WordPress Plugin Check findings and resolutions in the Christopher Ross Shadow plugin.
+This document provides detailed technical rationale for WordPress Plugin Check findings and resolutions in the Shadow by Christopher Ross plugin.
 
 ---
 
@@ -534,7 +534,7 @@ By splitting the token across a concatenation operator (`'auto_update_' . 'plugi
 ### When This Pattern Is Appropriate
 
 This pattern is used for:
-- **Legitimate plugin behavior**: Christopher Ross Shadow intentionally hardens WordPress by managing update settings
+- **Legitimate plugin behavior**: Shadow by Christopher Ross intentionally hardens WordPress by managing update settings
 - **Not malware**: The code's intent and context are transparent
 - **Diagnostic-only reads**: `class-diagnostic-wp-settings-helper.php` only *reads* these options, doesn't modify them
 

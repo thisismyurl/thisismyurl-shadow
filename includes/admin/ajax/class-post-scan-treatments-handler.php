@@ -19,7 +19,7 @@
  * finding ID is in this list, repeat scans apply its treatment automatically
  * without prompting.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Admin\Ajax
  * @since      0.6095
  */

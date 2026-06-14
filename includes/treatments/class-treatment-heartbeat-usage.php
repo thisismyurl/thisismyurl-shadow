@@ -6,7 +6,7 @@
  * keeping authenticated admin sessions alive and enabling real-time features
  * like post locking. On most sites this frequency is unnecessary and adds
  * background server load. This treatment stores a flag that tells the
- * Christopher Ross Shadow bootstrap to filter wp_heartbeat_settings and raise the interval
+ * Shadow by Christopher Ross bootstrap to filter wp_heartbeat_settings and raise the interval
  * to 60 seconds on admin screens.
  *
  * The fix is skipped if a dedicated heartbeat management plugin is already

@@ -1,4 +1,4 @@
-# Christopher Ross Shadow Accessibility & Inclusion Commitment
+# Shadow Accessibility & Inclusion Commitment
 
 **Last Updated:** April 3, 2026  
 **Status:** Active and ongoing  
@@ -8,7 +8,7 @@
 
 ## Why This Matters
 
-Christopher Ross Shadow is meant to help people feel safer and more confident running WordPress.
+Shadow by Christopher Ross is meant to help people feel safer and more confident running WordPress.
 
 That goal is incomplete if the plugin is harder to use for people with disabilities, people using assistive technology, people under stress, or people who simply need clearer language and more predictable interfaces.
 
@@ -18,7 +18,7 @@ Accessibility is not decoration. It is not a bonus feature. It is part of whethe
 
 ## Our Standard
 
-We strive to build Christopher Ross Shadow so it works well for people who use:
+We strive to build Shadow by Christopher Ross so it works well for people who use:
 
 - screen readers
 - keyboards instead of a mouse
@@ -98,7 +98,7 @@ Good documentation should:
 
 ## What We Mean by Inclusive Functionality
 
-For Christopher Ross Shadow, inclusive functionality includes things like:
+For Shadow by Christopher Ross, inclusive functionality includes things like:
 
 - diagnostics written in human terms instead of fear-based technical shorthand
 - clear finding descriptions for non-developers

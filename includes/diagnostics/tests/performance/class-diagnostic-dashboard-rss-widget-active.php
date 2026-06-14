@@ -7,7 +7,7 @@
  * HTTP fetch to WordPress.org on first load and every 12 hours thereafter,
  * adding an external dependency to every dashboard page load.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */
@@ -149,7 +149,7 @@ class Diagnostic_Dashboard_Rss_Widget_Active extends Diagnostic_Base {
 				'feed_url'          => $feed_url,
 				'feed_cache_status' => $feed_status,
 				'note'              => __(
-					'Christopher Ross Shadow can remove these widgets automatically. Alternatively, add remove_meta_box(\'dashboard_primary\', \'dashboard\', \'side\') in your theme\'s functions.php or a functionality plugin.',
+					'Shadow by Christopher Ross can remove these widgets automatically. Alternatively, add remove_meta_box(\'dashboard_primary\', \'dashboard\', \'side\') in your theme\'s functions.php or a functionality plugin.',
 					'thisismyurl-shadow'
 				),
 			),

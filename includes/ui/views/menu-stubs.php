@@ -36,7 +36,7 @@ if ( ! function_exists( 'thisismyurl_shadow_render_findings' ) ) {
 
 if ( ! function_exists( 'thisismyurl_shadow_render_settings' ) ) {
 	/**
-	 * Render the Christopher Ross Shadow Settings page.
+	 * Render the Shadow Settings page.
 	 *
 	 * @since 0.6095
 	 */
@@ -71,7 +71,7 @@ if ( ! function_exists( 'thisismyurl_shadow_enqueue_settings_assets' ) ) {
 	 * @return void
 	 */
 	function thisismyurl_shadow_enqueue_settings_assets( string $hook_suffix ): void {
-		// Only load on the Christopher Ross Shadow settings page.
+		// Only load on the Shadow by Christopher Ross settings page.
 		if ( false === strpos( $hook_suffix, 'thisismyurl-shadow-settings' ) ) {
 			return;
 		}

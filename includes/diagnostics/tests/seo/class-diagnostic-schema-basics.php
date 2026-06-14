@@ -5,7 +5,7 @@
  * Checks whether a schema markup plugin is active to output structured data
  * that helps search engines display the site's content in rich results.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

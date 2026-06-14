@@ -7,7 +7,7 @@
  * URLs were a legacy technique for mixed HTTP/HTTPS sites but are now
  * considered anti-patterns on HTTPS-only sites.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

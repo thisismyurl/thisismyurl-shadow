@@ -1,18 +1,18 @@
-# Christopher Ross Shadow Product Family
+# Shadow Product Family
 
 **Date:** April 5, 2026
 **Version:** Current
-**Status:** Active — Christopher Ross Shadow is the only current product
+**Status:** Active — Shadow by Christopher Ross is the only current product
 
 ---
 
 ## Current State
 
-Only one product currently ships: **Christopher Ross Shadow**. It is a free WordPress plugin.
+Only one product currently ships: **Shadow by Christopher Ross**. It is a free WordPress plugin.
 
 ---
 
-## Christopher Ross Shadow
+## Shadow by Christopher Ross
 
 **Type:** WordPress Plugin (free)
 **Repository:** `thisismyurl/thisismyurl-shadow`
@@ -50,19 +50,19 @@ To maintain consistency in documentation, code, and communications:
 
 | Product | Type | Always Called | Avoid Calling |
 |---------|------|---------------|--------------|
-| **Christopher Ross Shadow** | Free WordPress Plugin | "Christopher Ross Shadow", "the plugin", or "Christopher Ross Shadow" when referring to code namespaces | any unshipped product name |
+| **Shadow by Christopher Ross** | Free WordPress Plugin | "Shadow by Christopher Ross", "the plugin", or "Shadow by Christopher Ross" when referring to code namespaces | any unshipped product name |
 
 ### What Exists vs. What Is Planned
 
 | Name | Status |
 |------|--------|
-| Christopher Ross Shadow | Exists — free plugin |
-| Christopher Ross Shadow Cloud | Reserved name only — not built |
-| Christopher Ross Shadow Guardian | Reserved name only — not a shipped product |
-| Christopher Ross Shadow Academy | Reserved name only — not built |
-| Christopher Ross Shadow Vault | Reserved name only — not built |
-| Christopher Ross Shadow Pro | Reserved name only — not built |
-| Christopher Ross Shadow Theme | Reserved name only — not built |
+| Shadow by Christopher Ross | Exists — free plugin |
+| Shadow Cloud | Reserved name only — not built |
+| Shadow Guardian | Reserved name only — not a shipped product |
+| Shadow Academy | Reserved name only — not built |
+| Shadow Vault | Reserved name only — not built |
+| Shadow Pro | Reserved name only — not built |
+| Shadow Theme | Reserved name only — not built |
 
 ### Code Namespace Standard
 ```php
@@ -70,13 +70,13 @@ To maintain consistency in documentation, code, and communications:
 namespace ThisIsMyURL\Shadow\Core;
 ```
 
-The PHP namespace remains `ThisIsMyURL\Shadow\...` even though the public plugin name is written as "Christopher Ross Shadow".
+The PHP namespace remains `ThisIsMyURL\Shadow\...` even though the public plugin name is written as "Shadow by Christopher Ross".
 
 ---
 
 ## Philosophy
 
-Christopher Ross Shadow's model is free whenever the feature runs locally on the user's own server and does not create ongoing infrastructure cost. If optional paid services are ever introduced, they should cover real service cost rather than gate the core plugin behind a paywall.
+Shadow's model is free whenever the feature runs locally on the user's own server and does not create ongoing infrastructure cost. If optional paid services are ever introduced, they should cover real service cost rather than gate the core plugin behind a paywall.
 
 See [BUSINESS_MODEL.md](BUSINESS_MODEL.md) for the full model.
 See [CORE_PHILOSOPHY.md](CORE_PHILOSOPHY.md) for guiding principles.
@@ -84,5 +84,5 @@ See [CORE_PHILOSOPHY.md](CORE_PHILOSOPHY.md) for guiding principles.
 ---
 
 **Version:** Current
-**Maintained By:** Christopher Ross Shadow Team
+**Maintained By:** Shadow Team
 **Repository:** [github.com/thisismyurl/thisismyurl-shadow](https://github.com/thisismyurl/thisismyurl-shadow)

@@ -5,7 +5,7 @@
  * Queries INFORMATION_SCHEMA to verify all WordPress core tables use the
  * InnoDB storage engine, which supports transactions and row-level locking.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

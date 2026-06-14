@@ -2,7 +2,7 @@
 /**
  * Stale Diagnostics Notice
  *
- * Renders a dismissible admin notice when the Christopher Ross Shadow diagnostic suite has
+ * Renders a dismissible admin notice when the Shadow by Christopher Ross diagnostic suite has
  * not been run in more than 24 hours. Prompts the administrator to review
  * schedule settings and status in Guardian.
  *
@@ -91,13 +91,13 @@ class Stale_Diagnostics_Notice {
 		$run_guardian = self::get_run_guardian_url( $redirect_url );
 
 		if ( 0 === $last_run ) {
-			$message = __( 'Christopher Ross Shadow Guardian has not completed yet. Run Guardian to execute diagnostics, apply automatic treatments, and refresh reports.', 'thisismyurl-shadow' );
+			$message = __( 'Shadow Guardian has not completed yet. Run Guardian to execute diagnostics, apply automatic treatments, and refresh reports.', 'thisismyurl-shadow' );
 		} else {
 			$time_ago = human_time_diff( $last_run, time() );
 			/* translators: %s: human-readable time since last run, e.g. "2 hours" */
 			$message = sprintf(
 				/* translators: %s: human-readable time since the last Guardian run. */
-				__( 'Christopher Ross Shadow Guardian has not run in %s. Run Guardian to bring diagnostics, treatments, and report cards up to date.', 'thisismyurl-shadow' ),
+				__( 'Shadow Guardian has not run in %s. Run Guardian to bring diagnostics, treatments, and report cards up to date.', 'thisismyurl-shadow' ),
 				$time_ago
 			);
 		}
@@ -105,7 +105,7 @@ class Stale_Diagnostics_Notice {
 		<div class="notice notice-warning is-dismissible thisismyurl-shadow-stale-diagnostics-notice"
 			data-nonce="<?php echo esc_attr( $notice_nonce ); ?>">
 			<p>
-				<strong><?php esc_html_e( 'Christopher Ross Shadow — Guardian Overdue', 'thisismyurl-shadow' ); ?></strong>
+				<strong><?php esc_html_e( 'Shadow by Christopher Ross — Guardian Overdue', 'thisismyurl-shadow' ); ?></strong>
 			</p>
 			<p><?php echo esc_html( $message ); ?></p>
 			<p>
@@ -163,7 +163,7 @@ class Stale_Diagnostics_Notice {
 				\ThisIsMyURL\Shadow\Admin\Pages\Scan_Frequency_Manager::run_diagnostic_scan( true );
 			} catch ( \Throwable $exception ) {
 				$run_error = sanitize_key( get_class( $exception ) );
-				\ThisIsMyURL\Shadow\Core\Error_Handler::log_error( 'Christopher Ross Shadow Guardian run failed', $exception );
+				\ThisIsMyURL\Shadow\Core\Error_Handler::log_error( 'Shadow Guardian run failed', $exception );
 			}
 		} else {
 			$run_error = 'scan_manager_missing';
@@ -200,7 +200,7 @@ class Stale_Diagnostics_Notice {
 				esc_url( $redirect ),
 				esc_html__( 'Continue', 'thisismyurl-shadow' )
 			),
-			esc_html__( 'Christopher Ross Shadow Guardian', 'thisismyurl-shadow' ),
+			esc_html__( 'Shadow Guardian', 'thisismyurl-shadow' ),
 			array( 'response' => 200 )
 		);
 	}

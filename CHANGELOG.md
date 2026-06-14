@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to Christopher Ross Shadow are documented here.
+All notable changes to Shadow by Christopher Ross are documented here.
 
 This project aims to follow the spirit of **Keep a Changelog**, while keeping entries readable for both technical and non-technical users.
 
@@ -29,7 +29,7 @@ This project aims to follow the spirit of **Keep a Changelog**, while keeping en
 ## [0.6124] - 2026-05-03
 
 ### Changed
-- Cleanup pass for the WPShadow → Christopher Ross Shadow rename: CSS classes, DOM IDs, dashboard JS globals, asset filenames, admin notice classes, GitHub workflow paths, and the GitHub release-updater repo slug now all use the `thisismyurl-shadow` brand
+- Cleanup pass for the WPShadow → Shadow by Christopher Ross rename: CSS classes, DOM IDs, dashboard JS globals, asset filenames, admin notice classes, GitHub workflow paths, and the GitHub release-updater repo slug now all use the `thisismyurl-shadow` brand
 - Supporting documentation (README, CONTRIBUTING, CODE_OF_CONDUCT, SUPPORT, PRIVACY, SECURITY, DONATE, docs/) updated to the new brand
 - Legacy on-disk backup directory and filename prefixes preserved with `TODO(rename-v2)` markers so existing user backups remain restorable across upgrade
 
@@ -38,7 +38,7 @@ This project aims to follow the spirit of **Keep a Changelog**, while keeping en
 ## [0.6123] - 2026-05-03
 
 ### Changed
-- Renamed plugin from "WPShadow" to "Christopher Ross Shadow" for the WordPress.org submission. Slug is now `thisismyurl-shadow`
+- Renamed plugin from "WPShadow" to "Shadow by Christopher Ross" for the WordPress.org submission. Slug is now `thisismyurl-shadow`
 - Renamed namespace `WPShadow\*` to `ThisIsMyURL\Shadow\*`, constants `THISISMYURL_SHADOW_*`, text domain `thisismyurl-shadow`, and AJAX / cron / option / transient identifiers to the `thisismyurl_shadow_*` prefix
 - Replaced `WP_CONTENT_DIR . '/uploads'` (and similar) with `wp_upload_dir()`, `WP_PLUGIN_DIR`, `WPMU_PLUGIN_DIR`, and `get_theme_root()`
 

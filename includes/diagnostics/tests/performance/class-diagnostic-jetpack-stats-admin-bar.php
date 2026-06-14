@@ -7,7 +7,7 @@
  * on every single admin page load, adding an outbound HTTP request to every
  * wp-admin visit.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

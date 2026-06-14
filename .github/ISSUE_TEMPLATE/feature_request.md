@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Suggest an improvement that would make Christopher Ross Shadow more helpful, safe, or clear
+about: Suggest an improvement that would make Shadow by Christopher Ross more helpful, safe, or clear
 labels: enhancement
 ---
 
@@ -14,7 +14,7 @@ Describe the improvement in plain English.
 Who benefits, and how?
 
 ## Philosophy fit
-How does this idea align with Christopher Ross Shadow's principles?
+How does this idea align with Shadow's principles?
 
 - Helpful Neighbor
 - Accessibility First
