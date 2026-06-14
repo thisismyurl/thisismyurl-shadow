@@ -86,6 +86,7 @@ Shadow by Christopher Ross is local-first and does not send your site data to an
 == Changelog ==
 
 = 1.6165 =
+* Resolved every WordPress.org Plugin Check error (verified with Plugin Check on WordPress 7.0); remaining notices are advisory database-scan warnings inherent to a diagnostics plugin.
 * Hardened input sanitization, output escaping, and database queries across the plugin in response to the WordPress.org review.
 * Removed the self-hosted update bridge; updates are handled through WordPress.org.
 * Added clean-up of all scheduled events on deactivation.

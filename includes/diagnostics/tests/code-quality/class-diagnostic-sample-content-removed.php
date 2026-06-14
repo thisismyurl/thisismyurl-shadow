@@ -110,6 +110,7 @@ class Diagnostic_Sample_Content_Removed extends Diagnostic_Base {
 		 */
 		// phpcs:disable WordPress.DB.DirectDatabaseQuery.DirectQuery -- read-only diagnostic; no caching layer.
 		// phpcs:disable WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- $where_or is placeholder-only; all values bound via $values.
+		// phpcs:disable WordPress.DB.PreparedSQLPlaceholders.UnfinishedPrepare -- $where_or is placeholder-only; all values bound via $values.
 		$rows = $wpdb->get_results(
 			$wpdb->prepare(
 				"SELECT ID, post_title, post_type, post_modified
@@ -122,7 +123,7 @@ class Diagnostic_Sample_Content_Removed extends Diagnostic_Base {
 				$values
 			)
 		);
-		// phpcs:enable WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+		// phpcs:enable WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, WordPress.DB.PreparedSQLPlaceholders.UnfinishedPrepare
 
 		if ( empty( $rows ) ) {
 			return null;

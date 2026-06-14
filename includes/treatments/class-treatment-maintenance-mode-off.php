@@ -190,7 +190,7 @@ class Treatment_Maintenance_Mode_Off extends Treatment_Base {
 		if ( ! empty( $file_backup['exists'] ) ) {
 			$contents = isset( $file_backup['contents'] ) ? base64_decode( (string) $file_backup['contents'] ) : false; // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_decode -- Restores the local .maintenance snapshot captured during apply().
 			if ( false !== $contents ) {
-				file_put_contents( $maintenance_file, $contents ); // phpcs:ignore WordPress.WP.AlternativeFunctions -- Restores the exact local .maintenance contents captured during apply().
+				file_put_contents( $maintenance_file, $contents ); // phpcs:ignore WordPress.WP.AlternativeFunctions, PluginCheck.CodeAnalysis.WriteFile.ABSPATHDetected -- Restores the exact local .maintenance contents captured during apply(); the .maintenance file must live in ABSPATH, that is where WordPress core reads it.
 			}
 		} elseif ( file_exists( $maintenance_file ) ) {
 			wp_delete_file( $maintenance_file );

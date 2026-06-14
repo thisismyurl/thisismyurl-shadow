@@ -82,7 +82,7 @@ class Diagnostic_Xmlrpc_Policy_Intentional extends Diagnostic_Base {
 		}
 
 		// A plugin or theme has disabled xmlrpc via the standard WordPress filter.
-		$xmlrpc_enabled = apply_filters( 'xmlrpc_enabled', true );
+		$xmlrpc_enabled = apply_filters( 'xmlrpc_enabled', true ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Reading a WordPress core filter's value for diagnostics, not defining a plugin hook.
 		if ( ! $xmlrpc_enabled ) {
 			return null;
 		}

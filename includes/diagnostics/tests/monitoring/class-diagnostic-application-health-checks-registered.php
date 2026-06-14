@@ -74,7 +74,7 @@ class Diagnostic_Application_Health_Checks_Registered extends Diagnostic_Base {
 	public static function check() {
 		// WordPress Site Health lets plugins register custom tests via the site_status_tests filter.
 		// A site with no custom tests registered may be missing application-specific health monitoring.
-		$tests = apply_filters( 'site_status_tests', array() );
+		$tests = apply_filters( 'site_status_tests', array() ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Reading a WordPress core filter's value for diagnostics, not defining a plugin hook.
 
 		$custom_direct = isset( $tests['direct'] ) ? count( $tests['direct'] ) : 0;
 		$custom_async  = isset( $tests['async'] ) ? count( $tests['async'] ) : 0;

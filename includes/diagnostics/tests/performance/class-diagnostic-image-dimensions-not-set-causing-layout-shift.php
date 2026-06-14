@@ -1,49 +1,10 @@
 <?php
 /**
- * Image Dimensions Not Set Causing Layout Shift Diagnostic
+ * Image Dimensions Not Set Causing Layout Shift Diagnostic.
  *
- * Checks if image dimensions are set.
- * Images without width/height = layout shifts when loaded.
- * Browser doesn't know size = reserves no space = content jumps.
- * With dimensions = browser reserves space = no layout shift.
- *
- * **What This Check Does:**
- * - Scans images in content for width/height attributes
- * - Checks CSS aspect-ratio properties
- * - Validates responsive image dimensions
- * - Measures Cumulative Layout Shift (CLS)
- * - Tests for explicit size declarations
- * - Returns severity if images missing dimensions
- *
- * **Why This Matters:**
- * User starts reading article. Images load.
- * Text jumps down 500px. User loses place. Frustrating.
- * Clicks wrong thing (shifted under cursor). Bad experience.
- * With dimensions: text stays put. Smooth experience.
- * Critical for Core Web Vitals (CLS score).
- *
- * **Business Impact:**
- * Blog posts: images without dimensions. Users reading. Images load.
- * Content shifts. User loses reading position. 40% abandon article.
- * CLS score: 0.35 (poor). Added width/height to all images via
- * WordPress default behavior. Browser reserves space correctly.
- * Content stable. CLS: 0.05 (good). User engagement improved 60%.
- * Time on page increased 2.5 minutes. Ad revenue increased 45%
- * (more engaged readers). Implementation: ensure theme uses wp_get_attachment_image().
- *
- * **Philosophy Alignment:**
- * - #8 Inspire Confidence: Stable, predictable layout
- * - #9 Show Value: Measurable CLS improvement
- * - #10 Beyond Pure: User experience focus
- *
- * **Related Checks:**
- * - Cumulative Layout Shift Optimization (CLS metric)
- * - Image Optimization Overall (related)
- * - Core Web Vitals (broader metrics)
- *
- * **Learn More:**
- * Layout shift prevention resources should be kept in plugin-bundled guidance.
- * Training references should not point to external product marketing pages.
+ * Flags images without width/height (or a CSS aspect-ratio), which cause
+ * Cumulative Layout Shift (CLS) as content jumps down while images load —
+ * a Core Web Vitals problem and a reading-experience one.
  *
  * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
@@ -57,7 +18,7 @@ namespace ThisIsMyURL\Shadow\Diagnostics;
 use ThisIsMyURL\Shadow\Core\Diagnostic_Base;
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+	exit; // Exit if accessed directly.
 }
 
 /**

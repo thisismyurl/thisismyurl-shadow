@@ -97,7 +97,7 @@ class Diagnostic_Wp_Content_Write_Scope_Minimized extends Diagnostic_Base {
 
 		$writable = array();
 		foreach ( $checks as $item ) {
-			if ( is_writable( $item['path'] ) ) {
+			if ( wp_is_writable( $item['path'] ) ) {
 				$writable[] = $item['label'];
 			}
 		}

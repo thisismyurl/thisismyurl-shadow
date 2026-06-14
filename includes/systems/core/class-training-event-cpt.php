@@ -622,8 +622,8 @@ class Training_Event_CPT {
 		$price          = isset( $_POST['thisismyurl_shadow_event_price'] ) ? sanitize_text_field( wp_unslash( $_POST['thisismyurl_shadow_event_price'] ) ) : '';
 		$price_currency = isset( $_POST['thisismyurl_shadow_event_price_currency'] ) ? strtoupper( sanitize_text_field( wp_unslash( $_POST['thisismyurl_shadow_event_price_currency'] ) ) ) : 'CAD';
 		$pricing_model  = isset( $_POST['thisismyurl_shadow_event_pricing_model'] ) ? sanitize_key( wp_unslash( $_POST['thisismyurl_shadow_event_pricing_model'] ) ) : 'tiered';
-		$price_min      = isset( $_POST['thisismyurl_shadow_event_price_min'] ) ? (float) wp_unslash( $_POST['thisismyurl_shadow_event_price_min'] ) : 0.0;
-		$price_max      = isset( $_POST['thisismyurl_shadow_event_price_max'] ) ? (float) wp_unslash( $_POST['thisismyurl_shadow_event_price_max'] ) : 0.0;
+		$price_min      = isset( $_POST['thisismyurl_shadow_event_price_min'] ) ? (float) sanitize_text_field( wp_unslash( $_POST['thisismyurl_shadow_event_price_min'] ) ) : 0.0;
+		$price_max      = isset( $_POST['thisismyurl_shadow_event_price_max'] ) ? (float) sanitize_text_field( wp_unslash( $_POST['thisismyurl_shadow_event_price_max'] ) ) : 0.0;
 		$registration   = isset( $_POST['thisismyurl_shadow_event_registration_url'] ) ? esc_url_raw( wp_unslash( $_POST['thisismyurl_shadow_event_registration_url'] ) ) : '';
 		$contact_email  = isset( $_POST['thisismyurl_shadow_event_contact_email'] ) ? sanitize_email( wp_unslash( $_POST['thisismyurl_shadow_event_contact_email'] ) ) : '';
 		$host_name      = isset( $_POST['thisismyurl_shadow_event_host_name'] ) ? sanitize_text_field( wp_unslash( $_POST['thisismyurl_shadow_event_host_name'] ) ) : '';
