@@ -209,8 +209,14 @@ run_release_proof_if_requested() {
 
 build_zip() {
 	log "Building distributable plugin zip"
+	# Ship the developer hook reference even though .distignore excludes docs/
+	# and *.md. rsync is first-match-wins, so these includes — placed BEFORE the
+	# --exclude-from — keep the docs/ directory walkable and let docs/HOOKS.md
+	# through. Every other docs/*.md still falls to the .distignore excludes.
 	rsync -a --delete \
 		--exclude '.git/' \
+		--include='docs/' \
+		--include='docs/HOOKS.md' \
 		--exclude-from="${DISTIGNORE_FILE}" \
 		"${ROOT_DIR}/" "${DIST_BUILD_ROOT}/"
 

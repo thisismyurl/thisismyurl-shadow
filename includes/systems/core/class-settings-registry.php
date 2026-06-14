@@ -340,6 +340,7 @@ class Settings_Registry {
 				'sanitize_callback' => array( __CLASS__, 'sanitize_verification_tokens' ),
 				'show_in_rest'      => false, // Security - tokens
 				'description'       => __( 'Pending email verification tokens', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -356,6 +357,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Enable diagnostic results caching', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -368,6 +370,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'absint',
 				'show_in_rest'      => false,
 				'description'       => __( 'Cache duration in seconds', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -380,6 +383,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Enable debug logging', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -392,6 +396,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Allow access to the WordPress Theme File Editor', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -404,6 +409,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Allow access to the WordPress Plugin File Editor', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -416,6 +422,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Send email notifications when magic links expire', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -433,6 +440,7 @@ class Settings_Registry {
 				'sanitize_callback' => array( __CLASS__, 'sanitize_class_list' ),
 				'show_in_rest'      => false,
 				'description'       => __( 'List of diagnostic classes disabled by admin', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -446,6 +454,7 @@ class Settings_Registry {
 				'sanitize_callback' => array( __CLASS__, 'sanitize_frequency_overrides' ),
 				'show_in_rest'      => false,
 				'description'       => __( 'Per-diagnostic scan frequency overrides set by admin', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -459,6 +468,7 @@ class Settings_Registry {
 				'sanitize_callback' => array( __CLASS__, 'sanitize_class_list' ),
 				'show_in_rest'      => false,
 				'description'       => __( 'List of treatment classes disabled by admin', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -479,6 +489,7 @@ class Settings_Registry {
 				'sanitize_callback' => array( __CLASS__, 'sanitize_heartbeat_settings' ),
 				'show_in_rest'      => false,
 				'description'       => __( 'WordPress Heartbeat API optimization settings', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -495,6 +506,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Show keyboard navigation hints and shortcuts (helps users who navigate without a mouse)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -507,6 +519,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Optimize interface for screen readers with enhanced labels (for blind and low-vision users)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -519,6 +532,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Force high contrast colors for better visibility (WCAG AAA compliance)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -531,6 +545,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Disable animations and transitions (helps with motion sensitivity and focus)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -543,6 +558,7 @@ class Settings_Registry {
 				'sanitize_callback' => array( __CLASS__, 'sanitize_admin_font_family' ),
 				'show_in_rest'      => false,
 				'description'       => __( 'Readable admin font choice, including an optional focus-friendly stack inspired by fonts some ADHD users prefer', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -555,6 +571,7 @@ class Settings_Registry {
 				'sanitize_callback' => array( __CLASS__, 'sanitize_font_multiplier' ),
 				'show_in_rest'      => false,
 				'description'       => __( 'Text size adjustment (0.8 to 2.0, where 1.0 is standard size)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -567,6 +584,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Use simplified interface with fewer options (helps with cognitive load and focus)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -579,6 +597,7 @@ class Settings_Registry {
 				'sanitize_callback' => array( __CLASS__, 'sanitize_focus_style' ),
 				'show_in_rest'      => false,
 				'description'       => __( 'Focus indicator visibility (standard/enhanced/maximum)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -595,6 +614,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Enable developer mode (shows extension points, hooks, and API documentation)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -607,6 +627,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Display available hooks and filters in admin interface', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -619,6 +640,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Show inline API documentation for extension development', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -631,6 +653,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Enable extension testing sandbox (safe testing environment)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -647,6 +670,7 @@ class Settings_Registry {
 				'sanitize_callback' => array( __CLASS__, 'sanitize_date_format' ),
 				'show_in_rest'      => false,
 				'description'       => __( 'Date format preference (wordpress/iso8601/us/eu/custom)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -659,6 +683,7 @@ class Settings_Registry {
 				'sanitize_callback' => array( __CLASS__, 'sanitize_time_format' ),
 				'show_in_rest'      => false,
 				'description'       => __( 'Time format preference (12h/24h/wordpress)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -671,6 +696,7 @@ class Settings_Registry {
 				'sanitize_callback' => array( __CLASS__, 'sanitize_number_format' ),
 				'show_in_rest'      => false,
 				'description'       => __( 'Number format (1,000.50 vs1.0,50)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -683,6 +709,7 @@ class Settings_Registry {
 				'sanitize_callback' => array( __CLASS__, 'sanitize_rtl_preference' ),
 				'show_in_rest'      => false,
 				'description'       => __( 'RTL interface direction (auto/force_ltr/force_rtl)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -695,6 +722,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Avoid idioms and culturally-specific phrases', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -711,6 +739,7 @@ class Settings_Registry {
 				'sanitize_callback' => array( __CLASS__, 'sanitize_learning_style' ),
 				'show_in_rest'      => false,
 				'description'       => __( 'Preferred learning format (text/video/interactive/mixed)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -723,6 +752,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Break complex operations into step-by-step guides', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -735,6 +765,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Show real-world examples with explanations', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -747,6 +778,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'ADHD-friendly UI (clear priorities, progress bars, auto-save)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -759,6 +791,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Use a dyslexia-friendly font stack with clearer letterforms and spacing', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -775,6 +808,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Track which features help you most (anonymous, helps us improve)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -787,6 +821,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Show impact metrics (time saved, performance gains)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -799,6 +834,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Track value delivered (money saved, issues prevented)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -815,6 +851,7 @@ class Settings_Registry {
 				'sanitize_callback' => array( __CLASS__, 'sanitize_autosave_frequency' ),
 				'show_in_rest'      => false,
 				'description'       => __( 'Auto-save frequency in seconds (10-300)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -827,6 +864,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Automatically retry failed operations (network, database)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -839,6 +877,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Use stale cache when fresh data unavailable (graceful degradation)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -851,6 +890,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Work offline when network unavailable (queue operations)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -863,6 +903,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Show user-friendly errors (hide technical details)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -875,50 +916,9 @@ class Settings_Registry {
 				'sanitize_callback' => array( __CLASS__, 'sanitize_operation_timeout' ),
 				'show_in_rest'      => false,
 				'description'       => __( 'Operation timeout in seconds (5-300)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
-	}
-
-	/**
-	 * Sanitize services array
-	 *
-	 * @param mixed $value Input value
-	 * @return array Sanitized services configuration
-	 */
-	public static function sanitize_services_array( $value ): array {
-		if ( ! is_array( $value ) ) {
-			return array();
-		}
-
-		$valid_services = array( 'cloud' );
-		$sanitized      = array();
-
-		foreach ( $value as $service => $config ) {
-			if ( ! in_array( $service, $valid_services, true ) || ! is_array( $config ) ) {
-				continue;
-			}
-
-			$sanitized[ $service ] = array(
-				'tier' => isset( $config['tier'] ) ? sanitize_text_field( $config['tier'] ) : 'free',
-			);
-
-			// Add service-specific fields.
-			foreach ( $config as $key => $val ) {
-				if ( 'tier' === $key ) {
-					continue;
-				}
-				// Sanitize based on type.
-				if ( is_int( $val ) ) {
-					$sanitized[ $service ][ $key ] = absint( $val );
-				} elseif ( is_bool( $val ) ) {
-					$sanitized[ $service ][ $key ] = rest_sanitize_boolean( $val );
-				} elseif ( is_string( $val ) ) {
-					$sanitized[ $service ][ $key ] = sanitize_text_field( $val );
-				}
-			}
-		}
-
-		return $sanitized;
 	}
 
 	/**

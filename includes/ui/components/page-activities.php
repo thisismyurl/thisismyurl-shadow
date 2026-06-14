@@ -33,45 +33,9 @@ function thisismyurl_shadow_render_page_activities( string $context = '', int $l
 		return;
 	}
 
-	// The dedicated activity timeline JS bundle is not shipped in the current build.
+	// The dedicated activity timeline JS bundle is not shipped in the current build,
+	// so this component renders nothing until that bundle is added back.
 	return;
-	?>
-	<div class="wps-card wps-mt-8">
-		<div class="wps-card-header">
-			<h3 class="wps-card-title wps-m-0">
-				<span class="dashicons dashicons-clock wps-icon-mr-2" aria-hidden="true"></span>
-				<?php esc_html_e( 'Recent Activity', 'thisismyurl-shadow' ); ?>
-			</h3>
-			<span class="wps-heartbeat-dot"
-				  role="status"
-				  aria-label="<?php esc_attr_e( 'Live — updates automatically when diagnostics run', 'thisismyurl-shadow' ); ?>"
-				  title="<?php esc_attr_e( 'Live — updates automatically when diagnostics run', 'thisismyurl-shadow' ); ?>"
-			></span>
-		</div>
-		<div class="wps-card-body">
-			<div class="wps-activity-timeline wps-activity-ajax-container"
-				 role="list"
-				 aria-label="<?php esc_attr_e( 'Recent page activity', 'thisismyurl-shadow' ); ?>"
-				 data-context="<?php echo esc_attr( $context ); ?>"
-				 data-limit="<?php echo esc_attr( (string) $limit ); ?>"
-				 data-nonce="<?php echo esc_attr( $nonce ); ?>"
-					 data-refresh-interval="3000"
-					 data-current-page="0"
-					 <?php if ( ! empty( $report_slug ) ) : ?>data-report="<?php echo esc_attr( $report_slug ); ?>"<?php endif; ?>>
-				<div class="wps-activity-loading">
-					<span class="spinner"></span>
-					<p><?php esc_html_e( 'Loading activity...', 'thisismyurl-shadow' ); ?></p>
-				</div>
-			</div>
-			<!-- Pagination -->
-			<div class="wps-activity-pagination">
-				<button class="wps-activity-pagination-prev button" disabled><?php esc_html_e( '← Previous', 'thisismyurl-shadow' ); ?></button>
-				<span class="wps-activity-pagination-info"></span>
-				<button class="wps-activity-pagination-next button" disabled><?php esc_html_e( 'Next →', 'thisismyurl-shadow' ); ?></button>
-			</div>
-		</div>
-	</div>
-	<?php
 }
 
 /**

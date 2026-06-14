@@ -239,6 +239,7 @@ function thisismyurl_shadow_render_dashboard_v2() {
 			</div>
 			<div class="wps-card-body wps-card-body--tight-top">
 				<table class="wps-attention-table">
+					<caption class="wps-sr-only"><?php esc_html_e( 'Issues that need attention, listed with their severity and reason', 'thisismyurl-shadow' ); ?></caption>
 					<tbody id="wps-dashboard-attention-tbody">
 					<?php foreach ( $top_issues as $issue ) :
 						$issue_name    = isset( $issue['name'] ) ? (string) $issue['name'] : '';
@@ -1074,7 +1075,7 @@ function thisismyurl_shadow_render_diagnostic_detail_v2() {
 		<!-- Header -->
 		<div class="wps-page-header">
 			<div class="wps-page-header-content">
-				<h1><?php echo esc_html( $name ); ?></h1>
+				<h1 id="wps-detail-heading" tabindex="-1"><?php echo esc_html( $name ); ?></h1>
 				<div class="wps-detail-badges wps-mt-3">
 					<?php if ( $is_core ) : ?>
 						<span class="wps-badge wps-badge--core"><?php esc_html_e( 'Core Check', 'thisismyurl-shadow' ); ?></span>
@@ -1212,7 +1213,7 @@ function thisismyurl_shadow_render_diagnostic_detail_v2() {
 												<?php esc_html_e( 'Run Fix', 'thisismyurl-shadow' ); ?>
 											</button>
 										</p>
-										<div id="wps-run-treatment-status" class="wps-status-message"></div>
+										<div id="wps-run-treatment-status" class="wps-status-message" aria-live="assertive" aria-atomic="true"></div>
 									<?php endif; ?>
 								<?php else : ?>
 									<p class="wps-action-note">
@@ -1243,7 +1244,7 @@ function thisismyurl_shadow_render_diagnostic_detail_v2() {
 										<?php esc_html_e( 'Default policy: OFF, because this treatment is not classified as safe for unattended application.', 'thisismyurl-shadow' ); ?>
 									</p>
 								<?php endif; ?>
-								<div id="wps-treatment-toggle-status" class="wps-status-message"></div>
+								<div id="wps-treatment-toggle-status" class="wps-status-message" aria-live="polite" aria-atomic="true"></div>
 							</div>
 						<?php else : ?>
 							<div class="wps-action-stack">
@@ -1398,7 +1399,7 @@ function thisismyurl_shadow_render_diagnostic_detail_v2() {
 								<button id="wps-save-treatment-inputs" class="wps-button wps-button--secondary wps-w-full">
 									<?php esc_html_e( 'Save Fix Inputs', 'thisismyurl-shadow' ); ?>
 								</button>
-								<div id="wps-treatment-inputs-status" class="wps-status-message"></div>
+								<div id="wps-treatment-inputs-status" class="wps-status-message" aria-live="polite" aria-atomic="true"></div>
 							</div>
 						<?php endif; ?>
 					</div>
@@ -1492,7 +1493,7 @@ function thisismyurl_shadow_render_diagnostic_detail_v2() {
 						<button id="wps-save-frequency" class="wps-button wps-button--secondary wps-w-full">
 							<?php esc_html_e( 'Save', 'thisismyurl-shadow' ); ?>
 						</button>
-						<div id="wps-frequency-status" data-status-message class="wps-status-message"></div>
+						<div id="wps-frequency-status" data-status-message class="wps-status-message" aria-live="polite" aria-atomic="true"></div>
 					</div>
 				</div>
 			</div>

@@ -44,10 +44,10 @@ function thisismyurl_shadow_rc_badge( string $status ): string {
 function thisismyurl_shadow_rc_card_open( string $slug, string $title, string $status ): void {
 	$did = 'wps-rc-' . $slug;
 	echo '<div class="wps-res-card wps-res-card--' . esc_attr( $status ) . '" id="' . esc_attr( $did ) . '" data-slug="' . esc_attr( $slug ) . '">';
-	echo '<div class="wps-res-card__header" role="button" tabindex="0" aria-expanded="false" aria-controls="' . esc_attr( $did ) . '-body">';
+	echo '<button type="button" class="wps-res-card__header" aria-expanded="false" aria-controls="' . esc_attr( $did ) . '-body">';
 	echo '<div class="wps-res-card__title-row"><strong class="wps-res-card__title">' . esc_html( $title ) . '</strong>' . wp_kses_post( thisismyurl_shadow_rc_badge( $status ) ) . '</div>';
 	echo '<span class="wps-res-card__toggle-icon" aria-hidden="true">&#9660;</span>';
-	echo '</div><div class="wps-res-card__body" id="' . esc_attr( $did ) . '-body" hidden>';
+	echo '</button><div class="wps-res-card__body" id="' . esc_attr( $did ) . '-body" hidden>';
 }
 
 function thisismyurl_shadow_rc_card_close( string $slug, string $status, string $nonce ): void {
@@ -65,7 +65,7 @@ function thisismyurl_shadow_rc_card_close( string $slug, string $status, string 
 		echo '<button class="button wps-rc-btn" data-action="pending" data-slug="' . esc_attr( $slug ) . '" data-nonce="' . esc_attr( $nonce ) . '">Undo</button>';
 	}
 
-	echo '<span class="wps-res-feedback-msg" aria-live="polite"></span></div></div></div>';
+	echo '<span class="wps-res-feedback-msg" aria-live="polite" aria-atomic="true"></span></div></div></div>';
 }
 
 function thisismyurl_shadow_rc_admin_link( string $url, string $label ): void {
@@ -629,6 +629,21 @@ thisismyurl_shadow_rc_admin_link(admin_url("themes.php"),"Appearance Themes"); t
 
 var ajaxUrl = <?php echo wp_json_encode( admin_url( "admin-ajax.php" ) ); ?>;
 
+/*
+ * Reload the page while preserving the user's place. The card's id is written
+ * to the URL fragment so focus can be restored to it after the reload — without
+ * this, keyboard and screen-reader users are dropped back to the top (WCAG 2.4.3).
+ */
+function reloadToCard(card) {
+	var target = card && card.id ? "#" + card.id : "";
+	window.setTimeout(function() {
+		if (target) {
+			window.location.hash = target;
+		}
+		window.location.reload();
+	}, 1200);
+}
+
 document.querySelectorAll(".wps-res-card__header").forEach(function(h) {
 	function toggle() {
 		var b = document.getElementById(h.getAttribute("aria-controls"));
@@ -642,12 +657,6 @@ document.querySelectorAll(".wps-res-card__header").forEach(function(h) {
 	}
 
 	h.addEventListener("click", toggle);
-	h.addEventListener("keydown", function(e) {
-		if (e.key === "Enter" || e.key === " ") {
-			e.preventDefault();
-			toggle();
-		}
-	});
 });
 
 document.querySelectorAll(".wps-rc-btn").forEach(function(btn) {
@@ -671,14 +680,22 @@ document.querySelectorAll(".wps-rc-btn").forEach(function(btn) {
 						msg.textContent = d.data.message || <?php echo wp_json_encode( __( "Saved.", "thisismyurl-shadow" ) ); ?>;
 						msg.style.display = "inline";
 					}
-					setTimeout(function() { location.reload(); }, 1200);
+					reloadToCard(card);
 				} else {
-					alert((d.data && d.data.message) || <?php echo wp_json_encode( __( "Could not save.", "thisismyurl-shadow" ) ); ?>);
+					if (msg) {
+						msg.textContent = (d.data && d.data.message) || <?php echo wp_json_encode( __( "Could not save.", "thisismyurl-shadow" ) ); ?>;
+						msg.classList.add("error");
+						msg.style.display = "inline";
+					}
 				}
 			})
 			.catch(function() {
 				btn.disabled = false;
-				alert(<?php echo wp_json_encode( __( "Network error.", "thisismyurl-shadow" ) ); ?>);
+				if (msg) {
+					msg.textContent = <?php echo wp_json_encode( __( "Network error.", "thisismyurl-shadow" ) ); ?>;
+					msg.classList.add("error");
+					msg.style.display = "inline";
+				}
 			});
 	});
 });
@@ -706,7 +723,7 @@ document.querySelectorAll(".wps-rc-save-option").forEach(function(btn) {
 						fb.textContent = d.data.message || <?php echo wp_json_encode( __( "Updated.", "thisismyurl-shadow" ) ); ?>;
 						fb.style.display = "inline";
 					}
-					setTimeout(function() { location.reload(); }, 1400);
+					reloadToCard(row ? row.closest(".wps-res-card") : null);
 				} else {
 					btn.textContent = <?php echo wp_json_encode( __( "Save", "thisismyurl-shadow" ) ); ?>;
 					if (fb) {
@@ -727,6 +744,28 @@ document.querySelectorAll(".wps-rc-save-option").forEach(function(btn) {
 			});
 	});
 });
+
+/*
+ * After a reloadToCard() reload, move focus to the card named in the fragment so
+ * keyboard/SR users land where they left off rather than at the top of the page.
+ */
+(function restoreFocusFromHash() {
+	var hash = window.location.hash;
+	if (!hash || hash.indexOf("#wps-rc-") !== 0) {
+		return;
+	}
+	var card = document.getElementById(hash.slice(1));
+	if (!card) {
+		return;
+	}
+	if (!card.hasAttribute("tabindex")) {
+		card.setAttribute("tabindex", "-1");
+	}
+	card.focus();
+	// Clear the hash so a manual reload / back-nav doesn't re-fire the focus jump.
+	history.replaceState(null, "", window.location.pathname + window.location.search);
+})();
+
 })();
 </script>
 <?php

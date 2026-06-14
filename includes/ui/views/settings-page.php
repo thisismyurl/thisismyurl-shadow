@@ -140,7 +140,7 @@ thisismyurl_shadow_render_page_header(
 			<a
 				href="<?php echo esc_url( $href ); ?>"
 				class="wps-settings-tab<?php echo esc_attr( $active ); ?>"
-				aria-current="<?php echo esc_attr( $active_tab === $tab_key ? 'page' : 'false' ); ?>"
+				<?php if ( $active_tab === $tab_key ) : ?>aria-current="page"<?php endif; ?>
 			>
 				<span class="dashicons <?php echo esc_attr( $settings_tab['icon'] ); ?>" aria-hidden="true"></span>
 				<?php echo esc_html( $settings_tab['label'] ); ?>
@@ -724,7 +724,7 @@ thisismyurl_shadow_render_page_header(
 				<?php esc_html_e( 'Refresh Summary', 'thisismyurl-shadow' ); ?>
 			</button>
 		</div>
-		<p id="wps-export-status" class="wps-governance-status"></p>
+		<p id="wps-export-status" class="wps-governance-status" aria-live="polite" aria-atomic="true"></p>
 
 		<div class="wps-readiness-sections">
 			<?php

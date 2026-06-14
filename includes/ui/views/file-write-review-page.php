@@ -225,7 +225,7 @@ $render_actionable_card = static function ( array $treatment ): void {
 			</button>
 		</div>
 
-		<div class="thisismyurl-shadow-card-status wps-file-review-status-box" id="thisismyurl-shadow-status-<?php echo esc_attr( $finding_id ); ?>"></div>
+		<div class="thisismyurl-shadow-card-status wps-file-review-status-box" id="thisismyurl-shadow-status-<?php echo esc_attr( $finding_id ); ?>" aria-live="polite" aria-atomic="true"></div>
 	</div>
 	<?php
 };

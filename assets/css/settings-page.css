@@ -61,7 +61,11 @@
 .wps-settings-tab:focus {
 	color: #2271b1;
 	border-bottom-color: #c3c4c7;
-	outline: none;
+}
+
+.wps-settings-tab:focus-visible {
+	outline: 2px solid #2271b1;
+	outline-offset: 2px;
 }
 
 .wps-settings-tab--active {
@@ -437,7 +441,7 @@
 
 .wps-governance-stat-card--warning {
 	background: #fff7ed;
-	border-left-color: #f57c00;
+	border-left-color: #b35900;
 }
 
 .wps-governance-stat-card--danger {
@@ -471,7 +475,7 @@
 }
 
 .wps-governance-stat-card--success .wps-governance-stat-value { color: #00a32a; }
-.wps-governance-stat-card--warning .wps-governance-stat-value { color: #f57c00; }
+.wps-governance-stat-card--warning .wps-governance-stat-value { color: #b35900; }
 .wps-governance-stat-card--danger .wps-governance-stat-value { color: #d32f2f; }
 .wps-governance-stat-card--info .wps-governance-stat-value { color: #2563eb; }
 
@@ -580,7 +584,7 @@
 }
 
 .wps-readiness-state-dot--production { background: #00a32a; }
-.wps-readiness-state-dot--beta { background: #f57c00; }
+.wps-readiness-state-dot--beta { background: #b35900; }
 .wps-readiness-state-dot--planned { background: #d32f2f; }
 
 .wps-toggle-arrow {
