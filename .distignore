@@ -12,6 +12,7 @@
 .distignore
 artifacts/
 scripts/
+repo-tools/
 
 # Composer dev tooling — vendor/ is dev-only, runtime classes are loaded by
 # includes/systems/core/class-bootstrap-autoloader.php.
