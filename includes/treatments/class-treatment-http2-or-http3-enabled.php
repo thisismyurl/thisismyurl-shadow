@@ -78,7 +78,7 @@ OPTION 4 — Cloudflare:
   2. Cloudflare also supports HTTP/3 (QUIC): Network → HTTP/3.
   3. No server configuration changes required.
 
-After enabling, re-run the Christopher Ross Shadow scan to verify.",
+After enabling, re-run the Shadow by Christopher Ross scan to verify.",
 				'thisismyurl-shadow'
 			),
 		];
@@ -92,7 +92,7 @@ After enabling, re-run the Christopher Ross Shadow scan to verify.",
 	public static function undo(): array {
 		return [
 			'success' => true,
-			'message' => __( 'This is a guidance-only treatment — no changes were made by Christopher Ross Shadow.', 'thisismyurl-shadow' ),
+			'message' => __( 'This is a guidance-only treatment — no changes were made by Shadow by Christopher Ross.', 'thisismyurl-shadow' ),
 		];
 	}
 }

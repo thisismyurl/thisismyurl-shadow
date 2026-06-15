@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Settings Registry - Centralized WordPress Settings API Registration
  *
- * Registers all Christopher Ross Shadow settings using proper WordPress Settings API.
+ * Registers all Shadow by Christopher Ross settings using proper WordPress Settings API.
  * Provides sanitization, validation, defaults, and proper WordPress integration.
  *
  * Philosophy Alignment:
@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Settings_Registry {
 	/**
-	 * Get a Christopher Ross Shadow setting value.
+	 * Get a Shadow by Christopher Ross setting value.
 	 *
 	 * @since 0.6095
 	 * @param  string $key     Setting key (with or without thisismyurl_shadow_ prefix).
@@ -70,7 +70,7 @@ class Settings_Registry {
 	}
 
 	/**
-	 * Set a Christopher Ross Shadow setting value.
+	 * Set a Shadow by Christopher Ross setting value.
 	 *
 	 * @since 0.6095
 	 * @param  string $key   Setting key (with or without thisismyurl_shadow_ prefix).
@@ -114,7 +114,7 @@ class Settings_Registry {
 	 * @param mixed  $value     The new option value.
 	 */
 	public static function on_setting_updated( $option, $old_value, $value ): void {
-		// Only fire for Christopher Ross Shadow settings (check for prefix).
+		// Only fire for Shadow by Christopher Ross settings (check for prefix).
 		// Use str_starts_with for PHP 8.0+, fallback to strpos for earlier versions.
 		if ( function_exists( 'str_starts_with' ) ) {
 			if ( ! str_starts_with( $option, 'thisismyurl_shadow_' ) ) {
@@ -131,7 +131,7 @@ class Settings_Registry {
 		}
 
 		/**
-		 * Fires when a Christopher Ross Shadow setting is updated.
+		 * Fires when a Shadow by Christopher Ross setting is updated.
 		 *
 		 * @param string $option    Setting name.
 		 * @param mixed  $old_value Previous value.
@@ -140,7 +140,7 @@ class Settings_Registry {
 		do_action( 'thisismyurl_shadow_setting_updated', $option, $old_value, $value );
 
 		/**
-		 * Fires when a specific Christopher Ross Shadow setting is updated.
+		 * Fires when a specific Shadow by Christopher Ross setting is updated.
 		 *
 		 * The dynamic portion of the hook name, $option, refers to the setting name.
 		 * For example: thisismyurl_shadow_setting_updated_thisismyurl_debug_mode
@@ -181,7 +181,7 @@ class Settings_Registry {
 	 * @param mixed  $value  Value of the added option.
 	 */
 	public static function on_setting_added( $option, $value ): void {
-		// Only fire for Christopher Ross Shadow settings (check for prefix).
+		// Only fire for Shadow by Christopher Ross settings (check for prefix).
 		// Use str_starts_with for PHP 8.0+, fallback to strpos for earlier versions.
 		if ( function_exists( 'str_starts_with' ) ) {
 			if ( ! str_starts_with( $option, 'thisismyurl_shadow_' ) ) {
@@ -194,7 +194,7 @@ class Settings_Registry {
 		}
 
 		/**
-		 * Fires when a Christopher Ross Shadow setting is added.
+		 * Fires when a Shadow by Christopher Ross setting is added.
 		 *
 		 * @param string $option Setting name.
 		 * @param mixed  $value  Setting value.
@@ -202,7 +202,7 @@ class Settings_Registry {
 		do_action( 'thisismyurl_shadow_setting_added', $option, $value );
 
 		/**
-		 * Fires when a specific Christopher Ross Shadow setting is added.
+		 * Fires when a specific Shadow by Christopher Ross setting is added.
 		 *
 		 * The dynamic portion of the hook name, $option, refers to the setting name.
 		 *
@@ -317,7 +317,7 @@ class Settings_Registry {
 	}
 
 	/**
-	 * Register all Christopher Ross Shadow settings with WordPress Settings API
+	 * Register all Shadow by Christopher Ross settings with WordPress Settings API
 	 *
 	 * Each setting gets:
 	 * - Type validation
@@ -340,6 +340,7 @@ class Settings_Registry {
 				'sanitize_callback' => array( __CLASS__, 'sanitize_verification_tokens' ),
 				'show_in_rest'      => false, // Security - tokens
 				'description'       => __( 'Pending email verification tokens', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -356,6 +357,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Enable diagnostic results caching', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -368,6 +370,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'absint',
 				'show_in_rest'      => false,
 				'description'       => __( 'Cache duration in seconds', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -380,6 +383,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Enable debug logging', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -392,6 +396,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Allow access to the WordPress Theme File Editor', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -404,130 +409,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Allow access to the WordPress Plugin File Editor', 'thisismyurl-shadow' ),
-			)
-		);
-
-		// =================================================================
-		// BACKUP SETTINGS (Vault Lite)
-		// =================================================================
-
-		register_setting(
-			'thisismyurl_shadow_settings',
-			'thisismyurl_shadow_backup_enabled',
-			array(
-				'type'              => 'boolean',
-				'default'           => true,
-				'sanitize_callback' => 'rest_sanitize_boolean',
-				'show_in_rest'      => false,
-				'description'       => __( 'Enable backups before treatments', 'thisismyurl-shadow' ),
-			)
-		);
-
-		register_setting(
-			'thisismyurl_shadow_settings',
-			'thisismyurl_shadow_backup_include_database',
-			array(
-				'type'              => 'boolean',
-				'default'           => true,
-				'sanitize_callback' => 'rest_sanitize_boolean',
-				'show_in_rest'      => false,
-				'description'       => __( 'Include database in Vault Lite backups', 'thisismyurl-shadow' ),
-			)
-		);
-
-		register_setting(
-			'thisismyurl_shadow_settings',
-			'thisismyurl_shadow_backup_restore_database_allowed',
-			array(
-				'type'              => 'boolean',
-				'default'           => false,
-				'sanitize_callback' => 'rest_sanitize_boolean',
-				'show_in_rest'      => false,
-				'description'       => __( 'Allow SQL imports to run during Vault Lite restores', 'thisismyurl-shadow' ),
-			)
-		);
-
-		register_setting(
-			'thisismyurl_shadow_settings',
-			'thisismyurl_shadow_backup_retention_days',
-			array(
-				'type'              => 'integer',
-				'default'           => 7,
-				'sanitize_callback' => array( __CLASS__, 'sanitize_retention_days' ),
-				'show_in_rest'      => false,
-				'description'       => __( 'Number of days to keep Vault Lite backups', 'thisismyurl-shadow' ),
-			)
-		);
-
-		register_setting(
-			'thisismyurl_shadow_settings',
-			'thisismyurl_shadow_backup_max_size_mb',
-			array(
-				'type'              => 'integer',
-				'default'           => 500,
-				'sanitize_callback' => 'absint',
-				'show_in_rest'      => false,
-				'description'       => __( 'Maximum total backup size (MB)', 'thisismyurl-shadow' ),
-			)
-		);
-
-		register_setting(
-			'thisismyurl_shadow_settings',
-			'thisismyurl_shadow_backup_compress',
-			array(
-				'type'              => 'boolean',
-				'default'           => true,
-				'sanitize_callback' => 'rest_sanitize_boolean',
-				'show_in_rest'      => false,
-				'description'       => __( 'Compress Vault Lite backups', 'thisismyurl-shadow' ),
-			)
-		);
-
-		register_setting(
-			'thisismyurl_shadow_settings',
-			'thisismyurl_shadow_backup_include_uploads',
-			array(
-				'type'              => 'boolean',
-				'default'           => true,
-				'sanitize_callback' => 'rest_sanitize_boolean',
-				'show_in_rest'      => false,
-				'description'       => __( 'Include uploads folder in Vault Lite backups', 'thisismyurl-shadow' ),
-			)
-		);
-
-		register_setting(
-			'thisismyurl_shadow_settings',
-			'thisismyurl_shadow_backup_verify',
-			array(
-				'type'              => 'boolean',
-				'default'           => true,
-				'sanitize_callback' => 'rest_sanitize_boolean',
-				'show_in_rest'      => false,
-				'description'       => __( 'Verify Vault Lite backups after creation', 'thisismyurl-shadow' ),
-			)
-		);
-
-		register_setting(
-			'thisismyurl_shadow_settings',
-			'thisismyurl_shadow_treatment_backup_window',
-			array(
-				'type'              => 'integer',
-				'default'           => 60,
-				'sanitize_callback' => 'absint',
-				'show_in_rest'      => false,
-				'description'       => __( 'Reuse an existing backup if created within this many minutes (treatment deduplication)', 'thisismyurl-shadow' ),
-			)
-		);
-
-		register_setting(
-			'thisismyurl_shadow_settings',
-			'thisismyurl_shadow_treatment_backup_exclude_uploads',
-			array(
-				'type'              => 'boolean',
-				'default'           => true,
-				'sanitize_callback' => 'rest_sanitize_boolean',
-				'show_in_rest'      => false,
-				'description'       => __( 'Exclude the uploads folder from treatment-triggered backups', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -540,42 +422,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Send email notifications when magic links expire', 'thisismyurl-shadow' ),
-			)
-		);
-
-		register_setting(
-			'thisismyurl_shadow_settings',
-			'thisismyurl_shadow_backup_schedule_enabled',
-			array(
-				'type'              => 'boolean',
-				'default'           => false,
-				'sanitize_callback' => 'rest_sanitize_boolean',
-				'show_in_rest'      => false,
-				'description'       => __( 'Enable scheduled Vault Lite backups', 'thisismyurl-shadow' ),
-			)
-		);
-
-		register_setting(
-			'thisismyurl_shadow_settings',
-			'thisismyurl_shadow_backup_schedule_frequency',
-			array(
-				'type'              => 'string',
-				'default'           => 'daily',
-				'sanitize_callback' => array( __CLASS__, 'sanitize_backup_frequency' ),
-				'show_in_rest'      => false,
-				'description'       => __( 'How often scheduled backups run', 'thisismyurl-shadow' ),
-			)
-		);
-
-		register_setting(
-			'thisismyurl_shadow_settings',
-			'thisismyurl_shadow_backup_schedule_time',
-			array(
-				'type'              => 'string',
-				'default'           => '02:00',
-				'sanitize_callback' => array( __CLASS__, 'sanitize_backup_time' ),
-				'show_in_rest'      => false,
-				'description'       => __( 'Time of day for scheduled backups (24h)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -593,6 +440,7 @@ class Settings_Registry {
 				'sanitize_callback' => array( __CLASS__, 'sanitize_class_list' ),
 				'show_in_rest'      => false,
 				'description'       => __( 'List of diagnostic classes disabled by admin', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -606,6 +454,7 @@ class Settings_Registry {
 				'sanitize_callback' => array( __CLASS__, 'sanitize_frequency_overrides' ),
 				'show_in_rest'      => false,
 				'description'       => __( 'Per-diagnostic scan frequency overrides set by admin', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -619,6 +468,7 @@ class Settings_Registry {
 				'sanitize_callback' => array( __CLASS__, 'sanitize_class_list' ),
 				'show_in_rest'      => false,
 				'description'       => __( 'List of treatment classes disabled by admin', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -639,6 +489,7 @@ class Settings_Registry {
 				'sanitize_callback' => array( __CLASS__, 'sanitize_heartbeat_settings' ),
 				'show_in_rest'      => false,
 				'description'       => __( 'WordPress Heartbeat API optimization settings', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -655,6 +506,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Show keyboard navigation hints and shortcuts (helps users who navigate without a mouse)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -667,6 +519,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Optimize interface for screen readers with enhanced labels (for blind and low-vision users)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -679,6 +532,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Force high contrast colors for better visibility (WCAG AAA compliance)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -691,6 +545,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Disable animations and transitions (helps with motion sensitivity and focus)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -703,6 +558,7 @@ class Settings_Registry {
 				'sanitize_callback' => array( __CLASS__, 'sanitize_admin_font_family' ),
 				'show_in_rest'      => false,
 				'description'       => __( 'Readable admin font choice, including an optional focus-friendly stack inspired by fonts some ADHD users prefer', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -715,6 +571,7 @@ class Settings_Registry {
 				'sanitize_callback' => array( __CLASS__, 'sanitize_font_multiplier' ),
 				'show_in_rest'      => false,
 				'description'       => __( 'Text size adjustment (0.8 to 2.0, where 1.0 is standard size)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -727,6 +584,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Use simplified interface with fewer options (helps with cognitive load and focus)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -739,6 +597,7 @@ class Settings_Registry {
 				'sanitize_callback' => array( __CLASS__, 'sanitize_focus_style' ),
 				'show_in_rest'      => false,
 				'description'       => __( 'Focus indicator visibility (standard/enhanced/maximum)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -755,6 +614,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Enable developer mode (shows extension points, hooks, and API documentation)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -767,6 +627,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Display available hooks and filters in admin interface', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -779,6 +640,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Show inline API documentation for extension development', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -791,6 +653,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Enable extension testing sandbox (safe testing environment)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -807,6 +670,7 @@ class Settings_Registry {
 				'sanitize_callback' => array( __CLASS__, 'sanitize_date_format' ),
 				'show_in_rest'      => false,
 				'description'       => __( 'Date format preference (wordpress/iso8601/us/eu/custom)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -819,6 +683,7 @@ class Settings_Registry {
 				'sanitize_callback' => array( __CLASS__, 'sanitize_time_format' ),
 				'show_in_rest'      => false,
 				'description'       => __( 'Time format preference (12h/24h/wordpress)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -831,6 +696,7 @@ class Settings_Registry {
 				'sanitize_callback' => array( __CLASS__, 'sanitize_number_format' ),
 				'show_in_rest'      => false,
 				'description'       => __( 'Number format (1,000.50 vs1.0,50)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -843,6 +709,7 @@ class Settings_Registry {
 				'sanitize_callback' => array( __CLASS__, 'sanitize_rtl_preference' ),
 				'show_in_rest'      => false,
 				'description'       => __( 'RTL interface direction (auto/force_ltr/force_rtl)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -855,6 +722,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Avoid idioms and culturally-specific phrases', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -871,6 +739,7 @@ class Settings_Registry {
 				'sanitize_callback' => array( __CLASS__, 'sanitize_learning_style' ),
 				'show_in_rest'      => false,
 				'description'       => __( 'Preferred learning format (text/video/interactive/mixed)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -883,6 +752,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Break complex operations into step-by-step guides', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -895,6 +765,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Show real-world examples with explanations', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -907,6 +778,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'ADHD-friendly UI (clear priorities, progress bars, auto-save)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -919,6 +791,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Use a dyslexia-friendly font stack with clearer letterforms and spacing', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -935,6 +808,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Track which features help you most (anonymous, helps us improve)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -947,6 +821,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Show impact metrics (time saved, performance gains)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -959,6 +834,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Track value delivered (money saved, issues prevented)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -975,6 +851,7 @@ class Settings_Registry {
 				'sanitize_callback' => array( __CLASS__, 'sanitize_autosave_frequency' ),
 				'show_in_rest'      => false,
 				'description'       => __( 'Auto-save frequency in seconds (10-300)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -987,6 +864,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Automatically retry failed operations (network, database)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -999,6 +877,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Use stale cache when fresh data unavailable (graceful degradation)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -1011,6 +890,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Work offline when network unavailable (queue operations)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -1023,6 +903,7 @@ class Settings_Registry {
 				'sanitize_callback' => 'rest_sanitize_boolean',
 				'show_in_rest'      => false,
 				'description'       => __( 'Show user-friendly errors (hide technical details)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
 
@@ -1035,50 +916,9 @@ class Settings_Registry {
 				'sanitize_callback' => array( __CLASS__, 'sanitize_operation_timeout' ),
 				'show_in_rest'      => false,
 				'description'       => __( 'Operation timeout in seconds (5-300)', 'thisismyurl-shadow' ),
+				'autoload'          => false,
 			)
 		);
-	}
-
-	/**
-	 * Sanitize services array
-	 *
-	 * @param mixed $value Input value
-	 * @return array Sanitized services configuration
-	 */
-	public static function sanitize_services_array( $value ): array {
-		if ( ! is_array( $value ) ) {
-			return array();
-		}
-
-		$valid_services = array( 'vault', 'cloud' );
-		$sanitized      = array();
-
-		foreach ( $value as $service => $config ) {
-			if ( ! in_array( $service, $valid_services, true ) || ! is_array( $config ) ) {
-				continue;
-			}
-
-			$sanitized[ $service ] = array(
-				'tier' => isset( $config['tier'] ) ? sanitize_text_field( $config['tier'] ) : 'free',
-			);
-
-			// Add service-specific fields.
-			foreach ( $config as $key => $val ) {
-				if ( 'tier' === $key ) {
-					continue;
-				}
-				// Sanitize based on type.
-				if ( is_int( $val ) ) {
-					$sanitized[ $service ][ $key ] = absint( $val );
-				} elseif ( is_bool( $val ) ) {
-					$sanitized[ $service ][ $key ] = rest_sanitize_boolean( $val );
-				} elseif ( is_string( $val ) ) {
-					$sanitized[ $service ][ $key ] = sanitize_text_field( $val );
-				}
-			}
-		}
-
-		return $sanitized;
 	}
 
 	/**
@@ -1182,44 +1022,6 @@ class Settings_Registry {
 		}
 
 		return $sanitized;
-	}
-
-	/**
-	 * Sanitize retention days
-	 *
-	 * @param mixed $value Input value
-	 * @return int Sanitized value (7-365 days)
-	 */
-	public static function sanitize_retention_days( $value ): int {
-		$int = absint( $value );
-		return min( max( $int, 7 ), 365 ); // Clamp between 7-365 days
-	}
-
-	/**
-	 * Sanitize backup frequency
-	 *
-	 * @param mixed $value Input value
-	 * @return string Sanitized frequency
-	 */
-	public static function sanitize_backup_frequency( $value ): string {
-		$allowed = array( 'daily', 'weekly', 'monthly' );
-		$value   = sanitize_key( (string) $value );
-		return in_array( $value, $allowed, true ) ? $value : 'weekly';
-	}
-
-	/**
-	 * Sanitize backup time (HH:MM 24h)
-	 *
-	 * @param mixed $value Input value
-	 * @return string Sanitized time
-	 */
-	public static function sanitize_backup_time( $value ): string {
-		$value = is_string( $value ) ? trim( $value ) : '';
-		if ( preg_match( '/^([01]\d|2[0-3]):([0-5]\d)$/', $value ) ) {
-			return $value;
-		}
-
-		return '02:00';
 	}
 
 	/**

@@ -4,7 +4,7 @@
  *
  * Provides convenient functions for rendering consistent page headers and footers.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Views
  * @since 0.6095
  */

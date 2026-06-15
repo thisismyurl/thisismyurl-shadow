@@ -4,7 +4,7 @@
  *
  * Checks for missing or inefficient database indexes.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since 0.6095
  */

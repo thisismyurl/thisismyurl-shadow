@@ -11,7 +11,7 @@
  * Removing them reduces head bloat and limits passive fingerprinting of
  * the blog's feed structure.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

@@ -2,7 +2,7 @@
 /**
  * AJAX Handler: Save Setting
  *
- * Saves a single Christopher Ross Shadow setting via AJAX for auto-save UI flows.
+ * Saves a single Shadow by Christopher Ross setting via AJAX for auto-save UI flows.
  *
  * @package ThisIsMyURL\Shadow
  * @subpackage Admin/AJAX

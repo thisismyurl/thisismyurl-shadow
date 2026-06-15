@@ -2,7 +2,7 @@
 /**
  * Treatment: Harden Admin Session Expiration
  *
- * Stores a Christopher Ross Shadow option that instructs the plugin bootstrap to hook
+ * Stores a Shadow by Christopher Ross option that instructs the plugin bootstrap to hook
  * auth_cookie_expiration and return DAY_IN_SECONDS (24 hours) for
  * administrator-level users instead of WordPress's default 14-day lifetime.
  *

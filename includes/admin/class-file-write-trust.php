@@ -30,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Persist the admin's decision to skip future file-write warnings.
  *
- * Christopher Ross Shadow shows extra caution before editing files because WordPress sites
+ * Shadow by Christopher Ross shows extra caution before editing files because WordPress sites
  * often live on shared hosting or custom deployment setups. This class stores
  * the admin's explicit trust decisions so repeated safe fixes can become less
  * disruptive once the person operating the plugin understands the workflow.

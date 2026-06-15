@@ -2,9 +2,9 @@
 /**
  * Dashboard At a Glance Problems Item
  *
- * Adds a Christopher Ross Shadow problem count to the WordPress "At a Glance" widget.
+ * Adds a Shadow by Christopher Ross problem count to the WordPress "At a Glance" widget.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Admin
  * @since 0.6095
  */
@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Dashboard_Glance_Problems Class
  *
- * Adds the Christopher Ross Shadow problem count to the default dashboard glance widget.
+ * Adds the Shadow by Christopher Ross problem count to the default dashboard glance widget.
  *
  * @since 0.6095
  */
@@ -53,7 +53,7 @@ class Dashboard_Glance_Problems extends Hook_Subscriber_Base {
 	}
 
 	/**
-	 * Add Christopher Ross Shadow problems count to At a Glance.
+	 * Add Shadow by Christopher Ross problems count to At a Glance.
 	 *
 	 * @since 0.6095
 	 * @param  array $items Glance items.
@@ -81,7 +81,7 @@ class Dashboard_Glance_Problems extends Hook_Subscriber_Base {
 	}
 
 	/**
-	 * Get the count of active Christopher Ross Shadow problems.
+	 * Get the count of active Shadow by Christopher Ross problems.
 	 *
 	 * @since 0.6095
 	 * @return int Problem count.

@@ -3,7 +3,7 @@
 /**
  * Treatment Hooks
  *
- * Runtime hook registration for Christopher Ross Shadow treatments that require active
+ * Runtime hook registration for Shadow by Christopher Ross treatments that require active
  * WordPress filters/actions rather than passive configuration changes.
  *
  * Called once from Hooks_Initializer::on_plugins_loaded_late(). Each section
@@ -310,7 +310,7 @@ class Treatment_Hooks {
 			return; // Safety: no token configured → no gate.
 		}
 
-		$supplied = isset( $_GET['wpstoken'] ) ? sanitize_key( (string) $_GET['wpstoken'] ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		$supplied = isset( $_GET['wpstoken'] ) ? sanitize_key( wp_unslash( $_GET['wpstoken'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only login-URL token gate compared with hash_equals().
 
 		if ( ! hash_equals( $token, $supplied ) ) {
 			wp_safe_redirect( home_url( '/' ), 302 );

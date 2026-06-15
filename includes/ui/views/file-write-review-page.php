@@ -46,7 +46,7 @@ if ( $preview_manual_enabled ) {
 		'sftp_instructions'      => '',
 		'risk_level'             => 'high',
 		'is_preview'             => true,
-		'manual_reason_override' => __( 'This is a safe preview card added by Christopher Ross Shadow so you can see how a manual-only file fix will look. It does not point to a real fix and it cannot change anything on your site.', 'thisismyurl-shadow' ),
+		'manual_reason_override' => __( 'This is a safe preview card added by Shadow by Christopher Ross so you can see how a manual-only file fix will look. It does not point to a real fix and it cannot change anything on your site.', 'thisismyurl-shadow' ),
 		'manual_steps_override'  => array(
 			__( 'Look at the explanation card and confirm the layout is easy to follow.', 'thisismyurl-shadow' ),
 			__( 'Review the sample file path and the code block to make sure the instructions feel clear.', 'thisismyurl-shadow' ),
@@ -60,19 +60,19 @@ $preview_exit_url   = remove_query_arg( 'thisismyurl_shadow_preview_manual', $re
 
 $build_manual_reason = static function ( bool $file_exists, bool $file_readable, bool $file_writable, string $filesystem_method ): string {
 	if ( ! $file_exists ) {
-		return __( 'Christopher Ross Shadow cannot make this change because the target file could not be found on the server. Until WordPress can see the file, it cannot safely edit or verify it for you.', 'thisismyurl-shadow' );
+		return __( 'Shadow by Christopher Ross cannot make this change because the target file could not be found on the server. Until WordPress can see the file, it cannot safely edit or verify it for you.', 'thisismyurl-shadow' );
 	}
 
 	if ( ! $file_readable ) {
-		return __( 'Christopher Ross Shadow can see that the file exists, but WordPress is not allowed to read it. That means Christopher Ross Shadow cannot safely inspect the current contents before making a change.', 'thisismyurl-shadow' );
+		return __( 'Shadow by Christopher Ross can see that the file exists, but WordPress is not allowed to read it. That means Shadow cannot safely inspect the current contents before making a change.', 'thisismyurl-shadow' );
 	}
 
 	if ( ! $file_writable ) {
-		return __( 'WordPress can read this file, but the server is blocking write access. This usually means the file permissions or file ownership are locked down, so Christopher Ross Shadow cannot save the change for you.', 'thisismyurl-shadow' );
+		return __( 'WordPress can read this file, but the server is blocking write access. This usually means the file permissions or file ownership are locked down, so Shadow by Christopher Ross cannot save the change for you.', 'thisismyurl-shadow' );
 	}
 
 	if ( 'direct' !== $filesystem_method ) {
-		return __( 'WordPress can inspect this file, but this site does not expose direct filesystem access to the WordPress process. Christopher Ross Shadow only applies file changes automatically in beta when direct access is available, so this fix needs to be completed with your host file manager or SFTP client.', 'thisismyurl-shadow' );
+		return __( 'WordPress can inspect this file, but this site does not expose direct filesystem access to the WordPress process. Shadow by Christopher Ross only applies file changes automatically in beta when direct access is available, so this fix needs to be completed with your host file manager or SFTP client.', 'thisismyurl-shadow' );
 	}
 
 	return '';
@@ -82,7 +82,7 @@ $build_manual_steps = static function ( string $file_path, string $file_label, s
 	$steps = array();
 
 	if ( '' !== $filesystem_method && 'direct' !== $filesystem_method ) {
-		$steps[] = __( 'Use your host file manager, SFTP client, or deployment workflow for this change. Christopher Ross Shadow is intentionally not attempting credential-based filesystem writes during beta.', 'thisismyurl-shadow' );
+		$steps[] = __( 'Use your host file manager, SFTP client, or deployment workflow for this change. Shadow by Christopher Ross is intentionally not attempting credential-based filesystem writes during beta.', 'thisismyurl-shadow' );
 	}
 
 	return array_merge(
@@ -174,7 +174,7 @@ $render_actionable_card = static function ( array $treatment ): void {
 				</p>
 			</div>
 			<div class="wps-file-review-pill-group">
-				<span class="wps-file-review-pill wps-file-review-pill--success"><?php esc_html_e( 'Christopher Ross Shadow beta can apply this', 'thisismyurl-shadow' ); ?></span>
+				<span class="wps-file-review-pill wps-file-review-pill--success"><?php esc_html_e( 'Shadow by Christopher Ross beta can apply this', 'thisismyurl-shadow' ); ?></span>
 				<span class="thisismyurl-shadow-risk-badge wps-file-review-risk">âš  <?php esc_html_e( 'File Write Required', 'thisismyurl-shadow' ); ?></span>
 			</div>
 		</div>
@@ -193,9 +193,9 @@ $render_actionable_card = static function ( array $treatment ): void {
 		</div>
 
 		<div class="wps-file-review-section">
-			<h3 class="wps-file-review-section-title"><?php esc_html_e( 'Exact Change Christopher Ross Shadow Will Make', 'thisismyurl-shadow' ); ?></h3>
+			<h3 class="wps-file-review-section-title"><?php esc_html_e( 'Exact Change Shadow Will Make', 'thisismyurl-shadow' ); ?></h3>
 			<pre class="wps-file-review-snippet"><?php echo esc_html( $snippet ); ?></pre>
-			<p class="wps-file-review-helptext"><?php esc_html_e( 'This is the exact content Christopher Ross Shadow will write. In beta, this auto-apply path is only available when WordPress has direct filesystem access, so review it first, then preview, back up, and apply when you are ready.', 'thisismyurl-shadow' ); ?></p>
+			<p class="wps-file-review-helptext"><?php esc_html_e( 'This is the exact content Shadow by Christopher Ross will write. In beta, this auto-apply path is only available when WordPress has direct filesystem access, so review it first, then preview, back up, and apply when you are ready.', 'thisismyurl-shadow' ); ?></p>
 		</div>
 
 		<div class="thisismyurl-shadow-diff-area wps-file-review-diff-area" id="thisismyurl-shadow-diff-<?php echo esc_attr( $finding_id ); ?>">
@@ -225,7 +225,7 @@ $render_actionable_card = static function ( array $treatment ): void {
 			</button>
 		</div>
 
-		<div class="thisismyurl-shadow-card-status wps-file-review-status-box" id="thisismyurl-shadow-status-<?php echo esc_attr( $finding_id ); ?>"></div>
+		<div class="thisismyurl-shadow-card-status wps-file-review-status-box" id="thisismyurl-shadow-status-<?php echo esc_attr( $finding_id ); ?>" aria-live="polite" aria-atomic="true"></div>
 	</div>
 	<?php
 };
@@ -259,7 +259,7 @@ $render_manual_card = static function ( array $treatment ): void {
 		<div class="wps-alert wps-alert--warning wps-file-review-manual-alert">
 			<div class="wps-alert-icon">!</div>
 			<div class="wps-alert-content">
-				<strong><?php esc_html_e( 'Why Christopher Ross Shadow cannot write this file', 'thisismyurl-shadow' ); ?></strong>
+				<strong><?php esc_html_e( 'Why Shadow by Christopher Ross cannot write this file', 'thisismyurl-shadow' ); ?></strong>
 				<p class="wps-alert-copy"><?php echo esc_html( $manual_reason ); ?></p>
 			</div>
 		</div>
@@ -841,7 +841,7 @@ $render_manual_card = static function ( array $treatment ): void {
 				<div>
 					<span class="wps-file-review-kicker"><?php esc_html_e( 'File Change Review', 'thisismyurl-shadow' ); ?></span>
 					<h1 class="wps-file-review-title"><?php esc_html_e( 'Review Proposed File Changes', 'thisismyurl-shadow' ); ?></h1>
-					<p class="wps-file-review-description"><?php esc_html_e( 'Christopher Ross Shadow has split these changes into two groups. The first group contains files WordPress can update directly in this beta because the site exposes direct filesystem access. The second group contains files that still need attention, but must be updated manually because WordPress cannot safely write them from inside the site.', 'thisismyurl-shadow' ); ?></p>
+					<p class="wps-file-review-description"><?php esc_html_e( 'Shadow by Christopher Ross has split these changes into two groups. The first group contains files WordPress can update directly in this beta because the site exposes direct filesystem access. The second group contains files that still need attention, but must be updated manually because WordPress cannot safely write them from inside the site.', 'thisismyurl-shadow' ); ?></p>
 				</div>
 				<div class="wps-file-review-hero-actions">
 					<?php if ( empty( $manual ) && ! $preview_manual_enabled ) : ?>
@@ -856,7 +856,7 @@ $render_manual_card = static function ( array $treatment ): void {
 			<div class="wps-file-review-stats">
 				<div class="wps-file-review-stat">
 					<span class="wps-file-review-stat-value"><?php echo (int) count( $actionable ); ?></span>
-					<span class="wps-file-review-stat-label"><?php esc_html_e( 'Changes Christopher Ross Shadow can apply', 'thisismyurl-shadow' ); ?></span>
+					<span class="wps-file-review-stat-label"><?php esc_html_e( 'Changes Shadow by Christopher Ross can apply', 'thisismyurl-shadow' ); ?></span>
 				</div>
 				<div class="wps-file-review-stat">
 					<span class="wps-file-review-stat-value"><?php echo (int) count( $manual ); ?></span>
@@ -872,7 +872,7 @@ $render_manual_card = static function ( array $treatment ): void {
 				<div class="wps-file-review-flow-step">
 					<span class="wps-file-review-flow-label">1</span>
 					<strong><?php esc_html_e( 'Review the exact code', 'thisismyurl-shadow' ); ?></strong>
-					<p><?php esc_html_e( 'Every card shows the file path and the exact snippet Christopher Ross Shadow wants to add or change.', 'thisismyurl-shadow' ); ?></p>
+					<p><?php esc_html_e( 'Every card shows the file path and the exact snippet Shadow by Christopher Ross wants to add or change.', 'thisismyurl-shadow' ); ?></p>
 				</div>
 				<div class="wps-file-review-flow-step">
 					<span class="wps-file-review-flow-label">2</span>
@@ -882,20 +882,20 @@ $render_manual_card = static function ( array $treatment ): void {
 				<div class="wps-file-review-flow-step">
 					<span class="wps-file-review-flow-label">3</span>
 					<strong><?php esc_html_e( 'Run Guardian again', 'thisismyurl-shadow' ); ?></strong>
-					<p><?php esc_html_e( 'After the file change is made, rerun the check so Christopher Ross Shadow can confirm the issue is resolved.', 'thisismyurl-shadow' ); ?></p>
+					<p><?php esc_html_e( 'After the file change is made, rerun the check so Shadow by Christopher Ross can confirm the issue is resolved.', 'thisismyurl-shadow' ); ?></p>
 				</div>
 			</div>
 
 			<?php if ( $preview_manual_enabled ) : ?>
 				<div class="wps-file-review-preview-banner">
 					<strong><?php esc_html_e( 'Preview mode is on', 'thisismyurl-shadow' ); ?></strong>
-					<p><?php esc_html_e( 'Christopher Ross Shadow added one fake manual card below so you can review the manual-only layout safely. No site files are changed in this mode.', 'thisismyurl-shadow' ); ?></p>
+					<p><?php esc_html_e( 'Shadow by Christopher Ross added one fake manual card below so you can review the manual-only layout safely. No site files are changed in this mode.', 'thisismyurl-shadow' ); ?></p>
 				</div>
 			<?php endif; ?>
 
 			<div class="wps-file-review-preview-banner">
 				<strong><?php esc_html_e( 'Beta safeguard', 'thisismyurl-shadow' ); ?></strong>
-				<p><?php esc_html_e( 'Automatic file changes are intentionally limited to direct filesystem access. If your host requires FTP, SSH, or another credentialed transport, Christopher Ross Shadow will keep the fix in the manual-review section and show the exact code to apply yourself.', 'thisismyurl-shadow' ); ?></p>
+				<p><?php esc_html_e( 'Automatic file changes are intentionally limited to direct filesystem access. If your host requires FTP, SSH, or another credentialed transport, Shadow by Christopher Ross will keep the fix in the manual-review section and show the exact code to apply yourself.', 'thisismyurl-shadow' ); ?></p>
 			</div>
 		</div>
 
@@ -914,7 +914,7 @@ $render_manual_card = static function ( array $treatment ): void {
 		<section class="wps-file-review-section-block wps-file-review-section-block--actionable">
 			<div class="wps-file-review-section-heading">
 				<div>
-					<h2><?php esc_html_e( 'Things Christopher Ross Shadow Can Apply In Beta', 'thisismyurl-shadow' ); ?></h2>
+					<h2><?php esc_html_e( 'Things Shadow Can Apply In Beta', 'thisismyurl-shadow' ); ?></h2>
 					<p><?php esc_html_e( 'These files are readable, writable, and available through WordPress direct filesystem access. You can preview each change, create a backup, and apply the fix directly from this page.', 'thisismyurl-shadow' ); ?></p>
 				</div>
 				<span class="wps-file-review-count-badge wps-file-review-count-badge--actionable"><?php echo (int) count( $actionable ); ?></span>
@@ -930,7 +930,7 @@ $render_manual_card = static function ( array $treatment ): void {
 						<div class="wps-alert-icon">i</div>
 						<div class="wps-alert-content">
 							<strong><?php esc_html_e( 'Nothing in this section right now', 'thisismyurl-shadow' ); ?></strong>
-							<p class="wps-alert-copy"><?php esc_html_e( 'Christopher Ross Shadow does not currently have any writable file changes it can apply automatically.', 'thisismyurl-shadow' ); ?></p>
+							<p class="wps-alert-copy"><?php esc_html_e( 'Shadow by Christopher Ross does not currently have any writable file changes it can apply automatically.', 'thisismyurl-shadow' ); ?></p>
 						</div>
 					</div>
 				<?php endif; ?>
@@ -941,7 +941,7 @@ $render_manual_card = static function ( array $treatment ): void {
 			<div class="wps-file-review-section-heading">
 				<div>
 					<h2><?php esc_html_e( 'Files That Need Manual Updates', 'thisismyurl-shadow' ); ?></h2>
-					<p><?php esc_html_e( 'These changes still matter, but WordPress does not have enough direct filesystem access to save them safely in beta. For each one below, Christopher Ross Shadow explains the reason in plain English and shows the exact code you need to add yourself.', 'thisismyurl-shadow' ); ?></p>
+					<p><?php esc_html_e( 'These changes still matter, but WordPress does not have enough direct filesystem access to save them safely in beta. For each one below, Shadow by Christopher Ross explains the reason in plain English and shows the exact code you need to add yourself.', 'thisismyurl-shadow' ); ?></p>
 				</div>
 				<span class="wps-file-review-count-badge wps-file-review-count-badge--manual"><?php echo (int) count( $manual ); ?></span>
 			</div>
@@ -956,7 +956,7 @@ $render_manual_card = static function ( array $treatment ): void {
 						<div class="wps-alert-icon">âœ“</div>
 						<div class="wps-alert-content">
 							<strong><?php esc_html_e( 'No blocked files right now', 'thisismyurl-shadow' ); ?></strong>
-							<p class="wps-alert-copy"><?php esc_html_e( 'Every file-based fix currently in this review can be written by Christopher Ross Shadow directly. If a future file is locked by permissions, it will appear here with manual steps.', 'thisismyurl-shadow' ); ?></p>
+							<p class="wps-alert-copy"><?php esc_html_e( 'Every file-based fix currently in this review can be written by Shadow by Christopher Ross directly. If a future file is locked by permissions, it will appear here with manual steps.', 'thisismyurl-shadow' ); ?></p>
 						</div>
 					</div>
 				<?php endif; ?>

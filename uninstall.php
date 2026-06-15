@@ -1,11 +1,8 @@
 <?php
 /**
- * Christopher Ross Shadow Uninstall Handler
+ * Shadow Uninstall Handler
  *
  * Handles plugin uninstall including:
- * - More detailed exit interview
- * - Optional diagnostic data submission
- * - Contact permission for follow-up
  * - Clean up plugin data
  *
  * Philosophy:
@@ -60,7 +57,7 @@ if ( ! $keep_data ) {
 	// Remove user meta
 	$wpdb->query( $wpdb->prepare( "DELETE FROM {$wpdb->usermeta} WHERE meta_key LIKE %s", $option_like ) );
 
-	// No custom Christopher Ross Shadow tables are maintained.
+	// No custom Shadow by Christopher Ross tables are maintained.
 
 	// Clear transients
 	$wpdb->query(

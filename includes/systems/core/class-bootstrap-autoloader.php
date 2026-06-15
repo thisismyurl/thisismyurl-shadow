@@ -2,7 +2,7 @@
 /**
  * Bootstrap Autoloader
  *
- * Automatically loads all Christopher Ross Shadow classes in dependency order.
+ * Automatically loads all Shadow by Christopher Ross classes in dependency order.
  * Replaces 130+ manual require_once calls with intelligent auto-loading.
  *
  * Philosophy:
@@ -10,7 +10,7 @@
  * - Phase 4: Bootstrap Consolidation (DRY bootstrap)
  * - Convention over configuration
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Core
  * @since 0.6095
  */
@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Bootstrap_Autoloader Class
  *
- * Intelligently loads all Christopher Ross Shadow classes with proper dependency ordering.
+ * Intelligently loads all Shadow by Christopher Ross classes with proper dependency ordering.
  *
  * @since 0.6095
  */
@@ -103,10 +103,6 @@ class Bootstrap_Autoloader {
 		'includes/ui/views/dashboard-shared.php',
 		'includes/ui/views/dashboard-page-v2.php',
 		'includes/ui/dashboard/gauges-module.php',
-
-		// Backup/recovery
-		'includes/features/monitoring/recovery/class-backup-manager.php',
-		'includes/features/monitoring/recovery/class-backup-scheduler.php',
 
 		// Menu and routing
 		'includes/systems/core/class-menu-manager.php',

@@ -4,7 +4,7 @@
  *
  * Detects missing Cache-Control headers causing browsers to re-download assets unnecessarily.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since 0.6095
  */

@@ -18,7 +18,7 @@
  * - #8 (Inspire Confidence): Users protected from attacks
  * - #1 (Helpful Neighbor): Legitimate users not impacted
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Core
  * @since 0.6095
  */
@@ -280,7 +280,7 @@ class Rate_Limiter {
 			);
 		} else {
 			Error_Handler::log_error(
-				'Christopher Ross Shadow rate limit exceeded',
+				'Shadow by Christopher Ross rate limit exceeded',
 				array(
 					'action'     => $action,
 					'user_id'    => $user_id,

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Christopher Ross Shadow Hooks Initializer
+ * Shadow Hooks Initializer
  *
  * Centralizes WordPress hook registration (add_action, add_filter).
  * Extracted from thisismyurl-shadow.php as part of Phase 4.5 refactoring.
@@ -21,11 +21,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 use ThisIsMyURL\Shadow\Core\Form_Param_Helper;
 use ThisIsMyURL\Shadow\Core\Activity_Logger;
 /**
- * Register Christopher Ross Shadow's WordPress hooks in one place.
+ * Register Shadow's WordPress hooks in one place.
  *
  * The plugin uses many actions and filters across admin pages, background
  * processing, diagnostics, treatments, and integration points. Keeping the
- * registration layer centralized gives readers a map of how Christopher Ross Shadow enters
+ * registration layer centralized gives readers a map of how Shadow by Christopher Ross enters
  * WordPress and which callbacks own each lifecycle phase.
  */
 class Hooks_Initializer {
@@ -34,7 +34,7 @@ class Hooks_Initializer {
 	/**
 	 * Register the plugin's actions and filters with WordPress.
 	 *
-	 * This is the bridge between Christopher Ross Shadow's internal services and the WordPress
+	 * This is the bridge between Shadow's internal services and the WordPress
 	 * lifecycle. The method is intentionally broad because it documents, in one
 	 * pass, how admin pages, cron jobs, notices, AJAX flows, and profile-related
 	 * features are wired into the host application.
@@ -51,12 +51,8 @@ class Hooks_Initializer {
 
 		// Menu and asset loading
 		add_action( 'admin_menu', array( __CLASS__, 'on_admin_menu' ) );
+		add_action( 'admin_enqueue_scripts', array( __CLASS__, 'enqueue_admin_accessibility_styles' ) );
 		add_action( 'admin_head', array( __CLASS__, 'on_admin_head' ) );
-
-		// Scheduled backups (Vault Lite)
-		if ( class_exists( '\\ThisIsMyURL\\Shadow\\Guardian\\Backup_Scheduler' ) ) {
-			\ThisIsMyURL\Shadow\Guardian\Backup_Scheduler::init();
-		}
 
 		// Hidden file-write review page used by Guardian file-write fixes.
 		if ( ! class_exists( '\\ThisIsMyURL\\Shadow\\Admin\\Pages\\File_Write_Review_Page' ) ) {
@@ -69,7 +65,7 @@ class Hooks_Initializer {
 			\ThisIsMyURL\Shadow\Admin\Pages\File_Write_Review_Page::init();
 		}
 
-		// Cache-bust Christopher Ross Shadow stylesheets using file modification time.
+		// Cache-bust Shadow by Christopher Ross stylesheets using file modification time.
 		add_filter( 'style_loader_src', array( __CLASS__, 'filter_style_loader_src' ), 10, 2 );
 
 		// Front-end assets
@@ -97,8 +93,6 @@ class Hooks_Initializer {
 		add_action( 'update_option_thisismyurl_shadow_notifications_enabled', array( __CLASS__, 'on_option_updated' ), 10, 3 );
 		add_action( 'update_option_thisismyurl_shadow_notification_severity', array( __CLASS__, 'on_option_updated' ), 10, 3 );
 		add_action( 'update_option_thisismyurl_shadow_notify_admin_email', array( __CLASS__, 'on_option_updated' ), 10, 3 );
-		add_action( 'update_option_thisismyurl_shadow_backup_enabled', array( __CLASS__, 'on_option_updated' ), 10, 3 );
-		add_action( 'update_option_thisismyurl_shadow_backup_retention_days', array( __CLASS__, 'on_option_updated' ), 10, 3 );
 
 		// Filters for WordPress integration
 		add_filter( 'plugin_action_links_' . THISISMYURL_SHADOW_BASENAME, array( __CLASS__, 'filter_plugin_action_links' ) );
@@ -147,7 +141,7 @@ class Hooks_Initializer {
 		if ( class_exists( 'ThisIsMyURL\\Shadow\\Core\\Activity_Logger' ) ) {
 			Activity_Logger::log(
 				'plugin_activated',
-				__( 'Christopher Ross Shadow plugin activated', 'thisismyurl-shadow' ),
+				__( 'Shadow by Christopher Ross plugin activated', 'thisismyurl-shadow' ),
 				'system',
 				array( 'version' => THISISMYURL_SHADOW_VERSION )
 			);
@@ -171,11 +165,30 @@ class Hooks_Initializer {
 	 * @return void
 	 */
 	public static function on_deactivate() {
+		// Clear every scheduled event this plugin may have registered so no
+		// orphaned WP-Cron hooks fire after deactivation. Data removal stays in
+		// uninstall.php; this only unschedules. Keep this list in sync with the
+		// $cron_hooks list in uninstall.php.
+		$cron_hooks = array(
+			'thisismyurl_shadow_run_automated_fixes',
+			'thisismyurl_shadow_run_data_cleanup',
+			'thisismyurl_shadow_send_scheduled_reports',
+			'thisismyurl_shadow_run_automatic_diagnostic_scan',
+			'thisismyurl_shadow_run_scheduled_backup',
+			'thisismyurl_shadow_scheduled_deep_scan',
+			'thisismyurl_shadow_run_offpeak_operations',
+			'thisismyurl_shadow_run_overnight_fixes',
+			'thisismyurl_shadow_hourly_cleanup',
+		);
+		foreach ( $cron_hooks as $cron_hook ) {
+			wp_clear_scheduled_hook( $cron_hook );
+		}
+
 		// Log plugin deactivation
 		if ( class_exists( 'ThisIsMyURL\\Shadow\\Core\\Activity_Logger' ) ) {
 			Activity_Logger::log(
 				'plugin_deactivated',
-				__( 'Christopher Ross Shadow plugin deactivated', 'thisismyurl-shadow' ),
+				__( 'Shadow by Christopher Ross plugin deactivated', 'thisismyurl-shadow' ),
 				'system',
 				array( 'version' => THISISMYURL_SHADOW_VERSION )
 			);
@@ -398,14 +411,12 @@ class Hooks_Initializer {
 	/**
 	 * Admin head hook
 	 *
-	 * Adds a safe History API guard early on Christopher Ross Shadow admin pages so
+	 * Adds a safe History API guard early on Shadow by Christopher Ross admin pages so
 	 * cross-origin replaceState attempts in proxied environments do not throw.
 	 *
 	 * @return void
 	 */
 	public static function on_admin_head() {
-		self::output_admin_accessibility_styles();
-
 		if ( ! function_exists( 'get_current_screen' ) ) {
 			return;
 		}
@@ -451,17 +462,42 @@ class Hooks_Initializer {
 	}
 
 	/**
-	 * Output optional admin accessibility styles.
+	 * Enqueue optional admin accessibility styles via an inline stylesheet.
 	 *
-	 * Applies reading and visibility preferences across WordPress admin screens
-	 * when enabled from the Christopher Ross Shadow Accessibility tab.
+	 * Registers a base handle and attaches the generated preference CSS with
+	 * wp_add_inline_style() so the output is enqueued through the styles API
+	 * rather than echoed directly into the admin head.
 	 *
-	 * @since 0.6095
+	 * @since 0.6149
 	 * @return void
 	 */
-	private static function output_admin_accessibility_styles(): void {
-		if ( ! is_admin() ) {
+	public static function enqueue_admin_accessibility_styles(): void {
+		$css = self::build_admin_accessibility_css();
+		if ( '' === $css ) {
 			return;
+		}
+
+		$handle = 'thisismyurl-shadow-admin-accessibility';
+		wp_register_style( $handle, false, array(), THISISMYURL_SHADOW_VERSION );
+		wp_enqueue_style( $handle );
+		wp_add_inline_style( $handle, $css );
+	}
+
+	/**
+	 * Build optional admin accessibility CSS from saved preferences.
+	 *
+	 * Applies reading and visibility preferences across WordPress admin screens
+	 * when enabled from the Shadow Accessibility tab. Every
+	 * interpolated value is derived from a controlled source — sanitize_key'd
+	 * enums, a clamped number_format'd scale, and hardcoded literals — so the
+	 * result cannot break out of the inline style context.
+	 *
+	 * @since 0.6095
+	 * @return string Generated CSS, or an empty string when no preference is active.
+	 */
+	private static function build_admin_accessibility_css(): string {
+		if ( ! is_admin() ) {
+			return '';
 		}
 
 		$admin_font      = sanitize_key( (string) get_option( 'thisismyurl_shadow_admin_font_family', 'default' ) );
@@ -515,14 +551,14 @@ class Hooks_Initializer {
 		}
 
 		if ( '' === trim( $css ) ) {
-			return;
+			return '';
 		}
 
-		echo "<style id='thisismyurl-shadow-admin-accessibility-styles'>\n{$css}</style>"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- CSS is generated from sanitized internal values.
+		return $css;
 	}
 
 	/**
-	 * Cache-bust Christopher Ross Shadow stylesheet URLs.
+	 * Cache-bust Shadow by Christopher Ross stylesheet URLs.
 	 *
 	 * Replaces version query strings with filemtime for plugin CSS files so
 	 * browser caches refresh immediately after CSS changes.
@@ -537,7 +573,7 @@ class Hooks_Initializer {
 			return $src;
 		}
 
-		// Only process Christopher Ross Shadow plugin styles.
+		// Only process Shadow by Christopher Ross plugin styles.
 		if ( false === strpos( $src, THISISMYURL_SHADOW_URL ) ) {
 			return $src;
 		}
@@ -592,7 +628,7 @@ class Hooks_Initializer {
 
 			echo '<div class="notice notice-info is-dismissible">';
 			echo '<p><span class="dashicons dashicons-clock" style="color: #2196f3;"></span> ';
-			echo '<strong>Christopher Ross Shadow:</strong> ' . esc_html( $count ) . ' operation(s) scheduled for off-peak hours (' . esc_html( $time_text ) . ').';
+			echo '<strong>Shadow by Christopher Ross:</strong> ' . esc_html( $count ) . ' operation(s) scheduled for off-peak hours (' . esc_html( $time_text ) . ').';
 			echo '</p></div>';
 		}
 
@@ -664,14 +700,14 @@ class Hooks_Initializer {
 		?>
 		<div class="wps-settings-section wps-max-w-600">
 			<div class="wps-settings-section-header">
-				<h3 class="wps-settings-section-title"><?php esc_html_e( 'Christopher Ross Shadow Dark Mode', 'thisismyurl-shadow' ); ?></h3>
+				<h3 class="wps-settings-section-title"><?php esc_html_e( 'Shadow Dark Mode', 'thisismyurl-shadow' ); ?></h3>
 				<p class="wps-settings-section-description">
-					<?php esc_html_e( 'Choose your preferred dark mode setting for Christopher Ross Shadow admin pages.', 'thisismyurl-shadow' ); ?>
+					<?php esc_html_e( 'Choose your preferred dark mode setting for Shadow by Christopher Ross admin pages.', 'thisismyurl-shadow' ); ?>
 				</p>
 			</div>
 
 			<fieldset>
-				<legend class="screen-reader-text"><span><?php esc_html_e( 'Christopher Ross Shadow Dark Mode', 'thisismyurl-shadow' ); ?></span></legend>
+				<legend class="screen-reader-text"><span><?php esc_html_e( 'Shadow Dark Mode', 'thisismyurl-shadow' ); ?></span></legend>
 				<div style="display: flex; flex-direction: column; gap: 8px;">
 					<label>
 						<input type="radio" name="thisismyurl_shadow_dark_mode" value="auto" <?php checked( $dark_mode_pref, 'auto' ); ?>>
@@ -810,7 +846,7 @@ class Hooks_Initializer {
 		// Diagnostics execution is cron-only.
 
 		$GLOBALS['thisismyurl_shadow_site_health_badge'] = array(
-			'label' => __( 'Christopher Ross Shadow', 'thisismyurl-shadow' ),
+			'label' => __( 'Shadow by Christopher Ross', 'thisismyurl-shadow' ),
 			'color' => 'blue',
 		);
 
@@ -838,7 +874,7 @@ class Hooks_Initializer {
 		$finding_count   = isset( $activity_result['total'] ) ? $activity_result['total'] : 0;
 
 		$section = array(
-			'label'  => __( 'Christopher Ross Shadow', 'thisismyurl-shadow' ),
+			'label'  => __( 'Shadow by Christopher Ross', 'thisismyurl-shadow' ),
 			'fields' => array(
 				array(
 					'label'   => __( 'Quick Scan last run', 'thisismyurl-shadow' ),
@@ -903,7 +939,7 @@ class Hooks_Initializer {
 	}
 
 	/**
-	 * Restrict file editor capabilities based on Christopher Ross Shadow settings.
+	 * Restrict file editor capabilities based on Shadow by Christopher Ross settings.
 	 *
 	 * @since 0.6095
 	 * @param array  $caps    Primitive capabilities required for the requested capability.
@@ -989,10 +1025,10 @@ class Hooks_Initializer {
 				$status_manager->set_finding_status( $finding_id, 'fixed' );
 				\ThisIsMyURL\Shadow\Core\Activity_Logger::log( 'treatment_applied', "Overnight fix completed: {$finding_id}", 'workflows', array( 'finding_id' => $finding_id ) );
 
-				$subject = 'Christopher Ross Shadow: Fix Completed';
+				$subject = 'Shadow by Christopher Ross: Fix Completed';
 				$message = "Your scheduled fix has been completed successfully.\n\nFinding: {$finding_id}\n" . $result['message'];
 			} else {
-				$subject = 'Christopher Ross Shadow: Fix Failed';
+				$subject = 'Shadow by Christopher Ross: Fix Failed';
 				$message = "Your scheduled fix encountered an error.\n\nFinding: {$finding_id}\n" . ( $result['message'] ?? 'Unknown error' );
 			}
 
@@ -1068,7 +1104,7 @@ class Hooks_Initializer {
 				\ThisIsMyURL\Shadow\Admin\Pages\Scan_Frequency_Manager::run_diagnostic_scan( true );
 			} catch ( \Throwable $exception ) {
 				$run_error = sanitize_key( get_class( $exception ) );
-				Error_Handler::log_error( 'Christopher Ross Shadow Guardian run failed', $exception );
+				Error_Handler::log_error( 'Shadow Guardian run failed', $exception );
 			}
 		} else {
 			$run_error = 'scan_manager_missing';
@@ -1108,7 +1144,7 @@ class Hooks_Initializer {
 				esc_url( $redirect ),
 				esc_html__( 'Continue', 'thisismyurl-shadow' )
 			),
-			esc_html__( 'Christopher Ross Shadow Guardian', 'thisismyurl-shadow' ),
+			esc_html__( 'Shadow Guardian', 'thisismyurl-shadow' ),
 			array( 'response' => 200 )
 		);
 	}
@@ -1187,7 +1223,7 @@ class Hooks_Initializer {
 					break;
 			}
 
-			$subject = $result['success'] ? 'Christopher Ross Shadow: Off-Peak Operation Completed' : 'Christopher Ross Shadow: Off-Peak Operation Failed';
+			$subject = $result['success'] ? 'Shadow by Christopher Ross: Off-Peak Operation Completed' : 'Shadow by Christopher Ross: Off-Peak Operation Failed';
 			$message = $result['success']
 				? "Your scheduled operation has been completed successfully.\n\nOperation: {$operation_type}\n" . $result['message']
 				: "Your scheduled operation encountered an error.\n\nOperation: {$operation_type}\n" . $result['message'];
@@ -1266,7 +1302,7 @@ class Hooks_Initializer {
 	/**
 	 * Track settings changes
 	 *
-	 * Logs when any Christopher Ross Shadow setting is updated.
+	 * Logs when any Shadow by Christopher Ross setting is updated.
 	 * Records which user made the change, what was changed, and old/new values.
 	 *
 	 * @param mixed  $old_value Old option value
@@ -1294,8 +1330,6 @@ class Hooks_Initializer {
 			'thisismyurl_shadow_notifications_enabled'     => 'Notifications',
 			'thisismyurl_shadow_notification_severity'     => 'Notification Severity',
 			'thisismyurl_shadow_notify_admin_email'        => 'Notification Email',
-			'thisismyurl_shadow_backup_enabled'            => 'Backups',
-			'thisismyurl_shadow_backup_retention_days'     => 'Backup Retention',
 		);
 
 		$setting_name = isset( $setting_names[ $option ] ) ? $setting_names[ $option ] : $option;
@@ -1352,14 +1386,14 @@ class Hooks_Initializer {
 	 */
 	public static function on_network_admin_menu() {
 		add_menu_page(
-			'Christopher Ross Shadow',
-			'Christopher Ross Shadow',
+			'Shadow by Christopher Ross',
+			'Shadow by Christopher Ross',
 			'read',
 			'thisismyurl-shadow',
 			function () {
 				?>
 				<div class="wrap">
-					<h1>Christopher Ross Shadow (Network)</h1>
+					<h1>Shadow by Christopher Ross (Network)</h1>
 					<?php do_action( 'thisismyurl_shadow_after_page_header' ); ?>
 					<p>Network admin menu check.</p>
 				</div>

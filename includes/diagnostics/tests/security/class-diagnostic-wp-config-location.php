@@ -5,7 +5,7 @@
  * Checks whether wp-config.php has been moved above the web root or
  * otherwise protected from direct web access.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

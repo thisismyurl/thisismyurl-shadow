@@ -5,7 +5,7 @@
  * Checks whether key wp-content subdirectories have overly permissive write
  * permissions that could allow unauthorized file modifications on the server.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */
@@ -97,7 +97,7 @@ class Diagnostic_Wp_Content_Write_Scope_Minimized extends Diagnostic_Base {
 
 		$writable = array();
 		foreach ( $checks as $item ) {
-			if ( is_writable( $item['path'] ) ) {
+			if ( wp_is_writable( $item['path'] ) ) {
 				$writable[] = $item['label'];
 			}
 		}

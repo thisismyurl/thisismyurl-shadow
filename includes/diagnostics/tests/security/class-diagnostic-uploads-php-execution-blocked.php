@@ -5,7 +5,7 @@
  * Checks whether PHP execution is blocked in the WordPress uploads directory
  * to prevent uploaded malicious files from running as PHP scripts.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

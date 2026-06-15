@@ -6,7 +6,7 @@
  * These features expose the site to link-spam and DDoS amplification abuse and
  * should be disabled unless intentionally required.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

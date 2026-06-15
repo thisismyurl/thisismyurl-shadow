@@ -92,7 +92,7 @@ VERIFICATION:
   Add <?php phpinfo(); ?> to a temp file and check OPcache section.
   Or check your hosting control panel's PHP configuration viewer for the OPcache section.
 
-Re-run the Christopher Ross Shadow scan after enabling OPcache.",
+Re-run the Shadow by Christopher Ross scan after enabling OPcache.",
 					'thisismyurl-shadow'
 				),
 				$php_version,
@@ -111,7 +111,7 @@ Re-run the Christopher Ross Shadow scan after enabling OPcache.",
 	public static function undo(): array {
 		return [
 			'success' => true,
-			'message' => __( 'This is a guidance-only treatment — no changes were made by Christopher Ross Shadow.', 'thisismyurl-shadow' ),
+			'message' => __( 'This is a guidance-only treatment — no changes were made by Shadow by Christopher Ross.', 'thisismyurl-shadow' ),
 		];
 	}
 }

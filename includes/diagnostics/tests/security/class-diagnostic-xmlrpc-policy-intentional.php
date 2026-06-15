@@ -5,7 +5,7 @@
  * Checks whether XML-RPC is intentionally enabled, as an unmanaged
  * xmlrpc.php endpoint is a common vector for brute-force and amplification attacks.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */
@@ -82,7 +82,7 @@ class Diagnostic_Xmlrpc_Policy_Intentional extends Diagnostic_Base {
 		}
 
 		// A plugin or theme has disabled xmlrpc via the standard WordPress filter.
-		$xmlrpc_enabled = apply_filters( 'xmlrpc_enabled', true );
+		$xmlrpc_enabled = apply_filters( 'xmlrpc_enabled', true ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Reading a WordPress core filter's value for diagnostics, not defining a plugin hook.
 		if ( ! $xmlrpc_enabled ) {
 			return null;
 		}

@@ -2,7 +2,7 @@
 /**
  * Treatment: Disable WordPress Emoji Assets
  *
- * Stores a Christopher Ross Shadow option that instructs the plugin bootstrap to dequeue
+ * Stores a Shadow by Christopher Ross option that instructs the plugin bootstrap to dequeue
  * and remove all WordPress emoji-related scripts and styles from the front
  * end and admin. Emoji characters continue to render natively via the
  * operating system or browser; only the WordPress-injected detection script,

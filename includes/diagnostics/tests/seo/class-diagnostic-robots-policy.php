@@ -5,7 +5,7 @@
  * Checks whether a physical robots.txt file is present and that it does not
  * accidentally block all crawlers with a blanket Disallow directive.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

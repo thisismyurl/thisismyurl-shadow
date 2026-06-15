@@ -7,7 +7,7 @@
  * uploads/ folder, creating filesystem performance issues and making manual
  * file management impractical as the media library grows.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

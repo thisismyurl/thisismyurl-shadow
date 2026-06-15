@@ -39,7 +39,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * This treatment is implemented as a file-write class because browser caching
  * on Apache is most reliably configured at the web server layer. The class
- * exposes both the remediation logic and the metadata needed by Christopher Ross Shadow's
+ * exposes both the remediation logic and the metadata needed by Shadow's
  * review UI so an admin can inspect, apply, and undo the change safely.
  */
 class Treatment_Browser_Caching_Headers extends Treatment_Base {
@@ -113,7 +113,7 @@ class Treatment_Browser_Caching_Headers extends Treatment_Base {
 	/**
 	 * Register this treatment with the file-write registry.
 	 *
-	 * Boot methods are used throughout Christopher Ross Shadow's file-write treatments so the
+	 * Boot methods are used throughout Shadow's file-write treatments so the
 	 * plugin can discover which classes need preview/backup UI support without
 	 * instantiating them.
 	 *

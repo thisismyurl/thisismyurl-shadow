@@ -6,7 +6,7 @@
  * tag into every page's <head>. RSD was used by desktop blogging clients
  * from the early 2000s and is obsolete on all modern sites.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

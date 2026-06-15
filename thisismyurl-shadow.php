@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name: - Shadow by Christopher Ross
+ * Plugin Name: Shadow by Christopher Ross
  * Plugin URI: https://thisismyurl.com/shadow/
- * Description: Local-first WordPress diagnostics and safer fixes — file review, one-click recovery, and plain-English guidance before risky changes.
- * Version: 1.6147
+ * Description: Local-first WordPress diagnostics and safer fixes — file review and plain-English guidance before risky changes.
+ * Version: 1.6165
  * Author: thisismyurl
  * Author URI: https://profiles.wordpress.org/thisismyurl/
  * Text Domain: thisismyurl-shadow
@@ -27,9 +27,9 @@ if ( ! defined( 'ABSPATH' ) ) {
  * These are intentionally declared in the main plugin file because they are
  * needed before the autoloader and service bootstrap can resolve any classes.
  * In practice they form the contract between WordPress' plugin loader and the
- * rest of the Christopher Ross Shadow codebase.
+ * rest of the Shadow by Christopher Ross codebase.
  */
-define( 'THISISMYURL_SHADOW_VERSION', '1.6147' );
+define( 'THISISMYURL_SHADOW_VERSION', '1.6165' );
 define( 'THISISMYURL_SHADOW_FILE', __FILE__ );
 define( 'THISISMYURL_SHADOW_BASENAME', plugin_basename( __FILE__ ) );
 define( 'THISISMYURL_SHADOW_PATH', plugin_dir_path( __FILE__ ) );
@@ -47,7 +47,7 @@ if ( file_exists( THISISMYURL_SHADOW_PATH . 'vendor/autoload.php' ) ) {
 /**
  * Bootstrap Autoloader
  *
- * Automatically loads all Christopher Ross Shadow classes in dependency order.
+ * Automatically loads all Shadow by Christopher Ross classes in dependency order.
  * Replaces 130+ manual require_once calls.
  *
  * Phase 4: Bootstrap Consolidation - eliminates manual loading.
@@ -223,21 +223,5 @@ if ( ! function_exists( 'thisismyurl_shadow_suppress_page_cache' ) ) {
 		if ( function_exists( 'nocache_headers' ) ) {
 			nocache_headers();
 		}
-	}
-}
-
-// Self-hosted updater is excluded from the WordPress.org distribution zip
-// via .distignore. Guard with file_exists() so .org installs do not fatal.
-if ( file_exists( THISISMYURL_SHADOW_PATH . 'github-updater.php' ) ) {
-	require_once THISISMYURL_SHADOW_PATH . 'github-updater.php';
-
-	if ( function_exists( 'timu_boot_github_release_updater' ) ) {
-		timu_boot_github_release_updater(
-			array(
-				'plugin_file' => __FILE__,
-				'slug'        => 'thisismyurl-shadow',
-				'repo'        => 'thisismyurl/thisismyurl-shadow',
-			)
-		);
 	}
 }

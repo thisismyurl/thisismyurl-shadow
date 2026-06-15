@@ -5,7 +5,7 @@
  * Checks whether an SMTP or transactional email plugin is active to ensure
  * outgoing emails are reliably delivered rather than relying on PHP mail().
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

@@ -5,7 +5,7 @@
  * Checks whether the published privacy policy and other legal pages are linked
  * somewhere in the site footer menus for compliance and visitor trust.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

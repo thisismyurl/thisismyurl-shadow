@@ -86,7 +86,7 @@ class Treatment_Fatal_Error_Handler_Enabled extends Treatment_Base {
 		if ( str_contains( $content, '// thisismyurl_shadow_MARKER_START: ' . self::MARKER_SLUG ) ) {
 			return array(
 				'success' => true,
-				'message' => __( 'The fatal error handler define was already commented out by Christopher Ross Shadow.', 'thisismyurl-shadow' ),
+				'message' => __( 'The fatal error handler define was already commented out by Shadow by Christopher Ross.', 'thisismyurl-shadow' ),
 			);
 		}
 
@@ -95,7 +95,7 @@ class Treatment_Fatal_Error_Handler_Enabled extends Treatment_Base {
 			static function ( array $matches ): string {
 				$original_line = $matches[0];
 				return "\n// thisismyurl_shadow_MARKER_START: " . self::MARKER_SLUG . "\n"
-					. '// ' . ltrim( $original_line ) . ' // commented out by Christopher Ross Shadow - was disabling WordPress recovery mode' . "\n"
+					. '// ' . ltrim( $original_line ) . ' // commented out by Shadow by Christopher Ross - was disabling WordPress recovery mode' . "\n"
 					. '// thisismyurl_shadow_MARKER_END: ' . self::MARKER_SLUG;
 			},
 			$content,
@@ -157,7 +157,7 @@ class Treatment_Fatal_Error_Handler_Enabled extends Treatment_Base {
 			array(
 				'Connect to your server via SFTP or File Manager.',
 				"Open {$file}.",
-				'Find and delete the Christopher Ross Shadow marker block for fatal-error-handler-enabled.',
+				'Find and delete the Shadow by Christopher Ross marker block for fatal-error-handler-enabled.',
 				'If you intentionally need to disable recovery mode again, re-add the original define manually.',
 				'Save the file and reload the site.',
 			)

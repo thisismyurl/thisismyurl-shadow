@@ -5,7 +5,7 @@
  * Checks whether an XML sitemap is active and accessible to help search engines
  * discover and efficiently index all published content on the site.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */
@@ -90,7 +90,7 @@ class Diagnostic_Xml_Sitemap_Enabled extends Diagnostic_Base {
 		$core_sitemap_url = '';
 		if ( function_exists( 'wp_sitemaps_get_server' ) ) {
 			$server = wp_sitemaps_get_server();
-			if ( $server instanceof \WP_Sitemaps && apply_filters( 'wp_sitemaps_enabled', true ) ) {
+			if ( $server instanceof \WP_Sitemaps && apply_filters( 'wp_sitemaps_enabled', true ) ) { // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Reading a WordPress core filter's value for diagnostics, not defining a plugin hook.
 				// Core sitemap is active.
 				return null;
 			}

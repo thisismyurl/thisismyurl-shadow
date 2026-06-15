@@ -380,9 +380,13 @@
 }
 
 .wps-category-gauge-status-text[data-status="Fair"] {
-	color: #f57c00 !important; /* Orange */
+	color: #b35900 !important; /* Orange — darkened from #f57c00 (2.7:1) to meet WCAG 4.5:1 on white */
 }
 
 .wps-category-gauge-status-text[data-status="Poor"] {
 	color: #c62828 !important; /* Red */
+}
+
+.wps-category-gauge-status-text[data-status="Needs Work"] {
+	color: #c62828 !important; /* Red — matches Poor so severity reads consistently */
 }

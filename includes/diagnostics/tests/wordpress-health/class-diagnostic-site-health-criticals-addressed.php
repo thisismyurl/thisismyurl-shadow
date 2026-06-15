@@ -6,7 +6,7 @@
  * issues. Reads the cached site-health result option and flags when WordPress
  * core has categorised one or more items as critical.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

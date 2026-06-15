@@ -33,8 +33,6 @@
 			this.bindDiagnosticFrequency();
 			this.bindDiagnosticFilters();
 			this.syncScanTimeVisibility();
-			this.bindRestoreModal();
-			this.bindDeleteModal();
 			this.bindGovernanceReport();
 		},
 
@@ -289,91 +287,6 @@
 			} );
 
 			$( '#wps-diag-no-results' ).prop( 'hidden', visible > 0 );
-		},
-
-		bindDeleteModal: function () {
-			var $dialog = $( '#wps-vault-delete-dialog' );
-
-			if ( ! $dialog.length ) {
-				return;
-			}
-
-			var closeDialog = function () {
-				if ( $dialog[0] && 'function' === typeof $dialog[0].close ) {
-					$dialog[0].close();
-				} else {
-					$dialog.removeAttr( 'open' ).hide();
-				}
-			};
-
-			$( document ).on( 'click', '.wps-vault-delete-trigger', function ( event ) {
-				event.preventDefault();
-
-				var $trigger    = $( this );
-				var backupFile  = $trigger.data( 'backup-file' ) || '';
-				var description = $trigger.data( 'backup-description' ) || '';
-
-				$( '#wps-vault-delete-file' ).val( backupFile );
-				$( '#wps-vault-delete-description strong' ).text( description );
-
-				if ( $dialog[0] && 'function' === typeof $dialog[0].showModal ) {
-					if ( ! $dialog[0].open ) {
-						$dialog[0].showModal();
-					}
-				} else {
-					$dialog.attr( 'open', 'open' ).show();
-				}
-			} );
-
-			$dialog.on( 'cancel', function ( event ) {
-				event.preventDefault();
-				closeDialog();
-			} );
-		},
-
-		bindRestoreModal: function () {
-			var $dialog = $( '#wps-vault-restore-dialog' );
-
-			if ( ! $dialog.length ) {
-				return;
-			}
-
-			var closeDialog = function () {
-				if ( $dialog[0] && 'function' === typeof $dialog[0].close ) {
-					$dialog[0].close();
-				} else {
-					$dialog.removeAttr( 'open' ).hide();
-				}
-			};
-
-			$( document ).on( 'click', '.wps-vault-restore-trigger', function ( event ) {
-				event.preventDefault();
-
-				var $trigger     = $( this );
-				var backupFile   = $trigger.data( 'backup-file' ) || '';
-				var description  = $trigger.data( 'backup-description' ) || '';
-
-				$( '#wps-vault-restore-file' ).val( backupFile );
-				$( '#wps-vault-restore-description' ).text( description );
-
-				if ( $dialog[0] && 'function' === typeof $dialog[0].showModal ) {
-					if ( ! $dialog[0].open ) {
-						$dialog[0].showModal();
-					}
-				} else {
-					$dialog.attr( 'open', 'open' ).show();
-				}
-			} );
-
-			$( document ).on( 'click', '[data-wps-vault-close]', function ( event ) {
-				event.preventDefault();
-				closeDialog();
-			} );
-
-			$dialog.on( 'cancel', function ( event ) {
-				event.preventDefault();
-				closeDialog();
-			} );
 		},
 
 		bindGovernanceReport: function () {

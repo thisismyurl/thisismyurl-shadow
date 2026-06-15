@@ -5,7 +5,7 @@
  * Checks whether WordPress discussion settings—comments, pings, and
  * moderation—have been intentionally configured to prevent spam.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

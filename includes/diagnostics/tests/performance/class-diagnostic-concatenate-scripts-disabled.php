@@ -6,7 +6,7 @@
  * which forces WordPress to serve every admin script as a separate HTTP
  * request instead of combining them through load-scripts.php.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */
@@ -109,7 +109,7 @@ class Diagnostic_Concatenate_Scripts_Disabled extends Diagnostic_Base {
 				'current_value'      => 'false',
 				'recommended_value'  => 'true (or removed)',
 				'note'               => __(
-					'Christopher Ross Shadow can comment out the define automatically. Alternatively, remove define(\'CONCATENATE_SCRIPTS\', false) from wp-config.php manually. This setting is intended for debugging only and should not be present on production sites.',
+					'Shadow by Christopher Ross can comment out the define automatically. Alternatively, remove define(\'CONCATENATE_SCRIPTS\', false) from wp-config.php manually. This setting is intended for debugging only and should not be present on production sites.',
 					'thisismyurl-shadow'
 				),
 			),

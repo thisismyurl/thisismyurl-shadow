@@ -7,7 +7,7 @@
  * high-privilege default role, or as a medium finding when it is open with a
  * safe role but potentially unintentional.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

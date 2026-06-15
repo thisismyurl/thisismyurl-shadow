@@ -1,6 +1,6 @@
 <?php
 /**
- * KPI Tracker for Christopher Ross Shadow
+ * KPI Tracker for Shadow by Christopher Ross
  *
  * Tracks key performance indicators to prove value delivered
  *
@@ -10,6 +10,10 @@
 declare(strict_types=1);
 
 namespace ThisIsMyURL\Shadow\Core;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
 
 /**
  * KPI tracking system for monitoring fixes and improvements

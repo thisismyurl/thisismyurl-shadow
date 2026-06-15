@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Christopher Ross Shadow Health Gauges Dashboard Module
+ * Shadow Health Gauges Dashboard Module
  *
  * Handles health gauge rendering for:
  * - Overall site health score
@@ -280,7 +280,7 @@ function thisismyurl_shadow_render_health_gauges( string $category_filter = '' )
 	<div class="wps-dashboard-gauges wps-gap-6 wps-mb-8">
 		<!-- Left: Large Overall Health Gauge + Scan Buttons -->
 		<div class="wps-health-gauge-main">
-			<div class="wps-health-gauge-card" style="display:block; color:inherit; text-decoration:none; border-color: <?php echo esc_attr( $overall_color ); ?>;" role="group" aria-label="<?php esc_attr_e( 'Overall Christopher Ross Shadow dashboard health gauge', 'thisismyurl-shadow' ); ?>">
+			<div class="wps-health-gauge-card" style="display:block; color:inherit; text-decoration:none; border-color: <?php echo esc_attr( $overall_color ); ?>;" role="group" aria-label="<?php esc_attr_e( 'Overall Shadow by Christopher Ross dashboard health gauge', 'thisismyurl-shadow' ); ?>">
 				<h3 class="wps-health-gauge-title"><?php esc_html_e( 'Overall Site Health', 'thisismyurl-shadow' ); ?></h3>
 
 				<svg id="thisismyurl-shadow-overall-gauge" width="200" height="200" viewBox="0 0 200 200" class="wps-health-gauge-svg" aria-labelledby="overall-health-title" role="img">
@@ -416,7 +416,19 @@ function thisismyurl_shadow_render_health_gauges( string $category_filter = '' )
 							$gauge_color  = '#c62828';
 						}
 						?>
-						<div class="wps-category-gauge" data-category="wordpress-health" role="group" aria-label="<?php esc_attr_e( 'WordPress health gauge', 'thisismyurl-shadow' ); ?>">
+						<div class="wps-category-gauge" data-category="wordpress-health" role="group" aria-label="
+						<?php
+						echo esc_attr(
+							sprintf(
+								/* translators: 1: pass rate percentage, 2: tests passed, 3: total tests */
+								__( 'WordPress health: %1$d%% pass rate (%2$d/%3$d tests).', 'thisismyurl-shadow' ),
+								$gauge_percent,
+								$wp_test_passed,
+								$wp_test_total
+							)
+						);
+						?>
+						">
 							<div class="wps-category-gauge-icon">
 								<svg width="70" height="70" viewBox="0 0 100 100" aria-hidden="true">
 									<!-- Gauge background -->
@@ -437,7 +449,7 @@ function thisismyurl_shadow_render_health_gauges( string $category_filter = '' )
 
 								<!-- Status -->
 								<div class="wps-category-gauge-status">
-									<span class="wps-category-gauge-status-text">
+									<span class="wps-category-gauge-status-text" data-status="<?php echo esc_attr( $status_text ); ?>">
 										<span aria-hidden="true"><?php echo esc_html( $status_icon ); ?></span>
 						<?php echo esc_html( $status_text ); ?>
 									</span>

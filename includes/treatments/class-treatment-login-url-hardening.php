@@ -121,7 +121,7 @@ class Treatment_Login_Url_Hardening extends Treatment_Base {
 		if ( function_exists( 'random_bytes' ) ) {
 			$bytes = random_bytes( self::TOKEN_LENGTH );
 			// Convert to base64 and strip non-URL-safe chars.
-			$b64 = base64_encode( $bytes );
+			$b64 = base64_encode( $bytes ); // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode -- Encodes random bytes into a URL-safe login-slug token.
 			return substr( preg_replace( '/[^a-zA-Z0-9]/', '', $b64 ), 0, self::TOKEN_LENGTH );
 		}
 

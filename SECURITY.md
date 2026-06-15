@@ -1,6 +1,6 @@
 # Security Policy
 
-Christopher Ross Shadow handles site diagnostics, admin workflows, and remediation guidance, so security issues matter a great deal.
+Shadow by Christopher Ross handles site diagnostics, admin workflows, and remediation guidance, so security issues matter a great deal.
 
 We appreciate responsible disclosure and will treat good-faith reports seriously and respectfully.
 
@@ -85,7 +85,7 @@ Reports that are purely theoretical, require unrealistic assumptions, or depend 
 
 ## Our Security Principles
 
-Christopher Ross Shadow follows these core expectations:
+Shadow by Christopher Ross follows these core expectations:
 
 - **Safe by Default**
 - **Privacy First**

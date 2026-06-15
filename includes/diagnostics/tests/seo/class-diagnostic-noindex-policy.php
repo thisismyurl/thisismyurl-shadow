@@ -5,7 +5,7 @@
  * Checks whether an SEO plugin is configured to apply noindex directives to
  * low-value pages such as date archives, author archives, and search results.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

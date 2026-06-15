@@ -5,7 +5,7 @@
  * Checks whether all WordPress authentication keys and salts are set to unique,
  * non-default values in wp-config.php to protect session security.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

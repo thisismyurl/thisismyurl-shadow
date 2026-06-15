@@ -90,31 +90,40 @@ class Diagnostic_Sample_Content_Removed extends Diagnostic_Base {
 		global $wpdb;
 
 		/*
-		 * Build a dynamic LIKE OR clause. Each placeholder is surrounded with
-		 * wildcard % so it matches anywhere inside post_content.
+		 * Build a placeholder-only LIKE OR clause. $where_or contains nothing
+		 * but `post_content LIKE %s OR …`, so it is safe to interpolate into the
+		 * query; every search phrase is bound through $values via prepare().
 		 */
-		$clauses = array_map(
-			static fn( string $p ) => $wpdb->prepare(
-				'post_content LIKE %s',
-				'%' . $wpdb->esc_like( $p ) . '%'
-			),
+		$like     = array_fill( 0, count( self::PLACEHOLDER_PHRASES ), 'post_content LIKE %s' );
+		$where_or = implode( ' OR ', $like );
+		$values   = array_map(
+			static fn( string $p ) => '%' . $wpdb->esc_like( $p ) . '%',
 			self::PLACEHOLDER_PHRASES
 		);
 
-		$where_or = implode( ' OR ', $clauses );
-
-		// phpcs:disable WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.NotPrepared
+		/*
+		 * The statement is fully prepared: $where_or is placeholder-only
+		 * ("post_content LIKE %s OR …") and every search value is bound through
+		 * $values. WPCS cannot statically prove the interpolated $where_or is
+		 * placeholder-only, so the InterpolatedNotPrepared sniff is scoped off
+		 * for this single query only.
+		 */
+		// phpcs:disable WordPress.DB.DirectDatabaseQuery.DirectQuery -- read-only diagnostic; no caching layer.
+		// phpcs:disable WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- $where_or is placeholder-only; all values bound via $values.
+		// phpcs:disable WordPress.DB.PreparedSQLPlaceholders.UnfinishedPrepare -- $where_or is placeholder-only; all values bound via $values.
 		$rows = $wpdb->get_results(
-			// phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
-			"SELECT ID, post_title, post_type, post_modified
-			 FROM   {$wpdb->posts}
-			 WHERE  post_status = 'publish'
-			 AND    post_type   IN ('post', 'page')
-			 AND    ( {$where_or} )
-			 ORDER  BY post_modified DESC
-			 LIMIT  200"
+			$wpdb->prepare(
+				"SELECT ID, post_title, post_type, post_modified
+				 FROM   {$wpdb->posts}
+				 WHERE  post_status = 'publish'
+				 AND    post_type   IN ('post', 'page')
+				 AND    ( {$where_or} )
+				 ORDER  BY post_modified DESC
+				 LIMIT  200",
+				$values
+			)
 		);
-		// phpcs:enable
+		// phpcs:enable WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, WordPress.DB.PreparedSQLPlaceholders.UnfinishedPrepare
 
 		if ( empty( $rows ) ) {
 			return null;

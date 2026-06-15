@@ -1,6 +1,6 @@
 <?php
 /**
- * WP-CLI commands for Christopher Ross Shadow.
+ * WP-CLI commands for Shadow by Christopher Ross.
  *
  * @package ThisIsMyURL\Shadow
  */
@@ -14,11 +14,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Register Christopher Ross Shadow commands with WP-CLI.
+ * Register Shadow by Christopher Ross commands with WP-CLI.
  */
 class thisismyurl_shadow_CLI_Command {
 	/**
-	 * Register all Christopher Ross Shadow WP-CLI commands.
+	 * Register all Shadow WP-CLI commands.
 	 *
 	 * @return void
 	 */
@@ -111,7 +111,7 @@ class thisismyurl_shadow_CLI_Command {
 	}
 
 	/**
-	 * Run the full Christopher Ross Shadow scan.
+	 * Run the full Shadow by Christopher Ross scan.
 	 *
 	 * ## OPTIONS
 	 *

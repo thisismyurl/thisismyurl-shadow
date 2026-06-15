@@ -6,7 +6,7 @@
  * discovery tag into every page's <head>, which publicly advertises the
  * REST API endpoint URL to anyone reading page source.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

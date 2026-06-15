@@ -1,8 +1,23 @@
 <?php
 /**
- * One-shot legacy data migration from the wpshadow / thisismyurl_ identifiers
- * the plugin shipped under prior to the WordPress.org rename to
- * "Christopher Ross Shadow" (slug: thisismyurl-shadow).
+ * One-shot legacy data migration to the "Shadow by Christopher Ross" rename
+ * (slug: thisismyurl-shadow), gated by a single one-shot flag option.
+ *
+ * @package ThisIsMyURL\Shadow
+ * @subpackage Core
+ * @since 0.6123
+ */
+
+declare(strict_types=1);
+
+namespace ThisIsMyURL\Shadow\Core;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
+/**
+ * Idempotent renamer for the WordPress.org compliance rebrand.
  *
  * What this class migrates, all gated by a single one-shot flag option so the
  * migration only ever runs once per site:
@@ -43,22 +58,6 @@
  * other plugin classes (so it can run during a plugin activation that has not
  * yet booted the autoloader), and is safe to delete in a future major version
  * once the migration window closes.
- *
- * @package ThisIsMyURL\Shadow
- * @subpackage Core
- * @since 0.6123
- */
-
-declare(strict_types=1);
-
-namespace ThisIsMyURL\Shadow\Core;
-
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
-
-/**
- * Idempotent renamer for the WordPress.org compliance rebrand.
  */
 class Rename_Migration_2026 {
 

@@ -5,7 +5,7 @@
  * Checks whether the default role assigned to new user registrations is a safe,
  * low-privilege role such as Subscriber rather than an elevated role.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

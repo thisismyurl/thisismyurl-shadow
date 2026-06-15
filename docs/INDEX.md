@@ -1,4 +1,4 @@
-# Christopher Ross Shadow Documentation Index
+# Shadow Documentation Index
 
 Last updated: April 5, 2026
 Status: Active
@@ -14,7 +14,7 @@ If you want the fastest accurate picture of the project, read these first:
 2. [CORE_PHILOSOPHY.md](CORE_PHILOSOPHY.md)
 3. [FEATURES.md](FEATURES.md)
 
-Those three documents explain what Christopher Ross Shadow is, how it behaves, and what is actually shipped today.
+Those three documents explain what Shadow by Christopher Ross is, how it behaves, and what is actually shipped today.
 
 ## By Audience
 
@@ -45,7 +45,7 @@ Those three documents explain what Christopher Ross Shadow is, how it behaves, a
 
 ## Documentation Principles
 
-Christopher Ross Shadow docs should do three things well:
+Shadow by Christopher Ross docs should do three things well:
 
 - tell the truth about current scope
 - teach in plain English

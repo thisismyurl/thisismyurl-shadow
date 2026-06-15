@@ -99,12 +99,25 @@ overflow: hidden;
 display: flex;
 align-items: center;
 justify-content: space-between;
+width: 100%;
+margin: 0;
 padding: 14px 16px;
+border: 0;
+background: none;
+color: inherit;
+font: inherit;
+text-align: left;
 cursor: pointer;
 user-select: none;
 gap: 12px;
+appearance: none;
+-webkit-appearance: none;
 }
 .wps-res-card__header:hover { background: #f6f7f7; }
+.wps-res-card__header:focus-visible {
+outline: 2px solid #2271b1;
+outline-offset: 2px;
+}
 
 .wps-res-card__title {
 flex: 1;
@@ -244,6 +257,8 @@ color: #00a32a;
 font-weight: 600;
 display: none;
 }
+
+.wps-res-feedback-msg.error { color: #d63638; }
 
 .wps-res-card__actions {
 display: flex;

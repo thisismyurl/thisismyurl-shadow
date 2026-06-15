@@ -5,7 +5,7 @@
  * Checks whether Twitter Card meta tags are being output so links shared on
  * X (Twitter) display with a proper image and summary.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

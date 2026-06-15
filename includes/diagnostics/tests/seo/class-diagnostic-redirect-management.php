@@ -5,7 +5,7 @@
  * Checks whether a dedicated redirect management plugin is active to handle
  * 301 redirects properly and prevent link rot when URLs change.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

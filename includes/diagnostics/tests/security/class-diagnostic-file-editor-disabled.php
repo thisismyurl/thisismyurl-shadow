@@ -5,7 +5,7 @@
  * Checks whether the built-in WordPress theme and plugin file editors have
  * been disabled via DISALLOW_FILE_EDIT to prevent code injection attacks.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

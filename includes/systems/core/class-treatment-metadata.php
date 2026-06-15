@@ -3,7 +3,7 @@
  * Treatment Metadata Registry
  *
  * Single source of truth for the maturity, risk level, category, and
- * reversibility of every treatment Christopher Ross Shadow ships.
+ * reversibility of every treatment Shadow by Christopher Ross ships.
  *
  * Maturity values
  * ---------------
@@ -38,7 +38,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Provides curated metadata for all shipped Christopher Ross Shadow treatments.
+ * Provides curated metadata for all shipped Shadow by Christopher Ross treatments.
  */
 final class Treatment_Metadata {
 

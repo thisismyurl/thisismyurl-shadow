@@ -7,7 +7,7 @@
  * creates a simple placeholder Blog page if the configured page is missing.
  *
  * Undo: restores the previous page_for_posts value, removes any page created
- * by Christopher Ross Shadow, and restores the prior post status when it was changed.
+ * by Shadow by Christopher Ross, and restores the prior post status when it was changed.
  *
  * @package ThisIsMyURL\Shadow
  * @since   0.7056

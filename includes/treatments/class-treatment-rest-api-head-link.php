@@ -2,7 +2,7 @@
 /**
  * Treatment: Remove REST API Head Link
  *
- * Stores a Christopher Ross Shadow option that instructs the plugin bootstrap to call
+ * Stores a Shadow by Christopher Ross option that instructs the plugin bootstrap to call
  * remove_action( 'wp_head', 'rest_output_link_wp_head' ) on every request.
  * This removes the REST API discovery link tag from <head>. The REST API
  * itself remains fully functional — only the <head> advertisement is removed.

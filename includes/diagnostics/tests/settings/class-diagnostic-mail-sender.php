@@ -6,7 +6,7 @@
  * customised from the generic defaults. Probes via apply_filters() so SMTP
  * plugins and custom hooks are included in the evaluation.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */
@@ -84,8 +84,8 @@ class Diagnostic_Mail_Sender extends Diagnostic_Base {
 		$default_email = 'wordpress@' . strtolower( preg_replace( '/^www\./', '', wp_parse_url( home_url(), PHP_URL_HOST ) ?? '' ) );
 		$default_name  = 'WordPress';
 
-		$active_email = apply_filters( 'wp_mail_from', $default_email );
-		$active_name  = apply_filters( 'wp_mail_from_name', $default_name );
+		$active_email = apply_filters( 'wp_mail_from', $default_email ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Reading a WordPress core filter's value for diagnostics, not defining a plugin hook.
+		$active_name  = apply_filters( 'wp_mail_from_name', $default_name ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Reading a WordPress core filter's value for diagnostics, not defining a plugin hook.
 
 		// If both have been customised, sender identity is configured.
 		if ( $active_email !== $default_email && $active_name !== $default_name ) {

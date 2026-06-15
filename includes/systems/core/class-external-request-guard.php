@@ -4,7 +4,7 @@
  *
  * Centralized permission checks for outbound HTTP requests.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Core
  * @since      0.6095
  */

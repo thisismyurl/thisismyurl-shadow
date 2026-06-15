@@ -240,7 +240,7 @@ class Deep_Scan_Handler extends AJAX_Handler_Base {
 			wp_raise_memory_limit( 'admin' );
 		}
 		if ( function_exists( 'ini_set' ) ) {
-			@ini_set( 'memory_limit', '2048M' );
+			@ini_set( 'memory_limit', '2048M' ); // phpcs:ignore WordPress.PHP.IniSet.memory_limit_Disallowed, Squiz.PHP.DiscouragedFunctions.Discouraged -- Scoped to the deep-scan execution method; a deep scan can exceed the default memory limit on large sites.
 		}
 
 		$request_lock = get_transient( self::REQUEST_LOCK_TRANSIENT_KEY );

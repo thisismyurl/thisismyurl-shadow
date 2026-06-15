@@ -5,7 +5,7 @@
  * Checks whether any installed themes have available updates, as outdated
  * themes can contain unpatched security vulnerabilities.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

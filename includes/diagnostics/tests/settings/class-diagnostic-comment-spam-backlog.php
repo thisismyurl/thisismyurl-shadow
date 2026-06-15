@@ -5,7 +5,7 @@
  * Checks that the spam comment queue is not excessively large. A large backlog
  * wastes database space and signals that spam filtering is not working.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

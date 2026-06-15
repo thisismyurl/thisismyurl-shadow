@@ -8,7 +8,7 @@
  * carry the `defer` attribute so the browser only executes them after the page
  * has parsed, improving First Contentful Paint.
  *
- * This treatment stores a flag that tells the Christopher Ross Shadow bootstrap to add a
+ * This treatment stores a flag that tells the Shadow by Christopher Ross bootstrap to add a
  * `script_loader_tag` filter applying `defer` to all frontend script enqueues
  * except those in a known-safe exclusion list:
  *   - jquery, jquery-core, jquery-migrate (must execute synchronously)

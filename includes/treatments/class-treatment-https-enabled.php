@@ -74,7 +74,7 @@ OPTION 3 — VPS / Dedicated (Certbot / Let's Encrypt):
   3. Run: sudo certbot --apache (or --nginx) -d yourdomain.com -d www.yourdomain.com
   4. Follow prompts; certbot configures and auto-renews the certificate.
 
-After enabling HTTPS, re-run the Christopher Ross Shadow scan to confirm this diagnostic is resolved.",
+After enabling HTTPS, re-run the Shadow by Christopher Ross scan to confirm this diagnostic is resolved.",
 				'thisismyurl-shadow'
 			),
 		];
@@ -88,7 +88,7 @@ After enabling HTTPS, re-run the Christopher Ross Shadow scan to confirm this di
 	public static function undo(): array {
 		return [
 			'success' => true,
-			'message' => __( 'This is a guidance-only treatment — no changes were made by Christopher Ross Shadow.', 'thisismyurl-shadow' ),
+			'message' => __( 'This is a guidance-only treatment — no changes were made by Shadow by Christopher Ross.', 'thisismyurl-shadow' ),
 		];
 	}
 }

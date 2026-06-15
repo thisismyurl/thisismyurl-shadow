@@ -1,15 +1,15 @@
-# Christopher Ross Shadow Business Model
+# Shadow Business Model
 
 **Date:** April 5, 2026
-**Status:** Active — Christopher Ross Shadow only
+**Status:** Active — Shadow by Christopher Ross only
 
 ---
 
 ## What Exists Today
 
-### Christopher Ross Shadow — Free WordPress Plugin
+### Shadow by Christopher Ross — Free WordPress Plugin
 
-Christopher Ross Shadow is the only currently available product. It is:
+Shadow by Christopher Ross is the only currently available product. It is:
 
 - **100% free** — no trial, no paywall, no paywalled features
 - **Self-contained** — runs entirely on your WordPress server
@@ -69,7 +69,7 @@ All decisions are evaluated against these pillars:
 
 ## Sustainability
 
-Christopher Ross Shadow is developed and maintained as a commitment to the WordPress community. The current model is:
+Shadow by Christopher Ross is developed and maintained as a commitment to the WordPress community. The current model is:
 
 - Plugin released free
 - Development funded by the project director
@@ -91,5 +91,5 @@ If paid products are ever introduced, every paid offering must clearly state:
 ---
 
 **Version:** Current
-**Maintained By:** Christopher Ross Shadow Team
+**Maintained By:** Shadow Team
 **Aligned With:** [CORE_PHILOSOPHY.md](CORE_PHILOSOPHY.md)

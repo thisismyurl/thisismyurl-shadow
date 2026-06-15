@@ -10,7 +10,7 @@
  * Risk level: high — writes a file to the uploads directory. The file is
  * removed by undo(). Does not affect image or media file delivery.
  *
- * Undo: removes the Christopher Ross Shadow block from the uploads .htaccess file using
+ * Undo: removes the Shadow by Christopher Ross block from the uploads .htaccess file using
  * WordPress's insert_with_markers() with an empty rules array.
  *
  * @package ThisIsMyURL\Shadow
@@ -61,7 +61,7 @@ class Treatment_Uploads_Php_Execution_Blocked extends Treatment_Base {
 		$htaccess   = trailingslashit( $upload_dir['basedir'] ) . '.htaccess';
 
 		$rules = array(
-			'# Block PHP execution in uploads - managed by Christopher Ross Shadow',
+			'# Block PHP execution in uploads - managed by Shadow by Christopher Ross',
 			'<FilesMatch "\.php$">',
 			'  Order Deny,Allow',
 			'  Deny from all',
@@ -89,7 +89,7 @@ class Treatment_Uploads_Php_Execution_Blocked extends Treatment_Base {
 	}
 
 	/**
-	 * Remove the Christopher Ross Shadow PHP-denial block from the uploads .htaccess.
+	 * Remove the Shadow PHP-denial block from the uploads .htaccess.
 	 *
 	 * @return array
 	 */

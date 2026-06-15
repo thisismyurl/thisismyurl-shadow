@@ -5,7 +5,7 @@
  * Checks that recently published posts have a featured image set. Missing
  * featured images look broken in blog listings and social sharing previews.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

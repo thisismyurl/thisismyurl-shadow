@@ -2,7 +2,7 @@
 /**
  * Treatment: Disable WordPress Embed Assets
  *
- * Stores a Christopher Ross Shadow option that instructs the plugin bootstrap to remove
+ * Stores a Shadow by Christopher Ross option that instructs the plugin bootstrap to remove
  * the oEmbed host JavaScript and associated head/footer hooks from front-end
  * output. This prevents other sites from embedding your content via iframes
  * while leaving your own ability to embed third-party content intact.

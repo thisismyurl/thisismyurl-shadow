@@ -1,4 +1,4 @@
-# Christopher Ross Shadow Support
+# Shadow Support
 
 This page explains the best place to go for help, bug reports, feature ideas, and security concerns.
 
@@ -40,7 +40,7 @@ Use:
 
 Please include as much of the following as you can:
 
-- Christopher Ross Shadow version
+- Shadow by Christopher Ross version
 - WordPress version
 - PHP version
 - whether this is single-site or multisite
@@ -87,7 +87,7 @@ A great bug report often includes:
 
 ## Our Support Philosophy
 
-Christopher Ross Shadow is built around **advice, not sales**.
+Shadow by Christopher Ross is built around **advice, not sales**.
 
 That means support should never feel like:
 

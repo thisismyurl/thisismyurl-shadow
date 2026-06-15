@@ -6,7 +6,7 @@
  * Tables without primary keys cause performance problems in MySQL/MariaDB
  * replication and can slow certain query patterns significantly.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

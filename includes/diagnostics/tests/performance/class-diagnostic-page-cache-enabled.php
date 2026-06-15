@@ -4,7 +4,7 @@
  *
  * Checks if page caching is enabled and working properly.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since 0.6095
  */
@@ -144,8 +144,8 @@ class Diagnostic_Page_Cache_Enabled extends Diagnostic_Base {
 				'threat_level' => 95,
 				'details'      => array(
 					'explanation_sections' => array(
-						'summary' => __( 'Christopher Ross Shadow could not detect full-page caching from active plugin signatures, runtime constants, or cache response headers. Without full-page caching, WordPress has to execute PHP and database queries for most requests, which raises response times and reduces capacity under traffic spikes.', 'thisismyurl-shadow' ),
-						'how_wp_shadow_tested' => __( 'Christopher Ross Shadow inspected active plugin identifiers for common caching engines, checked the WP_CACHE constant, and looked for standard cache headers such as X-Cache and CF-Cache-Status during front-end execution contexts. The result is considered high confidence when all indicators are absent.', 'thisismyurl-shadow' ),
+						'summary' => __( 'Shadow by Christopher Ross could not detect full-page caching from active plugin signatures, runtime constants, or cache response headers. Without full-page caching, WordPress has to execute PHP and database queries for most requests, which raises response times and reduces capacity under traffic spikes.', 'thisismyurl-shadow' ),
+						'how_wp_shadow_tested' => __( 'Shadow by Christopher Ross inspected active plugin identifiers for common caching engines, checked the WP_CACHE constant, and looked for standard cache headers such as X-Cache and CF-Cache-Status during front-end execution contexts. The result is considered high confidence when all indicators are absent.', 'thisismyurl-shadow' ),
 						'why_it_matters' => __( 'Page caching is typically the highest-impact performance control on WordPress. Without it, your server repeats expensive page generation work for every anonymous visitor, increasing CPU load, response latency, and the risk of slowdown during marketing campaigns, crawler bursts, or normal growth.', 'thisismyurl-shadow' ),
 						'how_to_fix_it' => __( 'Enable a reputable page cache plugin or host-level cache layer, then verify cache bypass rules for logged-in users and dynamic checkout/account pages. Warm cache for key routes after deployment. Re-run this diagnostic and confirm at least one cache signal is now detected consistently.', 'thisismyurl-shadow' ),
 					),

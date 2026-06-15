@@ -5,7 +5,7 @@
  * Checks whether the authentication cookie lifetime for admin sessions has
  * been reduced from WordPress defaults to lower the risk of session hijack.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */
@@ -75,7 +75,7 @@ class Diagnostic_Admin_Session_Expiration_Hardened extends Diagnostic_Base {
 		// WordPress default: 14 days with "Remember Me" (1209600 seconds), 2 days without (172800).
 		// Hardened sites reduce this for privileged sessions.
 		// We simulate what WP will return for an admin session expiry.
-		$sample_expiry = apply_filters( 'auth_cookie_expiration', 1209600, 0, true );
+		$sample_expiry = apply_filters( 'auth_cookie_expiration', 1209600, 0, true ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Reading a WordPress core filter's value for diagnostics, not defining a plugin hook.
 
 		// 1209600 = 14 days. Anything above 7 days (604800) for admin sessions is too long.
 		$seven_days = 7 * DAY_IN_SECONDS;

@@ -5,7 +5,7 @@
  * Provides step-by-step manual guidance for changing the WordPress database
  * table prefix from the default "wp_" to a custom value.
  *
- * Christopher Ross Shadow does not perform this operation automatically because a failed or
+ * Shadow by Christopher Ross does not perform this operation automatically because a failed or
  * interrupted prefix change can break the entire WordPress installation. The
  * instructions below must be executed manually by a developer with database
  * access.
@@ -109,7 +109,7 @@ ALTERNATIVE:
   'Brozzme DB Prefix & Tools Addons' or 'Change DB Prefix'.
   These plugins handle all renaming steps and are less error-prone.
 
-Re-run the Christopher Ross Shadow scan after completing the prefix change.",
+Re-run the Shadow by Christopher Ross scan after completing the prefix change.",
 					'thisismyurl-shadow'
 				),
 				$current_prefix,
@@ -136,7 +136,7 @@ Re-run the Christopher Ross Shadow scan after completing the prefix change.",
 	public static function undo(): array {
 		return [
 			'success' => true,
-			'message' => __( 'This is a guidance-only treatment — no changes were made by Christopher Ross Shadow.', 'thisismyurl-shadow' ),
+			'message' => __( 'This is a guidance-only treatment — no changes were made by Shadow by Christopher Ross.', 'thisismyurl-shadow' ),
 		];
 	}
 }

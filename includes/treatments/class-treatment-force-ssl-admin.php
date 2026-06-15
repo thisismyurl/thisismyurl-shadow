@@ -11,7 +11,7 @@
  * only be applied on servers with a valid TLS certificate. An active HTTPS
  * certificate check is performed before writing.
  *
- * Undo: removes the Christopher Ross Shadow-inserted define block.
+ * Undo: removes the Shadow by Christopher Ross-inserted define block.
  *
  * @package ThisIsMyURL\Shadow
  * @since   0.6095
@@ -35,7 +35,7 @@ class Treatment_Force_Ssl_Admin extends Treatment_Base {
 	/** @var string */
 	protected static $slug = 'force-ssl-admin';
 
-	private const DEFINE_LINE  = "define( 'FORCE_SSL_ADMIN', true ); // Added by Christopher Ross Shadow";
+	private const DEFINE_LINE  = "define( 'FORCE_SSL_ADMIN', true ); // Added by Shadow by Christopher Ross";
 	private const MARKER_START = '// BEGIN This Is My URL Shadow FORCE_SSL_ADMIN';
 	private const MARKER_END   = '// END This Is My URL Shadow FORCE_SSL_ADMIN';
 
@@ -86,7 +86,7 @@ class Treatment_Force_Ssl_Admin extends Treatment_Base {
 		if ( strpos( $original, self::MARKER_START ) !== false ) {
 			return array(
 				'success' => true,
-				'message' => __( 'FORCE_SSL_ADMIN was already added by Christopher Ross Shadow.', 'thisismyurl-shadow' ),
+				'message' => __( 'FORCE_SSL_ADMIN was already added by Shadow by Christopher Ross.', 'thisismyurl-shadow' ),
 			);
 		}
 

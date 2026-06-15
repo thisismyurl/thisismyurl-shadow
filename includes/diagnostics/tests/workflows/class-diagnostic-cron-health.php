@@ -6,7 +6,7 @@
  * overdue (more than 30 minutes late), and flags when the total number of
  * registered scheduled events exceeds a healthy threshold (cron bloat).
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */
@@ -129,11 +129,11 @@ class Diagnostic_Cron_Health extends Diagnostic_Base {
 					'explanation_sections' => array(
 						'summary' => sprintf(
 							/* translators: 1: overdue events count, 2: total scheduled events count */
-							__( 'Christopher Ross Shadow found %1$d overdue scheduled events out of %2$d total registered cron hooks. This means background jobs are not executing on schedule, which can delay order processing, email queues, backups, and cleanup tasks that your site depends on to stay healthy.', 'thisismyurl-shadow' ),
+							__( 'Shadow by Christopher Ross found %1$d overdue scheduled events out of %2$d total registered cron hooks. This means background jobs are not executing on schedule, which can delay order processing, email queues, backups, and cleanup tasks that your site depends on to stay healthy.', 'thisismyurl-shadow' ),
 							$overdue_30m,
 							$total_hooks
 						),
-						'how_wp_shadow_tested' => __( 'Christopher Ross Shadow inspected the WordPress cron array in memory and compared each scheduled timestamp against current server time. Any hooks delayed by more than 30 minutes were classified as overdue. This threshold intentionally ignores minor drift and highlights persistent scheduling failures.', 'thisismyurl-shadow' ),
+						'how_wp_shadow_tested' => __( 'Shadow by Christopher Ross inspected the WordPress cron array in memory and compared each scheduled timestamp against current server time. Any hooks delayed by more than 30 minutes were classified as overdue. This threshold intentionally ignores minor drift and highlights persistent scheduling failures.', 'thisismyurl-shadow' ),
 						'why_it_matters' => __( 'When cron jobs miss schedule windows, small maintenance tasks compound into larger reliability problems. Expired data is left behind, queued jobs pile up, and business workflows become inconsistent. On busy sites this can create operational instability; on low-traffic sites it can silently prevent critical tasks from running at all.', 'thisismyurl-shadow' ),
 						'how_to_fix_it' => __( 'Confirm wp-cron.php is reachable and not blocked by firewall, basic auth, or caching rules. If your site does not have predictable traffic, offload cron to a real server scheduler and set DISABLE_WP_CRON to true. After changes, run this diagnostic multiple times over the next hour to confirm overdue counts stop growing.', 'thisismyurl-shadow' ),
 					),
@@ -159,10 +159,10 @@ class Diagnostic_Cron_Health extends Diagnostic_Base {
 					'explanation_sections' => array(
 						'summary' => sprintf(
 							/* translators: %d: total scheduled events */
-							__( 'Christopher Ross Shadow counted %d scheduled cron hooks, which is higher than a healthy baseline for most WordPress sites. A large cron queue usually points to plugins repeatedly scheduling jobs without adequate cleanup, or long-running jobs that are not completing normally.', 'thisismyurl-shadow' ),
+							__( 'Shadow by Christopher Ross counted %d scheduled cron hooks, which is higher than a healthy baseline for most WordPress sites. A large cron queue usually points to plugins repeatedly scheduling jobs without adequate cleanup, or long-running jobs that are not completing normally.', 'thisismyurl-shadow' ),
 							$total_hooks
 						),
-						'how_wp_shadow_tested' => __( 'Christopher Ross Shadow enumerated the active cron array and counted each registered hook instance. This is a direct runtime measurement of queue size, not an estimate. The check surfaces queue bloat even when tasks are not currently overdue, so you can correct scheduler pressure before it becomes a reliability incident.', 'thisismyurl-shadow' ),
+						'how_wp_shadow_tested' => __( 'Shadow by Christopher Ross enumerated the active cron array and counted each registered hook instance. This is a direct runtime measurement of queue size, not an estimate. The check surfaces queue bloat even when tasks are not currently overdue, so you can correct scheduler pressure before it becomes a reliability incident.', 'thisismyurl-shadow' ),
 						'why_it_matters' => __( 'An oversized cron queue increases processing overhead and can make scheduled maintenance more bursty and unpredictable. Over time, this can contribute to lock contention, duplicate task execution, and slower request handling when cron is triggered during page loads.', 'thisismyurl-shadow' ),
 						'how_to_fix_it' => __( 'Identify plugins with aggressive scheduling patterns, reduce unnecessary intervals, and ensure deactivation hooks unschedule recurring events. Remove abandoned plugin data where appropriate. Keep WP-Cron execution reliable with a real system cron, then re-run this check and confirm the total event count trends downward.', 'thisismyurl-shadow' ),
 					),

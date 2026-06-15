@@ -40,7 +40,7 @@ class Treatment_Wp_Debug_Display_Off extends Treatment_Base {
 	protected static $slug = 'wp-debug-display-off';
 
 	const MARKER_SLUG = 'wp-debug-display-off';
-	const DEFINE_LINE = "define( 'WP_DEBUG_DISPLAY', false ); // Christopher Ross Shadow: hide errors from visitors";
+	const DEFINE_LINE = "define( 'WP_DEBUG_DISPLAY', false ); // Shadow by Christopher Ross: hide errors from visitors";
 
 	public static function boot(): void {
 		File_Write_Registry::register( static::class );

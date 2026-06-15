@@ -33,6 +33,36 @@
 			this.initFilterButtons();
 			this.initPreselectedFamilyFilter();
 			this.initDetailPageActions();
+			this.restoreLastActionFocus();
+		},
+
+		/*
+		 * Reload the page after a destructive/state-changing action, flagging the
+		 * detail heading so focus can be restored to it once the new page loads.
+		 * Without this, the reload drops keyboard/SR users at the top of the page
+		 * with no announcement of where they were (WCAG 2.4.3).
+		 */
+		reloadToLastAction: function( delay ) {
+			window.setTimeout( () => {
+				window.location.hash = 'wps-last-action';
+				window.location.reload();
+			}, delay );
+		},
+
+		/*
+		 * On load after reloadToLastAction(), move focus to the detail heading so
+		 * the keyboard/SR user lands back on the check they just acted on.
+		 */
+		restoreLastActionFocus: function() {
+			if ( window.location.hash !== '#wps-last-action' ) {
+				return;
+			}
+			const heading = document.getElementById( 'wps-detail-heading' );
+			if ( heading ) {
+				heading.focus();
+			}
+			// Clear the hash so a manual reload / back-nav doesn't re-fire the focus jump.
+			history.replaceState( null, '', window.location.pathname + window.location.search );
 		},
 
 		initPreselectedFamilyFilter: function() {
@@ -87,6 +117,23 @@
 				} ).catch( () => {
 					// Ignore dismiss errors; the notice is non-critical UI only.
 				} );
+			}
+
+			// Move focus off the dismiss control before it disappears, so keyboard and
+			// screen-reader users are not stranded on a hidden element (WCAG 2.4.3).
+			const focusTarget = document.querySelector( '.wrap h1' ) || document.body;
+			if ( focusTarget ) {
+				if ( focusTarget === document.body || ! focusTarget.hasAttribute( 'tabindex' ) ) {
+					focusTarget.setAttribute( 'tabindex', '-1' );
+				}
+				focusTarget.focus();
+			}
+
+			// Respect the user's reduced-motion preference: skip the fade and hide immediately.
+			const prefersReducedMotion = window.matchMedia( '(prefers-reduced-motion: reduce)' ).matches;
+			if ( prefersReducedMotion ) {
+				notice.style.display = 'none';
+				return;
 			}
 
 			notice.style.transition = 'opacity 0.3s ease';
@@ -313,7 +360,7 @@
 						if (statusEl) {
 							statusEl.textContent = data.data?.message || 'Fix applied. Refreshing…';
 						}
-						window.setTimeout(() => window.location.reload(), 900);
+						this.reloadToLastAction( 900 );
 					} else if (statusEl) {
 						statusEl.textContent = 'Error: ' + (data.data?.message || 'Could not apply fix.');
 					}
@@ -499,7 +546,7 @@
 						if (statusEl) {
 							statusEl.textContent = data.data?.message || 'Schedule saved. Refreshing…';
 						}
-						window.setTimeout(() => window.location.reload(), 700);
+						this.reloadToLastAction( 700 );
 					} else {
 						if (statusEl) {
 							statusEl.textContent = 'Error: ' + (data.data?.message || 'Failed');

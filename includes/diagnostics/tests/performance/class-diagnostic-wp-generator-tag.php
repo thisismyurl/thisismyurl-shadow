@@ -6,7 +6,7 @@
  * in every page's <head>, which advertises the exact WordPress version to
  * anyone scanning for vulnerable installations.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

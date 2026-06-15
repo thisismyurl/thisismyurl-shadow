@@ -3,8 +3,12 @@ declare(strict_types=1);
 
 namespace ThisIsMyURL\Shadow\Admin\Pages;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 /**
- * Manage Christopher Ross Shadow's automated diagnostic scan schedule.
+ * Manage Shadow's automated diagnostic scan schedule.
  *
  * This class is the main scheduling coordinator for the plugin's recurring
  * "Guardian" scans. It stores the admin's preferred frequency, translates
@@ -280,7 +284,7 @@ class Scan_Frequency_Manager {
 	}
 
 	/**
-	 * Run a full Christopher Ross Shadow Guardian scan and optionally apply safe treatments.
+	 * Run a full Shadow Guardian scan and optionally apply safe treatments.
 	 *
 	 * This is the operational heart of automated scanning. It raises execution
 	 * limits when possible, runs enabled diagnostics, persists the resulting site
@@ -303,7 +307,7 @@ class Scan_Frequency_Manager {
 		}
 
 		if ( function_exists( 'set_time_limit' ) ) {
-			set_time_limit( 120 ); // phpcs:ignore Squiz.PHP.DiscouragedFunctions.Discouraged -- Manual Guardian runs can exceed default local execution limits.
+			set_time_limit( 120 ); // phpcs:ignore Squiz.PHP.DiscouragedFunctions.Discouraged -- Scoped to the diagnostic-scan execution method; a full Guardian scan can exceed the default execution limit on some hosts.
 		}
 
 		$config  = self::get_scan_config();
@@ -489,7 +493,7 @@ class Scan_Frequency_Manager {
 				$treatment_class = \ThisIsMyURL\Shadow\Treatments\Treatment_Registry::get_treatment( $finding_id );
 			} catch ( \Throwable $exception ) {
 				\ThisIsMyURL\Shadow\Core\Error_Handler::log_error(
-					sprintf( 'Christopher Ross Shadow Guardian treatment lookup failed for %s', $finding_id ),
+					sprintf( 'Shadow Guardian treatment lookup failed for %s', $finding_id ),
 					$exception
 				);
 				continue;
@@ -516,7 +520,7 @@ class Scan_Frequency_Manager {
 				$result = \ThisIsMyURL\Shadow\Treatments\Treatment_Registry::apply_treatment( $finding_id, false );
 			} catch ( \Throwable $exception ) {
 				\ThisIsMyURL\Shadow\Core\Error_Handler::log_error(
-					sprintf( 'Christopher Ross Shadow Guardian treatment apply failed for %s', $finding_id ),
+					sprintf( 'Shadow Guardian treatment apply failed for %s', $finding_id ),
 					$exception
 				);
 				continue;
@@ -609,7 +613,7 @@ class Scan_Frequency_Manager {
 			);
 		} catch ( \Throwable $exception ) {
 			\ThisIsMyURL\Shadow\Core\Error_Handler::log_error(
-				sprintf( 'Christopher Ross Shadow Guardian verification failed for %s', $finding_id ),
+				sprintf( 'Shadow Guardian verification failed for %s', $finding_id ),
 				$exception
 			);
 			return array(
@@ -648,7 +652,7 @@ class Scan_Frequency_Manager {
 					<h3 class="wps-m-0"><?php esc_html_e( 'Scan Frequency Settings', 'thisismyurl-shadow' ); ?></h3>
 				</div>
 				<p class="wps-m-0">
-					<?php esc_html_e( 'Choose how often Christopher Ross Shadow runs automatic diagnostics to check your site health.', 'thisismyurl-shadow' ); ?>
+					<?php esc_html_e( 'Choose how often Shadow by Christopher Ross runs automatic diagnostics to check your site health.', 'thisismyurl-shadow' ); ?>
 				</p>
 
 				<form class="thisismyurl-shadow-scan-frequency-form" method="POST" action="<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>">

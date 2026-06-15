@@ -6,7 +6,7 @@
  * loaded on a classic (non-FSE) theme's front end, where most block styles
  * are unused and represent wasted CSS weight.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

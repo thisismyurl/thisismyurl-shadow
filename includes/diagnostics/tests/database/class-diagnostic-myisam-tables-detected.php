@@ -6,7 +6,7 @@
  * engine. MyISAM lacks transactions, foreign-key support, and crash recovery;
  * all tables should use InnoDB.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

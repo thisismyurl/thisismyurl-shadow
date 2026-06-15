@@ -6,7 +6,7 @@
  * its row count has grown to an unhealthy size. A large sessions table
  * indicates that WooCommerce session cleanup is not running correctly.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

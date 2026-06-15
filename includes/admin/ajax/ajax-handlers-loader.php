@@ -53,12 +53,6 @@ thisismyurl_shadow_require_ajax_handler( $thisismyurl_shadow_ajax_path, 'heartbe
 // Scanning operations.
 thisismyurl_shadow_require_ajax_handler( $thisismyurl_shadow_ajax_path, 'dismiss-scan-notice-handler.php' );
 
-// Notifications and alerts.
-thisismyurl_shadow_require_ajax_handler( $thisismyurl_shadow_ajax_path, 'run-local-backup-handler.php' );
-thisismyurl_shadow_require_ajax_handler( $thisismyurl_shadow_ajax_path, 'class-restore-local-backup-handler.php' );
-thisismyurl_shadow_require_ajax_handler( $thisismyurl_shadow_ajax_path, 'class-download-local-backup-handler.php' );
-thisismyurl_shadow_require_ajax_handler( $thisismyurl_shadow_ajax_path, 'class-delete-local-backup-handler.php' );
-
 // Reporting.
 // Settings management.
 thisismyurl_shadow_require_ajax_handler( $thisismyurl_shadow_ajax_path, 'class-save-setting-handler.php' );
@@ -80,23 +74,6 @@ thisismyurl_shadow_require_ajax_handler( $thisismyurl_shadow_ajax_path, 'class-a
 thisismyurl_shadow_require_ajax_handler( $thisismyurl_shadow_ajax_path, 'class-ajax-readiness-export.php' );
 thisismyurl_shadow_require_ajax_handler( $thisismyurl_shadow_ajax_path, 'class-ajax-environment-policy.php' );
 thisismyurl_shadow_require_ajax_handler( $thisismyurl_shadow_ajax_path, 'class-ajax-treatment-maturity.php' );
-
-// Register local backup handlers explicitly to guarantee admin-post availability.
-if ( class_exists( '\\ThisIsMyURL\\Shadow\\Admin\\Ajax\\Run_Local_Backup_Handler' ) ) {
-	\ThisIsMyURL\Shadow\Admin\Ajax\Run_Local_Backup_Handler::register();
-}
-
-if ( class_exists( '\\ThisIsMyURL\\Shadow\\Admin\\Ajax\\Restore_Local_Backup_Handler' ) ) {
-	\ThisIsMyURL\Shadow\Admin\Ajax\Restore_Local_Backup_Handler::register();
-}
-
-if ( class_exists( '\\ThisIsMyURL\\Shadow\\Admin\\Ajax\\Download_Local_Backup_Handler' ) ) {
-	\ThisIsMyURL\Shadow\Admin\Ajax\Download_Local_Backup_Handler::register();
-}
-
-if ( class_exists( '\\ThisIsMyURL\\Shadow\\Admin\\Ajax\\Delete_Local_Backup_Handler' ) ) {
-	\ThisIsMyURL\Shadow\Admin\Ajax\Delete_Local_Backup_Handler::register();
-}
 
 // Register dashboard handlers explicitly for real-time updates.
 if ( class_exists( '\\ThisIsMyURL\\Shadow\\Admin\\Ajax\\Get_Dashboard_Data_Handler' ) ) {

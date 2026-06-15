@@ -6,7 +6,7 @@
  * to the number of registered users. A high ratio often indicates abandoned
  * plugin metadata that was never cleaned up.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

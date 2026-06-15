@@ -5,7 +5,7 @@
  * Verifies that web server directory listing is disabled for the uploads
  * folder to prevent attackers from enumerating uploaded files.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */
@@ -89,7 +89,7 @@ class Diagnostic_Directory_Listing_Disabled extends Diagnostic_Base {
 			array(
 				'timeout'             => 7,
 				'redirection'         => 2,
-				'user-agent'          => 'Christopher Ross Shadow-Diagnostic/1.0',
+				'user-agent'          => 'Shadow by Christopher Ross-Diagnostic/1.0',
 				'reject_unsafe_urls'  => false,
 			)
 		);

@@ -283,7 +283,7 @@ Status key: â Implemented | ð§ Stub (check returns null / TODO)
 Current review of missing treatments: 138 diagnostics are missing a treatment implementation.
 
 Category definitions:
-- Better automation: deterministic changes Christopher Ross Shadow can apply directly with high confidence.
+- Better automation: deterministic changes Shadow by Christopher Ross can apply directly with high confidence.
 - Scripted remediation: code-driven or batch-driven fixes that need environment checks, verification, or multi-step workflows.
 - User interaction / form: fixes that need user intent, credentials, content, policy decisions, or other guided input.
 

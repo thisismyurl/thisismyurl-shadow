@@ -5,7 +5,7 @@
  * Checks whether the WordPress site language has been explicitly set to match
  * the business audience, rather than left at the installer default of en_US.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

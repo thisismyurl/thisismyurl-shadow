@@ -2,10 +2,10 @@
 /**
  * Settings Page
  *
- * Full settings UI for Christopher Ross Shadow: general options, scan schedule,
+ * Full settings UI for Shadow by Christopher Ross: general options, scan schedule,
  * and per-diagnostic toggles and frequency.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Views
  * @since      0.6095
  */
@@ -24,7 +24,7 @@ require_once THISISMYURL_SHADOW_PATH . 'includes/ui/views/functions-page-layout.
 
 // ── Tab detection ─────────────────────────────────────────────────────────
 $active_tab = isset( $_GET['tab'] ) ? sanitize_key( wp_unslash( $_GET['tab'] ) ) : 'general'; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Passive tab selection only.
-$valid_tabs = array( 'general', 'scanning', 'backups', 'accessibility' );
+$valid_tabs = array( 'general', 'scanning', 'accessibility' );
 if ( ! in_array( $active_tab, $valid_tabs, true ) ) {
 	$active_tab = 'general';
 }
@@ -50,26 +50,8 @@ $scan_config = wp_parse_args(
 	)
 );
 
-
-
-$backup_status = class_exists( '\ThisIsMyURL\Shadow\Guardian\Backup_Manager' )
-	? \ThisIsMyURL\Shadow\Guardian\Backup_Manager::get_status_summary()
-	: array(
-		'directory'              => '',
-		'directory_public_label' => __( 'Private Vault Lite storage (hidden randomized path)', 'thisismyurl-shadow' ),
-		'count'                  => 0,
-		'total_size_human'       => size_format( 0 ),
-		'last_backup_label'      => __( 'No local backups yet', 'thisismyurl-shadow' ),
-		'last_backup_file'       => '',
-		'last_backup_status'     => 'warning',
-	);
-
-$next_backup_display = class_exists( '\ThisIsMyURL\Shadow\Guardian\Backup_Scheduler' )
-	? \ThisIsMyURL\Shadow\Guardian\Backup_Scheduler::get_next_scheduled_display()
-	: __( 'Scheduler unavailable', 'thisismyurl-shadow' );
-
 /**
- * Helper: read a Christopher Ross Shadow option using the shared settings registry when available.
+ * Helper: read a Shadow by Christopher Ross option using the shared settings registry when available.
  *
  * @param  string $option   Option name.
  * @param  mixed  $fallback Default value.
@@ -126,7 +108,7 @@ $settings_url = admin_url( 'admin.php?page=thisismyurl-shadow-settings' );
 <?php
 thisismyurl_shadow_render_page_header(
 	__( 'Settings', 'thisismyurl-shadow' ),
-	__( 'Configure Christopher Ross Shadow to match your workflow and site requirements.', 'thisismyurl-shadow' ),
+	__( 'Configure Shadow by Christopher Ross to match your workflow and site requirements.', 'thisismyurl-shadow' ),
 	'dashicons-admin-settings'
 );
 ?>
@@ -146,10 +128,6 @@ thisismyurl_shadow_render_page_header(
 				'label' => __( 'Scanning', 'thisismyurl-shadow' ),
 				'icon'  => 'dashicons-search',
 			),
-			'backups'       => array(
-				'label' => __( 'Backups', 'thisismyurl-shadow' ),
-				'icon'  => 'dashicons-backup',
-			),
 			'accessibility' => array(
 				'label' => __( 'Accessibility', 'thisismyurl-shadow' ),
 				'icon'  => 'dashicons-universal-access-alt',
@@ -162,7 +140,7 @@ thisismyurl_shadow_render_page_header(
 			<a
 				href="<?php echo esc_url( $href ); ?>"
 				class="wps-settings-tab<?php echo esc_attr( $active ); ?>"
-				aria-current="<?php echo esc_attr( $active_tab === $tab_key ? 'page' : 'false' ); ?>"
+				<?php if ( $active_tab === $tab_key ) : ?>aria-current="page"<?php endif; ?>
 			>
 				<span class="dashicons <?php echo esc_attr( $settings_tab['icon'] ); ?>" aria-hidden="true"></span>
 				<?php echo esc_html( $settings_tab['label'] ); ?>
@@ -317,7 +295,7 @@ thisismyurl_shadow_render_page_header(
 				<div class="wps-settings-row">
 					<div class="wps-settings-row-label">
 						<label for="wps-debug-mode"><?php esc_html_e( 'Debug Mode', 'thisismyurl-shadow' ); ?></label>
-						<p class="wps-settings-row-hint"><?php esc_html_e( 'Enable verbose logging of all Christopher Ross Shadow operations. Useful when reporting issues.', 'thisismyurl-shadow' ); ?></p>
+						<p class="wps-settings-row-hint"><?php esc_html_e( 'Enable verbose logging of all Shadow by Christopher Ross operations. Useful when reporting issues.', 'thisismyurl-shadow' ); ?></p>
 					</div>
 					<div class="wps-settings-row-control">
 						<label class="wps-toggle-switch">
@@ -349,7 +327,7 @@ thisismyurl_shadow_render_page_header(
 
 		<div class="wps-settings-section">
 			<h2 class="wps-settings-section-title"><?php esc_html_e( 'Automatic Scan Schedule', 'thisismyurl-shadow' ); ?></h2>
-			<p class="wps-settings-section-desc"><?php esc_html_e( 'Control how often Christopher Ross Shadow runs diagnostic scans in the background.', 'thisismyurl-shadow' ); ?></p>
+			<p class="wps-settings-section-desc"><?php esc_html_e( 'Control how often Shadow by Christopher Ross runs diagnostic scans in the background.', 'thisismyurl-shadow' ); ?></p>
 
 			<div class="wps-settings-rows">
 
@@ -490,373 +468,6 @@ thisismyurl_shadow_render_page_header(
 	<?php endif; ?>
 
 	<!-- ═══════════════════════════════════════════════════════════════════════
-		TAB: BACKUPS
-		═══════════════════════════════════════════════════════════════════════ -->
-	<?php if ( 'backups' === $active_tab ) : ?>
-	<div class="wps-settings-body">
-
-		<?php if ( isset( $_GET['thisismyurl_shadow_backup_run'] ) && 'error' === sanitize_key( wp_unslash( $_GET['thisismyurl_shadow_backup_run'] ) ) ) : // phpcs:ignore WordPress.Security.NonceVerification.Recommended ?>
-			<div class="notice notice-error">
-				<p><?php esc_html_e( 'Local backup could not be created.', 'thisismyurl-shadow' ); ?></p>
-			</div>
-		<?php endif; ?>
-
-		<div class="wps-settings-section">
-			<h2 class="wps-settings-section-title"><?php esc_html_e( 'Local Backup Status', 'thisismyurl-shadow' ); ?></h2>
-			<p class="wps-settings-section-desc"><?php esc_html_e( 'Vault Lite stores local-only restore points on this server. No cloud tools are used in this lite version.', 'thisismyurl-shadow' ); ?></p>
-
-			<div class="wps-settings-rows">
-				<div class="wps-settings-row">
-					<div class="wps-settings-row-label">
-						<label><?php esc_html_e( 'Stored Backups', 'thisismyurl-shadow' ); ?></label>
-						<p class="wps-settings-row-hint">
-							<?php
-							echo esc_html(
-								sprintf(
-									/* translators: %d: number of retained local backups. */
-									_n( '%d local backup currently stored.', '%d local backups currently stored.', (int) $backup_status['count'], 'thisismyurl-shadow' ),
-									(int) $backup_status['count']
-								)
-							);
-							?>
-						</p>
-					</div>
-					<div class="wps-settings-row-control">
-						<strong><?php echo esc_html( (string) $backup_status['count'] ); ?></strong>
-					</div>
-				</div>
-
-				<div class="wps-settings-row">
-					<div class="wps-settings-row-label">
-						<label><?php esc_html_e( 'Disk Usage', 'thisismyurl-shadow' ); ?></label>
-						<p class="wps-settings-row-hint"><?php esc_html_e( 'Combined size of all local backup archives currently retained.', 'thisismyurl-shadow' ); ?></p>
-					</div>
-					<div class="wps-settings-row-control">
-						<strong><?php echo esc_html( (string) $backup_status['total_size_human'] ); ?></strong>
-					</div>
-				</div>
-
-				<div class="wps-settings-row">
-					<div class="wps-settings-row-label">
-						<label><?php esc_html_e( 'Last Backup', 'thisismyurl-shadow' ); ?></label>
-						<p class="wps-settings-row-hint"><?php echo esc_html( (string) $backup_status['last_backup_label'] ); ?></p>
-					</div>
-					<div class="wps-settings-row-control">
-						<?php if ( ! empty( $backup_status['last_backup_file'] ) ) : ?>
-							<code><?php echo esc_html( (string) $backup_status['last_backup_file'] ); ?></code>
-						<?php else : ?>
-							<span class="description"><?php esc_html_e( 'No backup file yet', 'thisismyurl-shadow' ); ?></span>
-						<?php endif; ?>
-					</div>
-				</div>
-
-				<div class="wps-settings-row">
-					<div class="wps-settings-row-label">
-						<label><?php esc_html_e( 'Next Scheduled Backup', 'thisismyurl-shadow' ); ?></label>
-						<p class="wps-settings-row-hint"><?php esc_html_e( 'Shown when scheduled local backups are enabled.', 'thisismyurl-shadow' ); ?></p>
-					</div>
-					<div class="wps-settings-row-control">
-						<strong><?php echo esc_html( $next_backup_display ); ?></strong>
-					</div>
-				</div>
-
-				<div class="wps-settings-row">
-					<div class="wps-settings-row-label">
-						<label><?php esc_html_e( 'Backup Location', 'thisismyurl-shadow' ); ?></label>
-						<p class="wps-settings-row-hint"><?php esc_html_e( 'These archives remain on the local server only, inside a secret randomized Vault Lite directory.', 'thisismyurl-shadow' ); ?></p>
-					</div>
-					<div class="wps-settings-row-control">
-						<strong><?php echo esc_html( (string) ( $backup_status['directory_public_label'] ?? __( 'Private Vault Lite storage (hidden randomized path)', 'thisismyurl-shadow' ) ) ); ?></strong>
-					</div>
-				</div>
-
-				<div class="wps-settings-row">
-					<div class="wps-settings-row-label">
-						<label><?php esc_html_e( 'Run Backup Now', 'thisismyurl-shadow' ); ?></label>
-						<p class="wps-settings-row-hint"><?php esc_html_e( 'Create a new local restore point immediately.', 'thisismyurl-shadow' ); ?></p>
-					</div>
-					<div class="wps-settings-row-control">
-						<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
-							<input type="hidden" name="action" value="thisismyurl_shadow_run_local_backup" />
-							<?php wp_nonce_field( 'thisismyurl_shadow_run_local_backup' ); ?>
-							<button type="submit" class="button button-primary"><?php esc_html_e( 'Create Local Backup', 'thisismyurl-shadow' ); ?></button>
-						</form>
-					</div>
-				</div>
-			</div><!-- .wps-settings-rows -->
-		</div><!-- .wps-settings-section -->
-
-		<div class="wps-settings-section">
-			<h2 class="wps-settings-section-title"><?php esc_html_e( 'Vault Lite Backups', 'thisismyurl-shadow' ); ?></h2>
-			<p class="wps-settings-section-desc"><?php esc_html_e( 'Lightweight backups created automatically before each treatment is applied.', 'thisismyurl-shadow' ); ?></p>
-
-			<div class="wps-settings-rows">
-
-				<div class="wps-settings-row">
-					<div class="wps-settings-row-label">
-						<label for="wps-backup-enabled"><?php esc_html_e( 'Enable Backups', 'thisismyurl-shadow' ); ?></label>
-						<p class="wps-settings-row-hint"><?php esc_html_e( 'Create a backup before applying any treatment. Strongly recommended.', 'thisismyurl-shadow' ); ?></p>
-					</div>
-					<div class="wps-settings-row-control">
-						<label class="wps-toggle-switch">
-							<input
-								type="checkbox"
-								id="wps-backup-enabled"
-								class="wps-auto-save"
-								data-option="thisismyurl_shadow_backup_enabled"
-								data-type="bool"
-								<?php checked( thisismyurl_shadow_settings_bool( 'thisismyurl_shadow_backup_enabled', true ) ); ?>
-							/>
-							<span class="wps-toggle-slider" aria-hidden="true"></span>
-						</label>
-						<span class="wps-save-status" aria-live="polite"></span>
-					</div>
-				</div>
-
-				<div class="wps-settings-row">
-					<div class="wps-settings-row-label">
-						<label for="wps-backup-db"><?php esc_html_e( 'Include Database', 'thisismyurl-shadow' ); ?></label>
-						<p class="wps-settings-row-hint"><?php esc_html_e( 'Include a database dump in each Vault Lite backup.', 'thisismyurl-shadow' ); ?></p>
-					</div>
-					<div class="wps-settings-row-control">
-						<label class="wps-toggle-switch">
-							<input
-								type="checkbox"
-								id="wps-backup-db"
-								class="wps-auto-save"
-								data-option="thisismyurl_shadow_backup_include_database"
-								data-type="bool"
-								<?php checked( thisismyurl_shadow_settings_bool( 'thisismyurl_shadow_backup_include_database', true ) ); ?>
-							/>
-							<span class="wps-toggle-slider" aria-hidden="true"></span>
-						</label>
-						<span class="wps-save-status" aria-live="polite"></span>
-					</div>
-				</div>
-
-				<div class="wps-settings-row">
-					<div class="wps-settings-row-label">
-						<label for="wps-backup-restore-db"><?php esc_html_e( 'Allow SQL Import During Restore', 'thisismyurl-shadow' ); ?></label>
-						<p class="wps-settings-row-hint"><?php esc_html_e( 'Off by default. When disabled, Vault Lite restores site files only and leaves any included database dump untouched unless site policy explicitly allows SQL import.', 'thisismyurl-shadow' ); ?></p>
-					</div>
-					<div class="wps-settings-row-control">
-						<label class="wps-toggle-switch">
-							<input
-								type="checkbox"
-								id="wps-backup-restore-db"
-								class="wps-auto-save"
-								data-option="thisismyurl_shadow_backup_restore_database_allowed"
-								data-type="bool"
-								<?php checked( thisismyurl_shadow_settings_bool( 'thisismyurl_shadow_backup_restore_database_allowed', false ) ); ?>
-							/>
-							<span class="wps-toggle-slider" aria-hidden="true"></span>
-						</label>
-						<span class="wps-save-status" aria-live="polite"></span>
-					</div>
-				</div>
-
-				<div class="wps-settings-row">
-					<div class="wps-settings-row-label">
-						<label for="wps-backup-compress"><?php esc_html_e( 'Compress Backups', 'thisismyurl-shadow' ); ?></label>
-						<p class="wps-settings-row-hint"><?php esc_html_e( 'Compress backup archives to save disk space.', 'thisismyurl-shadow' ); ?></p>
-					</div>
-					<div class="wps-settings-row-control">
-						<label class="wps-toggle-switch">
-							<input
-								type="checkbox"
-								id="wps-backup-compress"
-								class="wps-auto-save"
-								data-option="thisismyurl_shadow_backup_compress"
-								data-type="bool"
-								<?php checked( thisismyurl_shadow_settings_bool( 'thisismyurl_shadow_backup_compress', true ) ); ?>
-							/>
-							<span class="wps-toggle-slider" aria-hidden="true"></span>
-						</label>
-						<span class="wps-save-status" aria-live="polite"></span>
-					</div>
-				</div>
-
-				<div class="wps-settings-row">
-					<div class="wps-settings-row-label">
-						<label for="wps-backup-uploads"><?php esc_html_e( 'Include Uploads Folder', 'thisismyurl-shadow' ); ?></label>
-						<p class="wps-settings-row-hint"><?php esc_html_e( 'Back up the /uploads directory along with the rest of your site files.', 'thisismyurl-shadow' ); ?></p>
-					</div>
-					<div class="wps-settings-row-control">
-						<label class="wps-toggle-switch">
-							<input
-								type="checkbox"
-								id="wps-backup-uploads"
-								class="wps-auto-save"
-								data-option="thisismyurl_shadow_backup_include_uploads"
-								data-type="bool"
-								<?php checked( thisismyurl_shadow_settings_bool( 'thisismyurl_shadow_backup_include_uploads', true ) ); ?>
-							/>
-							<span class="wps-toggle-slider" aria-hidden="true"></span>
-						</label>
-						<span class="wps-save-status" aria-live="polite"></span>
-					</div>
-				</div>
-
-				<div class="wps-settings-row">
-					<div class="wps-settings-row-label">
-						<label for="wps-backup-verify"><?php esc_html_e( 'Verify Backups', 'thisismyurl-shadow' ); ?></label>
-						<p class="wps-settings-row-hint"><?php esc_html_e( 'Verify the integrity of each backup after creation.', 'thisismyurl-shadow' ); ?></p>
-					</div>
-					<div class="wps-settings-row-control">
-						<label class="wps-toggle-switch">
-							<input
-								type="checkbox"
-								id="wps-backup-verify"
-								class="wps-auto-save"
-								data-option="thisismyurl_shadow_backup_verify"
-								data-type="bool"
-								<?php checked( thisismyurl_shadow_settings_bool( 'thisismyurl_shadow_backup_verify', true ) ); ?>
-							/>
-							<span class="wps-toggle-slider" aria-hidden="true"></span>
-						</label>
-						<span class="wps-save-status" aria-live="polite"></span>
-					</div>
-				</div>
-
-				<div class="wps-settings-row">
-					<div class="wps-settings-row-label">
-						<label for="wps-backup-retention"><?php esc_html_e( 'Retention Period', 'thisismyurl-shadow' ); ?></label>
-						<p class="wps-settings-row-hint"><?php esc_html_e( 'Number of days to keep backup files before they are automatically deleted.', 'thisismyurl-shadow' ); ?></p>
-					</div>
-					<div class="wps-settings-row-control">
-						<select
-							id="wps-backup-retention"
-							class="wps-auto-save"
-							data-option="thisismyurl_shadow_backup_retention_days"
-							data-type="integer"
-						>
-							<?php
-							$retention_options = array(
-								1  => '1 day',
-								3  => '3 days',
-								7  => '7 days (recommended)',
-								14 => '14 days',
-								30 => '30 days',
-								60 => '60 days',
-								90 => '90 days',
-							);
-							$current_retention = thisismyurl_shadow_settings_int( 'thisismyurl_shadow_backup_retention_days', 7 );
-							foreach ( $retention_options as $days => $label ) :
-								echo '<option value="' . esc_attr( $days ) . '"' . selected( $current_retention, $days, false ) . '>' . esc_html( $label ) . '</option>';
-							endforeach;
-							?>
-						</select>
-						<span class="wps-save-status" aria-live="polite"></span>
-					</div>
-				</div>
-
-				<div class="wps-settings-row">
-					<div class="wps-settings-row-label">
-						<label for="wps-backup-max-size"><?php esc_html_e( 'Maximum Total Size', 'thisismyurl-shadow' ); ?></label>
-						<p class="wps-settings-row-hint"><?php esc_html_e( 'Maximum total disk space (MB) that all Vault Lite backups may occupy. Oldest backups are pruned when exceeded.', 'thisismyurl-shadow' ); ?></p>
-					</div>
-					<div class="wps-settings-row-control">
-						<div class="wps-input-with-unit">
-							<input
-								type="number"
-								id="wps-backup-max-size"
-								class="wps-auto-save small-text"
-								data-option="thisismyurl_shadow_backup_max_size_mb"
-								data-type="integer"
-								min="50"
-								max="10000"
-								step="50"
-								value="<?php echo esc_attr( thisismyurl_shadow_settings_int( 'thisismyurl_shadow_backup_max_size_mb', 500 ) ); ?>"
-							/>
-							<span class="wps-input-unit">MB</span>
-						</div>
-						<span class="wps-save-status" aria-live="polite"></span>
-					</div>
-				</div>
-
-			</div><!-- .wps-settings-rows -->
-		</div><!-- .wps-settings-section -->
-
-		<div class="wps-settings-section">
-			<h2 class="wps-settings-section-title"><?php esc_html_e( 'Scheduled Backups', 'thisismyurl-shadow' ); ?></h2>
-			<p class="wps-settings-section-desc"><?php esc_html_e( 'Run regular automatic backups on a schedule, independent of treatment activity.', 'thisismyurl-shadow' ); ?></p>
-
-			<div class="wps-settings-rows">
-
-				<div class="wps-settings-row">
-					<div class="wps-settings-row-label">
-						<label for="wps-backup-schedule"><?php esc_html_e( 'Enable Scheduled Backups', 'thisismyurl-shadow' ); ?></label>
-						<p class="wps-settings-row-hint"><?php esc_html_e( 'Run automatic backups on a regular schedule.', 'thisismyurl-shadow' ); ?></p>
-					</div>
-					<div class="wps-settings-row-control">
-						<label class="wps-toggle-switch">
-							<input
-								type="checkbox"
-								id="wps-backup-schedule"
-								class="wps-auto-save"
-								data-option="thisismyurl_shadow_backup_schedule_enabled"
-								data-type="bool"
-								<?php checked( thisismyurl_shadow_settings_bool( 'thisismyurl_shadow_backup_schedule_enabled', false ) ); ?>
-							/>
-							<span class="wps-toggle-slider" aria-hidden="true"></span>
-						</label>
-						<span class="wps-save-status" aria-live="polite"></span>
-					</div>
-				</div>
-
-				<div class="wps-settings-row">
-					<div class="wps-settings-row-label">
-						<label for="wps-backup-freq"><?php esc_html_e( 'Backup Frequency', 'thisismyurl-shadow' ); ?></label>
-						<p class="wps-settings-row-hint"><?php esc_html_e( 'How often to create a scheduled backup.', 'thisismyurl-shadow' ); ?></p>
-					</div>
-					<div class="wps-settings-row-control">
-						<select
-							id="wps-backup-freq"
-							class="wps-auto-save"
-							data-option="thisismyurl_shadow_backup_schedule_frequency"
-							data-type="string"
-						>
-							<?php
-							$backup_freqs   = array(
-								'daily'   => __( 'Daily (recommended)', 'thisismyurl-shadow' ),
-								'weekly'  => __( 'Weekly', 'thisismyurl-shadow' ),
-								'monthly' => __( 'Monthly', 'thisismyurl-shadow' ),
-							);
-							$current_bkfreq = thisismyurl_shadow_settings_str( 'thisismyurl_shadow_backup_schedule_frequency', 'daily' );
-							foreach ( $backup_freqs as $bfk => $bfl ) :
-								echo '<option value="' . esc_attr( $bfk ) . '"' . selected( $current_bkfreq, $bfk, false ) . '>' . esc_html( $bfl ) . '</option>';
-							endforeach;
-							?>
-						</select>
-						<span class="wps-save-status" aria-live="polite"></span>
-					</div>
-				</div>
-
-				<div class="wps-settings-row">
-					<div class="wps-settings-row-label">
-						<label for="wps-backup-time"><?php esc_html_e( 'Backup Time', 'thisismyurl-shadow' ); ?></label>
-						<p class="wps-settings-row-hint"><?php esc_html_e( 'The time of day (24-hour) when scheduled backups run. Choose a low-traffic period.', 'thisismyurl-shadow' ); ?></p>
-					</div>
-					<div class="wps-settings-row-control">
-						<input
-							type="time"
-							id="wps-backup-time"
-							class="wps-auto-save"
-							data-option="thisismyurl_shadow_backup_schedule_time"
-							data-type="string"
-							value="<?php echo esc_attr( thisismyurl_shadow_settings_str( 'thisismyurl_shadow_backup_schedule_time', '02:00' ) ); ?>"
-						/>
-						<span class="wps-save-status" aria-live="polite"></span>
-					</div>
-				</div>
-
-			</div><!-- .wps-settings-rows -->
-		</div><!-- .wps-settings-section -->
-
-	</div><!-- .wps-settings-body (backups) -->
-	<?php endif; ?>
-
-	<!-- ═══════════════════════════════════════════════════════════════════════
 		TAB: ACCESSIBILITY
 		═══════════════════════════════════════════════════════════════════════ -->
 	<?php if ( 'accessibility' === $active_tab ) : ?>
@@ -870,7 +481,7 @@ thisismyurl_shadow_render_page_header(
 
 		<div class="wps-settings-section">
 			<h2 class="wps-settings-section-title"><?php esc_html_e( 'Reading Comfort & Focus', 'thisismyurl-shadow' ); ?></h2>
-			<p class="wps-settings-section-desc"><?php esc_html_e( 'These options can be applied across WordPress admin screens, not just Christopher Ross Shadow. They are optional comfort aids — what helps one person read or focus more easily may not help another.', 'thisismyurl-shadow' ); ?></p>
+			<p class="wps-settings-section-desc"><?php esc_html_e( 'These options can be applied across WordPress admin screens, not just Shadow by Christopher Ross. They are optional comfort aids — what helps one person read or focus more easily may not help another.', 'thisismyurl-shadow' ); ?></p>
 
 			<div class="notice notice-info inline">
 				<p><?php esc_html_e( 'The focus-friendly font option uses a local readable font stack inspired by styles some ADHD or dyslexic users report as easier to track. No external font files are loaded.', 'thisismyurl-shadow' ); ?></p>
@@ -1113,7 +724,7 @@ thisismyurl_shadow_render_page_header(
 				<?php esc_html_e( 'Refresh Summary', 'thisismyurl-shadow' ); ?>
 			</button>
 		</div>
-		<p id="wps-export-status" class="wps-governance-status"></p>
+		<p id="wps-export-status" class="wps-governance-status" aria-live="polite" aria-atomic="true"></p>
 
 		<div class="wps-readiness-sections">
 			<?php

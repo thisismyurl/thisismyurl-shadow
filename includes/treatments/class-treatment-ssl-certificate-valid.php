@@ -83,7 +83,7 @@ OPTION 3 — Cloudflare:
 VERIFICATION (run on server):
   openssl s_client -connect %2\$s:443 -servername %2\$s 2>&1 | openssl x509 -noout -dates
 
-Today's date: %1\$s. Re-run the Christopher Ross Shadow scan after renewing the certificate.",
+Today's date: %1\$s. Re-run the Shadow by Christopher Ross scan after renewing the certificate.",
 					'thisismyurl-shadow'
 				),
 				$now,
@@ -100,7 +100,7 @@ Today's date: %1\$s. Re-run the Christopher Ross Shadow scan after renewing the 
 	public static function undo(): array {
 		return [
 			'success' => true,
-			'message' => __( 'This is a guidance-only treatment — no changes were made by Christopher Ross Shadow.', 'thisismyurl-shadow' ),
+			'message' => __( 'This is a guidance-only treatment — no changes were made by Shadow by Christopher Ross.', 'thisismyurl-shadow' ),
 		];
 	}
 }

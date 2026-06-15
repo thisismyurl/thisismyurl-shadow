@@ -7,7 +7,7 @@
  * indicates a plugin that is writing data to every post but has since been
  * removed, leaving behind large amounts of stale metadata.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */
@@ -72,7 +72,7 @@ class Diagnostic_Duplicate_Post_Meta_Keys extends Diagnostic_Base {
 
         $threshold = (int) ceil( $published_count * 0.8 );
 
-        // phpcs:disable WordPress.DB.DirectDatabaseQuery
+        // phpcs:disable WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQLPlaceholders.LikeWildcardsInQuery -- Static LIKE pattern with no user input; matches meta keys that do not start with an underscore.
         $suspect_keys = $wpdb->get_results( $wpdb->prepare(
             "SELECT meta_key, COUNT(DISTINCT post_id) AS post_count
              FROM {$wpdb->postmeta}
@@ -83,7 +83,7 @@ class Diagnostic_Duplicate_Post_Meta_Keys extends Diagnostic_Base {
              LIMIT 20",
             $threshold
         ) );
-        // phpcs:enable WordPress.DB.DirectDatabaseQuery
+        // phpcs:enable WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQLPlaceholders.LikeWildcardsInQuery
 
         if ( empty( $suspect_keys ) ) {
             return null;

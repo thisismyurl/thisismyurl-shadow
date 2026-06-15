@@ -5,7 +5,7 @@
  * Verifies that the site SSL certificate is trusted, not expired, and not
  * expiring within the configured warning window.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */
@@ -151,7 +151,7 @@ class Diagnostic_Ssl_Certificate_Valid extends Diagnostic_Base {
 
 		// Grab the peer cert from the stream context for further inspection.
 		$params = stream_context_get_params( $socket );
-		fclose( $socket );
+		fclose( $socket ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fclose -- $socket is a network stream from stream_socket_client(), not a filesystem handle; WP_Filesystem does not apply.
 
 		$cert_resource = $params['options']['ssl']['peer_certificate'] ?? null;
 		if ( empty( $cert_resource ) ) {

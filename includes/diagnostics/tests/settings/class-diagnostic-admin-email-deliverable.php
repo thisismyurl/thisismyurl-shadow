@@ -7,7 +7,7 @@
  * actively monitored. Site notifications and security alerts rely on this
  * address being deliverable.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

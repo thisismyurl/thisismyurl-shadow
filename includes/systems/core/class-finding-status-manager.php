@@ -11,6 +11,10 @@ declare(strict_types=1);
 
 namespace ThisIsMyURL\Shadow\Core;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 /**
  * Manages finding status and organization
  */

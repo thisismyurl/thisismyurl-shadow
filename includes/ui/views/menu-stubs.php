@@ -36,7 +36,7 @@ if ( ! function_exists( 'thisismyurl_shadow_render_findings' ) ) {
 
 if ( ! function_exists( 'thisismyurl_shadow_render_settings' ) ) {
 	/**
-	 * Render the Christopher Ross Shadow Settings page.
+	 * Render the Shadow Settings page.
 	 *
 	 * @since 0.6095
 	 */
@@ -62,44 +62,17 @@ if ( ! function_exists( 'thisismyurl_shadow_render_settings' ) ) {
 	}
 }
 
-if ( ! function_exists( 'thisismyurl_shadow_render_vault_lite' ) ) {
-	/**
-	 * Render the Vault Lite page.
-	 *
-	 * @since 0.6095
-	 */
-	function thisismyurl_shadow_render_vault_lite() {
-		$vault_view = THISISMYURL_SHADOW_PATH . 'includes/ui/views/vault-lite-page.php';
-		if ( file_exists( $vault_view ) ) {
-			require_once $vault_view;
-			return;
-		}
-
-		?>
-		<div class="wrap wps-page-container">
-			<?php
-			thisismyurl_shadow_render_page_header(
-				__( 'Vault Lite', 'thisismyurl-shadow' ),
-				__( 'Vault Lite page could not be loaded.', 'thisismyurl-shadow' ),
-				'dashicons-backup'
-			);
-			?>
-		</div>
-		<?php
-	}
-}
-
 if ( ! function_exists( 'thisismyurl_shadow_enqueue_settings_assets' ) ) {
 	/**
-	 * Enqueue CSS and JS for the Settings and Vault Lite pages.
+	 * Enqueue CSS and JS for the Settings page.
 	 *
 	 * @since 0.6095
 	 * @param string $hook_suffix Current admin page hook suffix.
 	 * @return void
 	 */
 	function thisismyurl_shadow_enqueue_settings_assets( string $hook_suffix ): void {
-		// Only load on Christopher Ross Shadow settings and Vault Lite pages.
-		if ( false === strpos( $hook_suffix, 'thisismyurl-shadow-settings' ) && false === strpos( $hook_suffix, 'thisismyurl-shadow-vault-lite' ) ) {
+		// Only load on the Shadow by Christopher Ross settings page.
+		if ( false === strpos( $hook_suffix, 'thisismyurl-shadow-settings' ) ) {
 			return;
 		}
 

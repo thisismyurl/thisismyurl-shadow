@@ -5,7 +5,7 @@
  * Checks that the number of active plugins is not excessive. Too many plugins
  * slow the site, create maintenance burden, and increase the attack surface.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

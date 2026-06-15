@@ -49,7 +49,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Define the execution model for automated fixes.
  *
  * Treatments are the write-capable half of the plugin. A diagnostic explains
- * what is wrong; a treatment explains how Christopher Ross Shadow can change the site to fix
+ * what is wrong; a treatment explains how Shadow by Christopher Ross can change the site to fix
  * it. This base class standardizes that behavior so individual treatments only
  * need to implement their site-specific logic rather than re-solving backup,
  * permission, logging, or hook orchestration every time.
@@ -334,7 +334,7 @@ abstract class Treatment_Base implements Treatment_Interface {
 	}
 
 	/**
-	 * Execute a treatment through the full Christopher Ross Shadow treatment pipeline.
+	 * Execute a treatment through the full Shadow by Christopher Ross treatment pipeline.
 	 *
 	 * This wrapper exists so every treatment follows the same lifecycle:
 	 * - confirm the treatment has not been disabled,

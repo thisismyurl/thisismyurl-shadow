@@ -7,7 +7,7 @@
  * high severity, PHP 8.0 (EOL Nov 2023) as high, and PHP 7.x or older as
  * critically high.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

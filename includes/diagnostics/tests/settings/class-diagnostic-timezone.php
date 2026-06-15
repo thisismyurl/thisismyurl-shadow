@@ -6,7 +6,7 @@
  * rather than the default UTC offset (0), which affects scheduled tasks,
  * date displays, and event-plugin output.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

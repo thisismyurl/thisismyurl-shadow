@@ -5,7 +5,7 @@
  * Checks whether a performance plugin handles JavaScript deferral, or whether
  * the active theme avoids registering a high number of render-blocking scripts.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */
@@ -99,7 +99,7 @@ class Diagnostic_Noncritical_Js_Deferred extends Diagnostic_Base {
 		$home_url = home_url( '/' );
 		$result = Diagnostic_Request_Helper::get_result( $home_url, array(
 			'timeout'    => 7,
-			'user-agent' => 'Christopher Ross Shadow-Diagnostic/1.0',
+			'user-agent' => 'Shadow by Christopher Ross-Diagnostic/1.0',
 		) );
 
 		if ( empty( $result['success'] ) || empty( $result['response'] ) || ! is_array( $result['response'] ) ) {

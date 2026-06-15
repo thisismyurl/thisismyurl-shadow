@@ -6,7 +6,7 @@
  * <link rel="next"> tags into individual post pages. Google officially
  * deprecated support for these tags in 2019.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

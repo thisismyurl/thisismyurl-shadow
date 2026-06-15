@@ -5,7 +5,7 @@
  * Checks whether the site title and tagline have been updated from the WordPress
  * default placeholder values that appear in browser tabs and search results.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

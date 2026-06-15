@@ -1,8 +1,8 @@
 <?php
 /**
- * Christopher Ross Shadow Menu Manager
+ * Shadow Menu Manager
  *
- * Centralized registration of WordPress admin menus for Christopher Ross Shadow.
+ * Centralized registration of WordPress admin menus for Shadow by Christopher Ross.
  * Extracted from thisismyurl-shadow.php as part of Phase 4.5 refactoring.
  *
  * Philosophy: Commandment #7 (Ridiculously Good - obvious structure)
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 use ThisIsMyURL\Shadow\Admin\Post_Types_Page;
 use ThisIsMyURL\Shadow\Core\Form_Param_Helper;
 /**
- * Manages Christopher Ross Shadow admin menu registration and setup
+ * Manages Shadow by Christopher Ross admin menu registration and setup
  */
 class Menu_Manager {
 
@@ -40,7 +40,7 @@ class Menu_Manager {
 	}
 
 	/**
-	 * Register all Christopher Ross Shadow admin menus
+	 * Register all Shadow by Christopher Ross admin menus
 	 *
 	 * @return void
 	 */
@@ -51,8 +51,8 @@ class Menu_Manager {
 
 		// Top-level menu.
 		add_menu_page(
-			'Christopher Ross Shadow',
-			'Christopher Ross Shadow',
+			'Shadow by Christopher Ross',
+			'Shadow by Christopher Ross',
 			$admin_capability,
 			'thisismyurl-shadow',
 			'thisismyurl_shadow_render_dashboard_v2',
@@ -104,16 +104,6 @@ class Menu_Manager {
 			);
 		}
 
-		// Vault Lite local backup page.
-		add_submenu_page(
-			'thisismyurl-shadow',
-			__( 'Vault Lite', 'thisismyurl-shadow' ),
-			__( 'Vault Lite', 'thisismyurl-shadow' ),
-			$admin_capability,
-			'thisismyurl-shadow-vault-lite',
-			'thisismyurl_shadow_render_vault_lite'
-		);
-
 		// Settings.
 		add_submenu_page(
 			'thisismyurl-shadow',
@@ -144,8 +134,6 @@ class Menu_Manager {
 				array( 'ThisIsMyURL\Shadow\Gamification\Gamification_UI', 'render_achievements_page' )
 			);
 		}
-
-		// Vault Lite now has its own dedicated submenu page.
 	}
 
 	/**
@@ -159,7 +147,6 @@ class Menu_Manager {
 		}
 
 		$page                = Form_Param_Helper::get( 'page', 'text', '' );
-		$tab                 = Form_Param_Helper::get( 'tab', 'text', '' );
 		$core_pages_released = self::are_core_pages_released();
 
 		if ( in_array( $page, array( 'thisismyurl-shadow-findings', 'thisismyurl-shadow-automations' ), true ) && ! $core_pages_released ) {
@@ -185,13 +172,6 @@ class Menu_Manager {
 		if ( in_array( $page, array( 'thisismyurl-shadow-achievements', 'wpshadow-leaderboard', 'wpshadow-rewards' ), true ) && class_exists( '\ThisIsMyURL\Shadow\Gamification\Gamification_Release_Gate' ) && ! \ThisIsMyURL\Shadow\Gamification\Gamification_Release_Gate::is_released() ) {
 			if ( current_user_can( self::get_analyst_capability() ) ) {
 				wp_safe_redirect( admin_url( 'admin.php?page=thisismyurl-shadow' ) );
-				exit;
-			}
-		}
-
-		if ( 'thisismyurl-shadow-settings' === $page && 'backups' === $tab ) {
-			if ( current_user_can( self::get_admin_capability() ) ) {
-				wp_safe_redirect( admin_url( 'admin.php?page=thisismyurl-shadow-vault-lite' ) );
 				exit;
 			}
 		}
@@ -222,7 +202,7 @@ class Menu_Manager {
 	}
 
 	/**
-	 * Register Christopher Ross Shadow settings link on plugins page
+	 * Register Shadow by Christopher Ross settings link on plugins page
 	 *
 	 * @param array $links Plugin action links.
 	 * @return array Modified action links.
@@ -254,7 +234,7 @@ class Menu_Manager {
 	}
 
 	/**
-	 * Get capability required for admin-level Christopher Ross Shadow pages.
+	 * Get capability required for admin-level Shadow by Christopher Ross pages.
 	 *
 	 * @return string Capability name.
 	 */
@@ -267,7 +247,7 @@ class Menu_Manager {
 	}
 
 	/**
-	 * Get capability required for analyst/read-only Christopher Ross Shadow pages.
+	 * Get capability required for analyst/read-only Shadow by Christopher Ross pages.
 	 *
 	 * @return string Capability name.
 	 */

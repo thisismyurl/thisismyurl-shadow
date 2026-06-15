@@ -8,7 +8,7 @@
  * necessary with no perceptible visual difference for web use.
  *
  * The diagnostic flags values outside the 60–85 working range. This treatment
- * stores a target quality of 82 and tells the Christopher Ross Shadow bootstrap to apply a
+ * stores a target quality of 82 and tells the Shadow by Christopher Ross bootstrap to apply a
  * `jpeg_quality` filter returning that value.
  *
  * Note: quality changes only affect images processed after installation.

@@ -6,7 +6,7 @@
  * tag that advertises the exact WordPress version number, which is separate
  * from the meta generator tag on HTML pages.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

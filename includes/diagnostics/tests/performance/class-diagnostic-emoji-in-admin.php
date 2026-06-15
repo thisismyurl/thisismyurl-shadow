@@ -6,7 +6,7 @@
  * injected into wp-admin pages. Every modern browser renders emoji natively,
  * making these assets unnecessary overhead for all authors and administrators.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

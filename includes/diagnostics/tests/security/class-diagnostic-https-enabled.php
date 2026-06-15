@@ -5,7 +5,7 @@
  * Verifies that both the WordPress Address and Home URL are configured
  * to use HTTPS, ensuring all site traffic is encrypted in transit.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */

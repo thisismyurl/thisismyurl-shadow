@@ -63,42 +63,6 @@ for rel_file in "${LINT_FILES[@]}"; do
 done
 
 log ""
-log "[CHECK] Backup vault protections and index parity"
-BACKUP_OUTPUT="$(docker exec --user www-data "${CONTAINER_NAME}" sh -lc 'php <<'"'"'PHP'"'"'
-<?php
-require "/var/www/html/wp-load.php";
-$secret = \ThisIsMyURL\Shadow\Guardian\Backup_Manager::get_backup_directory();
-$index = get_option("thisismyurl_local_backup_index", []);
-$files = glob($secret . "/*.zip") ?: [];
-echo "secret_dir={$secret}" . PHP_EOL;
-foreach (["index.php", ".htaccess", "web.config"] as $file) {
-    echo $file . "=" . (file_exists(trailingslashit($secret) . $file) ? "yes" : "no") . PHP_EOL;
-}
-echo "indexed_count=" . count($index) . PHP_EOL;
-echo "disk_count=" . count($files) . PHP_EOL;
-PHP')"
-log "${BACKUP_OUTPUT}"
-
-for marker in "index.php=yes" ".htaccess=yes" "web.config=yes"; do
-  if printf "%s\n" "${BACKUP_OUTPUT}" | grep -q "${marker}"; then
-    log "[PASS] ${marker}"
-  else
-    log "[FAIL] ${marker}"
-    FAILURES=$((FAILURES + 1))
-  fi
-done
-
-INDEXED_COUNT="$(printf "%s\n" "${BACKUP_OUTPUT}" | sed -n 's/^indexed_count=//p' | head -n 1)"
-DISK_COUNT="$(printf "%s\n" "${BACKUP_OUTPUT}" | sed -n 's/^disk_count=//p' | head -n 1)"
-
-if [[ -n "${INDEXED_COUNT}" && "${INDEXED_COUNT}" == "${DISK_COUNT}" ]]; then
-  log "[PASS] indexed_count equals disk_count (${INDEXED_COUNT})"
-else
-  log "[FAIL] indexed_count (${INDEXED_COUNT:-missing}) does not equal disk_count (${DISK_COUNT:-missing})"
-  FAILURES=$((FAILURES + 1))
-fi
-
-log ""
 log "[CHECK] Public docs count alignment"
 README_FILE="${ROOT_DIR}/README.md"
 FEATURES_FILE="${ROOT_DIR}/docs/FEATURES.md"

@@ -118,7 +118,7 @@ if ( ! function_exists( 'thisismyurl_shadow_attempt_autofix' ) ) {
 		}
 
 		/**
-		 * Filter a top-level treatment attempt before Christopher Ross Shadow applies its default flow.
+		 * Filter a top-level treatment attempt before Shadow by Christopher Ross applies its default flow.
 		 *
 		 * Return a result array to short-circuit the built-in treatment resolution.
 		 *
@@ -139,7 +139,7 @@ if ( ! function_exists( 'thisismyurl_shadow_attempt_autofix' ) ) {
 		}
 
 		/**
-		 * Fires before Christopher Ross Shadow begins its top-level treatment attempt flow.
+		 * Fires before Shadow by Christopher Ross begins its top-level treatment attempt flow.
 		 *
 		 * @param string $finding_id Finding identifier.
 		 * @param bool   $dry_run    Whether the run is a dry run.
@@ -190,7 +190,7 @@ if ( ! function_exists( 'thisismyurl_shadow_attempt_autofix' ) ) {
 		}
 
 		/**
-		 * Fires after Christopher Ross Shadow completes its top-level treatment attempt flow.
+		 * Fires after Shadow by Christopher Ross completes its top-level treatment attempt flow.
 		 *
 		 * @param string              $finding_id Finding identifier.
 		 * @param bool                $dry_run    Whether the run was a dry run.

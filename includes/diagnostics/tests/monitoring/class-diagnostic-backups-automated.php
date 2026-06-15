@@ -101,7 +101,6 @@ class Diagnostic_Backups_Automated extends Diagnostic_Base {
 		'backwpup_cron',
 		'wpvivid_backup_cron',
 		'jetpack_backup_cron',
-		'thisismyurl_shadow_run_scheduled_backup',
 	);
 
 	/**
@@ -130,29 +129,6 @@ class Diagnostic_Backups_Automated extends Diagnostic_Base {
 		}
 
 		if ( '' === $active_backup_plugin ) {
-			// Check Vault Lite (Christopher Ross Shadow's built-in backup engine) before declaring no backup found.
-			if ( (bool) get_option( 'thisismyurl_shadow_backup_enabled', true ) ) {
-				$schedule_enabled = (bool) get_option( 'thisismyurl_shadow_backup_schedule_enabled', false );
-				$has_backups      = ! empty( get_option( 'thisismyurl_shadow_local_backup_index', array() ) );
-
-				if ( $schedule_enabled || $has_backups ) {
-					return null;
-				}
-
-				// Vault Lite is enabled but no schedule and no completed backups yet.
-				return array(
-					'id'           => self::$slug,
-					'title'        => self::$title,
-					'description'  => __( 'Vault Lite is active but no backup schedule has been configured. Backups will only run when triggered manually, leaving data at risk between runs.', 'thisismyurl-shadow' ),
-					'severity'     => 'medium',
-					'threat_level' => 40,
-					'details'      => array(
-						'plugin' => 'Christopher Ross Shadow Vault Lite',
-						'fix'    => __( 'Open Christopher Ross Shadow › Vault Lite and enable a daily or weekly backup schedule so your data is protected automatically.', 'thisismyurl-shadow' ),
-					),
-				);
-			}
-
 			// No backup plugin active — check for known backup cron hooks as a fallback.
 			foreach ( self::BACKUP_CRON_HOOKS as $hook ) {
 				if ( wp_get_scheduled_event( $hook ) ) {

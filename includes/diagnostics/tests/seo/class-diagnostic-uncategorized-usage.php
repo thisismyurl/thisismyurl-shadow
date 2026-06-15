@@ -6,7 +6,7 @@
  * Uncategorized category, which signals poor content organisation to visitors
  * and search engines.
  *
- * @package    Christopher Ross Shadow
+ * @package    Shadow by Christopher Ross
  * @subpackage Diagnostics
  * @since      0.6095
  */
