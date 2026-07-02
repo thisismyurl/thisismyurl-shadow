@@ -8,11 +8,14 @@
 .gitignore
 .github/
 
-# Distribution + release machinery
-.distignore
-artifacts/
-scripts/
-repo-tools/
+# Distribution + release machinery.
+# Patterns are ANCHORED with a leading slash so they match ONLY the repo-root
+# directory. An unanchored pattern in rsync --exclude-from matches a directory of
+# that name at ANY depth — the cause of the regression fixed below.
+/.distignore
+/artifacts/
+/scripts/
+/repo-tools/
 
 # Composer dev tooling — vendor/ is dev-only, runtime classes are loaded by
 # includes/systems/core/class-bootstrap-autoloader.php.
@@ -20,13 +23,18 @@ composer.json
 composer.lock
 vendor/
 
-# Tests + test infrastructure
-tests/
+# Tests + test infrastructure.
+# CRITICAL: anchor as `/tests/`. An unanchored `tests/` matches a `tests` directory
+# at ANY depth and would wrongly exclude the RUNTIME `includes/diagnostics/tests/`
+# (237 diagnostic classes), shipping a plugin that installs but does nothing.
+# `/tests/` matches only the repo-root unit-test directory. (Guarded at build time by
+# the diagnostic-class count assertion in scripts/prepare-wordpress-org-release.sh.)
+/tests/
 .phpunit.cache/
 phpunit.xml.dist
 
 # Project documentation that does not belong in the runtime zip
-docs/
+/docs/
 *.md
 
 # Local IDE / editor cruft

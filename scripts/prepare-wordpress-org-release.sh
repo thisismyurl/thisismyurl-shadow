@@ -220,6 +220,18 @@ build_zip() {
 		--exclude-from="${DISTIGNORE_FILE}" \
 		"${ROOT_DIR}/" "${DIST_BUILD_ROOT}/"
 
+	# Regression guard: the runtime diagnostic classes MUST survive into the staged
+	# build. A prior .distignore over-exclusion (unanchored `tests/` matching the
+	# runtime includes/diagnostics/tests/) once shipped a zip with ZERO diagnostics —
+	# a plugin that installs but does nothing. Refuse to build if they are missing.
+	local _diag_count
+	_diag_count="$(find "${DIST_BUILD_ROOT}/includes/diagnostics/tests" -name '*.php' 2>/dev/null | wc -l | tr -d '[:space:]')"
+	if [ "${_diag_count:-0}" -lt 200 ]; then
+		echo "FATAL: staged build has only ${_diag_count:-0} diagnostic classes under includes/diagnostics/tests/ (expected ~237). The .distignore is over-excluding — refusing to build a hollow zip." >&2
+		exit 1
+	fi
+	log "Diagnostic-class check passed: ${_diag_count} classes staged."
+
 	(
 		cd "${TEMP_BUILD_DIR}"
 		zip -rq "${ZIP_PATH}" thisismyurl-shadow
