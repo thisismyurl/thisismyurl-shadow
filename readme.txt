@@ -5,7 +5,7 @@ Tags: diagnostics, site-health, security, performance, site-audit
 Requires at least: 6.4
 Requires PHP: 8.1
 Tested up to: 7.0
-Stable tag: 1.6165
+Stable tag: 1.6183
 License: GPL v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -84,6 +84,9 @@ Shadow by Christopher Ross is local-first and does not send your site data to an
 3. Treatment and file review workflows
 
 == Changelog ==
+
+= 1.6183 =
+* Fixed a fatal error under WP_DEBUG on the Automations page. The admin menu registered a page callback (`thisismyurl_shadow_render_workflow_builder`) that was never defined, so opening Automations raised an uncaught error. Added the missing render stub so the gated Automations page loads cleanly.
 
 = 1.6165 =
 * Resolved every WordPress.org Plugin Check error (verified with Plugin Check on WordPress 7.0); remaining notices are advisory database-scan warnings inherent to a diagnostics plugin.

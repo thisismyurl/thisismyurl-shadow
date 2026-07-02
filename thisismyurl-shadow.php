@@ -3,7 +3,7 @@
  * Plugin Name: Shadow by Christopher Ross
  * Plugin URI: https://thisismyurl.com/shadow/
  * Description: Local-first WordPress diagnostics and safer fixes — file review and plain-English guidance before risky changes.
- * Version: 1.6165
+ * Version: 1.6183
  * Author: thisismyurl
  * Author URI: https://profiles.wordpress.org/thisismyurl/
  * Text Domain: thisismyurl-shadow
@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * In practice they form the contract between WordPress' plugin loader and the
  * rest of the Shadow by Christopher Ross codebase.
  */
-define( 'THISISMYURL_SHADOW_VERSION', '1.6165' );
+define( 'THISISMYURL_SHADOW_VERSION', '1.6183' );
 define( 'THISISMYURL_SHADOW_FILE', __FILE__ );
 define( 'THISISMYURL_SHADOW_BASENAME', plugin_basename( __FILE__ ) );
 define( 'THISISMYURL_SHADOW_PATH', plugin_dir_path( __FILE__ ) );

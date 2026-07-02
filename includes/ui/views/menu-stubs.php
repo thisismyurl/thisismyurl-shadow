@@ -34,6 +34,31 @@ if ( ! function_exists( 'thisismyurl_shadow_render_findings' ) ) {
 	}
 }
 
+if ( ! function_exists( 'thisismyurl_shadow_render_workflow_builder' ) ) {
+	/**
+	 * Render the Automations (Workflow) page.
+	 *
+	 * Stub renderer for the gated Automations page. Registered by the menu manager
+	 * once the core pages are released; without this the admin.php callback resolves
+	 * to an undefined function and fatals under WP_DEBUG.
+	 *
+	 * @since 1.6183
+	 */
+	function thisismyurl_shadow_render_workflow_builder() {
+		?>
+		<div class="wrap wps-page-container">
+			<?php
+			thisismyurl_shadow_render_page_header(
+				__( 'Automations', 'thisismyurl-shadow' ),
+				__( 'Automation, scheduled tasks, and workflows.', 'thisismyurl-shadow' ),
+				'dashicons-controls-repeat'
+			);
+			?>
+		</div>
+		<?php
+	}
+}
+
 if ( ! function_exists( 'thisismyurl_shadow_render_settings' ) ) {
 	/**
 	 * Render the Shadow Settings page.
