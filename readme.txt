@@ -4,7 +4,7 @@ Donate link: https://github.com/sponsors/thisismyurl
 Tags: diagnostics, site-health, security, performance, site-audit
 Requires at least: 6.4
 Requires PHP: 8.1
-Tested up to: 7.0
+Tested up to: 7.1
 Stable tag: 1.6183
 License: GPL v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
